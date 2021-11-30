@@ -1,0 +1,58 @@
+# AccountResponse
+
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**account_number** | **str, none_type** |  | [optional] 
+**apr** | **float, none_type** |  | [optional] 
+**apy** | **float, none_type** |  | [optional] 
+**available_balance** | **float, none_type** |  | [optional] 
+**available_credit** | **float, none_type** |  | [optional] 
+**balance** | **float, none_type** |  | [optional] 
+**cash_balance** | **float, none_type** |  | [optional] 
+**cash_surrender_value** | **float, none_type** |  | [optional] 
+**created_at** | **str, none_type** |  | [optional] 
+**credit_limit** | **float, none_type** |  | [optional] 
+**currency_code** | **str, none_type** |  | [optional] 
+**day_payment_is_due** | **int, none_type** |  | [optional] 
+**death_benefit** | **int, none_type** |  | [optional] 
+**guid** | **str** |  | [optional] 
+**holdings_value** | **float, none_type** |  | [optional] 
+**id** | **str, none_type** |  | [optional] 
+**imported_at** | **str, none_type** |  | [optional] 
+**institution_code** | **str, none_type** |  | [optional] 
+**insured_name** | **str, none_type** |  | [optional] 
+**interest_rate** | **float, none_type** |  | [optional] 
+**is_closed** | **bool, none_type** |  | [optional] 
+**is_hidden** | **bool, none_type** |  | [optional] 
+**last_payment** | **float, none_type** |  | [optional] 
+**last_payment_at** | **str, none_type** |  | [optional] 
+**loan_amount** | **float, none_type** |  | [optional] 
+**matures_on** | **str, none_type** |  | [optional] 
+**member_guid** | **str** |  | [optional] 
+**member_id** | **str, none_type** |  | [optional] 
+**member_is_managed_by_user** | **bool, none_type** |  | [optional] 
+**metadata** | **str, none_type** |  | [optional] 
+**minimum_balance** | **float, none_type** |  | [optional] 
+**minimum_payment** | **float, none_type** |  | [optional] 
+**name** | **str, none_type** |  | [optional] 
+**nickname** | **str, none_type** |  | [optional] 
+**original_balance** | **float, none_type** |  | [optional] 
+**pay_out_amount** | **float, none_type** |  | [optional] 
+**payment_due_at** | **str, none_type** |  | [optional] 
+**payoff_balance** | **float, none_type** |  | [optional] 
+**premium_amount** | **float, none_type** |  | [optional] 
+**routing_number** | **str, none_type** |  | [optional] 
+**started_on** | **str, none_type** |  | [optional] 
+**subtype** | **str, none_type** |  | [optional] 
+**total_account_value** | **float, none_type** |  | [optional] 
+**type** | **str, none_type** |  | [optional] 
+**updated_at** | **str, none_type** |  | [optional] 
+**user_guid** | **str** |  | [optional] 
+**user_id** | **str, none_type** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
