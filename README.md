@@ -14,12 +14,15 @@ Python >= 3.6
 
 ## Installation
 
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
+Install the package using pip from PyPI by running:
 ```shell
-python setup.py install --user
+pip install mx-platform-python
 ```
-(or `sudo python setup.py install` to install the package for all users)
+
+Or install it yourself with:
+```shell
+python setup.py install
+```
 
 Then import the package:
 ```python

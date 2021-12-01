@@ -1807,8 +1807,62 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/categories/default',
+                'endpoint_path': '/categories/default',
                 'operation_id': 'list_default_categories',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_default_categories_by_user_endpoint = _Endpoint(
+            settings={
+                'response_type': (CategoriesResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/categories/default',
+                'operation_id': 'list_default_categories_by_user',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -3434,6 +3488,63 @@ class MxPlatformApi(object):
                 ],
                 'endpoint_path': '/users/{user_guid}/categories/{category_guid}',
                 'operation_id': 'read_category',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'category_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'category_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'category_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'category_guid': 'category_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'category_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_default_category_endpoint = _Endpoint(
+            settings={
+                'response_type': (CategoryResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/categories/{category_guid}',
+                'operation_id': 'read_default_category',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -7406,16 +7517,79 @@ class MxPlatformApi(object):
 
     def list_default_categories(
         self,
-        user_guid,
         **kwargs
     ):
         """List default categories  # noqa: E501
 
-        Use this endpoint to read the attributes of a specific user.  # noqa: E501
+        Use this endpoint to retrieve a list of all the default categories and subcategories offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_default_categories(user_guid, async_req=True)
+        >>> thread = api.list_default_categories(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CategoriesResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.list_default_categories_endpoint.call_with_http_info(**kwargs)
+
+    def list_default_categories_by_user(
+        self,
+        user_guid,
+        **kwargs
+    ):
+        """List default categories by user  # noqa: E501
+
+        Use this endpoint to retrieve a list of all the default categories and subcategories, scoped by user, offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_default_categories_by_user(user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -7470,7 +7644,7 @@ class MxPlatformApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['user_guid'] = \
             user_guid
-        return self.list_default_categories_endpoint.call_with_http_info(**kwargs)
+        return self.list_default_categories_by_user_endpoint.call_with_http_info(**kwargs)
 
     def list_favorite_institutions(
         self,
@@ -9140,7 +9314,7 @@ class MxPlatformApi(object):
         user_guid,
         **kwargs
     ):
-        """Read category  # noqa: E501
+        """Read a custom category  # noqa: E501
 
         Use this endpoint to read the attributes of either a default category or a custom category.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9203,6 +9377,76 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.read_category_endpoint.call_with_http_info(**kwargs)
+
+    def read_default_category(
+        self,
+        category_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Read a default category  # noqa: E501
+
+        Use this endpoint to read the attributes of a default category.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_default_category(category_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            category_guid (str): The unique id for a `category`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CategoryResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['category_guid'] = \
+            category_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.read_default_category_endpoint.call_with_http_info(**kwargs)
 
     def read_holding(
         self,

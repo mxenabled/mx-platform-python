@@ -233,6 +233,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_default_categories_by_user(self):
+        """Test case for list_default_categories_by_user
+
+        List default categories by user  # noqa: E501
+        """
+        pass
+
     def test_list_favorite_institutions(self):
         """Test case for list_favorite_institutions
 
@@ -404,7 +411,14 @@ class TestMxPlatformApi(unittest.TestCase):
     def test_read_category(self):
         """Test case for read_category
 
-        Read category  # noqa: E501
+        Read a custom category  # noqa: E501
+        """
+        pass
+
+    def test_read_default_category(self):
+        """Test case for read_default_category
+
+        Read a default category  # noqa: E501
         """
         pass
 
