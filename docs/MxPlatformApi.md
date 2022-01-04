@@ -1926,7 +1926,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
                 extended_transaction_type="partner_transaction_type",
                 id="ID-123",
                 memo="Additional-information*on_transaction",
-                merchant_category_code=123,
+                merchant_category_code=4121,
                 type="DEBIT",
             ),
         ],
