@@ -196,6 +196,9 @@ conf = mx_platform_python.Configuration(
         self.proxy = None
         """Proxy URL
         """
+        self.no_proxy = None
+        """bypass proxy for host in the no_proxy list.
+        """
         self.proxy_headers = None
         """Proxy headers
         """
@@ -401,7 +404,7 @@ conf = mx_platform_python.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 0.1.0\n"\
-               "SDK Package Version: 0.3.0".\
+               "SDK Package Version: 0.4.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
