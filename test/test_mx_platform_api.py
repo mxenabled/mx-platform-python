@@ -254,6 +254,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_holdings_by_account(self):
+        """Test case for list_holdings_by_account
+
+        List holdings by account  # noqa: E501
+        """
+        pass
+
     def test_list_holdings_by_member(self):
         """Test case for list_holdings_by_member
 
