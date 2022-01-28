@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**list_default_categories_by_user**](MxPlatformApi.md#list_default_categories_by_user) | **GET** /users/{user_guid}/categories/default | List default categories by user
 [**list_favorite_institutions**](MxPlatformApi.md#list_favorite_institutions) | **GET** /institutions/favorites | List favorite institutions
 [**list_holdings**](MxPlatformApi.md#list_holdings) | **GET** /users/{user_guid}/holdings | List holdings
+[**list_holdings_by_account**](MxPlatformApi.md#list_holdings_by_account) | **GET** /users/{user_guid}/accounts/{account_guid}/holdings | List holdings by account
 [**list_holdings_by_member**](MxPlatformApi.md#list_holdings_by_member) | **GET** /users/{user_guid}/members/{member_guid}/holdings | List holdings by member
 [**list_institution_credentials**](MxPlatformApi.md#list_institution_credentials) | **GET** /institutions/{institution_code}/credentials | List institution credentials
 [**list_institutions**](MxPlatformApi.md#list_institutions) | **GET** /institutions | List institutions
@@ -2901,6 +2902,103 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **from_date** | **str**| Filter holdings from this date. | [optional]
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+ **to_date** | **str**| Filter holdings to this date. | [optional]
+
+### Return type
+
+[**HoldingsResponseBody**](HoldingsResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_holdings_by_account**
+> HoldingsResponseBody list_holdings_by_account(account_guid, user_guid)
+
+List holdings by account
+
+This endpoint returns all holdings associated with the specified `account`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.holdings_response_body import HoldingsResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for the `account`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for the `user`.
+    from_date = "2015-09-20" # str | Filter holdings from this date. (optional)
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+    to_date = "2019-10-20" # str | Filter holdings to this date. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List holdings by account
+        api_response = api_instance.list_holdings_by_account(account_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_holdings_by_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List holdings by account
+        api_response = api_instance.list_holdings_by_account(account_guid, user_guid, from_date=from_date, page=page, records_per_page=records_per_page, to_date=to_date)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_holdings_by_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for the &#x60;account&#x60;. |
+ **user_guid** | **str**| The unique id for the &#x60;user&#x60;. |
  **from_date** | **str**| Filter holdings from this date. | [optional]
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]

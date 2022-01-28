@@ -2023,6 +2023,83 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.list_holdings_by_account_endpoint = _Endpoint(
+            settings={
+                'response_type': (HoldingsResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/accounts/{account_guid}/holdings',
+                'operation_id': 'list_holdings_by_account',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_guid',
+                    'user_guid',
+                    'from_date',
+                    'page',
+                    'records_per_page',
+                    'to_date',
+                ],
+                'required': [
+                    'account_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                    'from_date':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                    'to_date':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_guid': 'account_guid',
+                    'user_guid': 'user_guid',
+                    'from_date': 'from_date',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                    'to_date': 'to_date',
+                },
+                'location_map': {
+                    'account_guid': 'path',
+                    'user_guid': 'path',
+                    'from_date': 'query',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                    'to_date': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.list_holdings_by_member_endpoint = _Endpoint(
             settings={
                 'response_type': (HoldingsResponseBody,),
@@ -7925,6 +8002,85 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.list_holdings_endpoint.call_with_http_info(**kwargs)
+
+    def list_holdings_by_account(
+        self,
+        account_guid,
+        user_guid,
+        **kwargs
+    ):
+        """List holdings by account  # noqa: E501
+
+        This endpoint returns all holdings associated with the specified `account`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_holdings_by_account(account_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_guid (str): The unique id for the `account`.
+            user_guid (str): The unique id for the `user`.
+
+        Keyword Args:
+            from_date (str): Filter holdings from this date.. [optional]
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            to_date (str): Filter holdings to this date.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HoldingsResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.list_holdings_by_account_endpoint.call_with_http_info(**kwargs)
 
     def list_holdings_by_member(
         self,
