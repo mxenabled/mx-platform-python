@@ -51,7 +51,7 @@ configuration = mx_platform_python.Configuration(
     host = 'https://int-api.mx.com'
 )
 
-with mx_platform_python.ApiClient(configuration) as api_client:
+with mx_platform_python.ApiClient(configuration, "Accept", "application/vnd.mx.api.v1+json") as api_client:
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     user_create_request_body = UserCreateRequestBody(
         user = UserCreateRequest(
