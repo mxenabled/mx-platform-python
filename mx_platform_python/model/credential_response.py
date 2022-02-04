@@ -84,8 +84,8 @@ class CredentialResponse(ModelNormal):
             'display_order': (int, none_type,),  # noqa: E501
             'field_name': (str, none_type,),  # noqa: E501
             'field_type': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
-            'label': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
+            'label': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -145,8 +145,8 @@ class CredentialResponse(ModelNormal):
             display_order (int, none_type): [optional]  # noqa: E501
             field_name (str, none_type): [optional]  # noqa: E501
             field_type (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            label (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            label (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,8 +231,8 @@ class CredentialResponse(ModelNormal):
             display_order (int, none_type): [optional]  # noqa: E501
             field_name (str, none_type): [optional]  # noqa: E501
             field_type (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            label (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            label (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

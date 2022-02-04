@@ -90,7 +90,7 @@ class MemberStatusResponse(ModelNormal):
             'aggregated_at': (str, none_type,),  # noqa: E501
             'challenges': ([ChallengeResponse],),  # noqa: E501
             'connection_status': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'has_processed_accounts': (bool, none_type,),  # noqa: E501
             'has_processed_transactions': (bool, none_type,),  # noqa: E501
             'is_authenticated': (bool, none_type,),  # noqa: E501
@@ -159,7 +159,7 @@ class MemberStatusResponse(ModelNormal):
             aggregated_at (str, none_type): [optional]  # noqa: E501
             challenges ([ChallengeResponse]): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             has_processed_accounts (bool, none_type): [optional]  # noqa: E501
             has_processed_transactions (bool, none_type): [optional]  # noqa: E501
             is_authenticated (bool, none_type): [optional]  # noqa: E501
@@ -249,7 +249,7 @@ class MemberStatusResponse(ModelNormal):
             aggregated_at (str, none_type): [optional]  # noqa: E501
             challenges ([ChallengeResponse]): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             has_processed_accounts (bool, none_type): [optional]  # noqa: E501
             has_processed_transactions (bool, none_type): [optional]  # noqa: E501
             is_authenticated (bool, none_type): [optional]  # noqa: E501

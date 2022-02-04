@@ -81,13 +81,13 @@ class TransactionRuleResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'category_guid': (str,),  # noqa: E501
+            'category_guid': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'match_description': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -146,13 +146,13 @@ class TransactionRuleResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_guid (str): [optional]  # noqa: E501
+            category_guid (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             match_description (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,13 +234,13 @@ class TransactionRuleResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_guid (str): [optional]  # noqa: E501
+            category_guid (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             match_description (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

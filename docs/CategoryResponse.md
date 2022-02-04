@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **is_default** | **bool, none_type** |  | [optional] 
 **is_income** | **bool, none_type** |  | [optional] 
 **metadata** | **str, none_type** |  | [optional] 
 **name** | **str, none_type** |  | [optional] 
-**parent_guid** | **str** |  | [optional] 
+**parent_guid** | **str, none_type** |  | [optional] 
 **updated_at** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

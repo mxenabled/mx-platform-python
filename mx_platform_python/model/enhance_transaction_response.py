@@ -100,7 +100,7 @@ class EnhanceTransactionResponse(ModelNormal):
             'is_subscription': (bool, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
             'merchant_category_code': (int, none_type,),  # noqa: E501
-            'merchant_guid': (str,),  # noqa: E501
+            'merchant_guid': (str, none_type,),  # noqa: E501
             'merchant_location_guid': (str, none_type,),  # noqa: E501
             'original_description': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
@@ -197,7 +197,7 @@ class EnhanceTransactionResponse(ModelNormal):
             is_subscription (bool, none_type): [optional]  # noqa: E501
             memo (str, none_type): [optional]  # noqa: E501
             merchant_category_code (int, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
             merchant_location_guid (str, none_type): [optional]  # noqa: E501
             original_description (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
@@ -301,7 +301,7 @@ class EnhanceTransactionResponse(ModelNormal):
             is_subscription (bool, none_type): [optional]  # noqa: E501
             memo (str, none_type): [optional]  # noqa: E501
             merchant_category_code (int, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
             merchant_location_guid (str, none_type): [optional]  # noqa: E501
             original_description (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501

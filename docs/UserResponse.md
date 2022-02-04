@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **is_disabled** | **bool, none_type** |  | [optional] 
 **metadata** | **str, none_type** |  | [optional] 

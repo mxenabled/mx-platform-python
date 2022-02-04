@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **logo_url** | **str, none_type** |  | [optional] 
 **name** | **str, none_type** |  | [optional] 
 **updated_at** | **str, none_type** |  | [optional] 

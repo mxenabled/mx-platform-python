@@ -82,7 +82,7 @@ class ConnectWidgetResponse(ModelNormal):
         """
         return {
             'connect_widget_url': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -137,7 +137,7 @@ class ConnectWidgetResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             connect_widget_url (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class ConnectWidgetResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             connect_widget_url (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

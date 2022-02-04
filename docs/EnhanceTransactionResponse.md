@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **is_subscription** | **bool, none_type** |  | [optional] 
 **memo** | **str, none_type** |  | [optional] 
 **merchant_category_code** | **int, none_type** |  | [optional] 
-**merchant_guid** | **str** |  | [optional] 
+**merchant_guid** | **str, none_type** |  | [optional] 
 **merchant_location_guid** | **str, none_type** |  | [optional] 
 **original_description** | **str, none_type** |  | [optional] 
 **type** | **str, none_type** |  | [optional] 

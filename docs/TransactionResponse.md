@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_guid** | **str** |  | [optional] 
+**account_guid** | **str, none_type** |  | [optional] 
 **account_id** | **str, none_type** |  | [optional] 
 **amount** | **float, none_type** |  | [optional] 
 **category** | **str, none_type** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **date** | **str, none_type** |  | [optional] 
 **description** | **str, none_type** |  | [optional] 
 **extended_transaction_type** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **is_bill_pay** | **bool, none_type** |  | [optional] 
 **is_direct_deposit** | **bool, none_type** |  | [optional] 
@@ -31,12 +31,12 @@ Name | Type | Description | Notes
 **localized_description** | **str, none_type** |  | [optional] 
 **localized_memo** | **str, none_type** |  | [optional] 
 **longitude** | **float, none_type** |  | [optional] 
-**member_guid** | **str** |  | [optional] 
+**member_guid** | **str, none_type** |  | [optional] 
 **member_is_managed_by_user** | **bool, none_type** |  | [optional] 
 **memo** | **str, none_type** |  | [optional] 
 **merchant_category_code** | **int, none_type** |  | [optional] 
-**merchant_guid** | **str** |  | [optional] 
-**merchant_location_guid** | **str** |  | [optional] 
+**merchant_guid** | **str, none_type** |  | [optional] 
+**merchant_location_guid** | **str, none_type** |  | [optional] 
 **metadata** | **str, none_type** |  | [optional] 
 **original_description** | **str, none_type** |  | [optional] 
 **posted_at** | **str, none_type** |  | [optional] 
@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **transacted_at** | **str, none_type** |  | [optional] 
 **type** | **str, none_type** |  | [optional] 
 **updated_at** | **str, none_type** |  | [optional] 
-**user_guid** | **str** |  | [optional] 
+**user_guid** | **str, none_type** |  | [optional] 
 **user_id** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

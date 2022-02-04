@@ -82,7 +82,7 @@ class MerchantResponse(ModelNormal):
         """
         return {
             'created_at': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'logo_url': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -145,7 +145,7 @@ class MerchantResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
@@ -232,7 +232,7 @@ class MerchantResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501

@@ -81,18 +81,18 @@ class AccountOwnerResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_guid': (str,),  # noqa: E501
+            'account_guid': (str, none_type,),  # noqa: E501
             'address': (str, none_type,),  # noqa: E501
             'city': (str, none_type,),  # noqa: E501
             'country': (str, none_type,),  # noqa: E501
             'email': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
-            'member_guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
+            'member_guid': (str, none_type,),  # noqa: E501
             'owner_name': (str, none_type,),  # noqa: E501
             'phone': (str, none_type,),  # noqa: E501
             'postal_code': (str, none_type,),  # noqa: E501
             'state': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -156,18 +156,18 @@ class AccountOwnerResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             address (str, none_type): [optional]  # noqa: E501
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             email (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             owner_name (str, none_type): [optional]  # noqa: E501
             phone (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,18 +249,18 @@ class AccountOwnerResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             address (str, none_type): [optional]  # noqa: E501
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             email (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             owner_name (str, none_type): [optional]  # noqa: E501
             phone (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

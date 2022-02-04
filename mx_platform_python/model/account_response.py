@@ -94,7 +94,7 @@ class AccountResponse(ModelNormal):
             'currency_code': (str, none_type,),  # noqa: E501
             'day_payment_is_due': (int, none_type,),  # noqa: E501
             'death_benefit': (int, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'holdings_value': (float, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'imported_at': (str, none_type,),  # noqa: E501
@@ -107,7 +107,7 @@ class AccountResponse(ModelNormal):
             'last_payment_at': (str, none_type,),  # noqa: E501
             'loan_amount': (float, none_type,),  # noqa: E501
             'matures_on': (str, none_type,),  # noqa: E501
-            'member_guid': (str,),  # noqa: E501
+            'member_guid': (str, none_type,),  # noqa: E501
             'member_id': (str, none_type,),  # noqa: E501
             'member_is_managed_by_user': (bool, none_type,),  # noqa: E501
             'metadata': (str, none_type,),  # noqa: E501
@@ -126,7 +126,7 @@ class AccountResponse(ModelNormal):
             'total_account_value': (float, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
             'user_id': (str, none_type,),  # noqa: E501
         }
 
@@ -239,7 +239,7 @@ class AccountResponse(ModelNormal):
             currency_code (str, none_type): [optional]  # noqa: E501
             day_payment_is_due (int, none_type): [optional]  # noqa: E501
             death_benefit (int, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             holdings_value (float, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             imported_at (str, none_type): [optional]  # noqa: E501
@@ -252,7 +252,7 @@ class AccountResponse(ModelNormal):
             last_payment_at (str, none_type): [optional]  # noqa: E501
             loan_amount (float, none_type): [optional]  # noqa: E501
             matures_on (str, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             member_id (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
@@ -271,7 +271,7 @@ class AccountResponse(ModelNormal):
             total_account_value (float, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -367,7 +367,7 @@ class AccountResponse(ModelNormal):
             currency_code (str, none_type): [optional]  # noqa: E501
             day_payment_is_due (int, none_type): [optional]  # noqa: E501
             death_benefit (int, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             holdings_value (float, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             imported_at (str, none_type): [optional]  # noqa: E501
@@ -380,7 +380,7 @@ class AccountResponse(ModelNormal):
             last_payment_at (str, none_type): [optional]  # noqa: E501
             loan_amount (float, none_type): [optional]  # noqa: E501
             matures_on (str, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             member_id (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
@@ -399,7 +399,7 @@ class AccountResponse(ModelNormal):
             total_account_value (float, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 

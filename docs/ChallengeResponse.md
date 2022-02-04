@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **field_name** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **image_data** | **str, none_type** |  | [optional] 
 **image_options** | [**[ImageOptionResponse]**](ImageOptionResponse.md) |  | [optional] 
 **label** | **str, none_type** |  | [optional] 

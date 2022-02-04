@@ -81,7 +81,7 @@ class OAuthWindowResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'oauth_window_uri': (str, none_type,),  # noqa: E501
         }
 
@@ -136,7 +136,7 @@ class OAuthWindowResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             oauth_window_uri (str, none_type): [optional]  # noqa: E501
         """
 
@@ -219,7 +219,7 @@ class OAuthWindowResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             oauth_window_uri (str, none_type): [optional]  # noqa: E501
         """
 
