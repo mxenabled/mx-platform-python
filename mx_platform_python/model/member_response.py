@@ -83,7 +83,7 @@ class MemberResponse(ModelNormal):
         return {
             'aggregated_at': (str, none_type,),  # noqa: E501
             'connection_status': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'institution_code': (str, none_type,),  # noqa: E501
             'is_being_aggregated': (bool, none_type,),  # noqa: E501
@@ -93,7 +93,7 @@ class MemberResponse(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'oauth_window_uri': (str, none_type,),  # noqa: E501
             'successfully_aggregated_at': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
             'user_id': (str, none_type,),  # noqa: E501
         }
 
@@ -162,7 +162,7 @@ class MemberResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             aggregated_at (str, none_type): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             institution_code (str, none_type): [optional]  # noqa: E501
             is_being_aggregated (bool, none_type): [optional]  # noqa: E501
@@ -172,7 +172,7 @@ class MemberResponse(ModelNormal):
             name (str, none_type): [optional]  # noqa: E501
             oauth_window_uri (str, none_type): [optional]  # noqa: E501
             successfully_aggregated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -257,7 +257,7 @@ class MemberResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             aggregated_at (str, none_type): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             institution_code (str, none_type): [optional]  # noqa: E501
             is_being_aggregated (bool, none_type): [optional]  # noqa: E501
@@ -267,7 +267,7 @@ class MemberResponse(ModelNormal):
             name (str, none_type): [optional]  # noqa: E501
             oauth_window_uri (str, none_type): [optional]  # noqa: E501
             successfully_aggregated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 

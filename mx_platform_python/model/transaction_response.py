@@ -81,7 +81,7 @@ class TransactionResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_guid': (str,),  # noqa: E501
+            'account_guid': (str, none_type,),  # noqa: E501
             'account_id': (str, none_type,),  # noqa: E501
             'amount': (float, none_type,),  # noqa: E501
             'category': (str, none_type,),  # noqa: E501
@@ -92,7 +92,7 @@ class TransactionResponse(ModelNormal):
             'date': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'extended_transaction_type': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'is_bill_pay': (bool, none_type,),  # noqa: E501
             'is_direct_deposit': (bool, none_type,),  # noqa: E501
@@ -108,12 +108,12 @@ class TransactionResponse(ModelNormal):
             'localized_description': (str, none_type,),  # noqa: E501
             'localized_memo': (str, none_type,),  # noqa: E501
             'longitude': (float, none_type,),  # noqa: E501
-            'member_guid': (str,),  # noqa: E501
+            'member_guid': (str, none_type,),  # noqa: E501
             'member_is_managed_by_user': (bool, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
             'merchant_category_code': (int, none_type,),  # noqa: E501
-            'merchant_guid': (str,),  # noqa: E501
-            'merchant_location_guid': (str,),  # noqa: E501
+            'merchant_guid': (str, none_type,),  # noqa: E501
+            'merchant_location_guid': (str, none_type,),  # noqa: E501
             'metadata': (str, none_type,),  # noqa: E501
             'original_description': (str, none_type,),  # noqa: E501
             'posted_at': (str, none_type,),  # noqa: E501
@@ -122,7 +122,7 @@ class TransactionResponse(ModelNormal):
             'transacted_at': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
             'user_id': (str, none_type,),  # noqa: E501
         }
 
@@ -218,7 +218,7 @@ class TransactionResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             account_id (str, none_type): [optional]  # noqa: E501
             amount (float, none_type): [optional]  # noqa: E501
             category (str, none_type): [optional]  # noqa: E501
@@ -229,7 +229,7 @@ class TransactionResponse(ModelNormal):
             date (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             extended_transaction_type (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             is_bill_pay (bool, none_type): [optional]  # noqa: E501
             is_direct_deposit (bool, none_type): [optional]  # noqa: E501
@@ -245,12 +245,12 @@ class TransactionResponse(ModelNormal):
             localized_description (str, none_type): [optional]  # noqa: E501
             localized_memo (str, none_type): [optional]  # noqa: E501
             longitude (float, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
             memo (str, none_type): [optional]  # noqa: E501
             merchant_category_code (int, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
-            merchant_location_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
+            merchant_location_guid (str, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
             original_description (str, none_type): [optional]  # noqa: E501
             posted_at (str, none_type): [optional]  # noqa: E501
@@ -259,7 +259,7 @@ class TransactionResponse(ModelNormal):
             transacted_at (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -342,7 +342,7 @@ class TransactionResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             account_id (str, none_type): [optional]  # noqa: E501
             amount (float, none_type): [optional]  # noqa: E501
             category (str, none_type): [optional]  # noqa: E501
@@ -353,7 +353,7 @@ class TransactionResponse(ModelNormal):
             date (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             extended_transaction_type (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             is_bill_pay (bool, none_type): [optional]  # noqa: E501
             is_direct_deposit (bool, none_type): [optional]  # noqa: E501
@@ -369,12 +369,12 @@ class TransactionResponse(ModelNormal):
             localized_description (str, none_type): [optional]  # noqa: E501
             localized_memo (str, none_type): [optional]  # noqa: E501
             longitude (float, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
             memo (str, none_type): [optional]  # noqa: E501
             merchant_category_code (int, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
-            merchant_location_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
+            merchant_location_guid (str, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
             original_description (str, none_type): [optional]  # noqa: E501
             posted_at (str, none_type): [optional]  # noqa: E501
@@ -383,7 +383,7 @@ class TransactionResponse(ModelNormal):
             transacted_at (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
             user_id (str, none_type): [optional]  # noqa: E501
         """
 

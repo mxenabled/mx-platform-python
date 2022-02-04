@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregated_at** | **str, none_type** |  | [optional] 
 **connection_status** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **institution_code** | **str, none_type** |  | [optional] 
 **is_being_aggregated** | **bool, none_type** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** |  | [optional] 
 **oauth_window_uri** | **str, none_type** |  | [optional] 
 **successfully_aggregated_at** | **str, none_type** |  | [optional] 
-**user_guid** | **str** |  | [optional] 
+**user_guid** | **str, none_type** |  | [optional] 
 **user_id** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

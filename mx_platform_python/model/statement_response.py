@@ -81,14 +81,14 @@ class StatementResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_guid': (str,),  # noqa: E501
+            'account_guid': (str, none_type,),  # noqa: E501
             'content_hash': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
-            'member_guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
+            'member_guid': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
             'uri': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -148,14 +148,14 @@ class StatementResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             content_hash (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
             uri (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,14 +237,14 @@ class StatementResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             content_hash (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
             uri (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

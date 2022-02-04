@@ -81,24 +81,24 @@ class HoldingResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_guid': (str,),  # noqa: E501
+            'account_guid': (str, none_type,),  # noqa: E501
             'cost_basis': (float, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
             'currency_code': (str, none_type,),  # noqa: E501
             'cusip': (str, none_type,),  # noqa: E501
             'daily_change': (float, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'holding_type': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'market_value': (float, none_type,),  # noqa: E501
-            'member_guid': (str,),  # noqa: E501
+            'member_guid': (str, none_type,),  # noqa: E501
             'metadata': (str, none_type,),  # noqa: E501
             'purchase_price': (float, none_type,),  # noqa: E501
             'shares': (float, none_type,),  # noqa: E501
             'symbol': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -168,24 +168,24 @@ class HoldingResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             cost_basis (float, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             currency_code (str, none_type): [optional]  # noqa: E501
             cusip (str, none_type): [optional]  # noqa: E501
             daily_change (float, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             holding_type (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             market_value (float, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
             purchase_price (float, none_type): [optional]  # noqa: E501
             shares (float, none_type): [optional]  # noqa: E501
             symbol (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -267,24 +267,24 @@ class HoldingResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_guid (str): [optional]  # noqa: E501
+            account_guid (str, none_type): [optional]  # noqa: E501
             cost_basis (float, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             currency_code (str, none_type): [optional]  # noqa: E501
             cusip (str, none_type): [optional]  # noqa: E501
             daily_change (float, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             holding_type (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             market_value (float, none_type): [optional]  # noqa: E501
-            member_guid (str): [optional]  # noqa: E501
+            member_guid (str, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
             purchase_price (float, none_type): [optional]  # noqa: E501
             shares (float, none_type): [optional]  # noqa: E501
             symbol (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

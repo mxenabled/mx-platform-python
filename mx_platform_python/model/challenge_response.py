@@ -90,7 +90,7 @@ class ChallengeResponse(ModelNormal):
         lazy_import()
         return {
             'field_name': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'image_data': (str, none_type,),  # noqa: E501
             'image_options': ([ImageOptionResponse],),  # noqa: E501
             'label': (str, none_type,),  # noqa: E501
@@ -155,7 +155,7 @@ class ChallengeResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             field_name (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             image_data (str, none_type): [optional]  # noqa: E501
             image_options ([ImageOptionResponse]): [optional]  # noqa: E501
             label (str, none_type): [optional]  # noqa: E501
@@ -243,7 +243,7 @@ class ChallengeResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             field_name (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             image_data (str, none_type): [optional]  # noqa: E501
             image_options ([ImageOptionResponse]): [optional]  # noqa: E501
             label (str, none_type): [optional]  # noqa: E501

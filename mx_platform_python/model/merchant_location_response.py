@@ -84,10 +84,10 @@ class MerchantLocationResponse(ModelNormal):
             'city': (str, none_type,),  # noqa: E501
             'country': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'latitude': (float, none_type,),  # noqa: E501
             'longitude': (float, none_type,),  # noqa: E501
-            'merchant_guid': (str,),  # noqa: E501
+            'merchant_guid': (str, none_type,),  # noqa: E501
             'phone_number': (str, none_type,),  # noqa: E501
             'postal_code': (str, none_type,),  # noqa: E501
             'state': (str, none_type,),  # noqa: E501
@@ -159,10 +159,10 @@ class MerchantLocationResponse(ModelNormal):
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             latitude (float, none_type): [optional]  # noqa: E501
             longitude (float, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
             phone_number (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501
@@ -252,10 +252,10 @@ class MerchantLocationResponse(ModelNormal):
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             latitude (float, none_type): [optional]  # noqa: E501
             longitude (float, none_type): [optional]  # noqa: E501
-            merchant_guid (str): [optional]  # noqa: E501
+            merchant_guid (str, none_type): [optional]  # noqa: E501
             phone_number (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             state (str, none_type): [optional]  # noqa: E501

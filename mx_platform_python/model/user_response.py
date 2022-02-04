@@ -82,7 +82,7 @@ class UserResponse(ModelNormal):
         """
         return {
             'email': (str, none_type,),  # noqa: E501
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'is_disabled': (bool, none_type,),  # noqa: E501
             'metadata': (str, none_type,),  # noqa: E501
@@ -143,7 +143,7 @@ class UserResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             email (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             is_disabled (bool, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501
@@ -229,7 +229,7 @@ class UserResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             email (str, none_type): [optional]  # noqa: E501
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             is_disabled (bool, none_type): [optional]  # noqa: E501
             metadata (str, none_type): [optional]  # noqa: E501

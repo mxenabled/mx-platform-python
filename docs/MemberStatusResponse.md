@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **aggregated_at** | **str, none_type** |  | [optional] 
 **challenges** | [**[ChallengeResponse]**](ChallengeResponse.md) |  | [optional] 
 **connection_status** | **str, none_type** |  | [optional] 
-**guid** | **str** |  | [optional] 
+**guid** | **str, none_type** |  | [optional] 
 **has_processed_accounts** | **bool, none_type** |  | [optional] 
 **has_processed_transactions** | **bool, none_type** |  | [optional] 
 **is_authenticated** | **bool, none_type** |  | [optional] 

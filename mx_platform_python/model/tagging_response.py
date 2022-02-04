@@ -81,11 +81,11 @@ class TaggingResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'guid': (str,),  # noqa: E501
+            'guid': (str, none_type,),  # noqa: E501
             'member_is_managed_by_user': (bool, none_type,),  # noqa: E501
-            'tag_guid': (str,),  # noqa: E501
-            'transaction_guid': (str,),  # noqa: E501
-            'user_guid': (str,),  # noqa: E501
+            'tag_guid': (str, none_type,),  # noqa: E501
+            'transaction_guid': (str, none_type,),  # noqa: E501
+            'user_guid': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,11 +142,11 @@ class TaggingResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
-            tag_guid (str): [optional]  # noqa: E501
-            transaction_guid (str): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            tag_guid (str, none_type): [optional]  # noqa: E501
+            transaction_guid (str, none_type): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,11 +228,11 @@ class TaggingResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            guid (str): [optional]  # noqa: E501
+            guid (str, none_type): [optional]  # noqa: E501
             member_is_managed_by_user (bool, none_type): [optional]  # noqa: E501
-            tag_guid (str): [optional]  # noqa: E501
-            transaction_guid (str): [optional]  # noqa: E501
-            user_guid (str): [optional]  # noqa: E501
+            tag_guid (str, none_type): [optional]  # noqa: E501
+            transaction_guid (str, none_type): [optional]  # noqa: E501
+            user_guid (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
