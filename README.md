@@ -34,36 +34,33 @@ import mx_platform_python
 Please follow the [installation procedure](#installation) and then run the following:
 
 ```python
-import time
 import mx_platform_python
 from mx_platform_python.api import mx_platform_api
-from mx_platform_python.model.user_response_body import UserResponseBody
-from mx_platform_python.model.user_create_request_body import UserCreateRequestBody
-from mx_platform_python.model.user_create_request import UserCreateRequest
+from mx_platform_python.models import *
 from pprint import pprint
 
 configuration = mx_platform_python.Configuration(
-    # Configure with your Client ID/API Key from https://dashboard.mx.com
-    username = 'Your Client ID',
-    password = 'Your API Key',
+  # Configure with your Client ID/API Key from https://dashboard.mx.com
+  username = 'Your Client ID',
+  password = 'Your API Key',
 
-    # Configure environment. https://int-api.mx.com for development, https://api.mx.com for production
-    host = 'https://int-api.mx.com'
+  # Configure environment. https://int-api.mx.com for development, https://api.mx.com for production
+  host = 'https://int-api.mx.com'
 )
 
-with mx_platform_python.ApiClient(configuration, "Accept", "application/vnd.mx.api.v1+json") as api_client:
-    api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_create_request_body = UserCreateRequestBody(
-        user = UserCreateRequest(
-            metadata = "Creating a user!"
-        )
+with mx_platform_python.ApiClient(configuration, 'Accept', 'application/vnd.mx.api.v1+json') as api_client:
+  api_instance = mx_platform_api.MxPlatformApi(api_client)
+  request_body = UserCreateRequestBody(
+    user = UserCreateRequest(
+      metadata = 'Creating a user!'
     )
+  )
 
-    try:
-        api_response = api_instance.create_user(user_create_request_body)
-        pprint(api_response)
-    except mx_platform_python.ApiException as e:
-        print("Exception when calling MxPlatformApi->create_user: %s\n" % e)
+  try:
+    api_response = api_instance.create_user(request_body)
+    pprint(api_response)
+  except mx_platform_python.ApiException as e:
+    print("Exception when calling MxPlatformApi->create_user: %s\n" % e)
 ```
 
 ## Development

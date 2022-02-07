@@ -3610,11 +3610,9 @@ class MxPlatformApi(object):
             params_map={
                 'all': [
                     'category_guid',
-                    'user_guid',
                 ],
                 'required': [
                     'category_guid',
-                    'user_guid',
                 ],
                 'nullable': [
                 ],
@@ -3631,16 +3629,12 @@ class MxPlatformApi(object):
                 'openapi_types': {
                     'category_guid':
                         (str,),
-                    'user_guid':
-                        (str,),
                 },
                 'attribute_map': {
                     'category_guid': 'category_guid',
-                    'user_guid': 'user_guid',
                 },
                 'location_map': {
                     'category_guid': 'path',
-                    'user_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -4520,6 +4514,7 @@ class MxPlatformApi(object):
                 ],
                 'required': [
                     'user_guid',
+                    'connect_widget_request_body',
                 ],
                 'nullable': [
                 ],
@@ -10198,7 +10193,6 @@ class MxPlatformApi(object):
     def read_default_category(
         self,
         category_guid,
-        user_guid,
         **kwargs
     ):
         """Read a default category  # noqa: E501
@@ -10207,12 +10201,11 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.read_default_category(category_guid, user_guid, async_req=True)
+        >>> thread = api.read_default_category(category_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
             category_guid (str): The unique id for a `category`.
-            user_guid (str): The unique id for a `user`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -10273,8 +10266,6 @@ class MxPlatformApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['category_guid'] = \
             category_guid
-        kwargs['user_guid'] = \
-            user_guid
         return self.read_default_category_endpoint.call_with_http_info(**kwargs)
 
     def read_holding(
@@ -11506,6 +11497,7 @@ class MxPlatformApi(object):
     def request_connect_widget_url(
         self,
         user_guid,
+        connect_widget_request_body,
         **kwargs
     ):
         """Request connect widget url  # noqa: E501
@@ -11514,14 +11506,14 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.request_connect_widget_url(user_guid, async_req=True)
+        >>> thread = api.request_connect_widget_url(user_guid, connect_widget_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
             user_guid (str): The unique id for a `user`.
+            connect_widget_request_body (ConnectWidgetRequestBody): Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
         Keyword Args:
-            connect_widget_request_body (ConnectWidgetRequestBody): Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials). [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -11580,6 +11572,8 @@ class MxPlatformApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['user_guid'] = \
             user_guid
+        kwargs['connect_widget_request_body'] = \
+            connect_widget_request_body
         return self.request_connect_widget_url_endpoint.call_with_http_info(**kwargs)
 
     def request_o_auth_window_uri(

@@ -5106,7 +5106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_default_category**
-> CategoryResponseBody read_default_category(category_guid, user_guid)
+> CategoryResponseBody read_default_category(category_guid)
 
 Read a default category
 
@@ -5144,12 +5144,11 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     category_guid = "CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874" # str | The unique id for a `category`.
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
 
     # example passing only required values which don't have defaults set
     try:
         # Read a default category
-        api_response = api_instance.read_default_category(category_guid, user_guid)
+        api_response = api_instance.read_default_category(category_guid)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->read_default_category: %s\n" % e)
@@ -5161,7 +5160,6 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_guid** | **str**| The unique id for a &#x60;category&#x60;. |
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
 
 ### Return type
 
@@ -6384,7 +6382,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_connect_widget_url**
-> ConnectWidgetResponseBody request_connect_widget_url(user_guid)
+> ConnectWidgetResponseBody request_connect_widget_url(user_guid, connect_widget_request_body)
 
 Request connect widget url
 
@@ -6437,21 +6435,12 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             update_credentials=False,
             wait_for_full_aggregation=False,
         ),
-    ) # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) (optional)
+    ) # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
     # example passing only required values which don't have defaults set
     try:
         # Request connect widget url
-        api_response = api_instance.request_connect_widget_url(user_guid)
-        pprint(api_response)
-    except mx_platform_python.ApiException as e:
-        print("Exception when calling MxPlatformApi->request_connect_widget_url: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Request connect widget url
-        api_response = api_instance.request_connect_widget_url(user_guid, connect_widget_request_body=connect_widget_request_body)
+        api_response = api_instance.request_connect_widget_url(user_guid, connect_widget_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->request_connect_widget_url: %s\n" % e)
@@ -6463,7 +6452,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
- **connect_widget_request_body** | [**ConnectWidgetRequestBody**](ConnectWidgetRequestBody.md)| Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) | [optional]
+ **connect_widget_request_body** | [**ConnectWidgetRequestBody**](ConnectWidgetRequestBody.md)| Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) |
 
 ### Return type
 
