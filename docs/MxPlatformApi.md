@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**create_category**](MxPlatformApi.md#create_category) | **POST** /users/{user_guid}/categories | Create category
 [**create_managed_account**](MxPlatformApi.md#create_managed_account) | **POST** /users/{user_guid}/managed_members/{member_guid}/accounts | Create managed account
 [**create_managed_member**](MxPlatformApi.md#create_managed_member) | **POST** /users/{user_guid}/managed_members | Create managed member
-[**create_managed_transaction**](MxPlatformApi.md#create_managed_transaction) | **POST** /users/{user_guid}/managed_members/{member_guid}/transactions | Create managed transaction
+[**create_managed_transaction**](MxPlatformApi.md#create_managed_transaction) | **POST** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions | Create managed transaction
 [**create_member**](MxPlatformApi.md#create_member) | **POST** /users/{user_guid}/members | Create member
 [**create_tag**](MxPlatformApi.md#create_tag) | **POST** /users/{user_guid}/tags | Create tag
 [**create_tagging**](MxPlatformApi.md#create_tagging) | **POST** /users/{user_guid}/taggings | Create tagging
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**delete_category**](MxPlatformApi.md#delete_category) | **DELETE** /users/{user_guid}/categories/{category_guid} | Delete category
 [**delete_managed_account**](MxPlatformApi.md#delete_managed_account) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid} | Delete managed account
 [**delete_managed_member**](MxPlatformApi.md#delete_managed_member) | **DELETE** /users/{user_guid}/managed_members/{member_guid} | Delete managed member
-[**delete_managed_transaction**](MxPlatformApi.md#delete_managed_transaction) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid} | Delete managed transaction
+[**delete_managed_transaction**](MxPlatformApi.md#delete_managed_transaction) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Delete managed transaction
 [**delete_member**](MxPlatformApi.md#delete_member) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
 [**delete_tag**](MxPlatformApi.md#delete_tag) | **DELETE** /users/{user_guid}/tags/{tag_guid} | Delete tag
 [**delete_tagging**](MxPlatformApi.md#delete_tagging) | **DELETE** /users/{user_guid}/taggings/{tagging_guid} | Delete tagging
@@ -44,7 +44,7 @@ Method | HTTP request | Description
 [**list_managed_accounts**](MxPlatformApi.md#list_managed_accounts) | **GET** /users/{user_guid}/managed_members/{member_guid}/accounts | List managed accounts
 [**list_managed_institutions**](MxPlatformApi.md#list_managed_institutions) | **GET** /managed_institutions | List managed institutions
 [**list_managed_members**](MxPlatformApi.md#list_managed_members) | **GET** /users/{user_guid}/managed_members | List managed members
-[**list_managed_transactions**](MxPlatformApi.md#list_managed_transactions) | **GET** /users/{user_guid}/managed_members/{member_guid}/transactions | List managed transactions
+[**list_managed_transactions**](MxPlatformApi.md#list_managed_transactions) | **GET** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions | List managed transactions
 [**list_member_challenges**](MxPlatformApi.md#list_member_challenges) | **GET** /users/{user_guid}/members/{member_guid}/challenges | List member challenges
 [**list_member_credentials**](MxPlatformApi.md#list_member_credentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 [**list_members**](MxPlatformApi.md#list_members) | **GET** /users/{user_guid}/members | List members
@@ -66,7 +66,7 @@ Method | HTTP request | Description
 [**read_institution**](MxPlatformApi.md#read_institution) | **GET** /institutions/{institution_code} | Read institution
 [**read_managed_account**](MxPlatformApi.md#read_managed_account) | **GET** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid} | Read managed account
 [**read_managed_member**](MxPlatformApi.md#read_managed_member) | **GET** /users/{user_guid}/managed_members/{member_guid} | Read managed member
-[**read_managed_transaction**](MxPlatformApi.md#read_managed_transaction) | **GET** /users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid} | Read managed transaction
+[**read_managed_transaction**](MxPlatformApi.md#read_managed_transaction) | **GET** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Read managed transaction
 [**read_member**](MxPlatformApi.md#read_member) | **GET** /users/{user_guid}/members/{member_guid} | Read member
 [**read_member_status**](MxPlatformApi.md#read_member_status) | **GET** /users/{user_guid}/members/{member_guid}/status | Read member status
 [**read_merchant**](MxPlatformApi.md#read_merchant) | **GET** /merchants/{merchant_guid} | Read merchant
@@ -85,7 +85,7 @@ Method | HTTP request | Description
 [**update_category**](MxPlatformApi.md#update_category) | **PUT** /users/{user_guid}/categories/{category_guid} | Update category
 [**update_managed_account**](MxPlatformApi.md#update_managed_account) | **PUT** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid} | Update managed account
 [**update_managed_member**](MxPlatformApi.md#update_managed_member) | **PUT** /users/{user_guid}/managed_members/{member_guid} | Update managed member
-[**update_managed_transaction**](MxPlatformApi.md#update_managed_transaction) | **PUT** /users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid} | Update managed transaction
+[**update_managed_transaction**](MxPlatformApi.md#update_managed_transaction) | **PUT** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Update managed transaction
 [**update_member**](MxPlatformApi.md#update_member) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
 [**update_tag**](MxPlatformApi.md#update_tag) | **PUT** /users/{user_guid}/tags/{tag_guid} | Update tag
 [**update_tagging**](MxPlatformApi.md#update_tagging) | **PUT** /users/{user_guid}/taggings/{tagging_guid} | Update tagging
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_managed_account**
-> AccountResponseBody create_managed_account(user_guid, member_guid, managed_account_create_request_body)
+> AccountResponseBody create_managed_account(member_guid, user_guid, managed_account_create_request_body)
 
 Create managed account
 
@@ -381,8 +381,8 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     managed_account_create_request_body = ManagedAccountCreateRequestBody(
         account=ManagedAccountCreateRequest(
             account_number="5366",
@@ -422,7 +422,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create managed account
-        api_response = api_instance.create_managed_account(user_guid, member_guid, managed_account_create_request_body)
+        api_response = api_instance.create_managed_account(member_guid, user_guid, managed_account_create_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->create_managed_account: %s\n" % e)
@@ -433,8 +433,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **managed_account_create_request_body** | [**ManagedAccountCreateRequestBody**](ManagedAccountCreateRequestBody.md)| Managed account to be created. |
 
 ### Return type
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_managed_transaction**
-> TransactionResponseBody create_managed_transaction(user_guid, member_guid, managed_transaction_create_request_body)
+> TransactionResponseBody create_managed_transaction(account_guid, member_guid, user_guid, managed_transaction_create_request_body)
 
 Create managed transaction
 
@@ -586,8 +586,9 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     managed_transaction_create_request_body = ManagedTransactionCreateRequestBody(
         transaction=ManagedTransactionCreateRequest(
             amount="61.11",
@@ -616,7 +617,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create managed transaction
-        api_response = api_instance.create_managed_transaction(user_guid, member_guid, managed_transaction_create_request_body)
+        api_response = api_instance.create_managed_transaction(account_guid, member_guid, user_guid, managed_transaction_create_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->create_managed_transaction: %s\n" % e)
@@ -627,8 +628,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **managed_transaction_create_request_body** | [**ManagedTransactionCreateRequestBody**](ManagedTransactionCreateRequestBody.md)| Managed transaction to be created. |
 
 ### Return type
@@ -1174,7 +1176,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_managed_account**
-> delete_managed_account(member_guid, user_guid, account_guid)
+> delete_managed_account(account_guid, member_guid, user_guid)
 
 Delete managed account
 
@@ -1210,14 +1212,14 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
-    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete managed account
-        api_instance.delete_managed_account(member_guid, user_guid, account_guid)
+        api_instance.delete_managed_account(account_guid, member_guid, user_guid)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->delete_managed_account: %s\n" % e)
 ```
@@ -1227,9 +1229,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
- **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
 
 ### Return type
 
@@ -1332,7 +1334,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_managed_transaction**
-> delete_managed_transaction(member_guid, user_guid, transaction_guid)
+> delete_managed_transaction(account_guid, member_guid, transaction_guid, user_guid)
 
 Delete managed transaction
 
@@ -1368,14 +1370,15 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     transaction_guid = "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4" # str | The unique id for a `transaction`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete managed transaction
-        api_instance.delete_managed_transaction(member_guid, user_guid, transaction_guid)
+        api_instance.delete_managed_transaction(account_guid, member_guid, transaction_guid, user_guid)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->delete_managed_transaction: %s\n" % e)
 ```
@@ -1385,9 +1388,10 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **transaction_guid** | **str**| The unique id for a &#x60;transaction&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
 
 ### Return type
 
@@ -3306,7 +3310,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_managed_accounts**
-> AccountsResponseBody list_managed_accounts(user_guid, member_guid)
+> AccountsResponseBody list_managed_accounts(member_guid, user_guid)
 
 List managed accounts
 
@@ -3343,15 +3347,15 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     page = 1 # int | Specify current page. (optional)
     records_per_page = 10 # int | Specify records per page. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List managed accounts
-        api_response = api_instance.list_managed_accounts(user_guid, member_guid)
+        api_response = api_instance.list_managed_accounts(member_guid, user_guid)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_managed_accounts: %s\n" % e)
@@ -3360,7 +3364,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List managed accounts
-        api_response = api_instance.list_managed_accounts(user_guid, member_guid, page=page, records_per_page=records_per_page)
+        api_response = api_instance.list_managed_accounts(member_guid, user_guid, page=page, records_per_page=records_per_page)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_managed_accounts: %s\n" % e)
@@ -3371,8 +3375,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
 
@@ -3571,7 +3575,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_managed_transactions**
-> TransactionsResponseBody list_managed_transactions(user_guid, member_guid)
+> TransactionsResponseBody list_managed_transactions(account_guid, member_guid, user_guid)
 
 List managed transactions
 
@@ -3608,15 +3612,16 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     page = 1 # int | Specify current page. (optional)
     records_per_page = 10 # int | Specify records per page. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # List managed transactions
-        api_response = api_instance.list_managed_transactions(user_guid, member_guid)
+        api_response = api_instance.list_managed_transactions(account_guid, member_guid, user_guid)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_managed_transactions: %s\n" % e)
@@ -3625,7 +3630,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List managed transactions
-        api_response = api_instance.list_managed_transactions(user_guid, member_guid, page=page, records_per_page=records_per_page)
+        api_response = api_instance.list_managed_transactions(account_guid, member_guid, user_guid, page=page, records_per_page=records_per_page)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_managed_transactions: %s\n" % e)
@@ -3636,8 +3641,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
 
@@ -5342,7 +5348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_managed_account**
-> AccountResponseBody read_managed_account(member_guid, user_guid, account_guid)
+> AccountResponseBody read_managed_account(account_guid, member_guid, user_guid)
 
 Read managed account
 
@@ -5379,14 +5385,14 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
-    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
 
     # example passing only required values which don't have defaults set
     try:
         # Read managed account
-        api_response = api_instance.read_managed_account(member_guid, user_guid, account_guid)
+        api_response = api_instance.read_managed_account(account_guid, member_guid, user_guid)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->read_managed_account: %s\n" % e)
@@ -5397,9 +5403,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
- **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
 
 ### Return type
 
@@ -5504,7 +5510,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **read_managed_transaction**
-> TransactionResponseBody read_managed_transaction(member_guid, user_guid, transaction_guid)
+> TransactionResponseBody read_managed_transaction(account_guid, member_guid, transaction_guid, user_guid)
 
 Read managed transaction
 
@@ -5541,14 +5547,15 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     transaction_guid = "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4" # str | The unique id for a `transaction`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
 
     # example passing only required values which don't have defaults set
     try:
         # Read managed transaction
-        api_response = api_instance.read_managed_transaction(member_guid, user_guid, transaction_guid)
+        api_response = api_instance.read_managed_transaction(account_guid, member_guid, transaction_guid, user_guid)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->read_managed_transaction: %s\n" % e)
@@ -5559,9 +5566,10 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **transaction_guid** | **str**| The unique id for a &#x60;transaction&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
 
 ### Return type
 
@@ -6517,8 +6525,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     referral_source = "APP" # str | Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`. (optional)
-    ui_message_webview_url_scheme = "mx" # str | A scheme for routing the user back to the application state they were previously in. (optional)
     skip_aggregation = False # bool | Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page. (optional)
+    ui_message_webview_url_scheme = "mx" # str | A scheme for routing the user back to the application state they were previously in. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -6532,7 +6540,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Request oauth window uri
-        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, referral_source=referral_source, ui_message_webview_url_scheme=ui_message_webview_url_scheme, skip_aggregation=skip_aggregation)
+        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, referral_source=referral_source, skip_aggregation=skip_aggregation, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->request_o_auth_window_uri: %s\n" % e)
@@ -6546,8 +6554,8 @@ Name | Type | Description  | Notes
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **referral_source** | **str**| Must be either &#x60;BROWSER&#x60; or &#x60;APP&#x60; depending on the implementation. Defaults to &#x60;BROWSER&#x60;. | [optional]
- **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. | [optional]
  **skip_aggregation** | **bool**| Setting this parameter to &#x60;true&#x60; will prevent the member from automatically aggregating after being redirected from the authorization page. | [optional]
+ **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. | [optional]
 
 ### Return type
 
@@ -6772,7 +6780,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_account_by_member**
-> AccountResponseBody update_account_by_member(user_guid, member_guid, account_guid, account_update_request_body)
+> AccountResponseBody update_account_by_member(account_guid, member_guid, user_guid, account_update_request_body)
 
 Update account by member
 
@@ -6810,9 +6818,9 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
-    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     account_update_request_body = AccountUpdateRequestBody(
         account=AccountUpdateRequest(
             is_hidden=False,
@@ -6822,7 +6830,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update account by member
-        api_response = api_instance.update_account_by_member(user_guid, member_guid, account_guid, account_update_request_body)
+        api_response = api_instance.update_account_by_member(account_guid, member_guid, user_guid, account_update_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->update_account_by_member: %s\n" % e)
@@ -6833,9 +6841,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
- **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **account_update_request_body** | [**AccountUpdateRequestBody**](AccountUpdateRequestBody.md)| Account object to be created with optional parameters (is_hidden) |
 
 ### Return type
@@ -6949,7 +6957,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_managed_account**
-> AccountResponseBody update_managed_account(member_guid, user_guid, account_guid, managed_account_update_request_body)
+> AccountResponseBody update_managed_account(account_guid, member_guid, user_guid, managed_account_update_request_body)
 
 Update managed account
 
@@ -6987,9 +6995,9 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
-    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     managed_account_update_request_body = ManagedAccountUpdateRequestBody(
         account=ManagedAccountUpdateRequest(
             account_number="5366",
@@ -7029,7 +7037,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update managed account
-        api_response = api_instance.update_managed_account(member_guid, user_guid, account_guid, managed_account_update_request_body)
+        api_response = api_instance.update_managed_account(account_guid, member_guid, user_guid, managed_account_update_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->update_managed_account: %s\n" % e)
@@ -7040,9 +7048,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
- **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **managed_account_update_request_body** | [**ManagedAccountUpdateRequestBody**](ManagedAccountUpdateRequestBody.md)| Managed account object to be updated (While no single parameter is required, the request body can&#39;t be empty) |
 
 ### Return type
@@ -7157,7 +7165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_managed_transaction**
-> TransactionResponseBody update_managed_transaction(member_guid, user_guid, transaction_guid, managed_transaction_update_request_body)
+> TransactionResponseBody update_managed_transaction(account_guid, member_guid, transaction_guid, user_guid, managed_transaction_update_request_body)
 
 Update managed transaction
 
@@ -7195,9 +7203,10 @@ configuration = mx_platform_python.Configuration(
 with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
-    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     transaction_guid = "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4" # str | The unique id for a `transaction`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     managed_transaction_update_request_body = ManagedTransactionUpdateRequestBody(
         transaction=ManagedTransactionUpdateRequest(
             amount="61.11",
@@ -7226,7 +7235,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update managed transaction
-        api_response = api_instance.update_managed_transaction(member_guid, user_guid, transaction_guid, managed_transaction_update_request_body)
+        api_response = api_instance.update_managed_transaction(account_guid, member_guid, transaction_guid, user_guid, managed_transaction_update_request_body)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->update_managed_transaction: %s\n" % e)
@@ -7237,9 +7246,10 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
- **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **transaction_guid** | **str**| The unique id for a &#x60;transaction&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **managed_transaction_update_request_body** | [**ManagedTransactionUpdateRequestBody**](ManagedTransactionUpdateRequestBody.md)| Managed transaction object to be updated (While no single parameter is required, the request body can&#39;t be empty) |
 
 ### Return type
