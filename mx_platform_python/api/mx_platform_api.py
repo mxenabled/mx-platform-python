@@ -277,13 +277,13 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
-                    'user_guid',
                     'member_guid',
+                    'user_guid',
                     'managed_account_create_request_body',
                 ],
                 'required': [
-                    'user_guid',
                     'member_guid',
+                    'user_guid',
                     'managed_account_create_request_body',
                 ],
                 'nullable': [
@@ -299,20 +299,20 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_guid':
-                        (str,),
                     'member_guid':
+                        (str,),
+                    'user_guid':
                         (str,),
                     'managed_account_create_request_body':
                         (ManagedAccountCreateRequestBody,),
                 },
                 'attribute_map': {
-                    'user_guid': 'user_guid',
                     'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
-                    'user_guid': 'path',
                     'member_guid': 'path',
+                    'user_guid': 'path',
                     'managed_account_create_request_body': 'body',
                 },
                 'collection_format_map': {
@@ -392,20 +392,22 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/transactions',
+                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions',
                 'operation_id': 'create_managed_transaction',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'user_guid',
+                    'account_guid',
                     'member_guid',
+                    'user_guid',
                     'managed_transaction_create_request_body',
                 ],
                 'required': [
-                    'user_guid',
+                    'account_guid',
                     'member_guid',
+                    'user_guid',
                     'managed_transaction_create_request_body',
                 ],
                 'nullable': [
@@ -421,20 +423,24 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_guid':
+                    'account_guid':
                         (str,),
                     'member_guid':
+                        (str,),
+                    'user_guid':
                         (str,),
                     'managed_transaction_create_request_body':
                         (ManagedTransactionCreateRequestBody,),
                 },
                 'attribute_map': {
-                    'user_guid': 'user_guid',
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
-                    'user_guid': 'path',
+                    'account_guid': 'path',
                     'member_guid': 'path',
+                    'user_guid': 'path',
                     'managed_transaction_create_request_body': 'body',
                 },
                 'collection_format_map': {
@@ -802,14 +808,14 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                 ],
                 'nullable': [
                 ],
@@ -824,22 +830,22 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'account_guid':
+                        (str,),
                     'member_guid':
                         (str,),
                     'user_guid':
                         (str,),
-                    'account_guid':
-                        (str,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
-                    'account_guid': 'account_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
                     'user_guid': 'path',
-                    'account_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -911,21 +917,23 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid}',
+                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid}',
                 'operation_id': 'delete_managed_transaction',
                 'http_method': 'DELETE',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                 ],
                 'nullable': [
                 ],
@@ -940,22 +948,26 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'member_guid':
+                    'account_guid':
                         (str,),
-                    'user_guid':
+                    'member_guid':
                         (str,),
                     'transaction_guid':
                         (str,),
+                    'user_guid':
+                        (str,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
-                    'user_guid': 'user_guid',
                     'transaction_guid': 'transaction_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
-                    'user_guid': 'path',
                     'transaction_guid': 'path',
+                    'user_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -2330,14 +2342,14 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
-                    'user_guid',
                     'member_guid',
+                    'user_guid',
                     'page',
                     'records_per_page',
                 ],
                 'required': [
-                    'user_guid',
                     'member_guid',
+                    'user_guid',
                 ],
                 'nullable': [
                 ],
@@ -2352,9 +2364,9 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_guid':
-                        (str,),
                     'member_guid':
+                        (str,),
+                    'user_guid':
                         (str,),
                     'page':
                         (int,),
@@ -2362,14 +2374,14 @@ class MxPlatformApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'user_guid': 'user_guid',
                     'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
                     'page': 'page',
                     'records_per_page': 'records_per_page',
                 },
                 'location_map': {
-                    'user_guid': 'path',
                     'member_guid': 'path',
+                    'user_guid': 'path',
                     'page': 'query',
                     'records_per_page': 'query',
                 },
@@ -2505,21 +2517,23 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/transactions',
+                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions',
                 'operation_id': 'list_managed_transactions',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'user_guid',
+                    'account_guid',
                     'member_guid',
+                    'user_guid',
                     'page',
                     'records_per_page',
                 ],
                 'required': [
-                    'user_guid',
+                    'account_guid',
                     'member_guid',
+                    'user_guid',
                 ],
                 'nullable': [
                 ],
@@ -2534,9 +2548,11 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_guid':
+                    'account_guid':
                         (str,),
                     'member_guid':
+                        (str,),
+                    'user_guid':
                         (str,),
                     'page':
                         (int,),
@@ -2544,14 +2560,16 @@ class MxPlatformApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'user_guid': 'user_guid',
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
                     'page': 'page',
                     'records_per_page': 'records_per_page',
                 },
                 'location_map': {
-                    'user_guid': 'path',
+                    'account_guid': 'path',
                     'member_guid': 'path',
+                    'user_guid': 'path',
                     'page': 'query',
                     'records_per_page': 'query',
                 },
@@ -3768,14 +3786,14 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                 ],
                 'nullable': [
                 ],
@@ -3790,22 +3808,22 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'account_guid':
+                        (str,),
                     'member_guid':
                         (str,),
                     'user_guid':
                         (str,),
-                    'account_guid':
-                        (str,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
-                    'account_guid': 'account_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
                     'user_guid': 'path',
-                    'account_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -3881,21 +3899,23 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid}',
+                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid}',
                 'operation_id': 'read_managed_transaction',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                 ],
                 'nullable': [
                 ],
@@ -3910,22 +3930,26 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'member_guid':
+                    'account_guid':
                         (str,),
-                    'user_guid':
+                    'member_guid':
                         (str,),
                     'transaction_guid':
                         (str,),
+                    'user_guid':
+                        (str,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
-                    'user_guid': 'user_guid',
                     'transaction_guid': 'transaction_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
-                    'user_guid': 'path',
                     'transaction_guid': 'path',
+                    'user_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -4570,8 +4594,8 @@ class MxPlatformApi(object):
                     'member_guid',
                     'user_guid',
                     'referral_source',
-                    'ui_message_webview_url_scheme',
                     'skip_aggregation',
+                    'ui_message_webview_url_scheme',
                 ],
                 'required': [
                     'member_guid',
@@ -4596,24 +4620,24 @@ class MxPlatformApi(object):
                         (str,),
                     'referral_source':
                         (str,),
-                    'ui_message_webview_url_scheme':
-                        (str,),
                     'skip_aggregation':
                         (bool,),
+                    'ui_message_webview_url_scheme':
+                        (str,),
                 },
                 'attribute_map': {
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
                     'referral_source': 'referral_source',
-                    'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',
                     'skip_aggregation': 'skip_aggregation',
+                    'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',
                 },
                 'location_map': {
                     'member_guid': 'path',
                     'user_guid': 'path',
                     'referral_source': 'query',
-                    'ui_message_webview_url_scheme': 'query',
                     'skip_aggregation': 'query',
+                    'ui_message_webview_url_scheme': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -4766,15 +4790,15 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
-                    'user_guid',
-                    'member_guid',
                     'account_guid',
+                    'member_guid',
+                    'user_guid',
                     'account_update_request_body',
                 ],
                 'required': [
-                    'user_guid',
-                    'member_guid',
                     'account_guid',
+                    'member_guid',
+                    'user_guid',
                     'account_update_request_body',
                 ],
                 'nullable': [
@@ -4790,24 +4814,24 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'user_guid':
+                    'account_guid':
                         (str,),
                     'member_guid':
                         (str,),
-                    'account_guid':
+                    'user_guid':
                         (str,),
                     'account_update_request_body':
                         (AccountUpdateRequestBody,),
                 },
                 'attribute_map': {
-                    'user_guid': 'user_guid',
-                    'member_guid': 'member_guid',
                     'account_guid': 'account_guid',
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
-                    'user_guid': 'path',
-                    'member_guid': 'path',
                     'account_guid': 'path',
+                    'member_guid': 'path',
+                    'user_guid': 'path',
                     'account_update_request_body': 'body',
                 },
                 'collection_format_map': {
@@ -4900,15 +4924,15 @@ class MxPlatformApi(object):
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                     'managed_account_update_request_body',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
                     'user_guid',
-                    'account_guid',
                     'managed_account_update_request_body',
                 ],
                 'nullable': [
@@ -4924,24 +4948,24 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'account_guid':
+                        (str,),
                     'member_guid':
                         (str,),
                     'user_guid':
-                        (str,),
-                    'account_guid':
                         (str,),
                     'managed_account_update_request_body':
                         (ManagedAccountUpdateRequestBody,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
-                    'account_guid': 'account_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
                     'user_guid': 'path',
-                    'account_guid': 'path',
                     'managed_account_update_request_body': 'body',
                 },
                 'collection_format_map': {
@@ -5027,22 +5051,24 @@ class MxPlatformApi(object):
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/transactions/{transaction_guid}',
+                'endpoint_path': '/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid}',
                 'operation_id': 'update_managed_transaction',
                 'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                     'managed_transaction_update_request_body',
                 ],
                 'required': [
+                    'account_guid',
                     'member_guid',
-                    'user_guid',
                     'transaction_guid',
+                    'user_guid',
                     'managed_transaction_update_request_body',
                 ],
                 'nullable': [
@@ -5058,24 +5084,28 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'account_guid':
+                        (str,),
                     'member_guid':
                         (str,),
-                    'user_guid':
-                        (str,),
                     'transaction_guid':
+                        (str,),
+                    'user_guid':
                         (str,),
                     'managed_transaction_update_request_body':
                         (ManagedTransactionUpdateRequestBody,),
                 },
                 'attribute_map': {
+                    'account_guid': 'account_guid',
                     'member_guid': 'member_guid',
-                    'user_guid': 'user_guid',
                     'transaction_guid': 'transaction_guid',
+                    'user_guid': 'user_guid',
                 },
                 'location_map': {
+                    'account_guid': 'path',
                     'member_guid': 'path',
-                    'user_guid': 'path',
                     'transaction_guid': 'path',
+                    'user_guid': 'path',
                     'managed_transaction_update_request_body': 'body',
                 },
                 'collection_format_map': {
@@ -5775,8 +5805,8 @@ class MxPlatformApi(object):
 
     def create_managed_account(
         self,
-        user_guid,
         member_guid,
+        user_guid,
         managed_account_create_request_body,
         **kwargs
     ):
@@ -5786,12 +5816,12 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_managed_account(user_guid, member_guid, managed_account_create_request_body, async_req=True)
+        >>> thread = api.create_managed_account(member_guid, user_guid, managed_account_create_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_guid (str): The unique id for a `user`.
             member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
             managed_account_create_request_body (ManagedAccountCreateRequestBody): Managed account to be created.
 
         Keyword Args:
@@ -5851,10 +5881,10 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['user_guid'] = \
-            user_guid
         kwargs['member_guid'] = \
             member_guid
+        kwargs['user_guid'] = \
+            user_guid
         kwargs['managed_account_create_request_body'] = \
             managed_account_create_request_body
         return self.create_managed_account_endpoint.call_with_http_info(**kwargs)
@@ -5943,8 +5973,9 @@ class MxPlatformApi(object):
 
     def create_managed_transaction(
         self,
-        user_guid,
+        account_guid,
         member_guid,
+        user_guid,
         managed_transaction_create_request_body,
         **kwargs
     ):
@@ -5954,12 +5985,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_managed_transaction(user_guid, member_guid, managed_transaction_create_request_body, async_req=True)
+        >>> thread = api.create_managed_transaction(account_guid, member_guid, user_guid, managed_transaction_create_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_guid (str): The unique id for a `user`.
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
             managed_transaction_create_request_body (ManagedTransactionCreateRequestBody): Managed transaction to be created.
 
         Keyword Args:
@@ -6019,10 +6051,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['user_guid'] = \
-            user_guid
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
+        kwargs['user_guid'] = \
+            user_guid
         kwargs['managed_transaction_create_request_body'] = \
             managed_transaction_create_request_body
         return self.create_managed_transaction_endpoint.call_with_http_info(**kwargs)
@@ -6517,9 +6551,9 @@ class MxPlatformApi(object):
 
     def delete_managed_account(
         self,
+        account_guid,
         member_guid,
         user_guid,
-        account_guid,
         **kwargs
     ):
         """Delete managed account  # noqa: E501
@@ -6528,13 +6562,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_managed_account(member_guid, user_guid, account_guid, async_req=True)
+        >>> thread = api.delete_managed_account(account_guid, member_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
             user_guid (str): The unique id for a `user`.
-            account_guid (str): The unique id for an `account`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -6593,12 +6627,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
         kwargs['user_guid'] = \
             user_guid
-        kwargs['account_guid'] = \
-            account_guid
         return self.delete_managed_account_endpoint.call_with_http_info(**kwargs)
 
     def delete_managed_member(
@@ -6685,9 +6719,10 @@ class MxPlatformApi(object):
 
     def delete_managed_transaction(
         self,
+        account_guid,
         member_guid,
-        user_guid,
         transaction_guid,
+        user_guid,
         **kwargs
     ):
         """Delete managed transaction  # noqa: E501
@@ -6696,13 +6731,14 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_managed_transaction(member_guid, user_guid, transaction_guid, async_req=True)
+        >>> thread = api.delete_managed_transaction(account_guid, member_guid, transaction_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
-            user_guid (str): The unique id for a `user`.
             transaction_guid (str): The unique id for a `transaction`.
+            user_guid (str): The unique id for a `user`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -6761,12 +6797,14 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
-        kwargs['user_guid'] = \
-            user_guid
         kwargs['transaction_guid'] = \
             transaction_guid
+        kwargs['user_guid'] = \
+            user_guid
         return self.delete_managed_transaction_endpoint.call_with_http_info(**kwargs)
 
     def delete_member(
@@ -8563,8 +8601,8 @@ class MxPlatformApi(object):
 
     def list_managed_accounts(
         self,
-        user_guid,
         member_guid,
+        user_guid,
         **kwargs
     ):
         """List managed accounts  # noqa: E501
@@ -8573,12 +8611,12 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_managed_accounts(user_guid, member_guid, async_req=True)
+        >>> thread = api.list_managed_accounts(member_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_guid (str): The unique id for a `user`.
             member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
 
         Keyword Args:
             page (int): Specify current page.. [optional]
@@ -8639,10 +8677,10 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['user_guid'] = \
-            user_guid
         kwargs['member_guid'] = \
             member_guid
+        kwargs['user_guid'] = \
+            user_guid
         return self.list_managed_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_managed_institutions(
@@ -8802,8 +8840,9 @@ class MxPlatformApi(object):
 
     def list_managed_transactions(
         self,
-        user_guid,
+        account_guid,
         member_guid,
+        user_guid,
         **kwargs
     ):
         """List managed transactions  # noqa: E501
@@ -8812,12 +8851,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.list_managed_transactions(user_guid, member_guid, async_req=True)
+        >>> thread = api.list_managed_transactions(account_guid, member_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_guid (str): The unique id for a `user`.
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
 
         Keyword Args:
             page (int): Specify current page.. [optional]
@@ -8878,10 +8918,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['user_guid'] = \
-            user_guid
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
+        kwargs['user_guid'] = \
+            user_guid
         return self.list_managed_transactions_endpoint.call_with_http_info(**kwargs)
 
     def list_member_challenges(
@@ -10430,9 +10472,9 @@ class MxPlatformApi(object):
 
     def read_managed_account(
         self,
+        account_guid,
         member_guid,
         user_guid,
-        account_guid,
         **kwargs
     ):
         """Read managed account  # noqa: E501
@@ -10441,13 +10483,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.read_managed_account(member_guid, user_guid, account_guid, async_req=True)
+        >>> thread = api.read_managed_account(account_guid, member_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
             user_guid (str): The unique id for a `user`.
-            account_guid (str): The unique id for an `account`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -10506,12 +10548,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
         kwargs['user_guid'] = \
             user_guid
-        kwargs['account_guid'] = \
-            account_guid
         return self.read_managed_account_endpoint.call_with_http_info(**kwargs)
 
     def read_managed_member(
@@ -10598,9 +10640,10 @@ class MxPlatformApi(object):
 
     def read_managed_transaction(
         self,
+        account_guid,
         member_guid,
-        user_guid,
         transaction_guid,
+        user_guid,
         **kwargs
     ):
         """Read managed transaction  # noqa: E501
@@ -10609,13 +10652,14 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.read_managed_transaction(member_guid, user_guid, transaction_guid, async_req=True)
+        >>> thread = api.read_managed_transaction(account_guid, member_guid, transaction_guid, user_guid, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
-            user_guid (str): The unique id for a `user`.
             transaction_guid (str): The unique id for a `transaction`.
+            user_guid (str): The unique id for a `user`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -10674,12 +10718,14 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
-        kwargs['user_guid'] = \
-            user_guid
         kwargs['transaction_guid'] = \
             transaction_guid
+        kwargs['user_guid'] = \
+            user_guid
         return self.read_managed_transaction_endpoint.call_with_http_info(**kwargs)
 
     def read_member(
@@ -11597,8 +11643,8 @@ class MxPlatformApi(object):
 
         Keyword Args:
             referral_source (str): Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`.. [optional]
-            ui_message_webview_url_scheme (str): A scheme for routing the user back to the application state they were previously in.. [optional]
             skip_aggregation (bool): Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page.. [optional]
+            ui_message_webview_url_scheme (str): A scheme for routing the user back to the application state they were previously in.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -11832,9 +11878,9 @@ class MxPlatformApi(object):
 
     def update_account_by_member(
         self,
-        user_guid,
-        member_guid,
         account_guid,
+        member_guid,
+        user_guid,
         account_update_request_body,
         **kwargs
     ):
@@ -11844,13 +11890,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_account_by_member(user_guid, member_guid, account_guid, account_update_request_body, async_req=True)
+        >>> thread = api.update_account_by_member(account_guid, member_guid, user_guid, account_update_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
-            user_guid (str): The unique id for a `user`.
-            member_guid (str): The unique id for a `member`.
             account_guid (str): The unique id for an `account`.
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
             account_update_request_body (AccountUpdateRequestBody): Account object to be created with optional parameters (is_hidden)
 
         Keyword Args:
@@ -11910,12 +11956,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['user_guid'] = \
-            user_guid
-        kwargs['member_guid'] = \
-            member_guid
         kwargs['account_guid'] = \
             account_guid
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
         kwargs['account_update_request_body'] = \
             account_update_request_body
         return self.update_account_by_member_endpoint.call_with_http_info(**kwargs)
@@ -12008,9 +12054,9 @@ class MxPlatformApi(object):
 
     def update_managed_account(
         self,
+        account_guid,
         member_guid,
         user_guid,
-        account_guid,
         managed_account_update_request_body,
         **kwargs
     ):
@@ -12020,13 +12066,13 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_managed_account(member_guid, user_guid, account_guid, managed_account_update_request_body, async_req=True)
+        >>> thread = api.update_managed_account(account_guid, member_guid, user_guid, managed_account_update_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
             user_guid (str): The unique id for a `user`.
-            account_guid (str): The unique id for an `account`.
             managed_account_update_request_body (ManagedAccountUpdateRequestBody): Managed account object to be updated (While no single parameter is required, the request body can't be empty)
 
         Keyword Args:
@@ -12086,12 +12132,12 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
         kwargs['user_guid'] = \
             user_guid
-        kwargs['account_guid'] = \
-            account_guid
         kwargs['managed_account_update_request_body'] = \
             managed_account_update_request_body
         return self.update_managed_account_endpoint.call_with_http_info(**kwargs)
@@ -12184,9 +12230,10 @@ class MxPlatformApi(object):
 
     def update_managed_transaction(
         self,
+        account_guid,
         member_guid,
-        user_guid,
         transaction_guid,
+        user_guid,
         managed_transaction_update_request_body,
         **kwargs
     ):
@@ -12196,13 +12243,14 @@ class MxPlatformApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_managed_transaction(member_guid, user_guid, transaction_guid, managed_transaction_update_request_body, async_req=True)
+        >>> thread = api.update_managed_transaction(account_guid, member_guid, transaction_guid, user_guid, managed_transaction_update_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
+            account_guid (str): The unique id for an `account`.
             member_guid (str): The unique id for a `member`.
-            user_guid (str): The unique id for a `user`.
             transaction_guid (str): The unique id for a `transaction`.
+            user_guid (str): The unique id for a `user`.
             managed_transaction_update_request_body (ManagedTransactionUpdateRequestBody): Managed transaction object to be updated (While no single parameter is required, the request body can't be empty)
 
         Keyword Args:
@@ -12262,12 +12310,14 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
         kwargs['member_guid'] = \
             member_guid
-        kwargs['user_guid'] = \
-            user_guid
         kwargs['transaction_guid'] = \
             transaction_guid
+        kwargs['user_guid'] = \
+            user_guid
         kwargs['managed_transaction_update_request_body'] = \
             managed_transaction_update_request_body
         return self.update_managed_transaction_endpoint.call_with_http_info(**kwargs)
