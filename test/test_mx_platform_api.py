@@ -548,6 +548,27 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_request_payment_account(self):
+        """Test case for request_payment_account
+
+        Request payment account  # noqa: E501
+        """
+        pass
+
+    def test_request_payment_processor_authorization_code(self):
+        """Test case for request_payment_processor_authorization_code
+
+        Request payment processor authorization code  # noqa: E501
+        """
+        pass
+
+    def test_request_payment_processor_token(self):
+        """Test case for request_payment_processor_token
+
+        Request payment processor token  # noqa: E501
+        """
+        pass
+
     def test_request_widget_url(self):
         """Test case for request_widget_url
 

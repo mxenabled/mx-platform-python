@@ -393,6 +393,13 @@ conf = mx_platform_python.Configuration(
                 'key': 'Authorization',
                 'value': self.get_basic_auth_token()
             }
+        if self.access_token is not None:
+            auth['bearerAuth'] = {
+                'type': 'bearer',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):
@@ -404,7 +411,7 @@ conf = mx_platform_python.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 0.1.0\n"\
-               "SDK Package Version: 0.6.0".\
+               "SDK Package Version: 0.7.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
