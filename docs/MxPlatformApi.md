@@ -79,6 +79,9 @@ Method | HTTP request | Description
 [**read_user**](MxPlatformApi.md#read_user) | **GET** /users/{user_guid} | Read user
 [**request_connect_widget_url**](MxPlatformApi.md#request_connect_widget_url) | **POST** /users/{user_guid}/connect_widget_url | Request connect widget url
 [**request_o_auth_window_uri**](MxPlatformApi.md#request_o_auth_window_uri) | **GET** /users/{user_guid}/members/{member_guid}/oauth_window_uri | Request oauth window uri
+[**request_payment_account**](MxPlatformApi.md#request_payment_account) | **GET** /payment_account | Request payment account
+[**request_payment_processor_authorization_code**](MxPlatformApi.md#request_payment_processor_authorization_code) | **POST** /payment_processor_authorization_code | Request payment processor authorization code
+[**request_payment_processor_token**](MxPlatformApi.md#request_payment_processor_token) | **POST** /payment_processor_token | Request payment processor token
 [**request_widget_url**](MxPlatformApi.md#request_widget_url) | **POST** /users/{user_guid}/widget_urls | Request widget url
 [**resume_aggregation**](MxPlatformApi.md#resume_aggregation) | **PUT** /users/{user_guid}/members/{member_guid}/resume | Resume aggregation
 [**update_account_by_member**](MxPlatformApi.md#update_account_by_member) | **PUT** /users/{user_guid}/members/{member_guid}/accounts/{account_guid} | Update account by member
@@ -6560,6 +6563,245 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAuthWindowResponseBody**](OAuthWindowResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_payment_account**
+> PaymentAccountResponseBody request_payment_account()
+
+Request payment account
+
+Use this endpoint to request a payment account.
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.payment_account_response_body import PaymentAccountResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mx_platform_python.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Request payment account
+        api_response = api_instance.request_payment_account()
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->request_payment_account: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PaymentAccountResponseBody**](PaymentAccountResponseBody.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_payment_processor_authorization_code**
+> PaymentProcessorAuthorizationCodeResponseBody request_payment_processor_authorization_code(payment_processor_authorization_code_request_body)
+
+Request payment processor authorization code
+
+Use this endpoint to request a payment processor authorization code.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
+from mx_platform_python.model.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    payment_processor_authorization_code_request_body = PaymentProcessorAuthorizationCodeRequestBody(
+        payment_processor_authorization_code=PaymentProcessorAuthorizationCodeRequest(
+            account_guid="ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+            member_guid="MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+            user_guid="USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+        ),
+    ) # PaymentProcessorAuthorizationCodeRequestBody | Payment processor authorization code object containing account_guid, member_guid, and user_guid.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Request payment processor authorization code
+        api_response = api_instance.request_payment_processor_authorization_code(payment_processor_authorization_code_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->request_payment_processor_authorization_code: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payment_processor_authorization_code_request_body** | [**PaymentProcessorAuthorizationCodeRequestBody**](PaymentProcessorAuthorizationCodeRequestBody.md)| Payment processor authorization code object containing account_guid, member_guid, and user_guid. |
+
+### Return type
+
+[**PaymentProcessorAuthorizationCodeResponseBody**](PaymentProcessorAuthorizationCodeResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_payment_processor_token**
+> PaymentProcessorTokenResponseBody request_payment_processor_token()
+
+Request payment processor token
+
+Use this endpoint to request a payment processor token.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.payment_processor_token_response_body import PaymentProcessorTokenResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    code = "sN3Ffd1nJg_iwEMuxcEo2Z5taC0RvMilfvYKsnM2XGM" # str | Code to request processor token. (optional)
+    grant_type = "authorization_code" # str | Specify grant type. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Request payment processor token
+        api_response = api_instance.request_payment_processor_token(code=code, grant_type=grant_type)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->request_payment_processor_token: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **str**| Code to request processor token. | [optional]
+ **grant_type** | **str**| Specify grant type. | [optional]
+
+### Return type
+
+[**PaymentProcessorTokenResponseBody**](PaymentProcessorTokenResponseBody.md)
 
 ### Authorization
 
