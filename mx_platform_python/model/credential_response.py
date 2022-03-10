@@ -86,6 +86,7 @@ class CredentialResponse(ModelNormal):
             'field_type': (str, none_type,),  # noqa: E501
             'guid': (str, none_type,),  # noqa: E501
             'label': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -99,6 +100,7 @@ class CredentialResponse(ModelNormal):
         'field_type': 'field_type',  # noqa: E501
         'guid': 'guid',  # noqa: E501
         'label': 'label',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -147,6 +149,7 @@ class CredentialResponse(ModelNormal):
             field_type (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             label (str, none_type): [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,6 +236,7 @@ class CredentialResponse(ModelNormal):
             field_type (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             label (str, none_type): [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
