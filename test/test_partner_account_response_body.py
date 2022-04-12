@@ -12,11 +12,13 @@ import sys
 import unittest
 
 import mx_platform_python
-from mx_platform_python.model.payment_processor_authorization_code_response import PaymentProcessorAuthorizationCodeResponse
+from mx_platform_python.model.partner_account_response import PartnerAccountResponse
+globals()['PartnerAccountResponse'] = PartnerAccountResponse
+from mx_platform_python.model.partner_account_response_body import PartnerAccountResponseBody
 
 
-class TestPaymentProcessorAuthorizationCodeResponse(unittest.TestCase):
-    """PaymentProcessorAuthorizationCodeResponse unit test stubs"""
+class TestPartnerAccountResponseBody(unittest.TestCase):
+    """PartnerAccountResponseBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +26,10 @@ class TestPaymentProcessorAuthorizationCodeResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPaymentProcessorAuthorizationCodeResponse(self):
-        """Test PaymentProcessorAuthorizationCodeResponse"""
+    def testPartnerAccountResponseBody(self):
+        """Test PartnerAccountResponseBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = PaymentProcessorAuthorizationCodeResponse()  # noqa: E501
+        # model = PartnerAccountResponseBody()  # noqa: E501
         pass
 
 

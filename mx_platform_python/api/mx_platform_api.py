@@ -56,10 +56,10 @@ from mx_platform_python.model.merchant_location_response_body import MerchantLoc
 from mx_platform_python.model.merchant_response_body import MerchantResponseBody
 from mx_platform_python.model.merchants_response_body import MerchantsResponseBody
 from mx_platform_python.model.o_auth_window_response_body import OAuthWindowResponseBody
-from mx_platform_python.model.payment_account_response_body import PaymentAccountResponseBody
-from mx_platform_python.model.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
-from mx_platform_python.model.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
-from mx_platform_python.model.payment_processor_token_response_body import PaymentProcessorTokenResponseBody
+from mx_platform_python.model.partner_account_response_body import PartnerAccountResponseBody
+from mx_platform_python.model.partner_authorization_code_request_body import PartnerAuthorizationCodeRequestBody
+from mx_platform_python.model.partner_authorization_code_response_body import PartnerAuthorizationCodeResponseBody
+from mx_platform_python.model.partner_token_response_body import PartnerTokenResponseBody
 from mx_platform_python.model.statement_response_body import StatementResponseBody
 from mx_platform_python.model.statements_response_body import StatementsResponseBody
 from mx_platform_python.model.tag_create_request_body import TagCreateRequestBody
@@ -4654,14 +4654,14 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
-        self.request_payment_account_endpoint = _Endpoint(
+        self.request_partner_account_endpoint = _Endpoint(
             settings={
-                'response_type': (PaymentAccountResponseBody,),
+                'response_type': (PartnerAccountResponseBody,),
                 'auth': [
                     'bearerAuth'
                 ],
-                'endpoint_path': '/payment_account',
-                'operation_id': 'request_payment_account',
+                'endpoint_path': '/partner_account',
+                'operation_id': 'request_partner_account',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -4698,23 +4698,23 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
-        self.request_payment_processor_authorization_code_endpoint = _Endpoint(
+        self.request_partner_authorization_code_endpoint = _Endpoint(
             settings={
-                'response_type': (PaymentProcessorAuthorizationCodeResponseBody,),
+                'response_type': (PartnerAuthorizationCodeResponseBody,),
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/payment_processor_authorization_code',
-                'operation_id': 'request_payment_processor_authorization_code',
+                'endpoint_path': '/partner_authorization_code',
+                'operation_id': 'request_partner_authorization_code',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'payment_processor_authorization_code_request_body',
+                    'partner_authorization_code_request_body',
                 ],
                 'required': [
-                    'payment_processor_authorization_code_request_body',
+                    'partner_authorization_code_request_body',
                 ],
                 'nullable': [
                 ],
@@ -4729,13 +4729,13 @@ class MxPlatformApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'payment_processor_authorization_code_request_body':
-                        (PaymentProcessorAuthorizationCodeRequestBody,),
+                    'partner_authorization_code_request_body':
+                        (PartnerAuthorizationCodeRequestBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'payment_processor_authorization_code_request_body': 'body',
+                    'partner_authorization_code_request_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -4750,14 +4750,14 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
-        self.request_payment_processor_token_endpoint = _Endpoint(
+        self.request_partner_token_endpoint = _Endpoint(
             settings={
-                'response_type': (PaymentProcessorTokenResponseBody,),
+                'response_type': (PartnerTokenResponseBody,),
                 'auth': [
                     'basicAuth'
                 ],
-                'endpoint_path': '/payment_processor_token',
-                'operation_id': 'request_payment_processor_token',
+                'endpoint_path': '/partner_token',
+                'operation_id': 'request_partner_token',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -11861,17 +11861,17 @@ class MxPlatformApi(object):
             user_guid
         return self.request_o_auth_window_uri_endpoint.call_with_http_info(**kwargs)
 
-    def request_payment_account(
+    def request_partner_account(
         self,
         **kwargs
     ):
-        """Request payment account  # noqa: E501
+        """Request partner account  # noqa: E501
 
-        Use this endpoint to request a payment account.  # noqa: E501
+        Use this endpoint to request a partner account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.request_payment_account(async_req=True)
+        >>> thread = api.request_partner_account(async_req=True)
         >>> result = thread.get()
 
 
@@ -11904,7 +11904,7 @@ class MxPlatformApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PaymentAccountResponseBody
+            PartnerAccountResponseBody
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -11932,24 +11932,24 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.request_payment_account_endpoint.call_with_http_info(**kwargs)
+        return self.request_partner_account_endpoint.call_with_http_info(**kwargs)
 
-    def request_payment_processor_authorization_code(
+    def request_partner_authorization_code(
         self,
-        payment_processor_authorization_code_request_body,
+        partner_authorization_code_request_body,
         **kwargs
     ):
-        """Request payment processor authorization code  # noqa: E501
+        """Request partner authorization code  # noqa: E501
 
-        Use this endpoint to request a payment processor authorization code.  # noqa: E501
+        Use this endpoint to request a partner authorization code.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.request_payment_processor_authorization_code(payment_processor_authorization_code_request_body, async_req=True)
+        >>> thread = api.request_partner_authorization_code(partner_authorization_code_request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
-            payment_processor_authorization_code_request_body (PaymentProcessorAuthorizationCodeRequestBody): Payment processor authorization code object containing account_guid, member_guid, and user_guid.
+            partner_authorization_code_request_body (PartnerAuthorizationCodeRequestBody): Partner authorization code object containing account_guid, member_guid, and user_guid.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -11980,7 +11980,7 @@ class MxPlatformApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PaymentProcessorAuthorizationCodeResponseBody
+            PartnerAuthorizationCodeResponseBody
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -12008,26 +12008,26 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['payment_processor_authorization_code_request_body'] = \
-            payment_processor_authorization_code_request_body
-        return self.request_payment_processor_authorization_code_endpoint.call_with_http_info(**kwargs)
+        kwargs['partner_authorization_code_request_body'] = \
+            partner_authorization_code_request_body
+        return self.request_partner_authorization_code_endpoint.call_with_http_info(**kwargs)
 
-    def request_payment_processor_token(
+    def request_partner_token(
         self,
         **kwargs
     ):
-        """Request payment processor token  # noqa: E501
+        """Request partner token  # noqa: E501
 
-        Use this endpoint to request a payment processor token.  # noqa: E501
+        Use this endpoint to request a partner token.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.request_payment_processor_token(async_req=True)
+        >>> thread = api.request_partner_token(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            code (str): Code to request processor token.. [optional]
+            code (str): Code to request partner token.. [optional]
             grant_type (str): Specify grant type.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -12057,7 +12057,7 @@ class MxPlatformApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PaymentProcessorTokenResponseBody
+            PartnerTokenResponseBody
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -12085,7 +12085,7 @@ class MxPlatformApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.request_payment_processor_token_endpoint.call_with_http_info(**kwargs)
+        return self.request_partner_token_endpoint.call_with_http_info(**kwargs)
 
     def request_widget_url(
         self,
