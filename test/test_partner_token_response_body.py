@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import mx_platform_python
-from mx_platform_python.model.payment_account_response import PaymentAccountResponse
+from mx_platform_python.model.partner_token_response_body import PartnerTokenResponseBody
 
 
-class TestPaymentAccountResponse(unittest.TestCase):
-    """PaymentAccountResponse unit test stubs"""
+class TestPartnerTokenResponseBody(unittest.TestCase):
+    """PartnerTokenResponseBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestPaymentAccountResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPaymentAccountResponse(self):
-        """Test PaymentAccountResponse"""
+    def testPartnerTokenResponseBody(self):
+        """Test PartnerTokenResponseBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = PaymentAccountResponse()  # noqa: E501
+        # model = PartnerTokenResponseBody()  # noqa: E501
         pass
 
 
