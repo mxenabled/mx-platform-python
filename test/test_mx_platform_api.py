@@ -548,27 +548,6 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
-    def test_request_partner_account(self):
-        """Test case for request_partner_account
-
-        Request partner account  # noqa: E501
-        """
-        pass
-
-    def test_request_partner_authorization_code(self):
-        """Test case for request_partner_authorization_code
-
-        Request partner authorization code  # noqa: E501
-        """
-        pass
-
-    def test_request_partner_token(self):
-        """Test case for request_partner_token
-
-        Request partner token  # noqa: E501
-        """
-        pass
-
     def test_request_widget_url(self):
         """Test case for request_widget_url
 
