@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str, none_type** |  | [optional] 
+**instructional_text** | **str, none_type** |  | [optional] 
 **medium_logo_url** | **str, none_type** |  | [optional] 
 **name** | **str, none_type** |  | [optional] 
 **small_logo_url** | **str, none_type** |  | [optional] 
