@@ -82,6 +82,7 @@ class InstitutionResponse(ModelNormal):
         """
         return {
             'code': (str, none_type,),  # noqa: E501
+            'instructional_text': (str, none_type,),  # noqa: E501
             'medium_logo_url': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'small_logo_url': (str, none_type,),  # noqa: E501
@@ -100,6 +101,7 @@ class InstitutionResponse(ModelNormal):
 
     attribute_map = {
         'code': 'code',  # noqa: E501
+        'instructional_text': 'instructional_text',  # noqa: E501
         'medium_logo_url': 'medium_logo_url',  # noqa: E501
         'name': 'name',  # noqa: E501
         'small_logo_url': 'small_logo_url',  # noqa: E501
@@ -153,6 +155,7 @@ class InstitutionResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             code (str, none_type): [optional]  # noqa: E501
+            instructional_text (str, none_type): [optional]  # noqa: E501
             medium_logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             small_logo_url (str, none_type): [optional]  # noqa: E501
@@ -244,6 +247,7 @@ class InstitutionResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             code (str, none_type): [optional]  # noqa: E501
+            instructional_text (str, none_type): [optional]  # noqa: E501
             medium_logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             small_logo_url (str, none_type): [optional]  # noqa: E501
