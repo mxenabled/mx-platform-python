@@ -698,6 +698,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     member_create_request_body = MemberCreateRequestBody(
         member=MemberCreateRequest(
             background_aggregation_is_disabled=False,
+            client_redirect_url="https://mx.com",
             credentials=[
                 CredentialRequest(
                     guid="CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f",
@@ -6431,6 +6432,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     connect_widget_request_body = ConnectWidgetRequestBody(
         config=ConnectWidgetRequest(
+            client_redirect_url="https://mx.com",
             color_scheme="light",
             current_institution_code="chase",
             current_member_guid="MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
@@ -6441,7 +6443,6 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             ui_message_version=4,
             ui_message_webview_url_scheme="mx",
             update_credentials=False,
-            wait_for_full_aggregation=False,
         ),
     ) # ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
@@ -6524,9 +6525,10 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    client_redirect_url = "https://mx.com" # str | A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`. (optional)
     referral_source = "APP" # str | Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`. (optional)
     skip_aggregation = False # bool | Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page. (optional)
-    ui_message_webview_url_scheme = "mx" # str | A scheme for routing the user back to the application state they were previously in. (optional)
+    ui_message_webview_url_scheme = "mx" # str | A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -6540,7 +6542,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Request oauth window uri
-        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, referral_source=referral_source, skip_aggregation=skip_aggregation, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
+        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, client_redirect_url=client_redirect_url, referral_source=referral_source, skip_aggregation=skip_aggregation, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->request_o_auth_window_uri: %s\n" % e)
@@ -6553,9 +6555,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **client_redirect_url** | **str**| A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with &#x60;referral_source&#x3D;APP&#x60;. | [optional]
  **referral_source** | **str**| Must be either &#x60;BROWSER&#x60; or &#x60;APP&#x60; depending on the implementation. Defaults to &#x60;BROWSER&#x60;. | [optional]
  **skip_aggregation** | **bool**| Setting this parameter to &#x60;true&#x60; will prevent the member from automatically aggregating after being redirected from the authorization page. | [optional]
- **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. | [optional]
+ **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. Only available with &#x60;referral_source&#x3D;APP&#x60;. | [optional]
 
 ### Return type
 
@@ -6621,6 +6624,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     widget_request_body = WidgetRequestBody(
         widget_url=WidgetRequest(
+            client_redirect_url="https://mx.com",
             color_scheme="light",
             current_institution_code="chase",
             current_institution_guid="INS-f1a3285d-e855-b61f-6aa7-8ae575c0e0e9",
@@ -6632,7 +6636,6 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             ui_message_version=4,
             ui_message_webview_url_scheme="mx",
             update_credentials=False,
-            wait_for_full_aggregation=False,
             widget_type="connect_widget",
         ),
     ) # WidgetRequestBody | The widget url configuration options.
