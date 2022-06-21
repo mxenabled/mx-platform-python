@@ -4593,6 +4593,7 @@ class MxPlatformApi(object):
                 'all': [
                     'member_guid',
                     'user_guid',
+                    'client_redirect_url',
                     'referral_source',
                     'skip_aggregation',
                     'ui_message_webview_url_scheme',
@@ -4618,6 +4619,8 @@ class MxPlatformApi(object):
                         (str,),
                     'user_guid':
                         (str,),
+                    'client_redirect_url':
+                        (str,),
                     'referral_source':
                         (str,),
                     'skip_aggregation':
@@ -4628,6 +4631,7 @@ class MxPlatformApi(object):
                 'attribute_map': {
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
+                    'client_redirect_url': 'client_redirect_url',
                     'referral_source': 'referral_source',
                     'skip_aggregation': 'skip_aggregation',
                     'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',
@@ -4635,6 +4639,7 @@ class MxPlatformApi(object):
                 'location_map': {
                     'member_guid': 'path',
                     'user_guid': 'path',
+                    'client_redirect_url': 'query',
                     'referral_source': 'query',
                     'skip_aggregation': 'query',
                     'ui_message_webview_url_scheme': 'query',
@@ -11642,9 +11647,10 @@ class MxPlatformApi(object):
             user_guid (str): The unique id for a `user`.
 
         Keyword Args:
+            client_redirect_url (str): A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`.. [optional]
             referral_source (str): Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`.. [optional]
             skip_aggregation (bool): Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page.. [optional]
-            ui_message_webview_url_scheme (str): A scheme for routing the user back to the application state they were previously in.. [optional]
+            ui_message_webview_url_scheme (str): A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

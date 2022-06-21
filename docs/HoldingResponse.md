@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **description** | **str, none_type** |  | [optional] 
 **guid** | **str, none_type** |  | [optional] 
 **holding_type** | **str, none_type** |  | [optional] 
+**holding_type_id** | **int, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **market_value** | **float, none_type** |  | [optional] 
 **member_guid** | **str, none_type** |  | [optional] 

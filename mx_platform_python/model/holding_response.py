@@ -90,6 +90,7 @@ class HoldingResponse(ModelNormal):
             'description': (str, none_type,),  # noqa: E501
             'guid': (str, none_type,),  # noqa: E501
             'holding_type': (str, none_type,),  # noqa: E501
+            'holding_type_id': (int, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'market_value': (float, none_type,),  # noqa: E501
             'member_guid': (str, none_type,),  # noqa: E501
@@ -116,6 +117,7 @@ class HoldingResponse(ModelNormal):
         'description': 'description',  # noqa: E501
         'guid': 'guid',  # noqa: E501
         'holding_type': 'holding_type',  # noqa: E501
+        'holding_type_id': 'holding_type_id',  # noqa: E501
         'id': 'id',  # noqa: E501
         'market_value': 'market_value',  # noqa: E501
         'member_guid': 'member_guid',  # noqa: E501
@@ -177,6 +179,7 @@ class HoldingResponse(ModelNormal):
             description (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             holding_type (str, none_type): [optional]  # noqa: E501
+            holding_type_id (int, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             market_value (float, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
@@ -276,6 +279,7 @@ class HoldingResponse(ModelNormal):
             description (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             holding_type (str, none_type): [optional]  # noqa: E501
+            holding_type_id (int, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             market_value (float, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501

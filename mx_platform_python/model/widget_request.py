@@ -82,6 +82,7 @@ class WidgetRequest(ModelNormal):
         """
         return {
             'widget_type': (str,),  # noqa: E501
+            'client_redirect_url': (str,),  # noqa: E501
             'color_scheme': (str,),  # noqa: E501
             'current_institution_code': (str,),  # noqa: E501
             'current_institution_guid': (str,),  # noqa: E501
@@ -93,7 +94,6 @@ class WidgetRequest(ModelNormal):
             'ui_message_version': (int,),  # noqa: E501
             'ui_message_webview_url_scheme': (str,),  # noqa: E501
             'update_credentials': (bool,),  # noqa: E501
-            'wait_for_full_aggregation': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +103,7 @@ class WidgetRequest(ModelNormal):
 
     attribute_map = {
         'widget_type': 'widget_type',  # noqa: E501
+        'client_redirect_url': 'client_redirect_url',  # noqa: E501
         'color_scheme': 'color_scheme',  # noqa: E501
         'current_institution_code': 'current_institution_code',  # noqa: E501
         'current_institution_guid': 'current_institution_guid',  # noqa: E501
@@ -114,7 +115,6 @@ class WidgetRequest(ModelNormal):
         'ui_message_version': 'ui_message_version',  # noqa: E501
         'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',  # noqa: E501
         'update_credentials': 'update_credentials',  # noqa: E501
-        'wait_for_full_aggregation': 'wait_for_full_aggregation',  # noqa: E501
     }
 
     read_only_vars = {
@@ -161,6 +161,7 @@ class WidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            client_redirect_url (str): [optional]  # noqa: E501
             color_scheme (str): [optional]  # noqa: E501
             current_institution_code (str): [optional]  # noqa: E501
             current_institution_guid (str): [optional]  # noqa: E501
@@ -172,7 +173,6 @@ class WidgetRequest(ModelNormal):
             ui_message_version (int): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501
             update_credentials (bool): [optional]  # noqa: E501
-            wait_for_full_aggregation (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -258,6 +258,7 @@ class WidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            client_redirect_url (str): [optional]  # noqa: E501
             color_scheme (str): [optional]  # noqa: E501
             current_institution_code (str): [optional]  # noqa: E501
             current_institution_guid (str): [optional]  # noqa: E501
@@ -269,7 +270,6 @@ class WidgetRequest(ModelNormal):
             ui_message_version (int): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501
             update_credentials (bool): [optional]  # noqa: E501
-            wait_for_full_aggregation (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
