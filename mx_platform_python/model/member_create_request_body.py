@@ -87,6 +87,7 @@ class MemberCreateRequestBody(ModelNormal):
         """
         lazy_import()
         return {
+            'client_redirect_url': (str,),  # noqa: E501
             'member': (MemberCreateRequest,),  # noqa: E501
             'referral_source': (str,),  # noqa: E501
             'ui_message_webview_url_scheme': (str,),  # noqa: E501
@@ -98,6 +99,7 @@ class MemberCreateRequestBody(ModelNormal):
 
 
     attribute_map = {
+        'client_redirect_url': 'client_redirect_url',  # noqa: E501
         'member': 'member',  # noqa: E501
         'referral_source': 'referral_source',  # noqa: E501
         'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',  # noqa: E501
@@ -144,6 +146,7 @@ class MemberCreateRequestBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            client_redirect_url (str): [optional]  # noqa: E501
             member (MemberCreateRequest): [optional]  # noqa: E501
             referral_source (str): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501
@@ -228,6 +231,7 @@ class MemberCreateRequestBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            client_redirect_url (str): [optional]  # noqa: E501
             member (MemberCreateRequest): [optional]  # noqa: E501
             referral_source (str): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501

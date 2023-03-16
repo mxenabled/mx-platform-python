@@ -82,6 +82,7 @@ class MemberResponse(ModelNormal):
         """
         return {
             'aggregated_at': (str, none_type,),  # noqa: E501
+            'background_aggregation_is_disabled': (bool,),  # noqa: E501
             'connection_status': (str, none_type,),  # noqa: E501
             'guid': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
@@ -104,6 +105,7 @@ class MemberResponse(ModelNormal):
 
     attribute_map = {
         'aggregated_at': 'aggregated_at',  # noqa: E501
+        'background_aggregation_is_disabled': 'background_aggregation_is_disabled',  # noqa: E501
         'connection_status': 'connection_status',  # noqa: E501
         'guid': 'guid',  # noqa: E501
         'id': 'id',  # noqa: E501
@@ -161,6 +163,7 @@ class MemberResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregated_at (str, none_type): [optional]  # noqa: E501
+            background_aggregation_is_disabled (bool): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
@@ -256,6 +259,7 @@ class MemberResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregated_at (str, none_type): [optional]  # noqa: E501
+            background_aggregation_is_disabled (bool): [optional]  # noqa: E501
             connection_status (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501

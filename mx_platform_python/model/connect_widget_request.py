@@ -85,10 +85,13 @@ class ConnectWidgetRequest(ModelNormal):
             'color_scheme': (str,),  # noqa: E501
             'current_institution_code': (str,),  # noqa: E501
             'current_member_guid': (str,),  # noqa: E501
+            'disable_background_agg': (bool,),  # noqa: E501
             'disable_institution_search': (bool,),  # noqa: E501
+            'include_identity': (bool,),  # noqa: E501
             'include_transactions': (bool,),  # noqa: E501
             'is_mobile_webview': (bool,),  # noqa: E501
             'mode': (str,),  # noqa: E501
+            'oauth_referral_source': (str,),  # noqa: E501
             'ui_message_version': (int,),  # noqa: E501
             'ui_message_webview_url_scheme': (str,),  # noqa: E501
             'update_credentials': (bool,),  # noqa: E501
@@ -104,10 +107,13 @@ class ConnectWidgetRequest(ModelNormal):
         'color_scheme': 'color_scheme',  # noqa: E501
         'current_institution_code': 'current_institution_code',  # noqa: E501
         'current_member_guid': 'current_member_guid',  # noqa: E501
+        'disable_background_agg': 'disable_background_agg',  # noqa: E501
         'disable_institution_search': 'disable_institution_search',  # noqa: E501
+        'include_identity': 'include_identity',  # noqa: E501
         'include_transactions': 'include_transactions',  # noqa: E501
         'is_mobile_webview': 'is_mobile_webview',  # noqa: E501
         'mode': 'mode',  # noqa: E501
+        'oauth_referral_source': 'oauth_referral_source',  # noqa: E501
         'ui_message_version': 'ui_message_version',  # noqa: E501
         'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',  # noqa: E501
         'update_credentials': 'update_credentials',  # noqa: E501
@@ -158,10 +164,13 @@ class ConnectWidgetRequest(ModelNormal):
             color_scheme (str): [optional]  # noqa: E501
             current_institution_code (str): [optional]  # noqa: E501
             current_member_guid (str): [optional]  # noqa: E501
+            disable_background_agg (bool): [optional]  # noqa: E501
             disable_institution_search (bool): [optional]  # noqa: E501
+            include_identity (bool): [optional]  # noqa: E501
             include_transactions (bool): [optional]  # noqa: E501
             is_mobile_webview (bool): [optional]  # noqa: E501
             mode (str): [optional]  # noqa: E501
+            oauth_referral_source (str): [optional]  # noqa: E501
             ui_message_version (int): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501
             update_credentials (bool): [optional]  # noqa: E501
@@ -250,10 +259,13 @@ class ConnectWidgetRequest(ModelNormal):
             color_scheme (str): [optional]  # noqa: E501
             current_institution_code (str): [optional]  # noqa: E501
             current_member_guid (str): [optional]  # noqa: E501
+            disable_background_agg (bool): [optional]  # noqa: E501
             disable_institution_search (bool): [optional]  # noqa: E501
+            include_identity (bool): [optional]  # noqa: E501
             include_transactions (bool): [optional]  # noqa: E501
             is_mobile_webview (bool): [optional]  # noqa: E501
             mode (str): [optional]  # noqa: E501
+            oauth_referral_source (str): [optional]  # noqa: E501
             ui_message_version (int): [optional]  # noqa: E501
             ui_message_webview_url_scheme (str): [optional]  # noqa: E501
             update_credentials (bool): [optional]  # noqa: E501

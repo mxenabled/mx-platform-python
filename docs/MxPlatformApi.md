@@ -45,6 +45,7 @@ Method | HTTP request | Description
 [**list_managed_institutions**](MxPlatformApi.md#list_managed_institutions) | **GET** /managed_institutions | List managed institutions
 [**list_managed_members**](MxPlatformApi.md#list_managed_members) | **GET** /users/{user_guid}/managed_members | List managed members
 [**list_managed_transactions**](MxPlatformApi.md#list_managed_transactions) | **GET** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions | List managed transactions
+[**list_member_accounts**](MxPlatformApi.md#list_member_accounts) | **GET** /users/{user_guid}/members/{member_guid}/accounts | List accounts by member
 [**list_member_challenges**](MxPlatformApi.md#list_member_challenges) | **GET** /users/{user_guid}/members/{member_guid}/challenges | List member challenges
 [**list_member_credentials**](MxPlatformApi.md#list_member_credentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 [**list_members**](MxPlatformApi.md#list_members) | **GET** /users/{user_guid}/members | List members
@@ -60,6 +61,7 @@ Method | HTTP request | Description
 [**list_user_accounts**](MxPlatformApi.md#list_user_accounts) | **GET** /users/{user_guid}/accounts | List accounts
 [**list_users**](MxPlatformApi.md#list_users) | **GET** /users | List users
 [**read_account**](MxPlatformApi.md#read_account) | **GET** /users/{user_guid}/accounts/{account_guid} | Read account
+[**read_account_by_member**](MxPlatformApi.md#read_account_by_member) | **GET** /users/{user_guid}/members/{member_guid}/accounts/{account_guid} | Read account by member
 [**read_category**](MxPlatformApi.md#read_category) | **GET** /users/{user_guid}/categories/{category_guid} | Read a custom category
 [**read_default_category**](MxPlatformApi.md#read_default_category) | **GET** /categories/{category_guid} | Read a default category
 [**read_holding**](MxPlatformApi.md#read_holding) | **GET** /users/{user_guid}/holdings/{holding_guid} | Read holding
@@ -696,9 +698,9 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     member_create_request_body = MemberCreateRequestBody(
+        client_redirect_url="https://mx.com",
         member=MemberCreateRequest(
             background_aggregation_is_disabled=False,
-            client_redirect_url="https://mx.com",
             credentials=[
                 CredentialRequest(
                     guid="CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f",
@@ -1056,7 +1058,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             email="email@provider.com",
             id="My-Unique-ID",
             is_disabled=False,
-            metadata="{\"first_name\": \"Steven\", \"last_name\": \"Universe\"}",
+            metadata="{\"type\": \"individual\", \"status\": \"preferred\"}",
         ),
     ) # UserCreateRequestBody | User object to be created. (None of these parameters are required, but the user object cannot be empty)
 
@@ -3670,6 +3672,101 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_member_accounts**
+> AccountsResponseBody list_member_accounts(user_guid, member_guid)
+
+List accounts by member
+
+This endpoint returns a list of all the accounts associated with the specified `member`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.accounts_response_body import AccountsResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    member_is_managed_by_user = True # bool | List only accounts whose member is managed by the user. (optional)
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List accounts by member
+        api_response = api_instance.list_member_accounts(user_guid, member_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_member_accounts: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List accounts by member
+        api_response = api_instance.list_member_accounts(user_guid, member_guid, member_is_managed_by_user=member_is_managed_by_user, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_member_accounts: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **member_is_managed_by_user** | **bool**| List only accounts whose member is managed by the user. | [optional]
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**AccountsResponseBody**](AccountsResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_member_challenges**
 > ChallengesResponseBody list_member_challenges(member_guid, user_guid)
 
@@ -4819,6 +4916,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    member_is_managed_by_user = True # bool | List only accounts whose member is managed by the user. (optional)
     page = 1 # int | Specify current page. (optional)
     records_per_page = 10 # int | Specify records per page. (optional)
 
@@ -4834,7 +4932,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List accounts
-        api_response = api_instance.list_user_accounts(user_guid, page=page, records_per_page=records_per_page)
+        api_response = api_instance.list_user_accounts(user_guid, member_is_managed_by_user=member_is_managed_by_user, page=page, records_per_page=records_per_page)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_user_accounts: %s\n" % e)
@@ -4846,6 +4944,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **member_is_managed_by_user** | **bool**| List only accounts whose member is managed by the user. | [optional]
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
 
@@ -4911,12 +5010,15 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     page = 1 # int | Specify current page. (optional)
     records_per_page = 10 # int | Specify records per page. (optional)
+    id = "u-12324-abdc" # str | The user `id` to search for. (optional)
+    email = "example@example.com" # str | The user `email` to search for. (optional)
+    is_disabled = True # bool | Search for users that are diabled. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List users
-        api_response = api_instance.list_users(page=page, records_per_page=records_per_page)
+        api_response = api_instance.list_users(page=page, records_per_page=records_per_page, id=id, email=email, is_disabled=is_disabled)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_users: %s\n" % e)
@@ -4929,6 +5031,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
+ **id** | **str**| The user &#x60;id&#x60; to search for. | [optional]
+ **email** | **str**| The user &#x60;email&#x60; to search for. | [optional]
+ **is_disabled** | **bool**| Search for users that are diabled. | [optional]
 
 ### Return type
 
@@ -5008,6 +5113,88 @@ with mx_platform_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+[**AccountResponseBody**](AccountResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_account_by_member**
+> AccountResponseBody read_account_by_member(account_guid, member_guid, user_guid)
+
+Read account by member
+
+This endpoint allows you to read the attributes of an `account` resource.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.account_response_body import AccountResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read account by member
+        api_response = api_instance.read_account_by_member(account_guid, member_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_account_by_member: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
 
 ### Return type
@@ -6436,10 +6623,13 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             color_scheme="light",
             current_institution_code="chase",
             current_member_guid="MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+            disable_background_agg=False,
             disable_institution_search=False,
+            include_identity=False,
             include_transactions=True,
-            is_mobile_webview=True,
+            is_mobile_webview=False,
             mode="aggregation",
+            oauth_referral_source="BROWSER",
             ui_message_version=4,
             ui_message_webview_url_scheme="mx",
             update_credentials=False,
@@ -6630,9 +6820,11 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             current_institution_guid="INS-f1a3285d-e855-b61f-6aa7-8ae575c0e0e9",
             current_member_guid="MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
             disable_institution_search=False,
+            include_identity=False,
             include_transactions=True,
-            is_mobile_webview=True,
+            is_mobile_webview=False,
             mode="aggregation",
+            oauth_referral_source="BROWSER",
             ui_message_version=4,
             ui_message_webview_url_scheme="mx",
             update_credentials=False,

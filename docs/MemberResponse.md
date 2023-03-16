@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregated_at** | **str, none_type** |  | [optional] 
+**background_aggregation_is_disabled** | **bool** |  | [optional] 
 **connection_status** | **str, none_type** |  | [optional] 
 **guid** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
