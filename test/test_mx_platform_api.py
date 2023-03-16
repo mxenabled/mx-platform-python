@@ -310,6 +310,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_member_accounts(self):
+        """Test case for list_member_accounts
+
+        List accounts by member  # noqa: E501
+        """
+        pass
+
     def test_list_member_challenges(self):
         """Test case for list_member_challenges
 
@@ -412,6 +419,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for read_account
 
         Read account  # noqa: E501
+        """
+        pass
+
+    def test_read_account_by_member(self):
+        """Test case for read_account_by_member
+
+        Read account by member  # noqa: E501
         """
         pass
 

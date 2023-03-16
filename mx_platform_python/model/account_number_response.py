@@ -86,6 +86,7 @@ class AccountNumberResponse(ModelNormal):
             'guid': (str, none_type,),  # noqa: E501
             'institution_number': (str, none_type,),  # noqa: E501
             'member_guid': (str, none_type,),  # noqa: E501
+            'passed_validation': (bool, none_type,),  # noqa: E501
             'routing_number': (str, none_type,),  # noqa: E501
             'transit_number': (str, none_type,),  # noqa: E501
             'user_guid': (str, none_type,),  # noqa: E501
@@ -102,6 +103,7 @@ class AccountNumberResponse(ModelNormal):
         'guid': 'guid',  # noqa: E501
         'institution_number': 'institution_number',  # noqa: E501
         'member_guid': 'member_guid',  # noqa: E501
+        'passed_validation': 'passed_validation',  # noqa: E501
         'routing_number': 'routing_number',  # noqa: E501
         'transit_number': 'transit_number',  # noqa: E501
         'user_guid': 'user_guid',  # noqa: E501
@@ -153,6 +155,7 @@ class AccountNumberResponse(ModelNormal):
             guid (str, none_type): [optional]  # noqa: E501
             institution_number (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
+            passed_validation (bool, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             transit_number (str, none_type): [optional]  # noqa: E501
             user_guid (str, none_type): [optional]  # noqa: E501
@@ -242,6 +245,7 @@ class AccountNumberResponse(ModelNormal):
             guid (str, none_type): [optional]  # noqa: E501
             institution_number (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
+            passed_validation (bool, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             transit_number (str, none_type): [optional]  # noqa: E501
             user_guid (str, none_type): [optional]  # noqa: E501

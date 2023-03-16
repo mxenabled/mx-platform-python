@@ -90,7 +90,6 @@ class MemberCreateRequest(ModelNormal):
             'credentials': ([CredentialRequest],),  # noqa: E501
             'institution_code': (str,),  # noqa: E501
             'background_aggregation_is_disabled': (bool,),  # noqa: E501
-            'client_redirect_url': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'is_oauth': (bool,),  # noqa: E501
             'metadata': (str,),  # noqa: E501
@@ -106,7 +105,6 @@ class MemberCreateRequest(ModelNormal):
         'credentials': 'credentials',  # noqa: E501
         'institution_code': 'institution_code',  # noqa: E501
         'background_aggregation_is_disabled': 'background_aggregation_is_disabled',  # noqa: E501
-        'client_redirect_url': 'client_redirect_url',  # noqa: E501
         'id': 'id',  # noqa: E501
         'is_oauth': 'is_oauth',  # noqa: E501
         'metadata': 'metadata',  # noqa: E501
@@ -159,7 +157,6 @@ class MemberCreateRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             background_aggregation_is_disabled (bool): [optional]  # noqa: E501
-            client_redirect_url (str): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             is_oauth (bool): [optional]  # noqa: E501
             metadata (str): [optional]  # noqa: E501
@@ -252,7 +249,6 @@ class MemberCreateRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             background_aggregation_is_disabled (bool): [optional]  # noqa: E501
-            client_redirect_url (str): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             is_oauth (bool): [optional]  # noqa: E501
             metadata (str): [optional]  # noqa: E501

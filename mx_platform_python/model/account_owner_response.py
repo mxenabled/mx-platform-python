@@ -86,7 +86,9 @@ class AccountOwnerResponse(ModelNormal):
             'city': (str, none_type,),  # noqa: E501
             'country': (str, none_type,),  # noqa: E501
             'email': (str, none_type,),  # noqa: E501
+            'first_name': (str, none_type,),  # noqa: E501
             'guid': (str, none_type,),  # noqa: E501
+            'last_name': (str, none_type,),  # noqa: E501
             'member_guid': (str, none_type,),  # noqa: E501
             'owner_name': (str, none_type,),  # noqa: E501
             'phone': (str, none_type,),  # noqa: E501
@@ -106,7 +108,9 @@ class AccountOwnerResponse(ModelNormal):
         'city': 'city',  # noqa: E501
         'country': 'country',  # noqa: E501
         'email': 'email',  # noqa: E501
+        'first_name': 'first_name',  # noqa: E501
         'guid': 'guid',  # noqa: E501
+        'last_name': 'last_name',  # noqa: E501
         'member_guid': 'member_guid',  # noqa: E501
         'owner_name': 'owner_name',  # noqa: E501
         'phone': 'phone',  # noqa: E501
@@ -161,7 +165,9 @@ class AccountOwnerResponse(ModelNormal):
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             email (str, none_type): [optional]  # noqa: E501
+            first_name (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
+            last_name (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
             owner_name (str, none_type): [optional]  # noqa: E501
             phone (str, none_type): [optional]  # noqa: E501
@@ -254,7 +260,9 @@ class AccountOwnerResponse(ModelNormal):
             city (str, none_type): [optional]  # noqa: E501
             country (str, none_type): [optional]  # noqa: E501
             email (str, none_type): [optional]  # noqa: E501
+            first_name (str, none_type): [optional]  # noqa: E501
             guid (str, none_type): [optional]  # noqa: E501
+            last_name (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
             owner_name (str, none_type): [optional]  # noqa: E501
             phone (str, none_type): [optional]  # noqa: E501

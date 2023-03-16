@@ -2584,6 +2584,78 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.list_member_accounts_endpoint = _Endpoint(
+            settings={
+                'response_type': (AccountsResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/accounts',
+                'operation_id': 'list_member_accounts',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'member_guid',
+                    'member_is_managed_by_user',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'member_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'member_guid':
+                        (str,),
+                    'member_is_managed_by_user':
+                        (bool,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'member_guid': 'member_guid',
+                    'member_is_managed_by_user': 'member_is_managed_by_user',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'member_guid': 'path',
+                    'member_is_managed_by_user': 'query',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.list_member_challenges_endpoint = _Endpoint(
             settings={
                 'response_type': (ChallengesResponseBody,),
@@ -3399,6 +3471,7 @@ class MxPlatformApi(object):
             params_map={
                 'all': [
                     'user_guid',
+                    'member_is_managed_by_user',
                     'page',
                     'records_per_page',
                 ],
@@ -3420,6 +3493,8 @@ class MxPlatformApi(object):
                 'openapi_types': {
                     'user_guid':
                         (str,),
+                    'member_is_managed_by_user':
+                        (bool,),
                     'page':
                         (int,),
                     'records_per_page':
@@ -3427,11 +3502,13 @@ class MxPlatformApi(object):
                 },
                 'attribute_map': {
                     'user_guid': 'user_guid',
+                    'member_is_managed_by_user': 'member_is_managed_by_user',
                     'page': 'page',
                     'records_per_page': 'records_per_page',
                 },
                 'location_map': {
                     'user_guid': 'path',
+                    'member_is_managed_by_user': 'query',
                     'page': 'query',
                     'records_per_page': 'query',
                 },
@@ -3461,6 +3538,9 @@ class MxPlatformApi(object):
                 'all': [
                     'page',
                     'records_per_page',
+                    'id',
+                    'email',
+                    'is_disabled',
                 ],
                 'required': [],
                 'nullable': [
@@ -3480,14 +3560,26 @@ class MxPlatformApi(object):
                         (int,),
                     'records_per_page':
                         (int,),
+                    'id':
+                        (str,),
+                    'email':
+                        (str,),
+                    'is_disabled':
+                        (bool,),
                 },
                 'attribute_map': {
                     'page': 'page',
                     'records_per_page': 'records_per_page',
+                    'id': 'id',
+                    'email': 'email',
+                    'is_disabled': 'is_disabled',
                 },
                 'location_map': {
                     'page': 'query',
                     'records_per_page': 'query',
+                    'id': 'query',
+                    'email': 'query',
+                    'is_disabled': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -3544,6 +3636,69 @@ class MxPlatformApi(object):
                 },
                 'location_map': {
                     'account_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_account_by_member_endpoint = _Endpoint(
+            settings={
+                'response_type': (AccountResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/accounts/{account_guid}',
+                'operation_id': 'read_account_by_member',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'account_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_guid':
+                        (str,),
+                    'member_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_guid': 'account_guid',
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'account_guid': 'path',
+                    'member_guid': 'path',
                     'user_guid': 'path',
                 },
                 'collection_format_map': {
@@ -8931,6 +9086,91 @@ class MxPlatformApi(object):
             user_guid
         return self.list_managed_transactions_endpoint.call_with_http_info(**kwargs)
 
+    def list_member_accounts(
+        self,
+        user_guid,
+        member_guid,
+        **kwargs
+    ):
+        """List accounts by member  # noqa: E501
+
+        This endpoint returns a list of all the accounts associated with the specified `member`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_member_accounts(user_guid, member_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            member_guid (str): The unique id for a `member`.
+
+        Keyword Args:
+            member_is_managed_by_user (bool): List only accounts whose member is managed by the user.. [optional]
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            AccountsResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['member_guid'] = \
+            member_guid
+        return self.list_member_accounts_endpoint.call_with_http_info(**kwargs)
+
     def list_member_challenges(
         self,
         member_guid,
@@ -9936,6 +10176,7 @@ class MxPlatformApi(object):
             user_guid (str): The unique id for a `user`.
 
         Keyword Args:
+            member_is_managed_by_user (bool): List only accounts whose member is managed by the user.. [optional]
             page (int): Specify current page.. [optional]
             records_per_page (int): Specify records per page.. [optional]
             _return_http_data_only (bool): response data without head status
@@ -10015,6 +10256,9 @@ class MxPlatformApi(object):
         Keyword Args:
             page (int): Specify current page.. [optional]
             records_per_page (int): Specify records per page.. [optional]
+            id (str): The user `id` to search for.. [optional]
+            email (str): The user `email` to search for.. [optional]
+            is_disabled (bool): Search for users that are diabled.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -10154,6 +10398,92 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.read_account_endpoint.call_with_http_info(**kwargs)
+
+    def read_account_by_member(
+        self,
+        account_guid,
+        member_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Read account by member  # noqa: E501
+
+        This endpoint allows you to read the attributes of an `account` resource.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_account_by_member(account_guid, member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_guid (str): The unique id for an `account`.
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            AccountResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.read_account_by_member_endpoint.call_with_http_info(**kwargs)
 
     def read_category(
         self,

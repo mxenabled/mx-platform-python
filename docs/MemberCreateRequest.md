@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **credentials** | [**[CredentialRequest]**](CredentialRequest.md) |  | 
 **institution_code** | **str** |  | 
 **background_aggregation_is_disabled** | **bool** |  | [optional] 
-**client_redirect_url** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **is_oauth** | **bool** |  | [optional] 
 **metadata** | **str** |  | [optional] 

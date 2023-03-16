@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **guid** | **str, none_type** |  | [optional] 
 **institution_number** | **str, none_type** |  | [optional] 
 **member_guid** | **str, none_type** |  | [optional] 
+**passed_validation** | **bool, none_type** |  | [optional] 
 **routing_number** | **str, none_type** |  | [optional] 
 **transit_number** | **str, none_type** |  | [optional] 
 **user_guid** | **str, none_type** |  | [optional] 
