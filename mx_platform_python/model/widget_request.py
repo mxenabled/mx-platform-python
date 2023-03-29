@@ -87,6 +87,7 @@ class WidgetRequest(ModelNormal):
             'current_institution_code': (str,),  # noqa: E501
             'current_institution_guid': (str,),  # noqa: E501
             'current_member_guid': (str,),  # noqa: E501
+            'disable_background_agg': (bool,),  # noqa: E501
             'disable_institution_search': (bool,),  # noqa: E501
             'include_identity': (bool,),  # noqa: E501
             'include_transactions': (bool,),  # noqa: E501
@@ -110,6 +111,7 @@ class WidgetRequest(ModelNormal):
         'current_institution_code': 'current_institution_code',  # noqa: E501
         'current_institution_guid': 'current_institution_guid',  # noqa: E501
         'current_member_guid': 'current_member_guid',  # noqa: E501
+        'disable_background_agg': 'disable_background_agg',  # noqa: E501
         'disable_institution_search': 'disable_institution_search',  # noqa: E501
         'include_identity': 'include_identity',  # noqa: E501
         'include_transactions': 'include_transactions',  # noqa: E501
@@ -170,6 +172,7 @@ class WidgetRequest(ModelNormal):
             current_institution_code (str): [optional]  # noqa: E501
             current_institution_guid (str): [optional]  # noqa: E501
             current_member_guid (str): [optional]  # noqa: E501
+            disable_background_agg (bool): [optional]  # noqa: E501
             disable_institution_search (bool): [optional]  # noqa: E501
             include_identity (bool): [optional]  # noqa: E501
             include_transactions (bool): [optional]  # noqa: E501
@@ -269,6 +272,7 @@ class WidgetRequest(ModelNormal):
             current_institution_code (str): [optional]  # noqa: E501
             current_institution_guid (str): [optional]  # noqa: E501
             current_member_guid (str): [optional]  # noqa: E501
+            disable_background_agg (bool): [optional]  # noqa: E501
             disable_institution_search (bool): [optional]  # noqa: E501
             include_identity (bool): [optional]  # noqa: E501
             include_transactions (bool): [optional]  # noqa: E501

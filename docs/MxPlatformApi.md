@@ -6819,6 +6819,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             current_institution_code="chase",
             current_institution_guid="INS-f1a3285d-e855-b61f-6aa7-8ae575c0e0e9",
             current_member_guid="MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+            disable_background_agg=False,
             disable_institution_search=False,
             include_identity=False,
             include_transactions=True,

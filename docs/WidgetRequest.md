@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **current_institution_code** | **str** |  | [optional] 
 **current_institution_guid** | **str** |  | [optional] 
 **current_member_guid** | **str** |  | [optional] 
+**disable_background_agg** | **bool** |  | [optional] 
 **disable_institution_search** | **bool** |  | [optional] 
 **include_identity** | **bool** |  | [optional] 
 **include_transactions** | **bool** |  | [optional] 
