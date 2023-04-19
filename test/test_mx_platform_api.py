@@ -163,6 +163,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_deprecated_request_payment_processor_authorization_code(self):
+        """Test case for deprecated_request_payment_processor_authorization_code
+
+        (Deprecated) Request an authorization code.  # noqa: E501
+        """
+        pass
+
     def test_download_statement_pdf(self):
         """Test case for download_statement_pdf
 
@@ -545,6 +552,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for read_user
 
         Read user  # noqa: E501
+        """
+        pass
+
+    def test_request_authorization_code(self):
+        """Test case for request_authorization_code
+
+        Request an authorization code.  # noqa: E501
         """
         pass
 
