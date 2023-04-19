@@ -26,6 +26,8 @@ from mx_platform_python.model.account_owners_response_body import AccountOwnersR
 from mx_platform_python.model.account_response_body import AccountResponseBody
 from mx_platform_python.model.account_update_request_body import AccountUpdateRequestBody
 from mx_platform_python.model.accounts_response_body import AccountsResponseBody
+from mx_platform_python.model.authorization_code_request_body import AuthorizationCodeRequestBody
+from mx_platform_python.model.authorization_code_response_body import AuthorizationCodeResponseBody
 from mx_platform_python.model.categories_response_body import CategoriesResponseBody
 from mx_platform_python.model.category_create_request_body import CategoryCreateRequestBody
 from mx_platform_python.model.category_response_body import CategoryResponseBody
@@ -56,6 +58,8 @@ from mx_platform_python.model.merchant_location_response_body import MerchantLoc
 from mx_platform_python.model.merchant_response_body import MerchantResponseBody
 from mx_platform_python.model.merchants_response_body import MerchantsResponseBody
 from mx_platform_python.model.o_auth_window_response_body import OAuthWindowResponseBody
+from mx_platform_python.model.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
+from mx_platform_python.model.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
 from mx_platform_python.model.statement_response_body import StatementResponseBody
 from mx_platform_python.model.statements_response_body import StatementsResponseBody
 from mx_platform_python.model.tag_create_request_body import TagCreateRequestBody
@@ -1244,6 +1248,58 @@ class MxPlatformApi(object):
             headers_map={
                 'accept': [],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.deprecated_request_payment_processor_authorization_code_endpoint = _Endpoint(
+            settings={
+                'response_type': (PaymentProcessorAuthorizationCodeResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/payment_processor_authorization_code',
+                'operation_id': 'deprecated_request_payment_processor_authorization_code',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'payment_processor_authorization_code_request_body',
+                ],
+                'required': [
+                    'payment_processor_authorization_code_request_body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'payment_processor_authorization_code_request_body':
+                        (PaymentProcessorAuthorizationCodeRequestBody,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'payment_processor_authorization_code_request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -4675,6 +4731,58 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.request_authorization_code_endpoint = _Endpoint(
+            settings={
+                'response_type': (AuthorizationCodeResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/authorization_code',
+                'operation_id': 'request_authorization_code',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'authorization_code_request_body',
+                ],
+                'required': [
+                    'authorization_code_request_body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'authorization_code_request_body':
+                        (AuthorizationCodeRequestBody,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'authorization_code_request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.request_connect_widget_url_endpoint = _Endpoint(
             settings={
                 'response_type': (ConnectWidgetResponseBody,),
@@ -7372,6 +7480,84 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.delete_user_endpoint.call_with_http_info(**kwargs)
+
+    def deprecated_request_payment_processor_authorization_code(
+        self,
+        payment_processor_authorization_code_request_body,
+        **kwargs
+    ):
+        """(Deprecated) Request an authorization code.  # noqa: E501
+
+        (This endpoint is deprecated. Clients should use `/authorization_code`.) Clients use this endpoint to request an authorization_code according to a user, member, and account specified in the request body. Clients then pass this code to processors. Processor access is scoped only to the user/member/account specified in this request. Before requesting an authorization_code, clients must have verified the specified member.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.deprecated_request_payment_processor_authorization_code(payment_processor_authorization_code_request_body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            payment_processor_authorization_code_request_body (PaymentProcessorAuthorizationCodeRequestBody): The scope for the authorization code.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PaymentProcessorAuthorizationCodeResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['payment_processor_authorization_code_request_body'] = \
+            payment_processor_authorization_code_request_body
+        return self.deprecated_request_payment_processor_authorization_code_endpoint.call_with_http_info(**kwargs)
 
     def download_statement_pdf(
         self,
@@ -11874,6 +12060,84 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.read_user_endpoint.call_with_http_info(**kwargs)
+
+    def request_authorization_code(
+        self,
+        authorization_code_request_body,
+        **kwargs
+    ):
+        """Request an authorization code.  # noqa: E501
+
+        Clients use this endpoint to request an authorization code according to the parameters specified in the scope. Clients then pass this code to processors. Processor access is scoped only to the GUIDs and features specified in this request. Before requesting an authorization code which includes a member in the scope, clients must have verified that member.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.request_authorization_code(authorization_code_request_body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            authorization_code_request_body (AuthorizationCodeRequestBody): The scope for the authorization code.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            AuthorizationCodeResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['authorization_code_request_body'] = \
+            authorization_code_request_body
+        return self.request_authorization_code_endpoint.call_with_http_info(**kwargs)
 
     def request_connect_widget_url(
         self,

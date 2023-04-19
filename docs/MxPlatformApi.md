@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**delete_tagging**](MxPlatformApi.md#delete_tagging) | **DELETE** /users/{user_guid}/taggings/{tagging_guid} | Delete tagging
 [**delete_transaction_rule**](MxPlatformApi.md#delete_transaction_rule) | **DELETE** /users/{user_guid}/transaction_rules/{transaction_rule_guid} | Delete transaction rule
 [**delete_user**](MxPlatformApi.md#delete_user) | **DELETE** /users/{user_guid} | Delete user
+[**deprecated_request_payment_processor_authorization_code**](MxPlatformApi.md#deprecated_request_payment_processor_authorization_code) | **POST** /payment_processor_authorization_code | (Deprecated) Request an authorization code.
 [**download_statement_pdf**](MxPlatformApi.md#download_statement_pdf) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf | Download statement pdf
 [**enhance_transactions**](MxPlatformApi.md#enhance_transactions) | **POST** /transactions/enhance | Enhance transactions
 [**extend_history**](MxPlatformApi.md#extend_history) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
@@ -79,6 +80,7 @@ Method | HTTP request | Description
 [**read_transaction**](MxPlatformApi.md#read_transaction) | **GET** /users/{user_guid}/transactions/{transaction_guid} | Read transaction
 [**read_transaction_rule**](MxPlatformApi.md#read_transaction_rule) | **GET** /users/{user_guid}/transaction_rules/{transaction_rule_guid} | Read transaction rule
 [**read_user**](MxPlatformApi.md#read_user) | **GET** /users/{user_guid} | Read user
+[**request_authorization_code**](MxPlatformApi.md#request_authorization_code) | **POST** /authorization_code | Request an authorization code.
 [**request_connect_widget_url**](MxPlatformApi.md#request_connect_widget_url) | **POST** /users/{user_guid}/connect_widget_url | Request connect widget url
 [**request_o_auth_window_uri**](MxPlatformApi.md#request_o_auth_window_uri) | **GET** /users/{user_guid}/members/{member_guid}/oauth_window_uri | Request oauth window uri
 [**request_widget_url**](MxPlatformApi.md#request_widget_url) | **POST** /users/{user_guid}/widget_urls | Request widget url
@@ -1803,6 +1805,91 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deprecated_request_payment_processor_authorization_code**
+> PaymentProcessorAuthorizationCodeResponseBody deprecated_request_payment_processor_authorization_code(payment_processor_authorization_code_request_body)
+
+(Deprecated) Request an authorization code.
+
+(This endpoint is deprecated. Clients should use `/authorization_code`.) Clients use this endpoint to request an authorization_code according to a user, member, and account specified in the request body. Clients then pass this code to processors. Processor access is scoped only to the user/member/account specified in this request. Before requesting an authorization_code, clients must have verified the specified member.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
+from mx_platform_python.model.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    payment_processor_authorization_code_request_body = PaymentProcessorAuthorizationCodeRequestBody(
+        payment_processor_authorization_code=PaymentProcessorAuthorizationCodeRequest(
+            account_guid="ACT-4d4c0068-33bc-4d06-bbd6-cd270fd0135c",
+            member_guid="MBR-46637bc5-942d-4229-9370-ddd858bf805e",
+            user_guid="USR-f12b1f5a-7cbe-467c-aa30-0a10d0b2f549",
+        ),
+    ) # PaymentProcessorAuthorizationCodeRequestBody | The scope for the authorization code.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # (Deprecated) Request an authorization code.
+        api_response = api_instance.deprecated_request_payment_processor_authorization_code(payment_processor_authorization_code_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->deprecated_request_payment_processor_authorization_code: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payment_processor_authorization_code_request_body** | [**PaymentProcessorAuthorizationCodeRequestBody**](PaymentProcessorAuthorizationCodeRequestBody.md)| The scope for the authorization code. |
+
+### Return type
+
+[**PaymentProcessorAuthorizationCodeResponseBody**](PaymentProcessorAuthorizationCodeResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6566,6 +6653,89 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **request_authorization_code**
+> AuthorizationCodeResponseBody request_authorization_code(authorization_code_request_body)
+
+Request an authorization code.
+
+Clients use this endpoint to request an authorization code according to the parameters specified in the scope. Clients then pass this code to processors. Processor access is scoped only to the GUIDs and features specified in this request. Before requesting an authorization code which includes a member in the scope, clients must have verified that member.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.authorization_code_request_body import AuthorizationCodeRequestBody
+from mx_platform_python.model.authorization_code_response_body import AuthorizationCodeResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    authorization_code_request_body = AuthorizationCodeRequestBody(
+        authorization_code=AuthorizationCodeRequest(
+            scope="user-guid:USR-101ad774-288b-44ed-ad16-da87d522ea20 member-guid:MBR-54feffb9-8474-47bd-8442-de003910113a account-guid:ACT-32a64160-582a-4f00-ab34-5f49cc35ed35 read-protected",
+        ),
+    ) # AuthorizationCodeRequestBody | The scope for the authorization code.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Request an authorization code.
+        api_response = api_instance.request_authorization_code(authorization_code_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->request_authorization_code: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization_code_request_body** | [**AuthorizationCodeRequestBody**](AuthorizationCodeRequestBody.md)| The scope for the authorization code. |
+
+### Return type
+
+[**AuthorizationCodeResponseBody**](AuthorizationCodeResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/vnd.mx.api.v1+json
 
 
