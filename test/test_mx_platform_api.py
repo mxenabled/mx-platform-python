@@ -177,6 +177,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_download_tax_document(self):
+        """Test case for download_tax_document
+
+        Download a Tax Document PDF  # noqa: E501
+        """
+        pass
+
     def test_enhance_transactions(self):
         """Test case for enhance_transactions
 
@@ -195,6 +202,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for fetch_statements
 
         Fetch statements  # noqa: E501
+        """
+        pass
+
+    def test_fetch_tax_documents(self):
+        """Test case for fetch_tax_documents
+
+        Fetch Tax Documents  # noqa: E501
         """
         pass
 
@@ -373,6 +387,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_tax_documents(self):
+        """Test case for list_tax_documents
+
+        List Tax Documents  # noqa: E501
+        """
+        pass
+
     def test_list_transaction_rules(self):
         """Test case for list_transaction_rules
 
@@ -531,6 +552,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for read_tagging
 
         Read tagging  # noqa: E501
+        """
+        pass
+
+    def test_read_tax_document(self):
+        """Test case for read_tax_document
+
+        Read a Tax Document  # noqa: E501
         """
         pass
 

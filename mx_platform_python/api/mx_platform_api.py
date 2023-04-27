@@ -70,6 +70,8 @@ from mx_platform_python.model.tagging_response_body import TaggingResponseBody
 from mx_platform_python.model.tagging_update_request_body import TaggingUpdateRequestBody
 from mx_platform_python.model.taggings_response_body import TaggingsResponseBody
 from mx_platform_python.model.tags_response_body import TagsResponseBody
+from mx_platform_python.model.tax_document_response_body import TaxDocumentResponseBody
+from mx_platform_python.model.tax_documents_response_body import TaxDocumentsResponseBody
 from mx_platform_python.model.transaction_response_body import TransactionResponseBody
 from mx_platform_python.model.transaction_rule_create_request_body import TransactionRuleCreateRequestBody
 from mx_platform_python.model.transaction_rule_response_body import TransactionRuleResponseBody
@@ -1366,6 +1368,69 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.download_tax_document_endpoint = _Endpoint(
+            settings={
+                'response_type': (file_type,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid}.pdf',
+                'operation_id': 'download_tax_document',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'tax_document_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'tax_document_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'tax_document_guid':
+                        (str,),
+                    'member_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'tax_document_guid': 'tax_document_guid',
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'tax_document_guid': 'path',
+                    'member_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+pdf'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.enhance_transactions_endpoint = _Endpoint(
             settings={
                 'response_type': (EnhanceTransactionsResponseBody,),
@@ -1483,6 +1548,63 @@ class MxPlatformApi(object):
                 ],
                 'endpoint_path': '/users/{user_guid}/members/{member_guid}/fetch_statements',
                 'operation_id': 'fetch_statements',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'member_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'member_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'member_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'member_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.fetch_tax_documents_endpoint = _Endpoint(
+            settings={
+                'response_type': (MemberResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/fetch_tax_documents',
+                'operation_id': 'fetch_tax_documents',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -3150,6 +3272,73 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.list_tax_documents_endpoint = _Endpoint(
+            settings={
+                'response_type': (TaxDocumentsResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/tax_documents',
+                'operation_id': 'list_tax_documents',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'member_guid',
+                    'user_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'member_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'member_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'member_guid': 'path',
+                    'user_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.list_transaction_rules_endpoint = _Endpoint(
             settings={
                 'response_type': (TransactionRulesResponseBody,),
@@ -4553,6 +4742,69 @@ class MxPlatformApi(object):
                 },
                 'location_map': {
                     'tagging_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_tax_document_endpoint = _Endpoint(
+            settings={
+                'response_type': (TaxDocumentResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid}',
+                'operation_id': 'read_tax_document',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'tax_document_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'tax_document_guid',
+                    'member_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'tax_document_guid':
+                        (str,),
+                    'member_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'tax_document_guid': 'tax_document_guid',
+                    'member_guid': 'member_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'tax_document_guid': 'path',
+                    'member_guid': 'path',
                     'user_guid': 'path',
                 },
                 'collection_format_map': {
@@ -7645,6 +7897,92 @@ class MxPlatformApi(object):
             user_guid
         return self.download_statement_pdf_endpoint.call_with_http_info(**kwargs)
 
+    def download_tax_document(
+        self,
+        tax_document_guid,
+        member_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Download a Tax Document PDF  # noqa: E501
+
+        Use this endpoint to download a PDF version of the specified tax document. The endpoint URL is the base URL appended with the uri of the tax_document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.download_tax_document(tax_document_guid, member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            tax_document_guid (str): The unique id for a `tax_document`.
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            file_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['tax_document_guid'] = \
+            tax_document_guid
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.download_tax_document_endpoint.call_with_http_info(**kwargs)
+
     def enhance_transactions(
         self,
         enhance_transactions_request_body,
@@ -7886,6 +8224,88 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.fetch_statements_endpoint.call_with_http_info(**kwargs)
+
+    def fetch_tax_documents(
+        self,
+        member_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Fetch Tax Documents  # noqa: E501
+
+        Use this endpoint to fetch (aggregate) the tax documents associated with the specified member. This request **does not** return the latest tax documents. It just starts the document aggregation process and returns the initial state of the process. You must interact with the newly aggregated data using the other document endpoints in this reference. This request may also trigger multi-factor authentication which requires end-user input and a specific process for answering authentication challenges.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.fetch_tax_documents(member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MemberResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.fetch_tax_documents_endpoint.call_with_http_info(**kwargs)
 
     def identify_member(
         self,
@@ -9924,6 +10344,90 @@ class MxPlatformApi(object):
             user_guid
         return self.list_tags_endpoint.call_with_http_info(**kwargs)
 
+    def list_tax_documents(
+        self,
+        member_guid,
+        user_guid,
+        **kwargs
+    ):
+        """List Tax Documents  # noqa: E501
+
+        Use this endpoint to get a paginated list of tax documents.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_tax_documents(member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TaxDocumentsResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.list_tax_documents_endpoint.call_with_http_info(**kwargs)
+
     def list_transaction_rules(
         self,
         user_guid,
@@ -11818,6 +12322,92 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.read_tagging_endpoint.call_with_http_info(**kwargs)
+
+    def read_tax_document(
+        self,
+        tax_document_guid,
+        member_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Read a Tax Document  # noqa: E501
+
+        Use this endpoint to read the attributes of the specified tax document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_tax_document(tax_document_guid, member_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            tax_document_guid (str): The unique id for a `tax_document`.
+            member_guid (str): The unique id for a `member`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TaxDocumentResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['tax_document_guid'] = \
+            tax_document_guid
+        kwargs['member_guid'] = \
+            member_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.read_tax_document_endpoint.call_with_http_info(**kwargs)
 
     def read_transaction(
         self,

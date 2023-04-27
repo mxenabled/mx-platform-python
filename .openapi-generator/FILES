@@ -94,6 +94,9 @@ docs/TaggingUpdateRequest.md
 docs/TaggingUpdateRequestBody.md
 docs/TaggingsResponseBody.md
 docs/TagsResponseBody.md
+docs/TaxDocumentResponse.md
+docs/TaxDocumentResponseBody.md
+docs/TaxDocumentsResponseBody.md
 docs/TransactionResponse.md
 docs/TransactionResponseBody.md
 docs/TransactionRuleCreateRequest.md
@@ -218,6 +221,9 @@ mx_platform_python/model/tagging_update_request.py
 mx_platform_python/model/tagging_update_request_body.py
 mx_platform_python/model/taggings_response_body.py
 mx_platform_python/model/tags_response_body.py
+mx_platform_python/model/tax_document_response.py
+mx_platform_python/model/tax_document_response_body.py
+mx_platform_python/model/tax_documents_response_body.py
 mx_platform_python/model/transaction_response.py
 mx_platform_python/model/transaction_response_body.py
 mx_platform_python/model/transaction_rule_create_request.py
@@ -343,6 +349,9 @@ test/test_tagging_update_request.py
 test/test_tagging_update_request_body.py
 test/test_taggings_response_body.py
 test/test_tags_response_body.py
+test/test_tax_document_response.py
+test/test_tax_document_response_body.py
+test/test_tax_documents_response_body.py
 test/test_transaction_response.py
 test/test_transaction_response_body.py
 test/test_transaction_rule_create_request.py
