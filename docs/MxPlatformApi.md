@@ -26,9 +26,11 @@ Method | HTTP request | Description
 [**delete_user**](MxPlatformApi.md#delete_user) | **DELETE** /users/{user_guid} | Delete user
 [**deprecated_request_payment_processor_authorization_code**](MxPlatformApi.md#deprecated_request_payment_processor_authorization_code) | **POST** /payment_processor_authorization_code | (Deprecated) Request an authorization code.
 [**download_statement_pdf**](MxPlatformApi.md#download_statement_pdf) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf | Download statement pdf
+[**download_tax_document**](MxPlatformApi.md#download_tax_document) | **GET** /users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid}.pdf | Download a Tax Document PDF
 [**enhance_transactions**](MxPlatformApi.md#enhance_transactions) | **POST** /transactions/enhance | Enhance transactions
 [**extend_history**](MxPlatformApi.md#extend_history) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
 [**fetch_statements**](MxPlatformApi.md#fetch_statements) | **POST** /users/{user_guid}/members/{member_guid}/fetch_statements | Fetch statements
+[**fetch_tax_documents**](MxPlatformApi.md#fetch_tax_documents) | **POST** /users/{user_guid}/members/{member_guid}/fetch_tax_documents | Fetch Tax Documents
 [**identify_member**](MxPlatformApi.md#identify_member) | **POST** /users/{user_guid}/members/{member_guid}/identify | Identify member
 [**list_account_numbers_by_account**](MxPlatformApi.md#list_account_numbers_by_account) | **GET** /users/{user_guid}/accounts/{account_guid}/account_numbers | List account numbers by account
 [**list_account_numbers_by_member**](MxPlatformApi.md#list_account_numbers_by_member) | **GET** /users/{user_guid}/members/{member_guid}/account_numbers | List account numbers by member
@@ -54,6 +56,7 @@ Method | HTTP request | Description
 [**list_statements_by_member**](MxPlatformApi.md#list_statements_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements | List statements by member
 [**list_taggings**](MxPlatformApi.md#list_taggings) | **GET** /users/{user_guid}/taggings | List taggings
 [**list_tags**](MxPlatformApi.md#list_tags) | **GET** /users/{user_guid}/tags | List tags
+[**list_tax_documents**](MxPlatformApi.md#list_tax_documents) | **GET** /users/{user_guid}/members/{member_guid}/tax_documents | List Tax Documents
 [**list_transaction_rules**](MxPlatformApi.md#list_transaction_rules) | **GET** /users/{user_guid}/transaction_rules | List transaction rules
 [**list_transactions**](MxPlatformApi.md#list_transactions) | **GET** /users/{user_guid}/transactions | List transactions
 [**list_transactions_by_account**](MxPlatformApi.md#list_transactions_by_account) | **GET** /users/{user_guid}/accounts/{account_guid}/transactions | List transactions by account
@@ -77,6 +80,7 @@ Method | HTTP request | Description
 [**read_statement_by_member**](MxPlatformApi.md#read_statement_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid} | Read statement by member
 [**read_tag**](MxPlatformApi.md#read_tag) | **GET** /users/{user_guid}/tags/{tag_guid} | Read tag
 [**read_tagging**](MxPlatformApi.md#read_tagging) | **GET** /users/{user_guid}/taggings/{tagging_guid} | Read tagging
+[**read_tax_document**](MxPlatformApi.md#read_tax_document) | **GET** /users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid} | Read a Tax Document
 [**read_transaction**](MxPlatformApi.md#read_transaction) | **GET** /users/{user_guid}/transactions/{transaction_guid} | Read transaction
 [**read_transaction_rule**](MxPlatformApi.md#read_transaction_rule) | **GET** /users/{user_guid}/transaction_rules/{transaction_rule_guid} | Read transaction rule
 [**read_user**](MxPlatformApi.md#read_user) | **GET** /users/{user_guid} | Read user
@@ -1974,6 +1978,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **download_tax_document**
+> file_type download_tax_document(tax_document_guid, member_guid, user_guid)
+
+Download a Tax Document PDF
+
+Use this endpoint to download a PDF version of the specified tax document. The endpoint URL is the base URL appended with the uri of the tax_document.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    tax_document_guid = "TAX-987dfds1b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `tax_document`.
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Download a Tax Document PDF
+        api_response = api_instance.download_tax_document(tax_document_guid, member_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->download_tax_document: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tax_document_guid** | **str**| The unique id for a &#x60;tax_document&#x60;. |
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+pdf
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **enhance_transactions**
 > EnhanceTransactionsResponseBody enhance_transactions(enhance_transactions_request_body)
 
@@ -2193,6 +2278,86 @@ with mx_platform_python.ApiClient(configuration) as api_client:
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->fetch_statements: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+[**MemberResponseBody**](MemberResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Accepted |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_tax_documents**
+> MemberResponseBody fetch_tax_documents(member_guid, user_guid)
+
+Fetch Tax Documents
+
+Use this endpoint to fetch (aggregate) the tax documents associated with the specified member. This request **does not** return the latest tax documents. It just starts the document aggregation process and returns the initial state of the process. You must interact with the newly aggregated data using the other document endpoints in this reference. This request may also trigger multi-factor authentication which requires end-user input and a specific process for answering authentication challenges.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.member_response_body import MemberResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Fetch Tax Documents
+        api_response = api_instance.fetch_tax_documents(member_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->fetch_tax_documents: %s\n" % e)
 ```
 
 
@@ -4487,6 +4652,99 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_tax_documents**
+> TaxDocumentsResponseBody list_tax_documents(member_guid, user_guid)
+
+List Tax Documents
+
+Use this endpoint to get a paginated list of tax documents.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.tax_documents_response_body import TaxDocumentsResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List Tax Documents
+        api_response = api_instance.list_tax_documents(member_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_tax_documents: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Tax Documents
+        api_response = api_instance.list_tax_documents(member_guid, user_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_tax_documents: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**TaxDocumentsResponseBody**](TaxDocumentsResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_transaction_rules**
 > TransactionRulesResponseBody list_transaction_rules(user_guid)
 
@@ -6407,6 +6665,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TaggingResponseBody**](TaggingResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_tax_document**
+> TaxDocumentResponseBody read_tax_document(tax_document_guid, member_guid, user_guid)
+
+Read a Tax Document
+
+Use this endpoint to read the attributes of the specified tax document.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.tax_document_response_body import TaxDocumentResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    tax_document_guid = "TAX-987dfds1b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `tax_document`.
+    member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read a Tax Document
+        api_response = api_instance.read_tax_document(tax_document_guid, member_guid, user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_tax_document: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tax_document_guid** | **str**| The unique id for a &#x60;tax_document&#x60;. |
+ **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+[**TaxDocumentResponseBody**](TaxDocumentResponseBody.md)
 
 ### Authorization
 
