@@ -82,6 +82,8 @@ class InstitutionResponse(ModelNormal):
         """
         return {
             'code': (str, none_type,),  # noqa: E501
+            'forgot_password_url': (str, none_type,),  # noqa: E501
+            'forgot_username_url': (str, none_type,),  # noqa: E501
             'instructional_text': (str, none_type,),  # noqa: E501
             'medium_logo_url': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
@@ -91,6 +93,7 @@ class InstitutionResponse(ModelNormal):
             'supports_account_verification': (bool, none_type,),  # noqa: E501
             'supports_oauth': (bool, none_type,),  # noqa: E501
             'supports_transaction_history': (bool, none_type,),  # noqa: E501
+            'trouble_signing_in_url': (str, none_type,),  # noqa: E501
             'url': (str, none_type,),  # noqa: E501
         }
 
@@ -101,6 +104,8 @@ class InstitutionResponse(ModelNormal):
 
     attribute_map = {
         'code': 'code',  # noqa: E501
+        'forgot_password_url': 'forgot_password_url',  # noqa: E501
+        'forgot_username_url': 'forgot_username_url',  # noqa: E501
         'instructional_text': 'instructional_text',  # noqa: E501
         'medium_logo_url': 'medium_logo_url',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -110,6 +115,7 @@ class InstitutionResponse(ModelNormal):
         'supports_account_verification': 'supports_account_verification',  # noqa: E501
         'supports_oauth': 'supports_oauth',  # noqa: E501
         'supports_transaction_history': 'supports_transaction_history',  # noqa: E501
+        'trouble_signing_in_url': 'trouble_signing_in_url',  # noqa: E501
         'url': 'url',  # noqa: E501
     }
 
@@ -155,6 +161,8 @@ class InstitutionResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             code (str, none_type): [optional]  # noqa: E501
+            forgot_password_url (str, none_type): [optional]  # noqa: E501
+            forgot_username_url (str, none_type): [optional]  # noqa: E501
             instructional_text (str, none_type): [optional]  # noqa: E501
             medium_logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
@@ -164,6 +172,7 @@ class InstitutionResponse(ModelNormal):
             supports_account_verification (bool, none_type): [optional]  # noqa: E501
             supports_oauth (bool, none_type): [optional]  # noqa: E501
             supports_transaction_history (bool, none_type): [optional]  # noqa: E501
+            trouble_signing_in_url (str, none_type): [optional]  # noqa: E501
             url (str, none_type): [optional]  # noqa: E501
         """
 
@@ -247,6 +256,8 @@ class InstitutionResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             code (str, none_type): [optional]  # noqa: E501
+            forgot_password_url (str, none_type): [optional]  # noqa: E501
+            forgot_username_url (str, none_type): [optional]  # noqa: E501
             instructional_text (str, none_type): [optional]  # noqa: E501
             medium_logo_url (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
@@ -256,6 +267,7 @@ class InstitutionResponse(ModelNormal):
             supports_account_verification (bool, none_type): [optional]  # noqa: E501
             supports_oauth (bool, none_type): [optional]  # noqa: E501
             supports_transaction_history (bool, none_type): [optional]  # noqa: E501
+            trouble_signing_in_url (str, none_type): [optional]  # noqa: E501
             url (str, none_type): [optional]  # noqa: E501
         """
 
