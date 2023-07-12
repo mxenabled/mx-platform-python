@@ -21,6 +21,7 @@ from mx_platform_python.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from mx_platform_python.model.account_create_request_body import AccountCreateRequestBody
 from mx_platform_python.model.account_numbers_response_body import AccountNumbersResponseBody
 from mx_platform_python.model.account_owners_response_body import AccountOwnersResponseBody
 from mx_platform_python.model.account_response_body import AccountResponseBody
@@ -448,6 +449,64 @@ class MxPlatformApi(object):
                     'member_guid': 'path',
                     'user_guid': 'path',
                     'managed_transaction_create_request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_manual_account_endpoint = _Endpoint(
+            settings={
+                'response_type': (AccountResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/accounts',
+                'operation_id': 'create_manual_account',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'account_create_request_body',
+                ],
+                'required': [
+                    'user_guid',
+                    'account_create_request_body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'account_create_request_body':
+                        (AccountCreateRequestBody,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'account_create_request_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -973,6 +1032,61 @@ class MxPlatformApi(object):
                     'account_guid': 'path',
                     'member_guid': 'path',
                     'transaction_guid': 'path',
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_manual_account_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/accounts/{account_guid}',
+                'operation_id': 'delete_manual_account',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_guid',
+                    'user_guid',
+                ],
+                'required': [
+                    'account_guid',
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_guid': 'account_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'account_guid': 'path',
                     'user_guid': 'path',
                 },
                 'collection_format_map': {
@@ -6581,6 +6695,88 @@ class MxPlatformApi(object):
             managed_transaction_create_request_body
         return self.create_managed_transaction_endpoint.call_with_http_info(**kwargs)
 
+    def create_manual_account(
+        self,
+        user_guid,
+        account_create_request_body,
+        **kwargs
+    ):
+        """Create manual account  # noqa: E501
+
+        This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed..  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_manual_account(user_guid, account_create_request_body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            account_create_request_body (AccountCreateRequestBody): Manual account object to be created.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            AccountResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['account_create_request_body'] = \
+            account_create_request_body
+        return self.create_manual_account_endpoint.call_with_http_info(**kwargs)
+
     def create_member(
         self,
         user_guid,
@@ -7326,6 +7522,88 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.delete_managed_transaction_endpoint.call_with_http_info(**kwargs)
+
+    def delete_manual_account(
+        self,
+        account_guid,
+        user_guid,
+        **kwargs
+    ):
+        """Delete manual account  # noqa: E501
+
+        This endpoint deletes accounts that were manually created. The API will respond with an empty object and a status of `204 No Content`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_manual_account(account_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_guid (str): The unique id for an `account`.
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['account_guid'] = \
+            account_guid
+        kwargs['user_guid'] = \
+            user_guid
+        return self.delete_manual_account_endpoint.call_with_http_info(**kwargs)
 
     def delete_member(
         self,

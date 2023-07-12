@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**create_managed_account**](MxPlatformApi.md#create_managed_account) | **POST** /users/{user_guid}/managed_members/{member_guid}/accounts | Create managed account
 [**create_managed_member**](MxPlatformApi.md#create_managed_member) | **POST** /users/{user_guid}/managed_members | Create managed member
 [**create_managed_transaction**](MxPlatformApi.md#create_managed_transaction) | **POST** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions | Create managed transaction
+[**create_manual_account**](MxPlatformApi.md#create_manual_account) | **POST** /users/{user_guid}/accounts | Create manual account
 [**create_member**](MxPlatformApi.md#create_member) | **POST** /users/{user_guid}/members | Create member
 [**create_tag**](MxPlatformApi.md#create_tag) | **POST** /users/{user_guid}/tags | Create tag
 [**create_tagging**](MxPlatformApi.md#create_tagging) | **POST** /users/{user_guid}/taggings | Create tagging
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**delete_managed_account**](MxPlatformApi.md#delete_managed_account) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid} | Delete managed account
 [**delete_managed_member**](MxPlatformApi.md#delete_managed_member) | **DELETE** /users/{user_guid}/managed_members/{member_guid} | Delete managed member
 [**delete_managed_transaction**](MxPlatformApi.md#delete_managed_transaction) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Delete managed transaction
+[**delete_manual_account**](MxPlatformApi.md#delete_manual_account) | **DELETE** /users/{user_guid}/accounts/{account_guid} | Delete manual account
 [**delete_member**](MxPlatformApi.md#delete_member) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
 [**delete_tag**](MxPlatformApi.md#delete_tag) | **DELETE** /users/{user_guid}/tags/{tag_guid} | Delete tag
 [**delete_tagging**](MxPlatformApi.md#delete_tagging) | **DELETE** /users/{user_guid}/taggings/{tagging_guid} | Delete tagging
@@ -660,6 +662,122 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_manual_account**
+> AccountResponseBody create_manual_account(user_guid, account_create_request_body)
+
+Create manual account
+
+This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed..
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.account_response_body import AccountResponseBody
+from mx_platform_python.model.account_create_request_body import AccountCreateRequestBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    account_create_request_body = AccountCreateRequestBody(
+        skip_webhook=True,
+        account=AccountCreateRequest(
+            account_number="5366",
+            apr=1.0,
+            apy=1.0,
+            available_balance=1000.0,
+            available_credit=1000.0,
+            balance=1000.0,
+            cash_surrender_value=1000.0,
+            credit_limit=100.0,
+            currency_code="USD",
+            day_payment_is_due=20,
+            death_benefit=1000,
+            id="1040434698",
+            interest_rate=1.0,
+            is_closed=False,
+            is_hidden=False,
+            last_payment=100.0,
+            last_payment_at="2015-10-13T17:57:37.000Z",
+            loan_amount=1000.0,
+            matures_on="2015-10-13T17:57:37.000Z",
+            metadata="some metadata",
+            minimum_balance=100.0,
+            minimum_payment=10.0,
+            name="Test account 2",
+            nickname="Swiss Account",
+            original_balance=10.0,
+            payment_due_at="2015-10-13T17:57:37.000Z",
+            payoff_balance=10.0,
+            routing_number="68899990000000",
+            started_on="2015-10-13T17:57:37.000Z",
+            subtype="NONE",
+            type="SAVINGS",
+        ),
+    ) # AccountCreateRequestBody | Manual account object to be created.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create manual account
+        api_response = api_instance.create_manual_account(user_guid, account_create_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->create_manual_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **account_create_request_body** | [**AccountCreateRequestBody**](AccountCreateRequestBody.md)| Manual account object to be created. |
+
+### Return type
+
+[**AccountResponseBody**](AccountResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1421,6 +1539,84 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_manual_account**
+> delete_manual_account(account_guid, user_guid)
+
+Delete manual account
+
+This endpoint deletes accounts that were manually created. The API will respond with an empty object and a status of `204 No Content`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    account_guid = "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1" # str | The unique id for an `account`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete manual account
+        api_instance.delete_manual_account(account_guid, user_guid)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->delete_manual_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_guid** | **str**| The unique id for an &#x60;account&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No content. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

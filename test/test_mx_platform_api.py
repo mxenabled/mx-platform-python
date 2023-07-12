@@ -65,6 +65,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_create_manual_account(self):
+        """Test case for create_manual_account
+
+        Create manual account  # noqa: E501
+        """
+        pass
+
     def test_create_member(self):
         """Test case for create_member
 
@@ -125,6 +132,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for delete_managed_transaction
 
         Delete managed transaction  # noqa: E501
+        """
+        pass
+
+    def test_delete_manual_account(self):
+        """Test case for delete_manual_account
+
+        Delete manual account  # noqa: E501
         """
         pass
 

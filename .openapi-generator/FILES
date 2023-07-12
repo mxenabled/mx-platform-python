@@ -1,5 +1,7 @@
 .gitignore
 README.md
+docs/AccountCreateRequest.md
+docs/AccountCreateRequestBody.md
 docs/AccountNumberResponse.md
 docs/AccountNumbersResponseBody.md
 docs/AccountOwnerResponse.md
@@ -128,6 +130,8 @@ mx_platform_python/apis/__init__.py
 mx_platform_python/configuration.py
 mx_platform_python/exceptions.py
 mx_platform_python/model/__init__.py
+mx_platform_python/model/account_create_request.py
+mx_platform_python/model/account_create_request_body.py
 mx_platform_python/model/account_number_response.py
 mx_platform_python/model/account_numbers_response_body.py
 mx_platform_python/model/account_owner_response.py
@@ -255,6 +259,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_account_create_request.py
+test/test_account_create_request_body.py
 test/test_account_number_response.py
 test/test_account_numbers_response_body.py
 test/test_account_owner_response.py
