@@ -10,7 +10,7 @@
 """
 
 
-__version__ = "0.14.0"
+__version__ = "0.15.0"
 
 # import ApiClient
 from mx_platform_python.api_client import ApiClient

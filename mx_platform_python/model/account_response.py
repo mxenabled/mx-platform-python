@@ -82,6 +82,10 @@ class AccountResponse(ModelNormal):
         """
         return {
             'account_number': (str, none_type,),  # noqa: E501
+            'account_ownership': (str, none_type,),  # noqa: E501
+            'annuity_policy_to_date': (str, none_type,),  # noqa: E501
+            'annuity_provider': (str, none_type,),  # noqa: E501
+            'annuity_term_year': (float, none_type,),  # noqa: E501
             'apr': (float, none_type,),  # noqa: E501
             'apy': (float, none_type,),  # noqa: E501
             'available_balance': (float, none_type,),  # noqa: E501
@@ -89,7 +93,7 @@ class AccountResponse(ModelNormal):
             'balance': (float, none_type,),  # noqa: E501
             'cash_balance': (float, none_type,),  # noqa: E501
             'cash_surrender_value': (float, none_type,),  # noqa: E501
-            'created_at': (str, none_type,),  # noqa: E501
+            'created_at': (str,),  # noqa: E501
             'credit_limit': (float, none_type,),  # noqa: E501
             'currency_code': (str, none_type,),  # noqa: E501
             'day_payment_is_due': (int, none_type,),  # noqa: E501
@@ -98,16 +102,16 @@ class AccountResponse(ModelNormal):
             'holdings_value': (float, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'imported_at': (str, none_type,),  # noqa: E501
+            'interest_rate': (float, none_type,),  # noqa: E501
             'institution_code': (str, none_type,),  # noqa: E501
             'insured_name': (str, none_type,),  # noqa: E501
-            'interest_rate': (float, none_type,),  # noqa: E501
-            'is_business': (bool, none_type,),  # noqa: E501
             'is_closed': (bool, none_type,),  # noqa: E501
             'is_hidden': (bool, none_type,),  # noqa: E501
             'is_manual': (bool, none_type,),  # noqa: E501
             'last_payment': (float, none_type,),  # noqa: E501
             'last_payment_at': (str, none_type,),  # noqa: E501
             'loan_amount': (float, none_type,),  # noqa: E501
+            'margin_balance': (float, none_type,),  # noqa: E501
             'matures_on': (str, none_type,),  # noqa: E501
             'member_guid': (str, none_type,),  # noqa: E501
             'member_id': (str, none_type,),  # noqa: E501
@@ -122,10 +126,11 @@ class AccountResponse(ModelNormal):
             'payment_due_at': (str, none_type,),  # noqa: E501
             'payoff_balance': (float, none_type,),  # noqa: E501
             'premium_amount': (float, none_type,),  # noqa: E501
-            'property_type': (str, none_type,),  # noqa: E501
             'routing_number': (str, none_type,),  # noqa: E501
             'started_on': (str, none_type,),  # noqa: E501
             'subtype': (str, none_type,),  # noqa: E501
+            'today_ugl_amount': (float, none_type,),  # noqa: E501
+            'today_ugl_percentage': (float, none_type,),  # noqa: E501
             'total_account_value': (float, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -140,6 +145,10 @@ class AccountResponse(ModelNormal):
 
     attribute_map = {
         'account_number': 'account_number',  # noqa: E501
+        'account_ownership': 'account_ownership',  # noqa: E501
+        'annuity_policy_to_date': 'annuity_policy_to_date',  # noqa: E501
+        'annuity_provider': 'annuity_provider',  # noqa: E501
+        'annuity_term_year': 'annuity_term_year',  # noqa: E501
         'apr': 'apr',  # noqa: E501
         'apy': 'apy',  # noqa: E501
         'available_balance': 'available_balance',  # noqa: E501
@@ -156,16 +165,16 @@ class AccountResponse(ModelNormal):
         'holdings_value': 'holdings_value',  # noqa: E501
         'id': 'id',  # noqa: E501
         'imported_at': 'imported_at',  # noqa: E501
+        'interest_rate': 'interest_rate',  # noqa: E501
         'institution_code': 'institution_code',  # noqa: E501
         'insured_name': 'insured_name',  # noqa: E501
-        'interest_rate': 'interest_rate',  # noqa: E501
-        'is_business': 'is_business',  # noqa: E501
         'is_closed': 'is_closed',  # noqa: E501
         'is_hidden': 'is_hidden',  # noqa: E501
         'is_manual': 'is_manual',  # noqa: E501
         'last_payment': 'last_payment',  # noqa: E501
         'last_payment_at': 'last_payment_at',  # noqa: E501
         'loan_amount': 'loan_amount',  # noqa: E501
+        'margin_balance': 'margin_balance',  # noqa: E501
         'matures_on': 'matures_on',  # noqa: E501
         'member_guid': 'member_guid',  # noqa: E501
         'member_id': 'member_id',  # noqa: E501
@@ -180,10 +189,11 @@ class AccountResponse(ModelNormal):
         'payment_due_at': 'payment_due_at',  # noqa: E501
         'payoff_balance': 'payoff_balance',  # noqa: E501
         'premium_amount': 'premium_amount',  # noqa: E501
-        'property_type': 'property_type',  # noqa: E501
         'routing_number': 'routing_number',  # noqa: E501
         'started_on': 'started_on',  # noqa: E501
         'subtype': 'subtype',  # noqa: E501
+        'today_ugl_amount': 'today_ugl_amount',  # noqa: E501
+        'today_ugl_percentage': 'today_ugl_percentage',  # noqa: E501
         'total_account_value': 'total_account_value',  # noqa: E501
         'type': 'type',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -233,6 +243,10 @@ class AccountResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_number (str, none_type): [optional]  # noqa: E501
+            account_ownership (str, none_type): [optional]  # noqa: E501
+            annuity_policy_to_date (str, none_type): [optional]  # noqa: E501
+            annuity_provider (str, none_type): [optional]  # noqa: E501
+            annuity_term_year (float, none_type): [optional]  # noqa: E501
             apr (float, none_type): [optional]  # noqa: E501
             apy (float, none_type): [optional]  # noqa: E501
             available_balance (float, none_type): [optional]  # noqa: E501
@@ -240,7 +254,7 @@ class AccountResponse(ModelNormal):
             balance (float, none_type): [optional]  # noqa: E501
             cash_balance (float, none_type): [optional]  # noqa: E501
             cash_surrender_value (float, none_type): [optional]  # noqa: E501
-            created_at (str, none_type): [optional]  # noqa: E501
+            created_at (str): [optional]  # noqa: E501
             credit_limit (float, none_type): [optional]  # noqa: E501
             currency_code (str, none_type): [optional]  # noqa: E501
             day_payment_is_due (int, none_type): [optional]  # noqa: E501
@@ -249,16 +263,16 @@ class AccountResponse(ModelNormal):
             holdings_value (float, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             imported_at (str, none_type): [optional]  # noqa: E501
+            interest_rate (float, none_type): [optional]  # noqa: E501
             institution_code (str, none_type): [optional]  # noqa: E501
             insured_name (str, none_type): [optional]  # noqa: E501
-            interest_rate (float, none_type): [optional]  # noqa: E501
-            is_business (bool, none_type): [optional]  # noqa: E501
             is_closed (bool, none_type): [optional]  # noqa: E501
             is_hidden (bool, none_type): [optional]  # noqa: E501
             is_manual (bool, none_type): [optional]  # noqa: E501
             last_payment (float, none_type): [optional]  # noqa: E501
             last_payment_at (str, none_type): [optional]  # noqa: E501
             loan_amount (float, none_type): [optional]  # noqa: E501
+            margin_balance (float, none_type): [optional]  # noqa: E501
             matures_on (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
             member_id (str, none_type): [optional]  # noqa: E501
@@ -273,10 +287,11 @@ class AccountResponse(ModelNormal):
             payment_due_at (str, none_type): [optional]  # noqa: E501
             payoff_balance (float, none_type): [optional]  # noqa: E501
             premium_amount (float, none_type): [optional]  # noqa: E501
-            property_type (str, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             started_on (str, none_type): [optional]  # noqa: E501
             subtype (str, none_type): [optional]  # noqa: E501
+            today_ugl_amount (float, none_type): [optional]  # noqa: E501
+            today_ugl_percentage (float, none_type): [optional]  # noqa: E501
             total_account_value (float, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
@@ -364,6 +379,10 @@ class AccountResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_number (str, none_type): [optional]  # noqa: E501
+            account_ownership (str, none_type): [optional]  # noqa: E501
+            annuity_policy_to_date (str, none_type): [optional]  # noqa: E501
+            annuity_provider (str, none_type): [optional]  # noqa: E501
+            annuity_term_year (float, none_type): [optional]  # noqa: E501
             apr (float, none_type): [optional]  # noqa: E501
             apy (float, none_type): [optional]  # noqa: E501
             available_balance (float, none_type): [optional]  # noqa: E501
@@ -371,7 +390,7 @@ class AccountResponse(ModelNormal):
             balance (float, none_type): [optional]  # noqa: E501
             cash_balance (float, none_type): [optional]  # noqa: E501
             cash_surrender_value (float, none_type): [optional]  # noqa: E501
-            created_at (str, none_type): [optional]  # noqa: E501
+            created_at (str): [optional]  # noqa: E501
             credit_limit (float, none_type): [optional]  # noqa: E501
             currency_code (str, none_type): [optional]  # noqa: E501
             day_payment_is_due (int, none_type): [optional]  # noqa: E501
@@ -380,16 +399,16 @@ class AccountResponse(ModelNormal):
             holdings_value (float, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             imported_at (str, none_type): [optional]  # noqa: E501
+            interest_rate (float, none_type): [optional]  # noqa: E501
             institution_code (str, none_type): [optional]  # noqa: E501
             insured_name (str, none_type): [optional]  # noqa: E501
-            interest_rate (float, none_type): [optional]  # noqa: E501
-            is_business (bool, none_type): [optional]  # noqa: E501
             is_closed (bool, none_type): [optional]  # noqa: E501
             is_hidden (bool, none_type): [optional]  # noqa: E501
             is_manual (bool, none_type): [optional]  # noqa: E501
             last_payment (float, none_type): [optional]  # noqa: E501
             last_payment_at (str, none_type): [optional]  # noqa: E501
             loan_amount (float, none_type): [optional]  # noqa: E501
+            margin_balance (float, none_type): [optional]  # noqa: E501
             matures_on (str, none_type): [optional]  # noqa: E501
             member_guid (str, none_type): [optional]  # noqa: E501
             member_id (str, none_type): [optional]  # noqa: E501
@@ -404,10 +423,11 @@ class AccountResponse(ModelNormal):
             payment_due_at (str, none_type): [optional]  # noqa: E501
             payoff_balance (float, none_type): [optional]  # noqa: E501
             premium_amount (float, none_type): [optional]  # noqa: E501
-            property_type (str, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             started_on (str, none_type): [optional]  # noqa: E501
             subtype (str, none_type): [optional]  # noqa: E501
+            today_ugl_amount (float, none_type): [optional]  # noqa: E501
+            today_ugl_percentage (float, none_type): [optional]  # noqa: E501
             total_account_value (float, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501

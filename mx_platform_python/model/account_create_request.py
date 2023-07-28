@@ -81,37 +81,28 @@ class AccountCreateRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'balance': (float,),  # noqa: E501
+            'account_type': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'account_number': (str,),  # noqa: E501
+            'account_subtype_name': (str,),  # noqa: E501
             'apr': (float,),  # noqa: E501
             'apy': (float,),  # noqa: E501
             'available_balance': (float,),  # noqa: E501
-            'available_credit': (float,),  # noqa: E501
+            'balance': (float,),  # noqa: E501
             'cash_surrender_value': (float,),  # noqa: E501
             'credit_limit': (float,),  # noqa: E501
             'currency_code': (str,),  # noqa: E501
-            'day_payment_is_due': (int,),  # noqa: E501
             'death_benefit': (int,),  # noqa: E501
-            'id': (str,),  # noqa: E501
             'interest_rate': (float,),  # noqa: E501
+            'is_business': (bool,),  # noqa: E501
             'is_closed': (bool,),  # noqa: E501
             'is_hidden': (bool,),  # noqa: E501
-            'last_payment': (float,),  # noqa: E501
-            'last_payment_at': (str,),  # noqa: E501
             'loan_amount': (float,),  # noqa: E501
-            'matures_on': (str,),  # noqa: E501
             'metadata': (str,),  # noqa: E501
-            'minimum_balance': (float,),  # noqa: E501
-            'minimum_payment': (float,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'original_balance': (float,),  # noqa: E501
-            'payment_due_at': (str,),  # noqa: E501
-            'payoff_balance': (float,),  # noqa: E501
-            'routing_number': (str,),  # noqa: E501
-            'started_on': (str,),  # noqa: E501
-            'subtype': (str,),  # noqa: E501
+            'property_type': (int,),  # noqa: E501
+            'property_type_name': (str,),  # noqa: E501
+            'skip_webhook': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -120,37 +111,28 @@ class AccountCreateRequest(ModelNormal):
 
 
     attribute_map = {
-        'balance': 'balance',  # noqa: E501
+        'account_type': 'account_type',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'account_number': 'account_number',  # noqa: E501
+        'account_subtype_name': 'account_subtype_name',  # noqa: E501
         'apr': 'apr',  # noqa: E501
         'apy': 'apy',  # noqa: E501
         'available_balance': 'available_balance',  # noqa: E501
-        'available_credit': 'available_credit',  # noqa: E501
+        'balance': 'balance',  # noqa: E501
         'cash_surrender_value': 'cash_surrender_value',  # noqa: E501
         'credit_limit': 'credit_limit',  # noqa: E501
         'currency_code': 'currency_code',  # noqa: E501
-        'day_payment_is_due': 'day_payment_is_due',  # noqa: E501
         'death_benefit': 'death_benefit',  # noqa: E501
-        'id': 'id',  # noqa: E501
         'interest_rate': 'interest_rate',  # noqa: E501
+        'is_business': 'is_business',  # noqa: E501
         'is_closed': 'is_closed',  # noqa: E501
         'is_hidden': 'is_hidden',  # noqa: E501
-        'last_payment': 'last_payment',  # noqa: E501
-        'last_payment_at': 'last_payment_at',  # noqa: E501
         'loan_amount': 'loan_amount',  # noqa: E501
-        'matures_on': 'matures_on',  # noqa: E501
         'metadata': 'metadata',  # noqa: E501
-        'minimum_balance': 'minimum_balance',  # noqa: E501
-        'minimum_payment': 'minimum_payment',  # noqa: E501
         'nickname': 'nickname',  # noqa: E501
         'original_balance': 'original_balance',  # noqa: E501
-        'payment_due_at': 'payment_due_at',  # noqa: E501
-        'payoff_balance': 'payoff_balance',  # noqa: E501
-        'routing_number': 'routing_number',  # noqa: E501
-        'started_on': 'started_on',  # noqa: E501
-        'subtype': 'subtype',  # noqa: E501
+        'property_type': 'property_type',  # noqa: E501
+        'property_type_name': 'property_type_name',  # noqa: E501
+        'skip_webhook': 'skip_webhook',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,13 +142,12 @@ class AccountCreateRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, balance, name, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_type, name, *args, **kwargs):  # noqa: E501
         """AccountCreateRequest - a model defined in OpenAPI
 
         Args:
-            balance (float):
+            account_type (int):
             name (str):
-            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -199,34 +180,26 @@ class AccountCreateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_number (str): [optional]  # noqa: E501
+            account_subtype_name (str): [optional]  # noqa: E501
             apr (float): [optional]  # noqa: E501
             apy (float): [optional]  # noqa: E501
             available_balance (float): [optional]  # noqa: E501
-            available_credit (float): [optional]  # noqa: E501
+            balance (float): [optional]  # noqa: E501
             cash_surrender_value (float): [optional]  # noqa: E501
             credit_limit (float): [optional]  # noqa: E501
             currency_code (str): [optional]  # noqa: E501
-            day_payment_is_due (int): [optional]  # noqa: E501
             death_benefit (int): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
             interest_rate (float): [optional]  # noqa: E501
+            is_business (bool): [optional]  # noqa: E501
             is_closed (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
-            last_payment (float): [optional]  # noqa: E501
-            last_payment_at (str): [optional]  # noqa: E501
             loan_amount (float): [optional]  # noqa: E501
-            matures_on (str): [optional]  # noqa: E501
             metadata (str): [optional]  # noqa: E501
-            minimum_balance (float): [optional]  # noqa: E501
-            minimum_payment (float): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             original_balance (float): [optional]  # noqa: E501
-            payment_due_at (str): [optional]  # noqa: E501
-            payoff_balance (float): [optional]  # noqa: E501
-            routing_number (str): [optional]  # noqa: E501
-            started_on (str): [optional]  # noqa: E501
-            subtype (str): [optional]  # noqa: E501
+            property_type (int): [optional]  # noqa: E501
+            property_type_name (str): [optional]  # noqa: E501
+            skip_webhook (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,9 +227,8 @@ class AccountCreateRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.balance = balance
+        self.account_type = account_type
         self.name = name
-        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -277,13 +249,12 @@ class AccountCreateRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, balance, name, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_type, name, *args, **kwargs):  # noqa: E501
         """AccountCreateRequest - a model defined in OpenAPI
 
         Args:
-            balance (float):
+            account_type (int):
             name (str):
-            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -316,34 +287,26 @@ class AccountCreateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_number (str): [optional]  # noqa: E501
+            account_subtype_name (str): [optional]  # noqa: E501
             apr (float): [optional]  # noqa: E501
             apy (float): [optional]  # noqa: E501
             available_balance (float): [optional]  # noqa: E501
-            available_credit (float): [optional]  # noqa: E501
+            balance (float): [optional]  # noqa: E501
             cash_surrender_value (float): [optional]  # noqa: E501
             credit_limit (float): [optional]  # noqa: E501
             currency_code (str): [optional]  # noqa: E501
-            day_payment_is_due (int): [optional]  # noqa: E501
             death_benefit (int): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
             interest_rate (float): [optional]  # noqa: E501
+            is_business (bool): [optional]  # noqa: E501
             is_closed (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
-            last_payment (float): [optional]  # noqa: E501
-            last_payment_at (str): [optional]  # noqa: E501
             loan_amount (float): [optional]  # noqa: E501
-            matures_on (str): [optional]  # noqa: E501
             metadata (str): [optional]  # noqa: E501
-            minimum_balance (float): [optional]  # noqa: E501
-            minimum_payment (float): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             original_balance (float): [optional]  # noqa: E501
-            payment_due_at (str): [optional]  # noqa: E501
-            payoff_balance (float): [optional]  # noqa: E501
-            routing_number (str): [optional]  # noqa: E501
-            started_on (str): [optional]  # noqa: E501
-            subtype (str): [optional]  # noqa: E501
+            property_type (int): [optional]  # noqa: E501
+            property_type_name (str): [optional]  # noqa: E501
+            skip_webhook (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -369,9 +332,8 @@ class AccountCreateRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.balance = balance
+        self.account_type = account_type
         self.name = name
-        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
