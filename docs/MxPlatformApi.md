@@ -706,9 +706,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_api.MxPlatformApi(api_client)
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     account_create_request_body = AccountCreateRequestBody(
-        skip_webhook=True,
         account=AccountCreateRequest(
-            account_subtype_name="SAVINGS",
+            account_subtype_name="PERSONAL",
             account_type=2,
             apr=1.0,
             apy=1.0,

@@ -126,6 +126,8 @@ class AccountResponse(ModelNormal):
             'payment_due_at': (str, none_type,),  # noqa: E501
             'payoff_balance': (float, none_type,),  # noqa: E501
             'premium_amount': (float, none_type,),  # noqa: E501
+            'property_type': (int, none_type,),  # noqa: E501
+            'property_type_name': (str, none_type,),  # noqa: E501
             'routing_number': (str, none_type,),  # noqa: E501
             'started_on': (str, none_type,),  # noqa: E501
             'subtype': (str, none_type,),  # noqa: E501
@@ -189,6 +191,8 @@ class AccountResponse(ModelNormal):
         'payment_due_at': 'payment_due_at',  # noqa: E501
         'payoff_balance': 'payoff_balance',  # noqa: E501
         'premium_amount': 'premium_amount',  # noqa: E501
+        'property_type': 'property_type',  # noqa: E501
+        'property_type_name': 'property_type_name',  # noqa: E501
         'routing_number': 'routing_number',  # noqa: E501
         'started_on': 'started_on',  # noqa: E501
         'subtype': 'subtype',  # noqa: E501
@@ -287,6 +291,8 @@ class AccountResponse(ModelNormal):
             payment_due_at (str, none_type): [optional]  # noqa: E501
             payoff_balance (float, none_type): [optional]  # noqa: E501
             premium_amount (float, none_type): [optional]  # noqa: E501
+            property_type (int, none_type): [optional]  # noqa: E501
+            property_type_name (str, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             started_on (str, none_type): [optional]  # noqa: E501
             subtype (str, none_type): [optional]  # noqa: E501
@@ -423,6 +429,8 @@ class AccountResponse(ModelNormal):
             payment_due_at (str, none_type): [optional]  # noqa: E501
             payoff_balance (float, none_type): [optional]  # noqa: E501
             premium_amount (float, none_type): [optional]  # noqa: E501
+            property_type (int, none_type): [optional]  # noqa: E501
+            property_type_name (str, none_type): [optional]  # noqa: E501
             routing_number (str, none_type): [optional]  # noqa: E501
             started_on (str, none_type): [optional]  # noqa: E501
             subtype (str, none_type): [optional]  # noqa: E501

@@ -49,6 +49,8 @@ Name | Type | Description | Notes
 **payment_due_at** | **str, none_type** |  | [optional] 
 **payoff_balance** | **float, none_type** |  | [optional] 
 **premium_amount** | **float, none_type** |  | [optional] 
+**property_type** | **int, none_type** |  | [optional] 
+**property_type_name** | **str, none_type** |  | [optional] 
 **routing_number** | **str, none_type** |  | [optional] 
 **started_on** | **str, none_type** |  | [optional] 
 **subtype** | **str, none_type** |  | [optional] 

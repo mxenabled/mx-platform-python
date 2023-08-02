@@ -87,7 +87,6 @@ class AccountCreateRequestBody(ModelNormal):
         """
         lazy_import()
         return {
-            'skip_webhook': (bool, none_type,),  # noqa: E501
             'account': (AccountCreateRequest,),  # noqa: E501
         }
 
@@ -97,7 +96,6 @@ class AccountCreateRequestBody(ModelNormal):
 
 
     attribute_map = {
-        'skip_webhook': 'skip_webhook',  # noqa: E501
         'account': 'account',  # noqa: E501
     }
 
@@ -142,7 +140,6 @@ class AccountCreateRequestBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            skip_webhook (bool, none_type): [optional]  # noqa: E501
             account (AccountCreateRequest): [optional]  # noqa: E501
         """
 
@@ -225,7 +222,6 @@ class AccountCreateRequestBody(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            skip_webhook (bool, none_type): [optional]  # noqa: E501
             account (AccountCreateRequest): [optional]  # noqa: E501
         """
 
