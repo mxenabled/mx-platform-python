@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_type** | **int** |  | 
+**account_type** | **str** |  | 
 **name** | **str** |  | 
-**account_subtype_name** | **str** |  | [optional] 
+**account_subtype** | **str** |  | [optional] 
 **apr** | **float** |  | [optional] 
 **apy** | **float** |  | [optional] 
 **available_balance** | **float** |  | [optional] 
@@ -23,8 +23,7 @@ Name | Type | Description | Notes
 **metadata** | **str** |  | [optional] 
 **nickname** | **str** |  | [optional] 
 **original_balance** | **float** |  | [optional] 
-**property_type** | **int** |  | [optional] 
-**property_type_name** | **str** |  | [optional] 
+**property_type** | **str** |  | [optional] 
 **skip_webhook** | **bool** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

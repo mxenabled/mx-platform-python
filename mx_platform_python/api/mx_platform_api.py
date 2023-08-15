@@ -3832,6 +3832,7 @@ class MxPlatformApi(object):
                     'user_guid',
                     'member_is_managed_by_user',
                     'page',
+                    'is_manual',
                     'records_per_page',
                 ],
                 'required': [
@@ -3856,6 +3857,8 @@ class MxPlatformApi(object):
                         (bool,),
                     'page':
                         (int,),
+                    'is_manual':
+                        (bool,),
                     'records_per_page':
                         (int,),
                 },
@@ -3863,12 +3866,14 @@ class MxPlatformApi(object):
                     'user_guid': 'user_guid',
                     'member_is_managed_by_user': 'member_is_managed_by_user',
                     'page': 'page',
+                    'is_manual': 'is_manual',
                     'records_per_page': 'records_per_page',
                 },
                 'location_map': {
                     'user_guid': 'path',
                     'member_is_managed_by_user': 'query',
                     'page': 'query',
+                    'is_manual': 'query',
                     'records_per_page': 'query',
                 },
                 'collection_format_map': {
@@ -11146,6 +11151,7 @@ class MxPlatformApi(object):
         Keyword Args:
             member_is_managed_by_user (bool): List only accounts whose member is managed by the user.. [optional]
             page (int): Specify current page.. [optional]
+            is_manual (bool): List only accounts that were manually created.. [optional]
             records_per_page (int): Specify records per page.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

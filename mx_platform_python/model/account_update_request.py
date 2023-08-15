@@ -81,7 +81,27 @@ class AccountUpdateRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'account_subtype': (str,),  # noqa: E501
+            'account_type': (str,),  # noqa: E501
+            'apr': (float,),  # noqa: E501
+            'apy': (float,),  # noqa: E501
+            'available_balance': (float,),  # noqa: E501
+            'balance': (float,),  # noqa: E501
+            'cash_surrender_value': (float,),  # noqa: E501
+            'credit_limit': (float,),  # noqa: E501
+            'currency_code': (str,),  # noqa: E501
+            'death_benefit': (int,),  # noqa: E501
+            'interest_rate': (float,),  # noqa: E501
+            'is_business': (bool,),  # noqa: E501
+            'is_closed': (bool,),  # noqa: E501
             'is_hidden': (bool,),  # noqa: E501
+            'loan_amount': (float,),  # noqa: E501
+            'metadata': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'nickname': (str,),  # noqa: E501
+            'original_balance': (float,),  # noqa: E501
+            'property_type': (str,),  # noqa: E501
+            'skip_webhook': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -90,7 +110,27 @@ class AccountUpdateRequest(ModelNormal):
 
 
     attribute_map = {
+        'account_subtype': 'account_subtype',  # noqa: E501
+        'account_type': 'account_type',  # noqa: E501
+        'apr': 'apr',  # noqa: E501
+        'apy': 'apy',  # noqa: E501
+        'available_balance': 'available_balance',  # noqa: E501
+        'balance': 'balance',  # noqa: E501
+        'cash_surrender_value': 'cash_surrender_value',  # noqa: E501
+        'credit_limit': 'credit_limit',  # noqa: E501
+        'currency_code': 'currency_code',  # noqa: E501
+        'death_benefit': 'death_benefit',  # noqa: E501
+        'interest_rate': 'interest_rate',  # noqa: E501
+        'is_business': 'is_business',  # noqa: E501
+        'is_closed': 'is_closed',  # noqa: E501
         'is_hidden': 'is_hidden',  # noqa: E501
+        'loan_amount': 'loan_amount',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'nickname': 'nickname',  # noqa: E501
+        'original_balance': 'original_balance',  # noqa: E501
+        'property_type': 'property_type',  # noqa: E501
+        'skip_webhook': 'skip_webhook',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,7 +174,27 @@ class AccountUpdateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            account_subtype (str): [optional]  # noqa: E501
+            account_type (str): [optional]  # noqa: E501
+            apr (float): [optional]  # noqa: E501
+            apy (float): [optional]  # noqa: E501
+            available_balance (float): [optional]  # noqa: E501
+            balance (float): [optional]  # noqa: E501
+            cash_surrender_value (float): [optional]  # noqa: E501
+            credit_limit (float): [optional]  # noqa: E501
+            currency_code (str): [optional]  # noqa: E501
+            death_benefit (int): [optional]  # noqa: E501
+            interest_rate (float): [optional]  # noqa: E501
+            is_business (bool): [optional]  # noqa: E501
+            is_closed (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
+            loan_amount (float): [optional]  # noqa: E501
+            metadata (str): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            nickname (str): [optional]  # noqa: E501
+            original_balance (float): [optional]  # noqa: E501
+            property_type (str): [optional]  # noqa: E501
+            skip_webhook (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -216,7 +276,27 @@ class AccountUpdateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            account_subtype (str): [optional]  # noqa: E501
+            account_type (str): [optional]  # noqa: E501
+            apr (float): [optional]  # noqa: E501
+            apy (float): [optional]  # noqa: E501
+            available_balance (float): [optional]  # noqa: E501
+            balance (float): [optional]  # noqa: E501
+            cash_surrender_value (float): [optional]  # noqa: E501
+            credit_limit (float): [optional]  # noqa: E501
+            currency_code (str): [optional]  # noqa: E501
+            death_benefit (int): [optional]  # noqa: E501
+            interest_rate (float): [optional]  # noqa: E501
+            is_business (bool): [optional]  # noqa: E501
+            is_closed (bool): [optional]  # noqa: E501
             is_hidden (bool): [optional]  # noqa: E501
+            loan_amount (float): [optional]  # noqa: E501
+            metadata (str): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            nickname (str): [optional]  # noqa: E501
+            original_balance (float): [optional]  # noqa: E501
+            property_type (str): [optional]  # noqa: E501
+            skip_webhook (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

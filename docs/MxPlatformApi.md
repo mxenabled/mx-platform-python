@@ -707,8 +707,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     account_create_request_body = AccountCreateRequestBody(
         account=AccountCreateRequest(
-            account_subtype_name="PERSONAL",
-            account_type=2,
+            account_subtype="PERSONAL",
+            account_type="SAVINGS",
             apr=1.0,
             apy=1.0,
             available_balance=1000.0,
@@ -726,9 +726,8 @@ with mx_platform_python.ApiClient(configuration) as api_client:
             name="Test account 2",
             nickname="Swiss Account",
             original_balance=10.0,
-            property_type=1,
-            property_type_name="VEHICLE",
-            skip_webhook=False,
+            property_type="VEHICLE",
+            skip_webhook=True,
         ),
     ) # AccountCreateRequestBody | Manual account object to be created.
 
@@ -5449,6 +5448,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     member_is_managed_by_user = True # bool | List only accounts whose member is managed by the user. (optional)
     page = 1 # int | Specify current page. (optional)
+    is_manual = True # bool | List only accounts that were manually created. (optional)
     records_per_page = 10 # int | Specify records per page. (optional)
 
     # example passing only required values which don't have defaults set
@@ -5463,7 +5463,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List accounts
-        api_response = api_instance.list_user_accounts(user_guid, member_is_managed_by_user=member_is_managed_by_user, page=page, records_per_page=records_per_page)
+        api_response = api_instance.list_user_accounts(user_guid, member_is_managed_by_user=member_is_managed_by_user, page=page, is_manual=is_manual, records_per_page=records_per_page)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->list_user_accounts: %s\n" % e)
@@ -5477,6 +5477,7 @@ Name | Type | Description  | Notes
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **member_is_managed_by_user** | **bool**| List only accounts whose member is managed by the user. | [optional]
  **page** | **int**| Specify current page. | [optional]
+ **is_manual** | **bool**| List only accounts that were manually created. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
@@ -7715,7 +7716,27 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     account_update_request_body = AccountUpdateRequestBody(
         account=AccountUpdateRequest(
+            account_subtype="PERSONAL",
+            account_type="SAVINGS",
+            apr=1.0,
+            apy=1.0,
+            available_balance=1000.0,
+            balance=1000.0,
+            cash_surrender_value=1000.0,
+            credit_limit=100.0,
+            currency_code="USD",
+            death_benefit=1000,
+            interest_rate=1.0,
+            is_business=False,
+            is_closed=False,
             is_hidden=False,
+            loan_amount=1000.0,
+            metadata="some metadata",
+            name="Test account 2",
+            nickname="Swiss Account",
+            original_balance=10.0,
+            property_type="VEHICLE",
+            skip_webhook=True,
         ),
     ) # AccountUpdateRequestBody | Account object to be created with optional parameters (is_hidden)
 

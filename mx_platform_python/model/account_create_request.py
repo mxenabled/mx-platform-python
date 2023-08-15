@@ -81,9 +81,9 @@ class AccountCreateRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_type': (int,),  # noqa: E501
+            'account_type': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'account_subtype_name': (str,),  # noqa: E501
+            'account_subtype': (str,),  # noqa: E501
             'apr': (float,),  # noqa: E501
             'apy': (float,),  # noqa: E501
             'available_balance': (float,),  # noqa: E501
@@ -100,8 +100,7 @@ class AccountCreateRequest(ModelNormal):
             'metadata': (str,),  # noqa: E501
             'nickname': (str,),  # noqa: E501
             'original_balance': (float,),  # noqa: E501
-            'property_type': (int,),  # noqa: E501
-            'property_type_name': (str,),  # noqa: E501
+            'property_type': (str,),  # noqa: E501
             'skip_webhook': (bool,),  # noqa: E501
         }
 
@@ -113,7 +112,7 @@ class AccountCreateRequest(ModelNormal):
     attribute_map = {
         'account_type': 'account_type',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'account_subtype_name': 'account_subtype_name',  # noqa: E501
+        'account_subtype': 'account_subtype',  # noqa: E501
         'apr': 'apr',  # noqa: E501
         'apy': 'apy',  # noqa: E501
         'available_balance': 'available_balance',  # noqa: E501
@@ -131,7 +130,6 @@ class AccountCreateRequest(ModelNormal):
         'nickname': 'nickname',  # noqa: E501
         'original_balance': 'original_balance',  # noqa: E501
         'property_type': 'property_type',  # noqa: E501
-        'property_type_name': 'property_type_name',  # noqa: E501
         'skip_webhook': 'skip_webhook',  # noqa: E501
     }
 
@@ -146,7 +144,7 @@ class AccountCreateRequest(ModelNormal):
         """AccountCreateRequest - a model defined in OpenAPI
 
         Args:
-            account_type (int):
+            account_type (str):
             name (str):
 
         Keyword Args:
@@ -180,7 +178,7 @@ class AccountCreateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_subtype_name (str): [optional]  # noqa: E501
+            account_subtype (str): [optional]  # noqa: E501
             apr (float): [optional]  # noqa: E501
             apy (float): [optional]  # noqa: E501
             available_balance (float): [optional]  # noqa: E501
@@ -197,8 +195,7 @@ class AccountCreateRequest(ModelNormal):
             metadata (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             original_balance (float): [optional]  # noqa: E501
-            property_type (int): [optional]  # noqa: E501
-            property_type_name (str): [optional]  # noqa: E501
+            property_type (str): [optional]  # noqa: E501
             skip_webhook (bool): [optional]  # noqa: E501
         """
 
@@ -253,7 +250,7 @@ class AccountCreateRequest(ModelNormal):
         """AccountCreateRequest - a model defined in OpenAPI
 
         Args:
-            account_type (int):
+            account_type (str):
             name (str):
 
         Keyword Args:
@@ -287,7 +284,7 @@ class AccountCreateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_subtype_name (str): [optional]  # noqa: E501
+            account_subtype (str): [optional]  # noqa: E501
             apr (float): [optional]  # noqa: E501
             apy (float): [optional]  # noqa: E501
             available_balance (float): [optional]  # noqa: E501
@@ -304,8 +301,7 @@ class AccountCreateRequest(ModelNormal):
             metadata (str): [optional]  # noqa: E501
             nickname (str): [optional]  # noqa: E501
             original_balance (float): [optional]  # noqa: E501
-            property_type (int): [optional]  # noqa: E501
-            property_type_name (str): [optional]  # noqa: E501
+            property_type (str): [optional]  # noqa: E501
             skip_webhook (bool): [optional]  # noqa: E501
         """
 
