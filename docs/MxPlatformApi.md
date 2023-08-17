@@ -812,6 +812,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     member_create_request_body = MemberCreateRequestBody(
         client_redirect_url="https://mx.com",
+        enable_app2app=False,
         member=MemberCreateRequest(
             background_aggregation_is_disabled=False,
             credentials=[
@@ -7413,6 +7414,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     member_guid = "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b" # str | The unique id for a `member`.
     user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
     client_redirect_url = "https://mx.com" # str | A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`. (optional)
+    enable_app2app = "false" # str | This indicates whether OAuth app2app behavior is enabled for institutions that support it. Defaults to `true`. This setting is not persistent. (optional)
     referral_source = "APP" # str | Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`. (optional)
     skip_aggregation = False # bool | Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page. (optional)
     ui_message_webview_url_scheme = "mx" # str | A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`. (optional)
@@ -7429,7 +7431,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Request oauth window uri
-        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, client_redirect_url=client_redirect_url, referral_source=referral_source, skip_aggregation=skip_aggregation, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
+        api_response = api_instance.request_o_auth_window_uri(member_guid, user_guid, client_redirect_url=client_redirect_url, enable_app2app=enable_app2app, referral_source=referral_source, skip_aggregation=skip_aggregation, ui_message_webview_url_scheme=ui_message_webview_url_scheme)
         pprint(api_response)
     except mx_platform_python.ApiException as e:
         print("Exception when calling MxPlatformApi->request_o_auth_window_uri: %s\n" % e)
@@ -7443,6 +7445,7 @@ Name | Type | Description  | Notes
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
  **client_redirect_url** | **str**| A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with &#x60;referral_source&#x3D;APP&#x60;. | [optional]
+ **enable_app2app** | **str**| This indicates whether OAuth app2app behavior is enabled for institutions that support it. Defaults to &#x60;true&#x60;. This setting is not persistent. | [optional]
  **referral_source** | **str**| Must be either &#x60;BROWSER&#x60; or &#x60;APP&#x60; depending on the implementation. Defaults to &#x60;BROWSER&#x60;. | [optional]
  **skip_aggregation** | **bool**| Setting this parameter to &#x60;true&#x60; will prevent the member from automatically aggregating after being redirected from the authorization page. | [optional]
  **ui_message_webview_url_scheme** | **str**| A scheme for routing the user back to the application state they were previously in. Only available with &#x60;referral_source&#x3D;APP&#x60;. | [optional]

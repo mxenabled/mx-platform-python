@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_redirect_url** | **str** |  | [optional] 
+**enable_app2app** | **bool** |  | [optional] 
 **member** | [**MemberCreateRequest**](MemberCreateRequest.md) |  | [optional] 
 **referral_source** | **str** |  | [optional] 
 **ui_message_webview_url_scheme** | **str** |  | [optional] 

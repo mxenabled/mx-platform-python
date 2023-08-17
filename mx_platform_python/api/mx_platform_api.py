@@ -5228,6 +5228,7 @@ class MxPlatformApi(object):
                     'member_guid',
                     'user_guid',
                     'client_redirect_url',
+                    'enable_app2app',
                     'referral_source',
                     'skip_aggregation',
                     'ui_message_webview_url_scheme',
@@ -5255,6 +5256,8 @@ class MxPlatformApi(object):
                         (str,),
                     'client_redirect_url':
                         (str,),
+                    'enable_app2app':
+                        (str,),
                     'referral_source':
                         (str,),
                     'skip_aggregation':
@@ -5266,6 +5269,7 @@ class MxPlatformApi(object):
                     'member_guid': 'member_guid',
                     'user_guid': 'user_guid',
                     'client_redirect_url': 'client_redirect_url',
+                    'enable_app2app': 'enable_app2app',
                     'referral_source': 'referral_source',
                     'skip_aggregation': 'skip_aggregation',
                     'ui_message_webview_url_scheme': 'ui_message_webview_url_scheme',
@@ -5274,6 +5278,7 @@ class MxPlatformApi(object):
                     'member_guid': 'path',
                     'user_guid': 'path',
                     'client_redirect_url': 'query',
+                    'enable_app2app': 'query',
                     'referral_source': 'query',
                     'skip_aggregation': 'query',
                     'ui_message_webview_url_scheme': 'query',
@@ -13116,6 +13121,7 @@ class MxPlatformApi(object):
 
         Keyword Args:
             client_redirect_url (str): A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`.. [optional]
+            enable_app2app (str): This indicates whether OAuth app2app behavior is enabled for institutions that support it. Defaults to `true`. This setting is not persistent.. [optional]
             referral_source (str): Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`.. [optional]
             skip_aggregation (bool): Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page.. [optional]
             ui_message_webview_url_scheme (str): A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`.. [optional]
