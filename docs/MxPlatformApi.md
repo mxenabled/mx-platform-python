@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**create_managed_transaction**](MxPlatformApi.md#create_managed_transaction) | **POST** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions | Create managed transaction
 [**create_manual_account**](MxPlatformApi.md#create_manual_account) | **POST** /users/{user_guid}/accounts | Create manual account
 [**create_member**](MxPlatformApi.md#create_member) | **POST** /users/{user_guid}/members | Create member
+[**create_spending_plan**](MxPlatformApi.md#create_spending_plan) | **POST** /users/{user_guid}/spending_plans | Create spending plan
+[**create_spending_plan_iteration_item**](MxPlatformApi.md#create_spending_plan_iteration_item) | **POST** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items | Create spending plan iteration item
 [**create_tag**](MxPlatformApi.md#create_tag) | **POST** /users/{user_guid}/tags | Create tag
 [**create_tagging**](MxPlatformApi.md#create_tagging) | **POST** /users/{user_guid}/taggings | Create tagging
 [**create_transaction_rule**](MxPlatformApi.md#create_transaction_rule) | **POST** /users/{user_guid}/transaction_rules | Create transaction rule
@@ -22,6 +24,9 @@ Method | HTTP request | Description
 [**delete_managed_transaction**](MxPlatformApi.md#delete_managed_transaction) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Delete managed transaction
 [**delete_manual_account**](MxPlatformApi.md#delete_manual_account) | **DELETE** /users/{user_guid}/accounts/{account_guid} | Delete manual account
 [**delete_member**](MxPlatformApi.md#delete_member) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
+[**delete_spending_plan**](MxPlatformApi.md#delete_spending_plan) | **DELETE** /users/{user_guid}/spending_plans/{spending_plan_guid} | Delete spending plan
+[**delete_spending_plan_account**](MxPlatformApi.md#delete_spending_plan_account) | **DELETE** /users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts/{spending_plan_account_guid} | Delete spending plan account
+[**delete_spending_plan_iteration_item**](MxPlatformApi.md#delete_spending_plan_iteration_item) | **DELETE** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid} | Delete spending plan iteration item
 [**delete_tag**](MxPlatformApi.md#delete_tag) | **DELETE** /users/{user_guid}/tags/{tag_guid} | Delete tag
 [**delete_tagging**](MxPlatformApi.md#delete_tagging) | **DELETE** /users/{user_guid}/taggings/{tagging_guid} | Delete tagging
 [**delete_transaction_rule**](MxPlatformApi.md#delete_transaction_rule) | **DELETE** /users/{user_guid}/transaction_rules/{transaction_rule_guid} | Delete transaction rule
@@ -55,6 +60,10 @@ Method | HTTP request | Description
 [**list_member_credentials**](MxPlatformApi.md#list_member_credentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 [**list_members**](MxPlatformApi.md#list_members) | **GET** /users/{user_guid}/members | List members
 [**list_merchants**](MxPlatformApi.md#list_merchants) | **GET** /merchants | List merchants
+[**list_spending_plan_accounts**](MxPlatformApi.md#list_spending_plan_accounts) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts | List spending plan accounts
+[**list_spending_plan_iteration_items**](MxPlatformApi.md#list_spending_plan_iteration_items) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items | List spending plan iteration items
+[**list_spending_plan_iterations**](MxPlatformApi.md#list_spending_plan_iterations) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations | List spending plan iterations
+[**list_spending_plans**](MxPlatformApi.md#list_spending_plans) | **GET** /users/{user_guid}/spending_plans | List spending plans
 [**list_statements_by_member**](MxPlatformApi.md#list_statements_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements | List statements by member
 [**list_taggings**](MxPlatformApi.md#list_taggings) | **GET** /users/{user_guid}/taggings | List taggings
 [**list_tags**](MxPlatformApi.md#list_tags) | **GET** /users/{user_guid}/tags | List tags
@@ -79,6 +88,10 @@ Method | HTTP request | Description
 [**read_member_status**](MxPlatformApi.md#read_member_status) | **GET** /users/{user_guid}/members/{member_guid}/status | Read member status
 [**read_merchant**](MxPlatformApi.md#read_merchant) | **GET** /merchants/{merchant_guid} | Read merchant
 [**read_merchant_location**](MxPlatformApi.md#read_merchant_location) | **GET** /merchant_locations/{merchant_location_guid} | Read merchant location
+[**read_spending_plan_account**](MxPlatformApi.md#read_spending_plan_account) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts/{spending_plan_account_guid} | Read spending plan account
+[**read_spending_plan_iteration**](MxPlatformApi.md#read_spending_plan_iteration) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/{iteration_number} | Read a spending plan iteration
+[**read_spending_plan_iteration_item**](MxPlatformApi.md#read_spending_plan_iteration_item) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid} | Read a spending plan iteration item
+[**read_spending_plan_user**](MxPlatformApi.md#read_spending_plan_user) | **GET** /users/{user_guid}/spending_plans/{spending_plan_guid} | Read a spending plan for a user
 [**read_statement_by_member**](MxPlatformApi.md#read_statement_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid} | Read statement by member
 [**read_tag**](MxPlatformApi.md#read_tag) | **GET** /users/{user_guid}/tags/{tag_guid} | Read tag
 [**read_tagging**](MxPlatformApi.md#read_tagging) | **GET** /users/{user_guid}/taggings/{tagging_guid} | Read tagging
@@ -97,6 +110,7 @@ Method | HTTP request | Description
 [**update_managed_member**](MxPlatformApi.md#update_managed_member) | **PUT** /users/{user_guid}/managed_members/{member_guid} | Update managed member
 [**update_managed_transaction**](MxPlatformApi.md#update_managed_transaction) | **PUT** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid} | Update managed transaction
 [**update_member**](MxPlatformApi.md#update_member) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
+[**update_spending_plan_iteration_item**](MxPlatformApi.md#update_spending_plan_iteration_item) | **PUT** /users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid} | Update a spending plan iteration item
 [**update_tag**](MxPlatformApi.md#update_tag) | **PUT** /users/{user_guid}/tags/{tag_guid} | Update tag
 [**update_tagging**](MxPlatformApi.md#update_tagging) | **PUT** /users/{user_guid}/taggings/{tagging_guid} | Update tagging
 [**update_transaction**](MxPlatformApi.md#update_transaction) | **PUT** /users/{user_guid}/transactions/{transaction_guid} | Update transaction
@@ -867,6 +881,173 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Accepted |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_spending_plan**
+> SpendingPlanResponse create_spending_plan(user_guid)
+
+Create spending plan
+
+This endpoint creates a new `spending_plan` for the user.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_response import SpendingPlanResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create spending plan
+        api_response = api_instance.create_spending_plan(user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->create_spending_plan: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+[**SpendingPlanResponse**](SpendingPlanResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_spending_plan_iteration_item**
+> SpendingPlanIterationItemResponse create_spending_plan_iteration_item(spending_plan_guid, user_guid, spending_plan_iteration_item_create_request_body)
+
+Create spending plan iteration item
+
+This endpoint creates a new `spending_plan_iteration_item`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iteration_item_create_request_body import SpendingPlanIterationItemCreateRequestBody
+from mx_platform_python.model.spending_plan_iteration_item_response import SpendingPlanIterationItemResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_iteration_item_create_request_body = SpendingPlanIterationItemCreateRequestBody(
+        category_guid="CAT-40faf068-abb4-405c-8f6a-e883ed541fff",
+        item_type=1,
+        planned_amount=110,
+        scheduled_payment_guid="SCP-c731988a-712f-4f83-9b3b-0aa5b3d5208b",
+        top_level_category_guid="CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8",
+    ) # SpendingPlanIterationItemCreateRequestBody | Iteration item to be created with required parameters (planned_amount)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create spending plan iteration item
+        api_response = api_instance.create_spending_plan_iteration_item(spending_plan_guid, user_guid, spending_plan_iteration_item_create_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->create_spending_plan_iteration_item: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_iteration_item_create_request_body** | [**SpendingPlanIterationItemCreateRequestBody**](SpendingPlanIterationItemCreateRequestBody.md)| Iteration item to be created with required parameters (planned_amount) |
+
+### Return type
+
+[**SpendingPlanIterationItemResponse**](SpendingPlanIterationItemResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1665,6 +1846,244 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. |
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_spending_plan**
+> delete_spending_plan(user_guid, spending_plan_guid)
+
+Delete spending plan
+
+Use this endpoint to delete a user's `spending_plan`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique ID for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete spending plan
+        api_instance.delete_spending_plan(user_guid, spending_plan_guid)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->delete_spending_plan: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique ID for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_spending_plan_account**
+> delete_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid)
+
+Delete spending plan account
+
+Use this endpoint to delete a `spending_plan_account`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique ID for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    spending_plan_account_guid = "ACT-e9f80fee-84da-7s7r-9a5e-0346g4279b4c" # str | The unique ID for the specified account.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete spending plan account
+        api_instance.delete_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->delete_spending_plan_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique ID for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **spending_plan_account_guid** | **str**| The unique ID for the specified account. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_spending_plan_iteration_item**
+> delete_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid)
+
+Delete spending plan iteration item
+
+Use this endpoint to delete a spending plan `iteration_item`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique ID for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    iteration_item_guid = "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3" # str | The unique ID for the `iteration_item`.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete spending plan iteration item
+        api_instance.delete_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->delete_spending_plan_iteration_item: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique ID for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **iteration_item_guid** | **str**| The unique ID for the &#x60;iteration_item&#x60;. |
 
 ### Return type
 
@@ -4563,6 +4982,376 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_spending_plan_accounts**
+> SpendingPlanAccountsResponse list_spending_plan_accounts(user_guid, spending_plan_guid)
+
+List spending plan accounts
+
+Use this endpoint to list all the spending plan accounts associated with the spending plan.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_accounts_response import SpendingPlanAccountsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List spending plan accounts
+        api_response = api_instance.list_spending_plan_accounts(user_guid, spending_plan_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_accounts: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List spending plan accounts
+        api_response = api_instance.list_spending_plan_accounts(user_guid, spending_plan_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_accounts: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanAccountsResponse**](SpendingPlanAccountsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_spending_plan_iteration_items**
+> SpendingPlanIterationItemsResponseBody list_spending_plan_iteration_items(user_guid, spending_plan_guid)
+
+List spending plan iteration items
+
+Use this endpoint to list all the spending plan `iteration_items` associated with the `iteration`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iteration_items_response_body import SpendingPlanIterationItemsResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List spending plan iteration items
+        api_response = api_instance.list_spending_plan_iteration_items(user_guid, spending_plan_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_iteration_items: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List spending plan iteration items
+        api_response = api_instance.list_spending_plan_iteration_items(user_guid, spending_plan_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_iteration_items: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanIterationItemsResponseBody**](SpendingPlanIterationItemsResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_spending_plan_iterations**
+> SpendingPlanIterationsResponse list_spending_plan_iterations(user_guid, spending_plan_guid)
+
+List spending plan iterations
+
+Use this endpoint to list all the spending plan `iterations` associated with the `spending_plan`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iterations_response import SpendingPlanIterationsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List spending plan iterations
+        api_response = api_instance.list_spending_plan_iterations(user_guid, spending_plan_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_iterations: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List spending plan iterations
+        api_response = api_instance.list_spending_plan_iterations(user_guid, spending_plan_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plan_iterations: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanIterationsResponse**](SpendingPlanIterationsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_spending_plans**
+> SpendingPlansResponseBody list_spending_plans(user_guid)
+
+List spending plans
+
+Use this endpoint to list all the spending plans associated with the user.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plans_response_body import SpendingPlansResponseBody
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List spending plans
+        api_response = api_instance.list_spending_plans(user_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plans: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List spending plans
+        api_response = api_instance.list_spending_plans(user_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->list_spending_plans: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlansResponseBody**](SpendingPlansResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_statements_by_member**
 > StatementsResponseBody list_statements_by_member(member_guid, user_guid)
 
@@ -6630,6 +7419,384 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **read_spending_plan_account**
+> SpendingPlanAccountResponse read_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid)
+
+Read spending plan account
+
+Use this endpoint to read the attributes of a specific spending plan account according to its unique GUID.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_account_response import SpendingPlanAccountResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    spending_plan_account_guid = "ACT-e9f80fee-84da-7s7r-9a5e-0346g4279b4c" # str | The unique ID for the specified account.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read spending plan account
+        api_response = api_instance.read_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Read spending plan account
+        api_response = api_instance.read_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **spending_plan_account_guid** | **str**| The unique ID for the specified account. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanAccountResponse**](SpendingPlanAccountResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_spending_plan_iteration**
+> SpendingPlanIterationResponse read_spending_plan_iteration(user_guid, spending_plan_guid, iteration_number)
+
+Read a spending plan iteration
+
+Use this endpoint to read the attributes of a specific spending plan `iteration` according to its `iteration_number`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iteration_response import SpendingPlanIterationResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    iteration_number = 1 # int | The current iteration number for the spending plan `iteration``.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read a spending plan iteration
+        api_response = api_instance.read_spending_plan_iteration(user_guid, spending_plan_guid, iteration_number)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_iteration: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Read a spending plan iteration
+        api_response = api_instance.read_spending_plan_iteration(user_guid, spending_plan_guid, iteration_number, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_iteration: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **iteration_number** | **int**| The current iteration number for the spending plan &#x60;iteration&#x60;&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanIterationResponse**](SpendingPlanIterationResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_spending_plan_iteration_item**
+> SpendingPlanIterationItemResponse read_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid)
+
+Read a spending plan iteration item
+
+Use this endpoint to read the attributes of a specific spending plan `iteration_item` according to its unique GUID.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iteration_item_response import SpendingPlanIterationItemResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    iteration_item_guid = "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3" # str | The unique ID for the `iteration_item`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read a spending plan iteration item
+        api_response = api_instance.read_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_iteration_item: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Read a spending plan iteration item
+        api_response = api_instance.read_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_iteration_item: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **iteration_item_guid** | **str**| The unique ID for the &#x60;iteration_item&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanIterationItemResponse**](SpendingPlanIterationItemResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_spending_plan_user**
+> SpendingPlanResponse read_spending_plan_user(user_guid, spending_plan_guid)
+
+Read a spending plan for a user
+
+Use this endpoint to read the attributes of a specific spending plan according to its unique GUID.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_response import SpendingPlanResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    page = 1 # int | Specify current page. (optional)
+    records_per_page = 10 # int | Specify records per page. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Read a spending plan for a user
+        api_response = api_instance.read_spending_plan_user(user_guid, spending_plan_guid)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_user: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Read a spending plan for a user
+        api_response = api_instance.read_spending_plan_user(user_guid, spending_plan_guid, page=page, records_per_page=records_per_page)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->read_spending_plan_user: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
+
+### Return type
+
+[**SpendingPlanResponse**](SpendingPlanResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **read_statement_by_member**
 > StatementResponseBody read_statement_by_member(member_guid, statement_guid, user_guid)
 
@@ -8267,6 +9434,97 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberResponseBody**](MemberResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_spending_plan_iteration_item**
+> SpendingPlanIterationItemResponse update_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, spending_plan_iteration_item_create_request_body)
+
+Update a spending plan iteration item
+
+Use this endpoint to update an existing `spending_plan_iteration_item`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import mx_platform_python
+from mx_platform_python.api import mx_platform_api
+from mx_platform_python.model.spending_plan_iteration_item_create_request_body import SpendingPlanIterationItemCreateRequestBody
+from mx_platform_python.model.spending_plan_iteration_item_response import SpendingPlanIterationItemResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_api.MxPlatformApi(api_client)
+    user_guid = "USR-fa7537f3-48aa-a683-a02a-b18940482f54" # str | The unique id for a `user`.
+    spending_plan_guid = "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262" # str | The unique ID for the `spending_plan`.
+    iteration_item_guid = "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3" # str | The unique ID for the `iteration_item`.
+    spending_plan_iteration_item_create_request_body = SpendingPlanIterationItemCreateRequestBody(
+        category_guid="CAT-40faf068-abb4-405c-8f6a-e883ed541fff",
+        item_type=1,
+        planned_amount=110,
+        scheduled_payment_guid="SCP-c731988a-712f-4f83-9b3b-0aa5b3d5208b",
+        top_level_category_guid="CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8",
+    ) # SpendingPlanIterationItemCreateRequestBody | Iteration item object to be updated with required parameter (iteration_item_guid)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a spending plan iteration item
+        api_response = api_instance.update_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, spending_plan_iteration_item_create_request_body)
+        pprint(api_response)
+    except mx_platform_python.ApiException as e:
+        print("Exception when calling MxPlatformApi->update_spending_plan_iteration_item: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. |
+ **spending_plan_guid** | **str**| The unique ID for the &#x60;spending_plan&#x60;. |
+ **iteration_item_guid** | **str**| The unique ID for the &#x60;iteration_item&#x60;. |
+ **spending_plan_iteration_item_create_request_body** | [**SpendingPlanIterationItemCreateRequestBody**](SpendingPlanIterationItemCreateRequestBody.md)| Iteration item object to be updated with required parameter (iteration_item_guid) |
+
+### Return type
+
+[**SpendingPlanIterationItemResponse**](SpendingPlanIterationItemResponse.md)
 
 ### Authorization
 

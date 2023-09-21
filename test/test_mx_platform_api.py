@@ -79,6 +79,20 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_create_spending_plan(self):
+        """Test case for create_spending_plan
+
+        Create spending plan  # noqa: E501
+        """
+        pass
+
+    def test_create_spending_plan_iteration_item(self):
+        """Test case for create_spending_plan_iteration_item
+
+        Create spending plan iteration item  # noqa: E501
+        """
+        pass
+
     def test_create_tag(self):
         """Test case for create_tag
 
@@ -146,6 +160,27 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for delete_member
 
         Delete member  # noqa: E501
+        """
+        pass
+
+    def test_delete_spending_plan(self):
+        """Test case for delete_spending_plan
+
+        Delete spending plan  # noqa: E501
+        """
+        pass
+
+    def test_delete_spending_plan_account(self):
+        """Test case for delete_spending_plan_account
+
+        Delete spending plan account  # noqa: E501
+        """
+        pass
+
+    def test_delete_spending_plan_iteration_item(self):
+        """Test case for delete_spending_plan_iteration_item
+
+        Delete spending plan iteration item  # noqa: E501
         """
         pass
 
@@ -380,6 +415,34 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_spending_plan_accounts(self):
+        """Test case for list_spending_plan_accounts
+
+        List spending plan accounts  # noqa: E501
+        """
+        pass
+
+    def test_list_spending_plan_iteration_items(self):
+        """Test case for list_spending_plan_iteration_items
+
+        List spending plan iteration items  # noqa: E501
+        """
+        pass
+
+    def test_list_spending_plan_iterations(self):
+        """Test case for list_spending_plan_iterations
+
+        List spending plan iterations  # noqa: E501
+        """
+        pass
+
+    def test_list_spending_plans(self):
+        """Test case for list_spending_plans
+
+        List spending plans  # noqa: E501
+        """
+        pass
+
     def test_list_statements_by_member(self):
         """Test case for list_statements_by_member
 
@@ -548,6 +611,34 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_read_spending_plan_account(self):
+        """Test case for read_spending_plan_account
+
+        Read spending plan account  # noqa: E501
+        """
+        pass
+
+    def test_read_spending_plan_iteration(self):
+        """Test case for read_spending_plan_iteration
+
+        Read a spending plan iteration  # noqa: E501
+        """
+        pass
+
+    def test_read_spending_plan_iteration_item(self):
+        """Test case for read_spending_plan_iteration_item
+
+        Read a spending plan iteration item  # noqa: E501
+        """
+        pass
+
+    def test_read_spending_plan_user(self):
+        """Test case for read_spending_plan_user
+
+        Read a spending plan for a user  # noqa: E501
+        """
+        pass
+
     def test_read_statement_by_member(self):
         """Test case for read_statement_by_member
 
@@ -671,6 +762,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for update_member
 
         Update member  # noqa: E501
+        """
+        pass
+
+    def test_update_spending_plan_iteration_item(self):
+        """Test case for update_spending_plan_iteration_item
+
+        Update a spending plan iteration item  # noqa: E501
         """
         pass
 

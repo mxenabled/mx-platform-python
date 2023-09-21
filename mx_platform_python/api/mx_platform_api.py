@@ -61,6 +61,15 @@ from mx_platform_python.model.merchants_response_body import MerchantsResponseBo
 from mx_platform_python.model.o_auth_window_response_body import OAuthWindowResponseBody
 from mx_platform_python.model.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
 from mx_platform_python.model.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
+from mx_platform_python.model.spending_plan_account_response import SpendingPlanAccountResponse
+from mx_platform_python.model.spending_plan_accounts_response import SpendingPlanAccountsResponse
+from mx_platform_python.model.spending_plan_iteration_item_create_request_body import SpendingPlanIterationItemCreateRequestBody
+from mx_platform_python.model.spending_plan_iteration_item_response import SpendingPlanIterationItemResponse
+from mx_platform_python.model.spending_plan_iteration_items_response_body import SpendingPlanIterationItemsResponseBody
+from mx_platform_python.model.spending_plan_iteration_response import SpendingPlanIterationResponse
+from mx_platform_python.model.spending_plan_iterations_response import SpendingPlanIterationsResponse
+from mx_platform_python.model.spending_plan_response import SpendingPlanResponse
+from mx_platform_python.model.spending_plans_response_body import SpendingPlansResponseBody
 from mx_platform_python.model.statement_response_body import StatementResponseBody
 from mx_platform_python.model.statements_response_body import StatementsResponseBody
 from mx_platform_python.model.tag_create_request_body import TagCreateRequestBody
@@ -565,6 +574,121 @@ class MxPlatformApi(object):
                 'location_map': {
                     'user_guid': 'path',
                     'member_create_request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_spending_plan_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans',
+                'operation_id': 'create_spending_plan',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                ],
+                'required': [
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.create_spending_plan_iteration_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationItemResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items',
+                'operation_id': 'create_spending_plan_iteration_item',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'spending_plan_guid',
+                    'user_guid',
+                    'spending_plan_iteration_item_create_request_body',
+                ],
+                'required': [
+                    'spending_plan_guid',
+                    'user_guid',
+                    'spending_plan_iteration_item_create_request_body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'spending_plan_guid':
+                        (str,),
+                    'user_guid':
+                        (str,),
+                    'spending_plan_iteration_item_create_request_body':
+                        (SpendingPlanIterationItemCreateRequestBody,),
+                },
+                'attribute_map': {
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'user_guid': 'user_guid',
+                },
+                'location_map': {
+                    'spending_plan_guid': 'path',
+                    'user_guid': 'path',
+                    'spending_plan_iteration_item_create_request_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1143,6 +1267,183 @@ class MxPlatformApi(object):
                 'location_map': {
                     'member_guid': 'path',
                     'user_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_spending_plan_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}',
+                'operation_id': 'delete_spending_plan',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_spending_plan_account_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts/{spending_plan_account_guid}',
+                'operation_id': 'delete_spending_plan_account',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'spending_plan_account_guid',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'spending_plan_account_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'spending_plan_account_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'spending_plan_account_guid': 'spending_plan_account_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'spending_plan_account_guid': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_spending_plan_iteration_item_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid}',
+                'operation_id': 'delete_spending_plan_iteration_item',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'iteration_item_guid':
+                        (str,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'iteration_item_guid': 'iteration_item_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'iteration_item_guid': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -3197,6 +3498,268 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.list_spending_plan_accounts_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanAccountsResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts',
+                'operation_id': 'list_spending_plan_accounts',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_spending_plan_iteration_items_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationItemsResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items',
+                'operation_id': 'list_spending_plan_iteration_items',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_spending_plan_iterations_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationsResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations',
+                'operation_id': 'list_spending_plan_iterations',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_spending_plans_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlansResponseBody,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans',
+                'operation_id': 'list_spending_plans',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.list_statements_by_member_endpoint = _Endpoint(
             settings={
                 'response_type': (StatementsResponseBody,),
@@ -4697,6 +5260,292 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.read_spending_plan_account_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanAccountResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/spending_plan_accounts/{spending_plan_account_guid}',
+                'operation_id': 'read_spending_plan_account',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'spending_plan_account_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'spending_plan_account_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'spending_plan_account_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'spending_plan_account_guid': 'spending_plan_account_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'spending_plan_account_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_spending_plan_iteration_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/{iteration_number}',
+                'operation_id': 'read_spending_plan_iteration',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_number',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_number',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'iteration_number':
+                        (int,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'iteration_number': 'iteration_number',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'iteration_number': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_spending_plan_iteration_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationItemResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid}',
+                'operation_id': 'read_spending_plan_iteration_item',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'iteration_item_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'iteration_item_guid': 'iteration_item_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'iteration_item_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.read_spending_plan_user_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}',
+                'operation_id': 'read_spending_plan_user',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'page',
+                    'records_per_page',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'page':
+                        (int,),
+                    'records_per_page':
+                        (int,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'page': 'page',
+                    'records_per_page': 'records_per_page',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'page': 'query',
+                    'records_per_page': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.read_statement_by_member_endpoint = _Endpoint(
             settings={
                 'response_type': (StatementResponseBody,),
@@ -5829,6 +6678,76 @@ class MxPlatformApi(object):
             },
             api_client=api_client
         )
+        self.update_spending_plan_iteration_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (SpendingPlanIterationItemResponse,),
+                'auth': [
+                    'basicAuth'
+                ],
+                'endpoint_path': '/users/{user_guid}/spending_plans/{spending_plan_guid}/iterations/current/iteration_items/{iteration_item_guid}',
+                'operation_id': 'update_spending_plan_iteration_item',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                    'spending_plan_iteration_item_create_request_body',
+                ],
+                'required': [
+                    'user_guid',
+                    'spending_plan_guid',
+                    'iteration_item_guid',
+                    'spending_plan_iteration_item_create_request_body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'user_guid':
+                        (str,),
+                    'spending_plan_guid':
+                        (str,),
+                    'iteration_item_guid':
+                        (str,),
+                    'spending_plan_iteration_item_create_request_body':
+                        (SpendingPlanIterationItemCreateRequestBody,),
+                },
+                'attribute_map': {
+                    'user_guid': 'user_guid',
+                    'spending_plan_guid': 'spending_plan_guid',
+                    'iteration_item_guid': 'iteration_item_guid',
+                },
+                'location_map': {
+                    'user_guid': 'path',
+                    'spending_plan_guid': 'path',
+                    'iteration_item_guid': 'path',
+                    'spending_plan_iteration_item_create_request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/vnd.mx.api.v1+json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.update_tag_endpoint = _Endpoint(
             settings={
                 'response_type': (TagResponseBody,),
@@ -6869,6 +7788,170 @@ class MxPlatformApi(object):
             member_create_request_body
         return self.create_member_endpoint.call_with_http_info(**kwargs)
 
+    def create_spending_plan(
+        self,
+        user_guid,
+        **kwargs
+    ):
+        """Create spending plan  # noqa: E501
+
+        This endpoint creates a new `spending_plan` for the user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_spending_plan(user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        return self.create_spending_plan_endpoint.call_with_http_info(**kwargs)
+
+    def create_spending_plan_iteration_item(
+        self,
+        spending_plan_guid,
+        user_guid,
+        spending_plan_iteration_item_create_request_body,
+        **kwargs
+    ):
+        """Create spending plan iteration item  # noqa: E501
+
+        This endpoint creates a new `spending_plan_iteration_item`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_spending_plan_iteration_item(spending_plan_guid, user_guid, spending_plan_iteration_item_create_request_body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            user_guid (str): The unique id for a `user`.
+            spending_plan_iteration_item_create_request_body (SpendingPlanIterationItemCreateRequestBody): Iteration item to be created with required parameters (planned_amount)
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationItemResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_iteration_item_create_request_body'] = \
+            spending_plan_iteration_item_create_request_body
+        return self.create_spending_plan_iteration_item_endpoint.call_with_http_info(**kwargs)
+
     def create_tag(
         self,
         user_guid,
@@ -7696,6 +8779,260 @@ class MxPlatformApi(object):
         kwargs['user_guid'] = \
             user_guid
         return self.delete_member_endpoint.call_with_http_info(**kwargs)
+
+    def delete_spending_plan(
+        self,
+        user_guid,
+        spending_plan_guid,
+        **kwargs
+    ):
+        """Delete spending plan  # noqa: E501
+
+        Use this endpoint to delete a user's `spending_plan`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_spending_plan(user_guid, spending_plan_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique ID for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        return self.delete_spending_plan_endpoint.call_with_http_info(**kwargs)
+
+    def delete_spending_plan_account(
+        self,
+        user_guid,
+        spending_plan_guid,
+        spending_plan_account_guid,
+        **kwargs
+    ):
+        """Delete spending plan account  # noqa: E501
+
+        Use this endpoint to delete a `spending_plan_account`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique ID for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            spending_plan_account_guid (str): The unique ID for the specified account.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['spending_plan_account_guid'] = \
+            spending_plan_account_guid
+        return self.delete_spending_plan_account_endpoint.call_with_http_info(**kwargs)
+
+    def delete_spending_plan_iteration_item(
+        self,
+        user_guid,
+        spending_plan_guid,
+        iteration_item_guid,
+        **kwargs
+    ):
+        """Delete spending plan iteration item  # noqa: E501
+
+        Use this endpoint to delete a spending plan `iteration_item`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique ID for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            iteration_item_guid (str): The unique ID for the `iteration_item`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['iteration_item_guid'] = \
+            iteration_item_guid
+        return self.delete_spending_plan_iteration_item_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag(
         self,
@@ -10388,6 +11725,338 @@ class MxPlatformApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         return self.list_merchants_endpoint.call_with_http_info(**kwargs)
 
+    def list_spending_plan_accounts(
+        self,
+        user_guid,
+        spending_plan_guid,
+        **kwargs
+    ):
+        """List spending plan accounts  # noqa: E501
+
+        Use this endpoint to list all the spending plan accounts associated with the spending plan.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_spending_plan_accounts(user_guid, spending_plan_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanAccountsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        return self.list_spending_plan_accounts_endpoint.call_with_http_info(**kwargs)
+
+    def list_spending_plan_iteration_items(
+        self,
+        user_guid,
+        spending_plan_guid,
+        **kwargs
+    ):
+        """List spending plan iteration items  # noqa: E501
+
+        Use this endpoint to list all the spending plan `iteration_items` associated with the `iteration`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_spending_plan_iteration_items(user_guid, spending_plan_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationItemsResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        return self.list_spending_plan_iteration_items_endpoint.call_with_http_info(**kwargs)
+
+    def list_spending_plan_iterations(
+        self,
+        user_guid,
+        spending_plan_guid,
+        **kwargs
+    ):
+        """List spending plan iterations  # noqa: E501
+
+        Use this endpoint to list all the spending plan `iterations` associated with the `spending_plan`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_spending_plan_iterations(user_guid, spending_plan_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        return self.list_spending_plan_iterations_endpoint.call_with_http_info(**kwargs)
+
+    def list_spending_plans(
+        self,
+        user_guid,
+        **kwargs
+    ):
+        """List spending plans  # noqa: E501
+
+        Use this endpoint to list all the spending plans associated with the user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_spending_plans(user_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlansResponseBody
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        return self.list_spending_plans_endpoint.call_with_http_info(**kwargs)
+
     def list_statements_by_member(
         self,
         member_guid,
@@ -12362,6 +14031,354 @@ class MxPlatformApi(object):
             merchant_location_guid
         return self.read_merchant_location_endpoint.call_with_http_info(**kwargs)
 
+    def read_spending_plan_account(
+        self,
+        user_guid,
+        spending_plan_guid,
+        spending_plan_account_guid,
+        **kwargs
+    ):
+        """Read spending plan account  # noqa: E501
+
+        Use this endpoint to read the attributes of a specific spending plan account according to its unique GUID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_spending_plan_account(user_guid, spending_plan_guid, spending_plan_account_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            spending_plan_account_guid (str): The unique ID for the specified account.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanAccountResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['spending_plan_account_guid'] = \
+            spending_plan_account_guid
+        return self.read_spending_plan_account_endpoint.call_with_http_info(**kwargs)
+
+    def read_spending_plan_iteration(
+        self,
+        user_guid,
+        spending_plan_guid,
+        iteration_number,
+        **kwargs
+    ):
+        """Read a spending plan iteration  # noqa: E501
+
+        Use this endpoint to read the attributes of a specific spending plan `iteration` according to its `iteration_number`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_spending_plan_iteration(user_guid, spending_plan_guid, iteration_number, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            iteration_number (int): The current iteration number for the spending plan `iteration``.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['iteration_number'] = \
+            iteration_number
+        return self.read_spending_plan_iteration_endpoint.call_with_http_info(**kwargs)
+
+    def read_spending_plan_iteration_item(
+        self,
+        user_guid,
+        spending_plan_guid,
+        iteration_item_guid,
+        **kwargs
+    ):
+        """Read a spending plan iteration item  # noqa: E501
+
+        Use this endpoint to read the attributes of a specific spending plan `iteration_item` according to its unique GUID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            iteration_item_guid (str): The unique ID for the `iteration_item`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationItemResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['iteration_item_guid'] = \
+            iteration_item_guid
+        return self.read_spending_plan_iteration_item_endpoint.call_with_http_info(**kwargs)
+
+    def read_spending_plan_user(
+        self,
+        user_guid,
+        spending_plan_guid,
+        **kwargs
+    ):
+        """Read a spending plan for a user  # noqa: E501
+
+        Use this endpoint to read the attributes of a specific spending plan according to its unique GUID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.read_spending_plan_user(user_guid, spending_plan_guid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+
+        Keyword Args:
+            page (int): Specify current page.. [optional]
+            records_per_page (int): Specify records per page.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        return self.read_spending_plan_user_endpoint.call_with_http_info(**kwargs)
+
     def read_statement_by_member(
         self,
         member_guid,
@@ -13887,6 +15904,96 @@ class MxPlatformApi(object):
         kwargs['member_update_request_body'] = \
             member_update_request_body
         return self.update_member_endpoint.call_with_http_info(**kwargs)
+
+    def update_spending_plan_iteration_item(
+        self,
+        user_guid,
+        spending_plan_guid,
+        iteration_item_guid,
+        spending_plan_iteration_item_create_request_body,
+        **kwargs
+    ):
+        """Update a spending plan iteration item  # noqa: E501
+
+        Use this endpoint to update an existing `spending_plan_iteration_item`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_spending_plan_iteration_item(user_guid, spending_plan_guid, iteration_item_guid, spending_plan_iteration_item_create_request_body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            user_guid (str): The unique id for a `user`.
+            spending_plan_guid (str): The unique ID for the `spending_plan`.
+            iteration_item_guid (str): The unique ID for the `iteration_item`.
+            spending_plan_iteration_item_create_request_body (SpendingPlanIterationItemCreateRequestBody): Iteration item object to be updated with required parameter (iteration_item_guid)
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SpendingPlanIterationItemResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['user_guid'] = \
+            user_guid
+        kwargs['spending_plan_guid'] = \
+            spending_plan_guid
+        kwargs['iteration_item_guid'] = \
+            iteration_item_guid
+        kwargs['spending_plan_iteration_item_create_request_body'] = \
+            spending_plan_iteration_item_create_request_body
+        return self.update_spending_plan_iteration_item_endpoint.call_with_http_info(**kwargs)
 
     def update_tag(
         self,
