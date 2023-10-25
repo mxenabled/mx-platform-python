@@ -4,10 +4,26 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_owners** | [**[AccountOwnerResponse]**](AccountOwnerResponse.md) |  | [optional] 
+**account_owners** | [**List[AccountOwnerResponse]**](AccountOwnerResponse.md) |  | [optional] 
 **pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from mx_platform_python.models.account_owners_response_body import AccountOwnersResponseBody
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AccountOwnersResponseBody from a JSON string
+account_owners_response_body_instance = AccountOwnersResponseBody.from_json(json)
+# print the JSON string representation of the object
+print AccountOwnersResponseBody.to_json()
+
+# convert the object into a dict
+account_owners_response_body_dict = account_owners_response_body_instance.to_dict()
+# create an instance of AccountOwnersResponseBody from a dict
+account_owners_response_body_form_dict = account_owners_response_body.from_dict(account_owners_response_body_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

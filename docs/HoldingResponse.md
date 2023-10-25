@@ -4,27 +4,43 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_guid** | **str, none_type** |  | [optional] 
-**cost_basis** | **float, none_type** |  | [optional] 
-**created_at** | **str, none_type** |  | [optional] 
-**currency_code** | **str, none_type** |  | [optional] 
-**cusip** | **str, none_type** |  | [optional] 
-**daily_change** | **float, none_type** |  | [optional] 
-**description** | **str, none_type** |  | [optional] 
-**guid** | **str, none_type** |  | [optional] 
-**holding_type** | **str, none_type** |  | [optional] 
-**holding_type_id** | **int, none_type** |  | [optional] 
-**id** | **str, none_type** |  | [optional] 
-**market_value** | **float, none_type** |  | [optional] 
-**member_guid** | **str, none_type** |  | [optional] 
-**metadata** | **str, none_type** |  | [optional] 
-**purchase_price** | **float, none_type** |  | [optional] 
-**shares** | **float, none_type** |  | [optional] 
-**symbol** | **str, none_type** |  | [optional] 
-**updated_at** | **str, none_type** |  | [optional] 
-**user_guid** | **str, none_type** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**account_guid** | **str** |  | [optional] 
+**cost_basis** | **float** |  | [optional] 
+**created_at** | **str** |  | [optional] 
+**currency_code** | **str** |  | [optional] 
+**cusip** | **str** |  | [optional] 
+**daily_change** | **float** |  | [optional] 
+**description** | **str** |  | [optional] 
+**guid** | **str** |  | [optional] 
+**holding_type** | **str** |  | [optional] 
+**holding_type_id** | **int** |  | [optional] 
+**id** | **str** |  | [optional] 
+**market_value** | **float** |  | [optional] 
+**member_guid** | **str** |  | [optional] 
+**metadata** | **str** |  | [optional] 
+**purchase_price** | **float** |  | [optional] 
+**shares** | **float** |  | [optional] 
+**symbol** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
+**user_guid** | **str** |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.holding_response import HoldingResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of HoldingResponse from a JSON string
+holding_response_instance = HoldingResponse.from_json(json)
+# print the JSON string representation of the object
+print HoldingResponse.to_json()
+
+# convert the object into a dict
+holding_response_dict = holding_response_instance.to_dict()
+# create an instance of HoldingResponse from a dict
+holding_response_form_dict = holding_response.from_dict(holding_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

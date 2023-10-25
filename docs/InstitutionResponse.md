@@ -4,22 +4,38 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **str, none_type** |  | [optional] 
-**forgot_password_url** | **str, none_type** |  | [optional] 
-**forgot_username_url** | **str, none_type** |  | [optional] 
-**instructional_text** | **str, none_type** |  | [optional] 
-**medium_logo_url** | **str, none_type** |  | [optional] 
-**name** | **str, none_type** |  | [optional] 
-**small_logo_url** | **str, none_type** |  | [optional] 
-**supports_account_identification** | **bool, none_type** |  | [optional] 
-**supports_account_statement** | **bool, none_type** |  | [optional] 
-**supports_account_verification** | **bool, none_type** |  | [optional] 
-**supports_oauth** | **bool, none_type** |  | [optional] 
-**supports_transaction_history** | **bool, none_type** |  | [optional] 
-**trouble_signing_in_url** | **str, none_type** |  | [optional] 
-**url** | **str, none_type** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**code** | **str** |  | [optional] 
+**forgot_password_url** | **str** |  | [optional] 
+**forgot_username_url** | **str** |  | [optional] 
+**instructional_text** | **str** |  | [optional] 
+**medium_logo_url** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**small_logo_url** | **str** |  | [optional] 
+**supports_account_identification** | **bool** |  | [optional] 
+**supports_account_statement** | **bool** |  | [optional] 
+**supports_account_verification** | **bool** |  | [optional] 
+**supports_oauth** | **bool** |  | [optional] 
+**supports_transaction_history** | **bool** |  | [optional] 
+**trouble_signing_in_url** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.institution_response import InstitutionResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of InstitutionResponse from a JSON string
+institution_response_instance = InstitutionResponse.from_json(json)
+# print the JSON string representation of the object
+print InstitutionResponse.to_json()
+
+# convert the object into a dict
+institution_response_dict = institution_response_instance.to_dict()
+# create an instance of InstitutionResponse from a dict
+institution_response_form_dict = institution_response.from_dict(institution_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -18,8 +18,24 @@ Name | Type | Description | Notes
 **ui_message_version** | **int** |  | [optional] 
 **ui_message_webview_url_scheme** | **str** |  | [optional] 
 **update_credentials** | **bool** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from mx_platform_python.models.connect_widget_request import ConnectWidgetRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ConnectWidgetRequest from a JSON string
+connect_widget_request_instance = ConnectWidgetRequest.from_json(json)
+# print the JSON string representation of the object
+print ConnectWidgetRequest.to_json()
+
+# convert the object into a dict
+connect_widget_request_dict = connect_widget_request_instance.to_dict()
+# create an instance of ConnectWidgetRequest from a dict
+connect_widget_request_form_dict = connect_widget_request.from_dict(connect_widget_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

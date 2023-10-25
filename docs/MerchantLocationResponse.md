@@ -4,20 +4,36 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**city** | **str, none_type** |  | [optional] 
-**country** | **str, none_type** |  | [optional] 
-**created_at** | **str, none_type** |  | [optional] 
-**guid** | **str, none_type** |  | [optional] 
-**latitude** | **float, none_type** |  | [optional] 
-**longitude** | **float, none_type** |  | [optional] 
-**merchant_guid** | **str, none_type** |  | [optional] 
-**phone_number** | **str, none_type** |  | [optional] 
-**postal_code** | **str, none_type** |  | [optional] 
-**state** | **str, none_type** |  | [optional] 
-**street_address** | **str, none_type** |  | [optional] 
-**updated_at** | **str, none_type** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**city** | **str** |  | [optional] 
+**country** | **str** |  | [optional] 
+**created_at** | **str** |  | [optional] 
+**guid** | **str** |  | [optional] 
+**latitude** | **float** |  | [optional] 
+**longitude** | **float** |  | [optional] 
+**merchant_guid** | **str** |  | [optional] 
+**phone_number** | **str** |  | [optional] 
+**postal_code** | **str** |  | [optional] 
+**state** | **str** |  | [optional] 
+**street_address** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.merchant_location_response import MerchantLocationResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of MerchantLocationResponse from a JSON string
+merchant_location_response_instance = MerchantLocationResponse.from_json(json)
+# print the JSON string representation of the object
+print MerchantLocationResponse.to_json()
+
+# convert the object into a dict
+merchant_location_response_dict = merchant_location_response_instance.to_dict()
+# create an instance of MerchantLocationResponse from a dict
+merchant_location_response_form_dict = merchant_location_response.from_dict(merchant_location_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

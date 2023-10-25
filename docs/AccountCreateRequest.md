@@ -4,9 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_type** | **str** |  | 
-**name** | **str** |  | 
 **account_subtype** | **str** |  | [optional] 
+**account_type** | **str** |  | 
 **apr** | **float** |  | [optional] 
 **apy** | **float** |  | [optional] 
 **available_balance** | **float** |  | [optional] 
@@ -21,12 +20,29 @@ Name | Type | Description | Notes
 **is_hidden** | **bool** |  | [optional] 
 **loan_amount** | **float** |  | [optional] 
 **metadata** | **str** |  | [optional] 
+**name** | **str** |  | 
 **nickname** | **str** |  | [optional] 
 **original_balance** | **float** |  | [optional] 
 **property_type** | **str** |  | [optional] 
 **skip_webhook** | **bool** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from mx_platform_python.models.account_create_request import AccountCreateRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AccountCreateRequest from a JSON string
+account_create_request_instance = AccountCreateRequest.from_json(json)
+# print the JSON string representation of the object
+print AccountCreateRequest.to_json()
+
+# convert the object into a dict
+account_create_request_dict = account_create_request_instance.to_dict()
+# create an instance of AccountCreateRequest from a dict
+account_create_request_form_dict = account_create_request.from_dict(account_create_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -4,31 +4,47 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float, none_type** |  | [optional] 
-**categorized_by** | **int, none_type** |  | [optional] 
-**category** | **str, none_type** |  | [optional] 
-**category_guid** | **str, none_type** |  | [optional] 
-**described_by** | **int, none_type** |  | [optional] 
-**description** | **str, none_type** |  | [optional] 
-**extended_transaction_type** | **str, none_type** |  | [optional] 
-**id** | **str, none_type** |  | [optional] 
-**is_bill_pay** | **bool, none_type** |  | [optional] 
-**is_direct_deposit** | **bool, none_type** |  | [optional] 
-**is_expense** | **bool, none_type** |  | [optional] 
-**is_fee** | **bool, none_type** |  | [optional] 
-**is_income** | **bool, none_type** |  | [optional] 
-**is_international** | **bool, none_type** |  | [optional] 
-**is_overdraft_fee** | **bool, none_type** |  | [optional] 
-**is_payroll_advance** | **bool, none_type** |  | [optional] 
-**is_subscription** | **bool, none_type** |  | [optional] 
-**memo** | **str, none_type** |  | [optional] 
-**merchant_category_code** | **int, none_type** |  | [optional] 
-**merchant_guid** | **str, none_type** |  | [optional] 
-**merchant_location_guid** | **str, none_type** |  | [optional] 
-**original_description** | **str, none_type** |  | [optional] 
-**type** | **str, none_type** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**amount** | **float** |  | [optional] 
+**categorized_by** | **int** |  | [optional] 
+**category** | **str** |  | [optional] 
+**category_guid** | **str** |  | [optional] 
+**described_by** | **int** |  | [optional] 
+**description** | **str** |  | [optional] 
+**extended_transaction_type** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**is_bill_pay** | **bool** |  | [optional] 
+**is_direct_deposit** | **bool** |  | [optional] 
+**is_expense** | **bool** |  | [optional] 
+**is_fee** | **bool** |  | [optional] 
+**is_income** | **bool** |  | [optional] 
+**is_international** | **bool** |  | [optional] 
+**is_overdraft_fee** | **bool** |  | [optional] 
+**is_payroll_advance** | **bool** |  | [optional] 
+**is_subscription** | **bool** |  | [optional] 
+**memo** | **str** |  | [optional] 
+**merchant_category_code** | **int** |  | [optional] 
+**merchant_guid** | **str** |  | [optional] 
+**merchant_location_guid** | **str** |  | [optional] 
+**original_description** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.enhance_transaction_response import EnhanceTransactionResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of EnhanceTransactionResponse from a JSON string
+enhance_transaction_response_instance = EnhanceTransactionResponse.from_json(json)
+# print the JSON string representation of the object
+print EnhanceTransactionResponse.to_json()
+
+# convert the object into a dict
+enhance_transaction_response_dict = enhance_transaction_response_instance.to_dict()
+# create an instance of EnhanceTransactionResponse from a dict
+enhance_transaction_response_form_dict = enhance_transaction_response.from_dict(enhance_transaction_response_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

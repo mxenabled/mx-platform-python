@@ -4,14 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balance** | **float** |  | 
-**name** | **str** |  | 
-**type** | **str** |  | 
 **account_number** | **str** |  | [optional] 
 **apr** | **float** |  | [optional] 
 **apy** | **float** |  | [optional] 
 **available_balance** | **float** |  | [optional] 
 **available_credit** | **float** |  | [optional] 
+**balance** | **float** |  | 
 **cash_surrender_value** | **float** |  | [optional] 
 **credit_limit** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] 
@@ -28,6 +26,7 @@ Name | Type | Description | Notes
 **metadata** | **str** |  | [optional] 
 **minimum_balance** | **float** |  | [optional] 
 **minimum_payment** | **float** |  | [optional] 
+**name** | **str** |  | 
 **nickname** | **str** |  | [optional] 
 **original_balance** | **float** |  | [optional] 
 **payment_due_at** | **str** |  | [optional] 
@@ -35,8 +34,25 @@ Name | Type | Description | Notes
 **routing_number** | **str** |  | [optional] 
 **started_on** | **str** |  | [optional] 
 **subtype** | **str** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**type** | **str** |  | 
 
+## Example
+
+```python
+from mx_platform_python.models.managed_account_create_request import ManagedAccountCreateRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ManagedAccountCreateRequest from a JSON string
+managed_account_create_request_instance = ManagedAccountCreateRequest.from_json(json)
+# print the JSON string representation of the object
+print ManagedAccountCreateRequest.to_json()
+
+# convert the object into a dict
+managed_account_create_request_dict = managed_account_create_request_instance.to_dict()
+# create an instance of ManagedAccountCreateRequest from a dict
+managed_account_create_request_form_dict = managed_account_create_request.from_dict(managed_account_create_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

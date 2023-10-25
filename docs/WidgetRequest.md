@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**widget_type** | **str** |  | 
 **client_redirect_url** | **str** |  | [optional] 
 **color_scheme** | **str** |  | [optional] 
 **current_institution_code** | **str** |  | [optional] 
@@ -20,8 +19,25 @@ Name | Type | Description | Notes
 **ui_message_version** | **int** |  | [optional] 
 **ui_message_webview_url_scheme** | **str** |  | [optional] 
 **update_credentials** | **bool** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**widget_type** | **str** |  | 
 
+## Example
+
+```python
+from mx_platform_python.models.widget_request import WidgetRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of WidgetRequest from a JSON string
+widget_request_instance = WidgetRequest.from_json(json)
+# print the JSON string representation of the object
+print WidgetRequest.to_json()
+
+# convert the object into a dict
+widget_request_dict = widget_request_instance.to_dict()
+# create an instance of WidgetRequest from a dict
+widget_request_form_dict = widget_request.from_dict(widget_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

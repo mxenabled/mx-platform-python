@@ -25,8 +25,24 @@ Name | Type | Description | Notes
 **original_balance** | **float** |  | [optional] 
 **property_type** | **str** |  | [optional] 
 **skip_webhook** | **bool** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
+## Example
+
+```python
+from mx_platform_python.models.account_update_request import AccountUpdateRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AccountUpdateRequest from a JSON string
+account_update_request_instance = AccountUpdateRequest.from_json(json)
+# print the JSON string representation of the object
+print AccountUpdateRequest.to_json()
+
+# convert the object into a dict
+account_update_request_dict = account_update_request_instance.to_dict()
+# create an instance of AccountUpdateRequest from a dict
+account_update_request_form_dict = account_update_request.from_dict(account_update_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

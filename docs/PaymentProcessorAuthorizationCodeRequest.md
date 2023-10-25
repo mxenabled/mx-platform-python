@@ -4,11 +4,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_guid** | **str, none_type** |  | [optional] 
-**member_guid** | **str, none_type** |  | [optional] 
-**user_guid** | **str, none_type** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**account_guid** | **str** |  | [optional] 
+**member_guid** | **str** |  | [optional] 
+**user_guid** | **str** |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.payment_processor_authorization_code_request import PaymentProcessorAuthorizationCodeRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PaymentProcessorAuthorizationCodeRequest from a JSON string
+payment_processor_authorization_code_request_instance = PaymentProcessorAuthorizationCodeRequest.from_json(json)
+# print the JSON string representation of the object
+print PaymentProcessorAuthorizationCodeRequest.to_json()
+
+# convert the object into a dict
+payment_processor_authorization_code_request_dict = payment_processor_authorization_code_request_instance.to_dict()
+# create an instance of PaymentProcessorAuthorizationCodeRequest from a dict
+payment_processor_authorization_code_request_form_dict = payment_processor_authorization_code_request.from_dict(payment_processor_authorization_code_request_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

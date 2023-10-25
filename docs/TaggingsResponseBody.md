@@ -5,9 +5,25 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
-**taggings** | [**[TaggingResponse]**](TaggingResponse.md) |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**taggings** | [**List[TaggingResponse]**](TaggingResponse.md) |  | [optional] 
 
+## Example
+
+```python
+from mx_platform_python.models.taggings_response_body import TaggingsResponseBody
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TaggingsResponseBody from a JSON string
+taggings_response_body_instance = TaggingsResponseBody.from_json(json)
+# print the JSON string representation of the object
+print TaggingsResponseBody.to_json()
+
+# convert the object into a dict
+taggings_response_body_dict = taggings_response_body_instance.to_dict()
+# create an instance of TaggingsResponseBody from a dict
+taggings_response_body_form_dict = taggings_response_body.from_dict(taggings_response_body_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
