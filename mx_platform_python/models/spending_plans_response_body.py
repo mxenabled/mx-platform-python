@@ -27,9 +27,9 @@ class SpendingPlansResponseBody(BaseModel):
     """
     SpendingPlansResponseBody
     """
-    iteration_items: Optional[conlist(SpendingPlanResponse)] = None
+    spending_plans: Optional[conlist(SpendingPlanResponse)] = None
     pagination: Optional[PaginationResponse] = None
-    __properties = ["iteration_items", "pagination"]
+    __properties = ["spending_plans", "pagination"]
 
     class Config:
         """Pydantic configuration"""
@@ -55,13 +55,13 @@ class SpendingPlansResponseBody(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in iteration_items (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in spending_plans (list)
         _items = []
-        if self.iteration_items:
-            for _item in self.iteration_items:
+        if self.spending_plans:
+            for _item in self.spending_plans:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['iteration_items'] = _items
+            _dict['spending_plans'] = _items
         # override the default output from pydantic by calling `to_dict()` of pagination
         if self.pagination:
             _dict['pagination'] = self.pagination.to_dict()
@@ -77,7 +77,7 @@ class SpendingPlansResponseBody(BaseModel):
             return SpendingPlansResponseBody.parse_obj(obj)
 
         _obj = SpendingPlansResponseBody.parse_obj({
-            "iteration_items": [SpendingPlanResponse.from_dict(_item) for _item in obj.get("iteration_items")] if obj.get("iteration_items") is not None else None,
+            "spending_plans": [SpendingPlanResponse.from_dict(_item) for _item in obj.get("spending_plans")] if obj.get("spending_plans") is not None else None,
             "pagination": PaginationResponse.from_dict(obj.get("pagination")) if obj.get("pagination") is not None else None
         })
         return _obj

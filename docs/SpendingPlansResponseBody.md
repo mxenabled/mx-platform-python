@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iteration_items** | [**List[SpendingPlanResponse]**](SpendingPlanResponse.md) |  | [optional] 
+**spending_plans** | [**List[SpendingPlanResponse]**](SpendingPlanResponse.md) |  | [optional] 
 **pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 
 ## Example

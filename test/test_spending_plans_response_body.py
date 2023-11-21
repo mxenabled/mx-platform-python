@@ -36,7 +36,7 @@ class TestSpendingPlansResponseBody(unittest.TestCase):
         model = SpendingPlansResponseBody()  # noqa: E501
         if include_optional:
             return SpendingPlansResponseBody(
-                iteration_items = [
+                spending_plans = [
                     mx_platform_python.models.spending_plan_response.SpendingPlanResponse(
                         created_at = '2016-10-13T18:08:00+00:00', 
                         current_iteration_number = 1, 
