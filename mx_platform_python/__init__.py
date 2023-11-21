@@ -14,10 +14,11 @@
 """  # noqa: E501
 
 
-__version__ = "0.19.0"
+__version__ = "0.20.0"
 
 # import apis into sdk package
 from mx_platform_python.api.mx_platform_api import MxPlatformApi
+from mx_platform_python.api.spending_plan_api import SpendingPlanApi
 
 # import ApiClient
 from mx_platform_python.api_response import ApiResponse
