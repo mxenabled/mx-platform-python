@@ -194,7 +194,7 @@ class SpendingPlanApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_spending_plan_iteration_item(self, spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be created with required parameters (planned_amount)")], **kwargs) -> SpendingPlanIterationItemResponse:  # noqa: E501
+    def create_spending_plan_iteration_item(self, spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be created with required parameter (planned_amount)")], **kwargs) -> SpendingPlanIterationItemResponse:  # noqa: E501
         """Create spending plan iteration item  # noqa: E501
 
         This endpoint creates a new `spending_plan_iteration_item`.  # noqa: E501
@@ -208,7 +208,7 @@ class SpendingPlanApi:
         :type spending_plan_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
-        :param spending_plan_iteration_item_create_request_body: Iteration item to be created with required parameters (planned_amount) (required)
+        :param spending_plan_iteration_item_create_request_body: Iteration item to be created with required parameter (planned_amount) (required)
         :type spending_plan_iteration_item_create_request_body: SpendingPlanIterationItemCreateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -228,7 +228,7 @@ class SpendingPlanApi:
         return self.create_spending_plan_iteration_item_with_http_info(spending_plan_guid, user_guid, spending_plan_iteration_item_create_request_body, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_spending_plan_iteration_item_with_http_info(self, spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be created with required parameters (planned_amount)")], **kwargs) -> ApiResponse:  # noqa: E501
+    def create_spending_plan_iteration_item_with_http_info(self, spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be created with required parameter (planned_amount)")], **kwargs) -> ApiResponse:  # noqa: E501
         """Create spending plan iteration item  # noqa: E501
 
         This endpoint creates a new `spending_plan_iteration_item`.  # noqa: E501
@@ -242,7 +242,7 @@ class SpendingPlanApi:
         :type spending_plan_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
-        :param spending_plan_iteration_item_create_request_body: Iteration item to be created with required parameters (planned_amount) (required)
+        :param spending_plan_iteration_item_create_request_body: Iteration item to be created with required parameter (planned_amount) (required)
         :type spending_plan_iteration_item_create_request_body: SpendingPlanIterationItemCreateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -2127,7 +2127,7 @@ class SpendingPlanApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_spending_plan_iteration_item(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], iteration_item_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `iteration_item`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item object to be updated with required parameter (iteration_item_guid)")], **kwargs) -> SpendingPlanIterationItemResponse:  # noqa: E501
+    def update_spending_plan_iteration_item(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], iteration_item_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `iteration_item`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be updated with required parameter (planned_amount)")], **kwargs) -> SpendingPlanIterationItemResponse:  # noqa: E501
         """Update a spending plan iteration item  # noqa: E501
 
         Use this endpoint to update an existing `spending_plan_iteration_item`.  # noqa: E501
@@ -2143,7 +2143,7 @@ class SpendingPlanApi:
         :type spending_plan_guid: str
         :param iteration_item_guid: The unique ID for the `iteration_item`. (required)
         :type iteration_item_guid: str
-        :param spending_plan_iteration_item_create_request_body: Iteration item object to be updated with required parameter (iteration_item_guid) (required)
+        :param spending_plan_iteration_item_create_request_body: Iteration item to be updated with required parameter (planned_amount) (required)
         :type spending_plan_iteration_item_create_request_body: SpendingPlanIterationItemCreateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -2163,7 +2163,7 @@ class SpendingPlanApi:
         return self.update_spending_plan_iteration_item_with_http_info(user_guid, spending_plan_guid, iteration_item_guid, spending_plan_iteration_item_create_request_body, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_spending_plan_iteration_item_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], iteration_item_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `iteration_item`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item object to be updated with required parameter (iteration_item_guid)")], **kwargs) -> ApiResponse:  # noqa: E501
+    def update_spending_plan_iteration_item_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], spending_plan_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `spending_plan`.")], iteration_item_guid : Annotated[StrictStr, Field(..., description="The unique ID for the `iteration_item`.")], spending_plan_iteration_item_create_request_body : Annotated[SpendingPlanIterationItemCreateRequestBody, Field(..., description="Iteration item to be updated with required parameter (planned_amount)")], **kwargs) -> ApiResponse:  # noqa: E501
         """Update a spending plan iteration item  # noqa: E501
 
         Use this endpoint to update an existing `spending_plan_iteration_item`.  # noqa: E501
@@ -2179,7 +2179,7 @@ class SpendingPlanApi:
         :type spending_plan_guid: str
         :param iteration_item_guid: The unique ID for the `iteration_item`. (required)
         :type iteration_item_guid: str
-        :param spending_plan_iteration_item_create_request_body: Iteration item object to be updated with required parameter (iteration_item_guid) (required)
+        :param spending_plan_iteration_item_create_request_body: Iteration item to be updated with required parameter (planned_amount) (required)
         :type spending_plan_iteration_item_create_request_body: SpendingPlanIterationItemCreateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
