@@ -46,6 +46,7 @@ class TestWidgetRequest(unittest.TestCase):
                 include_identity = False,
                 include_transactions = True,
                 is_mobile_webview = False,
+                microwidget_instance_id = 'false',
                 mode = 'aggregation',
                 oauth_referral_source = 'BROWSER',
                 ui_message_version = 4,

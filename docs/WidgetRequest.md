@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **include_identity** | **bool** |  | [optional] 
 **include_transactions** | **bool** |  | [optional] 
 **is_mobile_webview** | **bool** |  | [optional] 
+**microwidget_instance_id** | **str** |  | [optional] 
 **mode** | **str** |  | [optional] 
 **oauth_referral_source** | **str** |  | [optional] 
 **ui_message_version** | **int** |  | [optional] 
