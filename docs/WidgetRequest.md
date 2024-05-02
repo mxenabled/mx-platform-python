@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **disable_institution_search** | **bool** |  | [optional] 
 **include_identity** | **bool** |  | [optional] 
 **include_transactions** | **bool** |  | [optional] 
+**insight_guid** | **str** |  | [optional] 
 **is_mobile_webview** | **bool** |  | [optional] 
 **microwidget_instance_id** | **str** |  | [optional] 
 **mode** | **str** |  | [optional] 

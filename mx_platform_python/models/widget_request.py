@@ -34,6 +34,7 @@ class WidgetRequest(BaseModel):
     disable_institution_search: Optional[StrictBool] = None
     include_identity: Optional[StrictBool] = None
     include_transactions: Optional[StrictBool] = None
+    insight_guid: Optional[StrictStr] = None
     is_mobile_webview: Optional[StrictBool] = None
     microwidget_instance_id: Optional[StrictStr] = None
     mode: Optional[StrictStr] = None
@@ -42,7 +43,7 @@ class WidgetRequest(BaseModel):
     ui_message_webview_url_scheme: Optional[StrictStr] = None
     update_credentials: Optional[StrictBool] = None
     widget_type: StrictStr = Field(...)
-    __properties = ["client_redirect_url", "color_scheme", "current_institution_code", "current_institution_guid", "current_member_guid", "disable_background_agg", "disable_institution_search", "include_identity", "include_transactions", "is_mobile_webview", "microwidget_instance_id", "mode", "oauth_referral_source", "ui_message_version", "ui_message_webview_url_scheme", "update_credentials", "widget_type"]
+    __properties = ["client_redirect_url", "color_scheme", "current_institution_code", "current_institution_guid", "current_member_guid", "disable_background_agg", "disable_institution_search", "include_identity", "include_transactions", "insight_guid", "is_mobile_webview", "microwidget_instance_id", "mode", "oauth_referral_source", "ui_message_version", "ui_message_webview_url_scheme", "update_credentials", "widget_type"]
 
     class Config:
         """Pydantic configuration"""
@@ -89,6 +90,7 @@ class WidgetRequest(BaseModel):
             "disable_institution_search": obj.get("disable_institution_search"),
             "include_identity": obj.get("include_identity"),
             "include_transactions": obj.get("include_transactions"),
+            "insight_guid": obj.get("insight_guid"),
             "is_mobile_webview": obj.get("is_mobile_webview"),
             "microwidget_instance_id": obj.get("microwidget_instance_id"),
             "mode": obj.get("mode"),
