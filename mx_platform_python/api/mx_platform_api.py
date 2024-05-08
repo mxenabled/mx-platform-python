@@ -1053,7 +1053,7 @@ class MxPlatformApi:
     def create_manual_account(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_create_request_body : Annotated[AccountCreateRequestBody, Field(..., description="Manual account object to be created.")], **kwargs) -> AccountResponseBody:  # noqa: E501
         """Create manual account  # noqa: E501
 
-        This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed..  # noqa: E501
+        This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1085,7 +1085,7 @@ class MxPlatformApi:
     def create_manual_account_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_create_request_body : Annotated[AccountCreateRequestBody, Field(..., description="Manual account object to be created.")], **kwargs) -> ApiResponse:  # noqa: E501
         """Create manual account  # noqa: E501
 
-        This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed..  # noqa: E501
+        This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

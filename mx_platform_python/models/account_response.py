@@ -46,9 +46,9 @@ class AccountResponse(BaseModel):
     holdings_value: Optional[Union[StrictFloat, StrictInt]] = None
     id: Optional[StrictStr] = None
     imported_at: Optional[StrictStr] = None
-    interest_rate: Optional[Union[StrictFloat, StrictInt]] = None
     institution_code: Optional[StrictStr] = None
     insured_name: Optional[StrictStr] = None
+    interest_rate: Optional[Union[StrictFloat, StrictInt]] = None
     is_closed: Optional[StrictBool] = None
     is_hidden: Optional[StrictBool] = None
     is_manual: Optional[StrictBool] = None
@@ -81,7 +81,7 @@ class AccountResponse(BaseModel):
     updated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "guid", "holdings_value", "id", "imported_at", "interest_rate", "institution_code", "insured_name", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "type", "updated_at", "user_guid", "user_id"]
+    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "type", "updated_at", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -207,11 +207,6 @@ class AccountResponse(BaseModel):
         if self.imported_at is None and "imported_at" in self.__fields_set__:
             _dict['imported_at'] = None
 
-        # set to None if interest_rate (nullable) is None
-        # and __fields_set__ contains the field
-        if self.interest_rate is None and "interest_rate" in self.__fields_set__:
-            _dict['interest_rate'] = None
-
         # set to None if institution_code (nullable) is None
         # and __fields_set__ contains the field
         if self.institution_code is None and "institution_code" in self.__fields_set__:
@@ -221,6 +216,11 @@ class AccountResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.insured_name is None and "insured_name" in self.__fields_set__:
             _dict['insured_name'] = None
+
+        # set to None if interest_rate (nullable) is None
+        # and __fields_set__ contains the field
+        if self.interest_rate is None and "interest_rate" in self.__fields_set__:
+            _dict['interest_rate'] = None
 
         # set to None if is_closed (nullable) is None
         # and __fields_set__ contains the field
@@ -415,9 +415,9 @@ class AccountResponse(BaseModel):
             "holdings_value": obj.get("holdings_value"),
             "id": obj.get("id"),
             "imported_at": obj.get("imported_at"),
-            "interest_rate": obj.get("interest_rate"),
             "institution_code": obj.get("institution_code"),
             "insured_name": obj.get("insured_name"),
+            "interest_rate": obj.get("interest_rate"),
             "is_closed": obj.get("is_closed"),
             "is_hidden": obj.get("is_hidden"),
             "is_manual": obj.get("is_manual"),

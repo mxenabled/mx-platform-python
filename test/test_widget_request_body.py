@@ -46,7 +46,7 @@ class TestWidgetRequestBody(unittest.TestCase):
                     disable_institution_search = False, 
                     include_identity = False, 
                     include_transactions = True, 
-                    insight_guid = 'BET-1234', 
+                    insight_guid = 'BET-123', 
                     is_mobile_webview = False, 
                     microwidget_instance_id = 'accounts_page', 
                     mode = 'aggregation', 

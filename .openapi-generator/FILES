@@ -39,6 +39,11 @@ docs/HoldingResponse.md
 docs/HoldingResponseBody.md
 docs/HoldingsResponseBody.md
 docs/ImageOptionResponse.md
+docs/InsightResponse.md
+docs/InsightResponseBody.md
+docs/InsightUpdateRequest.md
+docs/InsightsApi.md
+docs/InsightsResponseBody.md
 docs/InstitutionResponse.md
 docs/InstitutionResponseBody.md
 docs/InstitutionsResponseBody.md
@@ -79,6 +84,8 @@ docs/PaymentProcessorAuthorizationCodeRequest.md
 docs/PaymentProcessorAuthorizationCodeRequestBody.md
 docs/PaymentProcessorAuthorizationCodeResponse.md
 docs/PaymentProcessorAuthorizationCodeResponseBody.md
+docs/ScheduledPaymentResponse.md
+docs/ScheduledPaymentsResponseBody.md
 docs/SpendingPlanAccountResponse.md
 docs/SpendingPlanAccountsResponse.md
 docs/SpendingPlanApi.md
@@ -134,6 +141,7 @@ docs/WidgetResponse.md
 docs/WidgetResponseBody.md
 mx_platform_python/__init__.py
 mx_platform_python/api/__init__.py
+mx_platform_python/api/insights_api.py
 mx_platform_python/api/mx_platform_api.py
 mx_platform_python/api/spending_plan_api.py
 mx_platform_python/api_client.py
@@ -180,6 +188,10 @@ mx_platform_python/models/holding_response.py
 mx_platform_python/models/holding_response_body.py
 mx_platform_python/models/holdings_response_body.py
 mx_platform_python/models/image_option_response.py
+mx_platform_python/models/insight_response.py
+mx_platform_python/models/insight_response_body.py
+mx_platform_python/models/insight_update_request.py
+mx_platform_python/models/insights_response_body.py
 mx_platform_python/models/institution_response.py
 mx_platform_python/models/institution_response_body.py
 mx_platform_python/models/institutions_response_body.py
@@ -219,6 +231,8 @@ mx_platform_python/models/payment_processor_authorization_code_request.py
 mx_platform_python/models/payment_processor_authorization_code_request_body.py
 mx_platform_python/models/payment_processor_authorization_code_response.py
 mx_platform_python/models/payment_processor_authorization_code_response_body.py
+mx_platform_python/models/scheduled_payment_response.py
+mx_platform_python/models/scheduled_payments_response_body.py
 mx_platform_python/models/spending_plan_account_response.py
 mx_platform_python/models/spending_plan_accounts_response.py
 mx_platform_python/models/spending_plan_iteration_item_create_request_body.py
@@ -318,6 +332,11 @@ test/test_holding_response.py
 test/test_holding_response_body.py
 test/test_holdings_response_body.py
 test/test_image_option_response.py
+test/test_insight_response.py
+test/test_insight_response_body.py
+test/test_insight_update_request.py
+test/test_insights_api.py
+test/test_insights_response_body.py
 test/test_institution_response.py
 test/test_institution_response_body.py
 test/test_institutions_response_body.py
@@ -358,6 +377,8 @@ test/test_payment_processor_authorization_code_request.py
 test/test_payment_processor_authorization_code_request_body.py
 test/test_payment_processor_authorization_code_response.py
 test/test_payment_processor_authorization_code_response_body.py
+test/test_scheduled_payment_response.py
+test/test_scheduled_payments_response_body.py
 test/test_spending_plan_account_response.py
 test/test_spending_plan_accounts_response.py
 test/test_spending_plan_api.py

@@ -14,9 +14,10 @@
 """  # noqa: E501
 
 
-__version__ = "0.24.0"
+__version__ = "0.25.0"
 
 # import apis into sdk package
+from mx_platform_python.api.insights_api import InsightsApi
 from mx_platform_python.api.mx_platform_api import MxPlatformApi
 from mx_platform_python.api.spending_plan_api import SpendingPlanApi
 
@@ -71,6 +72,10 @@ from mx_platform_python.models.holding_response import HoldingResponse
 from mx_platform_python.models.holding_response_body import HoldingResponseBody
 from mx_platform_python.models.holdings_response_body import HoldingsResponseBody
 from mx_platform_python.models.image_option_response import ImageOptionResponse
+from mx_platform_python.models.insight_response import InsightResponse
+from mx_platform_python.models.insight_response_body import InsightResponseBody
+from mx_platform_python.models.insight_update_request import InsightUpdateRequest
+from mx_platform_python.models.insights_response_body import InsightsResponseBody
 from mx_platform_python.models.institution_response import InstitutionResponse
 from mx_platform_python.models.institution_response_body import InstitutionResponseBody
 from mx_platform_python.models.institutions_response_body import InstitutionsResponseBody
@@ -110,6 +115,8 @@ from mx_platform_python.models.payment_processor_authorization_code_request impo
 from mx_platform_python.models.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
 from mx_platform_python.models.payment_processor_authorization_code_response import PaymentProcessorAuthorizationCodeResponse
 from mx_platform_python.models.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
+from mx_platform_python.models.scheduled_payment_response import ScheduledPaymentResponse
+from mx_platform_python.models.scheduled_payments_response_body import ScheduledPaymentsResponseBody
 from mx_platform_python.models.spending_plan_account_response import SpendingPlanAccountResponse
 from mx_platform_python.models.spending_plan_accounts_response import SpendingPlanAccountsResponse
 from mx_platform_python.models.spending_plan_iteration_item_create_request_body import SpendingPlanIterationItemCreateRequestBody
