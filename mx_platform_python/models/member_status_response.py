@@ -31,11 +31,12 @@ class MemberStatusResponse(BaseModel):
     connection_status: Optional[StrictStr] = None
     guid: Optional[StrictStr] = None
     has_processed_accounts: Optional[StrictBool] = None
+    has_processed_account_numbers: Optional[StrictBool] = None
     has_processed_transactions: Optional[StrictBool] = None
     is_authenticated: Optional[StrictBool] = None
     is_being_aggregated: Optional[StrictBool] = None
     successfully_aggregated_at: Optional[StrictStr] = None
-    __properties = ["aggregated_at", "challenges", "connection_status", "guid", "has_processed_accounts", "has_processed_transactions", "is_authenticated", "is_being_aggregated", "successfully_aggregated_at"]
+    __properties = ["aggregated_at", "challenges", "connection_status", "guid", "has_processed_accounts", "has_processed_account_numbers", "has_processed_transactions", "is_authenticated", "is_being_aggregated", "successfully_aggregated_at"]
 
     class Config:
         """Pydantic configuration"""
@@ -88,6 +89,11 @@ class MemberStatusResponse(BaseModel):
         if self.has_processed_accounts is None and "has_processed_accounts" in self.__fields_set__:
             _dict['has_processed_accounts'] = None
 
+        # set to None if has_processed_account_numbers (nullable) is None
+        # and __fields_set__ contains the field
+        if self.has_processed_account_numbers is None and "has_processed_account_numbers" in self.__fields_set__:
+            _dict['has_processed_account_numbers'] = None
+
         # set to None if has_processed_transactions (nullable) is None
         # and __fields_set__ contains the field
         if self.has_processed_transactions is None and "has_processed_transactions" in self.__fields_set__:
@@ -125,6 +131,7 @@ class MemberStatusResponse(BaseModel):
             "connection_status": obj.get("connection_status"),
             "guid": obj.get("guid"),
             "has_processed_accounts": obj.get("has_processed_accounts"),
+            "has_processed_account_numbers": obj.get("has_processed_account_numbers"),
             "has_processed_transactions": obj.get("has_processed_transactions"),
             "is_authenticated": obj.get("is_authenticated"),
             "is_being_aggregated": obj.get("is_being_aggregated"),

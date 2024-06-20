@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.25.0"
+__version__ = "0.26.0"
 
 # import apis into sdk package
 from mx_platform_python.api.insights_api import InsightsApi

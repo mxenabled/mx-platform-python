@@ -59,6 +59,7 @@ class TestMemberStatusResponse(unittest.TestCase):
                 connection_status = 'CONNECTED',
                 guid = 'MBR-7c6f361b-e582-15b6-60c0-358f12466b4b',
                 has_processed_accounts = True,
+                has_processed_account_numbers = True,
                 has_processed_transactions = False,
                 is_authenticated = False,
                 is_being_aggregated = False,
