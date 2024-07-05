@@ -33,14 +33,17 @@ class MemberResponse(BaseModel):
     institution_code: Optional[StrictStr] = None
     is_being_aggregated: Optional[StrictBool] = None
     is_managed_by_user: Optional[StrictBool] = None
+    is_manual: Optional[StrictBool] = None
     is_oauth: Optional[StrictBool] = None
     metadata: Optional[StrictStr] = None
+    most_recent_job_detail_code: Optional[StrictStr] = None
+    most_recent_job_detail_text: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     oauth_window_uri: Optional[StrictStr] = None
     successfully_aggregated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_oauth", "metadata", "name", "oauth_window_uri", "successfully_aggregated_at", "user_guid", "user_id"]
+    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -101,6 +104,11 @@ class MemberResponse(BaseModel):
         if self.is_managed_by_user is None and "is_managed_by_user" in self.__fields_set__:
             _dict['is_managed_by_user'] = None
 
+        # set to None if is_manual (nullable) is None
+        # and __fields_set__ contains the field
+        if self.is_manual is None and "is_manual" in self.__fields_set__:
+            _dict['is_manual'] = None
+
         # set to None if is_oauth (nullable) is None
         # and __fields_set__ contains the field
         if self.is_oauth is None and "is_oauth" in self.__fields_set__:
@@ -110,6 +118,16 @@ class MemberResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.metadata is None and "metadata" in self.__fields_set__:
             _dict['metadata'] = None
+
+        # set to None if most_recent_job_detail_code (nullable) is None
+        # and __fields_set__ contains the field
+        if self.most_recent_job_detail_code is None and "most_recent_job_detail_code" in self.__fields_set__:
+            _dict['most_recent_job_detail_code'] = None
+
+        # set to None if most_recent_job_detail_text (nullable) is None
+        # and __fields_set__ contains the field
+        if self.most_recent_job_detail_text is None and "most_recent_job_detail_text" in self.__fields_set__:
+            _dict['most_recent_job_detail_text'] = None
 
         # set to None if name (nullable) is None
         # and __fields_set__ contains the field
@@ -156,8 +174,11 @@ class MemberResponse(BaseModel):
             "institution_code": obj.get("institution_code"),
             "is_being_aggregated": obj.get("is_being_aggregated"),
             "is_managed_by_user": obj.get("is_managed_by_user"),
+            "is_manual": obj.get("is_manual"),
             "is_oauth": obj.get("is_oauth"),
             "metadata": obj.get("metadata"),
+            "most_recent_job_detail_code": obj.get("most_recent_job_detail_code"),
+            "most_recent_job_detail_text": obj.get("most_recent_job_detail_text"),
             "name": obj.get("name"),
             "oauth_window_uri": obj.get("oauth_window_uri"),
             "successfully_aggregated_at": obj.get("successfully_aggregated_at"),
