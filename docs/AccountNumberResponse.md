@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **account_guid** | **str** |  | [optional] 
 **account_number** | **str** |  | [optional] 
 **guid** | **str** |  | [optional] 
+**loan_guarantor** | **str** |  | [optional] 
 **institution_number** | **str** |  | [optional] 
 **member_guid** | **str** |  | [optional] 
 **passed_validation** | **bool** |  | [optional] 

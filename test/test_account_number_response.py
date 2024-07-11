@@ -39,6 +39,7 @@ class TestAccountNumberResponse(unittest.TestCase):
                 account_guid = 'ACT-06d7f45b-caae-0f6e-1384-01f52e75dcb1',
                 account_number = '10001',
                 guid = 'ACN-8899832e-e5b4-42cd-aa25-bbf1dc889a8f',
+                loan_guarantor = 'U.S. DEPARTMENT OF EDUCATION',
                 institution_number = '123',
                 member_guid = 'MBR-7c6f361b-e582-15b6-60c0-358f12466b4b',
                 passed_validation = True,
