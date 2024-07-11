@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **today_ugl_amount** | **float** |  | [optional] 
 **today_ugl_percentage** | **float** |  | [optional] 
 **total_account_value** | **float** |  | [optional] 
+**total_account_value_ugl** | **float** |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **user_guid** | **str** |  | [optional] 

@@ -77,11 +77,12 @@ class AccountResponse(BaseModel):
     today_ugl_amount: Optional[Union[StrictFloat, StrictInt]] = None
     today_ugl_percentage: Optional[Union[StrictFloat, StrictInt]] = None
     total_account_value: Optional[Union[StrictFloat, StrictInt]] = None
+    total_account_value_ugl: Optional[Union[StrictFloat, StrictInt]] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "type", "updated_at", "user_guid", "user_id"]
+    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "total_account_value_ugl", "type", "updated_at", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -362,6 +363,11 @@ class AccountResponse(BaseModel):
         if self.total_account_value is None and "total_account_value" in self.__fields_set__:
             _dict['total_account_value'] = None
 
+        # set to None if total_account_value_ugl (nullable) is None
+        # and __fields_set__ contains the field
+        if self.total_account_value_ugl is None and "total_account_value_ugl" in self.__fields_set__:
+            _dict['total_account_value_ugl'] = None
+
         # set to None if type (nullable) is None
         # and __fields_set__ contains the field
         if self.type is None and "type" in self.__fields_set__:
@@ -446,6 +452,7 @@ class AccountResponse(BaseModel):
             "today_ugl_amount": obj.get("today_ugl_amount"),
             "today_ugl_percentage": obj.get("today_ugl_percentage"),
             "total_account_value": obj.get("total_account_value"),
+            "total_account_value_ugl": obj.get("total_account_value_ugl"),
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at"),
             "user_guid": obj.get("user_guid"),
