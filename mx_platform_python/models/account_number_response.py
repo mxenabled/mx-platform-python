@@ -29,13 +29,15 @@ class AccountNumberResponse(BaseModel):
     account_number: Optional[StrictStr] = None
     guid: Optional[StrictStr] = None
     loan_guarantor: Optional[StrictStr] = None
+    loan_reference_number: Optional[StrictStr] = None
     institution_number: Optional[StrictStr] = None
     member_guid: Optional[StrictStr] = None
     passed_validation: Optional[StrictBool] = None
     routing_number: Optional[StrictStr] = None
+    sequence_number: Optional[StrictStr] = None
     transit_number: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
-    __properties = ["account_guid", "account_number", "guid", "loan_guarantor", "institution_number", "member_guid", "passed_validation", "routing_number", "transit_number", "user_guid"]
+    __properties = ["account_guid", "account_number", "guid", "loan_guarantor", "loan_reference_number", "institution_number", "member_guid", "passed_validation", "routing_number", "sequence_number", "transit_number", "user_guid"]
 
     class Config:
         """Pydantic configuration"""
@@ -81,6 +83,11 @@ class AccountNumberResponse(BaseModel):
         if self.loan_guarantor is None and "loan_guarantor" in self.__fields_set__:
             _dict['loan_guarantor'] = None
 
+        # set to None if loan_reference_number (nullable) is None
+        # and __fields_set__ contains the field
+        if self.loan_reference_number is None and "loan_reference_number" in self.__fields_set__:
+            _dict['loan_reference_number'] = None
+
         # set to None if institution_number (nullable) is None
         # and __fields_set__ contains the field
         if self.institution_number is None and "institution_number" in self.__fields_set__:
@@ -100,6 +107,11 @@ class AccountNumberResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.routing_number is None and "routing_number" in self.__fields_set__:
             _dict['routing_number'] = None
+
+        # set to None if sequence_number (nullable) is None
+        # and __fields_set__ contains the field
+        if self.sequence_number is None and "sequence_number" in self.__fields_set__:
+            _dict['sequence_number'] = None
 
         # set to None if transit_number (nullable) is None
         # and __fields_set__ contains the field
@@ -127,10 +139,12 @@ class AccountNumberResponse(BaseModel):
             "account_number": obj.get("account_number"),
             "guid": obj.get("guid"),
             "loan_guarantor": obj.get("loan_guarantor"),
+            "loan_reference_number": obj.get("loan_reference_number"),
             "institution_number": obj.get("institution_number"),
             "member_guid": obj.get("member_guid"),
             "passed_validation": obj.get("passed_validation"),
             "routing_number": obj.get("routing_number"),
+            "sequence_number": obj.get("sequence_number"),
             "transit_number": obj.get("transit_number"),
             "user_guid": obj.get("user_guid")
         })
