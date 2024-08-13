@@ -86,6 +86,7 @@ class TestAccountsResponseBody(unittest.TestCase):
                         property_type = 'VEHICLE', 
                         routing_number = '68899990000000', 
                         started_on = '2015-10-13T17:57:37.000Z', 
+                        statement_balance = 100.1, 
                         subtype = 'NONE', 
                         today_ugl_amount = 1000.5, 
                         today_ugl_percentage = 6.9, 

@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **property_type** | **str** |  | [optional] 
 **routing_number** | **str** |  | [optional] 
 **started_on** | **str** |  | [optional] 
+**statement_balance** | **float** |  | [optional] 
 **subtype** | **str** |  | [optional] 
 **today_ugl_amount** | **float** |  | [optional] 
 **today_ugl_percentage** | **float** |  | [optional] 
