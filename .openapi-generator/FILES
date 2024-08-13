@@ -31,6 +31,8 @@ docs/ConnectWidgetResponseBody.md
 docs/CredentialRequest.md
 docs/CredentialResponse.md
 docs/CredentialsResponseBody.md
+docs/CreditCardProduct.md
+docs/CreditCardProductResponse.md
 docs/EnhanceTransactionResponse.md
 docs/EnhanceTransactionsRequest.md
 docs/EnhanceTransactionsRequestBody.md
@@ -84,6 +86,10 @@ docs/PaymentProcessorAuthorizationCodeRequest.md
 docs/PaymentProcessorAuthorizationCodeRequestBody.md
 docs/PaymentProcessorAuthorizationCodeResponse.md
 docs/PaymentProcessorAuthorizationCodeResponseBody.md
+docs/RewardResponse.md
+docs/RewardResponseBody.md
+docs/RewardsResponse.md
+docs/RewardsResponseBody.md
 docs/ScheduledPaymentResponse.md
 docs/ScheduledPaymentsResponseBody.md
 docs/SpendingPlanAccountResponse.md
@@ -180,6 +186,8 @@ mx_platform_python/models/connect_widget_response_body.py
 mx_platform_python/models/credential_request.py
 mx_platform_python/models/credential_response.py
 mx_platform_python/models/credentials_response_body.py
+mx_platform_python/models/credit_card_product.py
+mx_platform_python/models/credit_card_product_response.py
 mx_platform_python/models/enhance_transaction_response.py
 mx_platform_python/models/enhance_transactions_request.py
 mx_platform_python/models/enhance_transactions_request_body.py
@@ -231,6 +239,10 @@ mx_platform_python/models/payment_processor_authorization_code_request.py
 mx_platform_python/models/payment_processor_authorization_code_request_body.py
 mx_platform_python/models/payment_processor_authorization_code_response.py
 mx_platform_python/models/payment_processor_authorization_code_response_body.py
+mx_platform_python/models/reward_response.py
+mx_platform_python/models/reward_response_body.py
+mx_platform_python/models/rewards_response.py
+mx_platform_python/models/rewards_response_body.py
 mx_platform_python/models/scheduled_payment_response.py
 mx_platform_python/models/scheduled_payments_response_body.py
 mx_platform_python/models/spending_plan_account_response.py
@@ -324,6 +336,8 @@ test/test_connect_widget_response_body.py
 test/test_credential_request.py
 test/test_credential_response.py
 test/test_credentials_response_body.py
+test/test_credit_card_product.py
+test/test_credit_card_product_response.py
 test/test_enhance_transaction_response.py
 test/test_enhance_transactions_request.py
 test/test_enhance_transactions_request_body.py
@@ -377,6 +391,10 @@ test/test_payment_processor_authorization_code_request.py
 test/test_payment_processor_authorization_code_request_body.py
 test/test_payment_processor_authorization_code_response.py
 test/test_payment_processor_authorization_code_response_body.py
+test/test_reward_response.py
+test/test_reward_response_body.py
+test/test_rewards_response.py
+test/test_rewards_response_body.py
 test/test_scheduled_payment_response.py
 test/test_scheduled_payments_response_body.py
 test/test_spending_plan_account_response.py

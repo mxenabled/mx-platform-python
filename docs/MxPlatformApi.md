@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**create_tagging**](MxPlatformApi.md#create_tagging) | **POST** /users/{user_guid}/taggings | Create tagging
 [**create_transaction_rule**](MxPlatformApi.md#create_transaction_rule) | **POST** /users/{user_guid}/transaction_rules | Create transaction rule
 [**create_user**](MxPlatformApi.md#create_user) | **POST** /users | Create user
+[**credit_card**](MxPlatformApi.md#credit_card) | **GET** /credit_card_products/{credit_card_product_guid} | Read a Credit Card Product
 [**delete_category**](MxPlatformApi.md#delete_category) | **DELETE** /users/{user_guid}/categories/{category_guid} | Delete category
 [**delete_managed_account**](MxPlatformApi.md#delete_managed_account) | **DELETE** /users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid} | Delete managed account
 [**delete_managed_member**](MxPlatformApi.md#delete_managed_member) | **DELETE** /users/{user_guid}/managed_members/{member_guid} | Delete managed member
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**download_tax_document**](MxPlatformApi.md#download_tax_document) | **GET** /users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid}.pdf | Download a Tax Document PDF
 [**enhance_transactions**](MxPlatformApi.md#enhance_transactions) | **POST** /transactions/enhance | Enhance transactions
 [**extend_history**](MxPlatformApi.md#extend_history) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
+[**fetch_rewards**](MxPlatformApi.md#fetch_rewards) | **POST** /users/{user_guid}/members/{member_guid}/fetch_rewards | Fetch Rewards
 [**fetch_statements**](MxPlatformApi.md#fetch_statements) | **POST** /users/{user_guid}/members/{member_guid}/fetch_statements | Fetch statements
 [**fetch_tax_documents**](MxPlatformApi.md#fetch_tax_documents) | **POST** /users/{user_guid}/members/{member_guid}/fetch_tax_documents | Fetch Tax Documents
 [**identify_member**](MxPlatformApi.md#identify_member) | **POST** /users/{user_guid}/members/{member_guid}/identify | Identify member
@@ -55,6 +57,7 @@ Method | HTTP request | Description
 [**list_member_credentials**](MxPlatformApi.md#list_member_credentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 [**list_members**](MxPlatformApi.md#list_members) | **GET** /users/{user_guid}/members | List members
 [**list_merchants**](MxPlatformApi.md#list_merchants) | **GET** /merchants | List merchants
+[**list_rewards**](MxPlatformApi.md#list_rewards) | **GET** /users/{user_guid}/members/{member_guid}/rewards | List Rewards
 [**list_statements_by_member**](MxPlatformApi.md#list_statements_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements | List statements by member
 [**list_taggings**](MxPlatformApi.md#list_taggings) | **GET** /users/{user_guid}/taggings | List taggings
 [**list_tags**](MxPlatformApi.md#list_tags) | **GET** /users/{user_guid}/tags | List tags
@@ -79,6 +82,7 @@ Method | HTTP request | Description
 [**read_member_status**](MxPlatformApi.md#read_member_status) | **GET** /users/{user_guid}/members/{member_guid}/status | Read member status
 [**read_merchant**](MxPlatformApi.md#read_merchant) | **GET** /merchants/{merchant_guid} | Read merchant
 [**read_merchant_location**](MxPlatformApi.md#read_merchant_location) | **GET** /merchant_locations/{merchant_location_guid} | Read merchant location
+[**read_rewards**](MxPlatformApi.md#read_rewards) | **GET** /users/{user_guid}/members/{member_guid}/rewards/{reward_guid} | Read Reward
 [**read_statement_by_member**](MxPlatformApi.md#read_statement_by_member) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid} | Read statement by member
 [**read_tag**](MxPlatformApi.md#read_tag) | **GET** /users/{user_guid}/tags/{tag_guid} | Read tag
 [**read_tagging**](MxPlatformApi.md#read_tagging) | **GET** /users/{user_guid}/taggings/{tagging_guid} | Read tagging
@@ -1070,6 +1074,84 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credit_card**
+> CreditCardProductResponse credit_card(credit_card_product_guid)
+
+Read a Credit Card Product
+
+This endpoint returns the specified `credit_card_product` according to the unique GUID.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.credit_card_product_response import CreditCardProductResponse
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    credit_card_product_guid = 'credit_card_product_guid' # str | The required `credit_card_product_guid` can be found on the `account` object.
+
+    try:
+        # Read a Credit Card Product
+        api_response = api_instance.credit_card(credit_card_product_guid)
+        print("The response of MxPlatformApi->credit_card:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->credit_card: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **credit_card_product_guid** | **str**| The required &#x60;credit_card_product_guid&#x60; can be found on the &#x60;account&#x60; object. | 
+
+### Return type
+
+[**CreditCardProductResponse**](CreditCardProductResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/vnd.mx.api.v1+json
 
 ### HTTP response details
@@ -2250,6 +2332,86 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Accepted |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_rewards**
+> MemberResponseBody fetch_rewards(user_guid, member_guid)
+
+Fetch Rewards
+
+Calling this endpoint initiates an aggregation-type event which will gather the member's rewards information, as well as account and transaction information. Rewards data is also gathered with daily background aggregations.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.member_response_body import MemberResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54' # str | The unique id for a `user`.
+    member_guid = 'MBR-fa7537f3-48aa-a683-a02a-b18345562f54' # str | The unique identifier for the member. Defined by MX.
+
+    try:
+        # Fetch Rewards
+        api_response = api_instance.fetch_rewards(user_guid, member_guid)
+        print("The response of MxPlatformApi->fetch_rewards:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->fetch_rewards: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
+ **member_guid** | **str**| The unique identifier for the member. Defined by MX. | 
+
+### Return type
+
+[**MemberResponseBody**](MemberResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4251,6 +4413,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_rewards**
+> RewardsResponseBody list_rewards(user_guid, member_guid)
+
+List Rewards
+
+Use this endpoint to list all the `rewards` associated with a specified `member`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.rewards_response_body import RewardsResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54' # str | The unique id for a `user`.
+    member_guid = 'MBR-fa7537f3-48aa-a683-a02a-b18345562f54' # str | The unique identifier for the member. Defined by MX.
+
+    try:
+        # List Rewards
+        api_response = api_instance.list_rewards(user_guid, member_guid)
+        print("The response of MxPlatformApi->list_rewards:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->list_rewards: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
+ **member_guid** | **str**| The unique identifier for the member. Defined by MX. | 
+
+### Return type
+
+[**RewardsResponseBody**](RewardsResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_statements_by_member**
 > StatementsResponseBody list_statements_by_member(member_guid, user_guid, page=page, records_per_page=records_per_page)
 
@@ -6210,6 +6452,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantLocationResponseBody**](MerchantLocationResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.mx.api.v1+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **read_rewards**
+> RewardResponseBody read_rewards(user_guid, member_guid, reward_guid)
+
+Read Reward
+
+Use this endpoint to read a specific `reward` based on its unique GUID..
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.reward_response_body import RewardResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54' # str | The unique id for a `user`.
+    member_guid = 'MBR-fa7537f3-48aa-a683-a02a-b18345562f54' # str | The unique identifier for the member. Defined by MX.
+    reward_guid = 'RWD-fa7537f3-48aa-a683-a02a-b324322f54' # str | The unique identifier for the rewards. Defined by MX.
+
+    try:
+        # Read Reward
+        api_response = api_instance.read_rewards(user_guid, member_guid, reward_guid)
+        print("The response of MxPlatformApi->read_rewards:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->read_rewards: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
+ **member_guid** | **str**| The unique identifier for the member. Defined by MX. | 
+ **reward_guid** | **str**| The unique identifier for the rewards. Defined by MX. | 
+
+### Return type
+
+[**RewardResponseBody**](RewardResponseBody.md)
 
 ### Authorization
 

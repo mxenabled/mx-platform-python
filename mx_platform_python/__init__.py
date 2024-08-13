@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.33.0"
+__version__ = "0.34.0"
 
 # import apis into sdk package
 from mx_platform_python.api.insights_api import InsightsApi
@@ -64,6 +64,8 @@ from mx_platform_python.models.connect_widget_response_body import ConnectWidget
 from mx_platform_python.models.credential_request import CredentialRequest
 from mx_platform_python.models.credential_response import CredentialResponse
 from mx_platform_python.models.credentials_response_body import CredentialsResponseBody
+from mx_platform_python.models.credit_card_product import CreditCardProduct
+from mx_platform_python.models.credit_card_product_response import CreditCardProductResponse
 from mx_platform_python.models.enhance_transaction_response import EnhanceTransactionResponse
 from mx_platform_python.models.enhance_transactions_request import EnhanceTransactionsRequest
 from mx_platform_python.models.enhance_transactions_request_body import EnhanceTransactionsRequestBody
@@ -115,6 +117,10 @@ from mx_platform_python.models.payment_processor_authorization_code_request impo
 from mx_platform_python.models.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
 from mx_platform_python.models.payment_processor_authorization_code_response import PaymentProcessorAuthorizationCodeResponse
 from mx_platform_python.models.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
+from mx_platform_python.models.reward_response import RewardResponse
+from mx_platform_python.models.reward_response_body import RewardResponseBody
+from mx_platform_python.models.rewards_response import RewardsResponse
+from mx_platform_python.models.rewards_response_body import RewardsResponseBody
 from mx_platform_python.models.scheduled_payment_response import ScheduledPaymentResponse
 from mx_platform_python.models.scheduled_payments_response_body import ScheduledPaymentsResponseBody
 from mx_platform_python.models.spending_plan_account_response import SpendingPlanAccountResponse

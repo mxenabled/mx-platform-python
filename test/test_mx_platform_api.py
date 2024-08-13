@@ -110,6 +110,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_credit_card(self) -> None:
+        """Test case for credit_card
+
+        Read a Credit Card Product  # noqa: E501
+        """
+        pass
+
     def test_delete_category(self) -> None:
         """Test case for delete_category
 
@@ -212,6 +219,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for extend_history
 
         Extend history  # noqa: E501
+        """
+        pass
+
+    def test_fetch_rewards(self) -> None:
+        """Test case for fetch_rewards
+
+        Fetch Rewards  # noqa: E501
         """
         pass
 
@@ -383,6 +397,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_list_rewards(self) -> None:
+        """Test case for list_rewards
+
+        List Rewards  # noqa: E501
+        """
+        pass
+
     def test_list_statements_by_member(self) -> None:
         """Test case for list_statements_by_member
 
@@ -548,6 +569,13 @@ class TestMxPlatformApi(unittest.TestCase):
         """Test case for read_merchant_location
 
         Read merchant location  # noqa: E501
+        """
+        pass
+
+    def test_read_rewards(self) -> None:
+        """Test case for read_rewards
+
+        Read Reward  # noqa: E501
         """
         pass
 
