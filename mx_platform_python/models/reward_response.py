@@ -34,8 +34,9 @@ class RewardResponse(BaseModel):
     guid: Optional[StrictStr] = None
     member_guid: Optional[StrictStr] = None
     unit_type: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
-    __properties = ["account_guid", "balance_type", "balance", "created_at", "description", "expires_on", "guid", "member_guid", "unit_type", "user_guid"]
+    __properties = ["account_guid", "balance_type", "balance", "created_at", "description", "expires_on", "guid", "member_guid", "unit_type", "updated_at", "user_guid"]
 
     class Config:
         """Pydantic configuration"""
@@ -82,6 +83,7 @@ class RewardResponse(BaseModel):
             "guid": obj.get("guid"),
             "member_guid": obj.get("member_guid"),
             "unit_type": obj.get("unit_type"),
+            "updated_at": obj.get("updated_at"),
             "user_guid": obj.get("user_guid")
         })
         return _obj

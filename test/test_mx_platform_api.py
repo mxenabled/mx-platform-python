@@ -740,6 +740,34 @@ class TestMxPlatformApi(unittest.TestCase):
         """
         pass
 
+    def test_users_user_guid_monthly_cash_flow_profile_get(self) -> None:
+        """Test case for users_user_guid_monthly_cash_flow_profile_get
+
+        Read monthly cash flow profile  # noqa: E501
+        """
+        pass
+
+    def test_users_user_guid_monthly_cash_flow_profile_put(self) -> None:
+        """Test case for users_user_guid_monthly_cash_flow_profile_put
+
+        Update monthly cash flow profile  # noqa: E501
+        """
+        pass
+
+    def test_users_user_guid_transactions_transaction_guid_split_delete(self) -> None:
+        """Test case for users_user_guid_transactions_transaction_guid_split_delete
+
+        Delete split transactions  # noqa: E501
+        """
+        pass
+
+    def test_users_user_guid_transactions_transaction_guid_split_post(self) -> None:
+        """Test case for users_user_guid_transactions_transaction_guid_split_post
+
+        Create split transactions  # noqa: E501
+        """
+        pass
+
     def test_verify_member(self) -> None:
         """Test case for verify_member
 

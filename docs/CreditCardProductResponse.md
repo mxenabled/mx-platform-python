@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reward** | [**CreditCardProduct**](CreditCardProduct.md) |  | [optional] 
+**credit_card_product** | [**CreditCardProduct**](CreditCardProduct.md) |  | [optional] 
 
 ## Example
 

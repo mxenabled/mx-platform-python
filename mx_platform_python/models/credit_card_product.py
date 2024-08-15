@@ -18,28 +18,28 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Optional
-from pydantic import BaseModel, StrictBool, StrictStr
+from typing import Optional, Union
+from pydantic import BaseModel, StrictBool, StrictFloat, StrictInt, StrictStr
 
 class CreditCardProduct(BaseModel):
     """
     CreditCardProduct
     """
-    annual_fee: Optional[Any] = None
-    duration_of_introductory_rate_on_balance_transfer: Optional[Any] = None
-    duration_of_introductory_rate_on_purchases: Optional[Any] = None
-    guid: Optional[Any] = None
+    annual_fee: Optional[Union[StrictFloat, StrictInt]] = None
+    duration_of_introductory_rate_on_balance_transfer: Optional[StrictInt] = None
+    duration_of_introductory_rate_on_purchases: Optional[StrictInt] = None
+    guid: Optional[StrictStr] = None
     has_cashback_rewards: Optional[StrictBool] = None
     has_other_rewards: Optional[StrictBool] = None
     has_travel_rewards: Optional[StrictBool] = None
     has_zero_introductory_annual_fee: Optional[StrictBool] = None
     has_zero_percent_introductory_rate: Optional[StrictBool] = None
     has_zero_percent_introductory_rate_on_balance_transfer: Optional[StrictBool] = None
-    financial_institution: Optional[StrictBool] = None
-    is_accepting_applications: Optional[StrictBool] = None
+    is_accepting_applicants: Optional[StrictBool] = None
+    is_active_credit_card_product: Optional[StrictBool] = None
     is_small_business_card: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    __properties = ["annual_fee", "duration_of_introductory_rate_on_balance_transfer", "duration_of_introductory_rate_on_purchases", "guid", "has_cashback_rewards", "has_other_rewards", "has_travel_rewards", "has_zero_introductory_annual_fee", "has_zero_percent_introductory_rate", "has_zero_percent_introductory_rate_on_balance_transfer", "financial_institution", "is_accepting_applications", "is_small_business_card", "name"]
+    __properties = ["annual_fee", "duration_of_introductory_rate_on_balance_transfer", "duration_of_introductory_rate_on_purchases", "guid", "has_cashback_rewards", "has_other_rewards", "has_travel_rewards", "has_zero_introductory_annual_fee", "has_zero_percent_introductory_rate", "has_zero_percent_introductory_rate_on_balance_transfer", "is_accepting_applicants", "is_active_credit_card_product", "is_small_business_card", "name"]
 
     class Config:
         """Pydantic configuration"""
@@ -65,26 +65,6 @@ class CreditCardProduct(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if annual_fee (nullable) is None
-        # and __fields_set__ contains the field
-        if self.annual_fee is None and "annual_fee" in self.__fields_set__:
-            _dict['annual_fee'] = None
-
-        # set to None if duration_of_introductory_rate_on_balance_transfer (nullable) is None
-        # and __fields_set__ contains the field
-        if self.duration_of_introductory_rate_on_balance_transfer is None and "duration_of_introductory_rate_on_balance_transfer" in self.__fields_set__:
-            _dict['duration_of_introductory_rate_on_balance_transfer'] = None
-
-        # set to None if duration_of_introductory_rate_on_purchases (nullable) is None
-        # and __fields_set__ contains the field
-        if self.duration_of_introductory_rate_on_purchases is None and "duration_of_introductory_rate_on_purchases" in self.__fields_set__:
-            _dict['duration_of_introductory_rate_on_purchases'] = None
-
-        # set to None if guid (nullable) is None
-        # and __fields_set__ contains the field
-        if self.guid is None and "guid" in self.__fields_set__:
-            _dict['guid'] = None
-
         return _dict
 
     @classmethod
@@ -107,8 +87,8 @@ class CreditCardProduct(BaseModel):
             "has_zero_introductory_annual_fee": obj.get("has_zero_introductory_annual_fee"),
             "has_zero_percent_introductory_rate": obj.get("has_zero_percent_introductory_rate"),
             "has_zero_percent_introductory_rate_on_balance_transfer": obj.get("has_zero_percent_introductory_rate_on_balance_transfer"),
-            "financial_institution": obj.get("financial_institution"),
-            "is_accepting_applications": obj.get("is_accepting_applications"),
+            "is_accepting_applicants": obj.get("is_accepting_applicants"),
+            "is_active_credit_card_product": obj.get("is_active_credit_card_product"),
             "is_small_business_card": obj.get("is_small_business_card"),
             "name": obj.get("name")
         })

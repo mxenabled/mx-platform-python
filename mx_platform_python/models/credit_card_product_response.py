@@ -26,8 +26,8 @@ class CreditCardProductResponse(BaseModel):
     """
     CreditCardProductResponse
     """
-    reward: Optional[CreditCardProduct] = None
-    __properties = ["reward"]
+    credit_card_product: Optional[CreditCardProduct] = None
+    __properties = ["credit_card_product"]
 
     class Config:
         """Pydantic configuration"""
@@ -53,9 +53,9 @@ class CreditCardProductResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of reward
-        if self.reward:
-            _dict['reward'] = self.reward.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of credit_card_product
+        if self.credit_card_product:
+            _dict['credit_card_product'] = self.credit_card_product.to_dict()
         return _dict
 
     @classmethod
@@ -68,7 +68,7 @@ class CreditCardProductResponse(BaseModel):
             return CreditCardProductResponse.parse_obj(obj)
 
         _obj = CreditCardProductResponse.parse_obj({
-            "reward": CreditCardProduct.from_dict(obj.get("reward")) if obj.get("reward") is not None else None
+            "credit_card_product": CreditCardProduct.from_dict(obj.get("credit_card_product")) if obj.get("credit_card_product") is not None else None
         })
         return _obj
 

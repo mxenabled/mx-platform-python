@@ -4,18 +4,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**annual_fee** | **object** |  | [optional] 
-**duration_of_introductory_rate_on_balance_transfer** | **object** |  | [optional] 
-**duration_of_introductory_rate_on_purchases** | **object** |  | [optional] 
-**guid** | **object** |  | [optional] 
+**annual_fee** | **float** |  | [optional] 
+**duration_of_introductory_rate_on_balance_transfer** | **int** |  | [optional] 
+**duration_of_introductory_rate_on_purchases** | **int** |  | [optional] 
+**guid** | **str** |  | [optional] 
 **has_cashback_rewards** | **bool** |  | [optional] 
 **has_other_rewards** | **bool** |  | [optional] 
 **has_travel_rewards** | **bool** |  | [optional] 
 **has_zero_introductory_annual_fee** | **bool** |  | [optional] 
 **has_zero_percent_introductory_rate** | **bool** |  | [optional] 
 **has_zero_percent_introductory_rate_on_balance_transfer** | **bool** |  | [optional] 
-**financial_institution** | **bool** |  | [optional] 
-**is_accepting_applications** | **bool** |  | [optional] 
+**is_accepting_applicants** | **bool** |  | [optional] 
+**is_active_credit_card_product** | **bool** |  | [optional] 
 **is_small_business_card** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 

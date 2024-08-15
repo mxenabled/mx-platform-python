@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **guid** | **str** |  | [optional] 
 **member_guid** | **str** |  | [optional] 
 **unit_type** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **user_guid** | **str** |  | [optional] 
 
 ## Example
