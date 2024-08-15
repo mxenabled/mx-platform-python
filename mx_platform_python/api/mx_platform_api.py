@@ -61,11 +61,15 @@ from mx_platform_python.models.members_response_body import MembersResponseBody
 from mx_platform_python.models.merchant_location_response_body import MerchantLocationResponseBody
 from mx_platform_python.models.merchant_response_body import MerchantResponseBody
 from mx_platform_python.models.merchants_response_body import MerchantsResponseBody
+from mx_platform_python.models.monthly_cash_flow_profile_request_body import MonthlyCashFlowProfileRequestBody
+from mx_platform_python.models.monthly_cash_flow_response_body import MonthlyCashFlowResponseBody
 from mx_platform_python.models.o_auth_window_response_body import OAuthWindowResponseBody
 from mx_platform_python.models.payment_processor_authorization_code_request_body import PaymentProcessorAuthorizationCodeRequestBody
 from mx_platform_python.models.payment_processor_authorization_code_response_body import PaymentProcessorAuthorizationCodeResponseBody
 from mx_platform_python.models.reward_response_body import RewardResponseBody
 from mx_platform_python.models.rewards_response_body import RewardsResponseBody
+from mx_platform_python.models.split_transaction_request_body import SplitTransactionRequestBody
+from mx_platform_python.models.split_transactions_response_body import SplitTransactionsResponseBody
 from mx_platform_python.models.statement_response_body import StatementResponseBody
 from mx_platform_python.models.statements_response_body import StatementsResponseBody
 from mx_platform_python.models.tag_create_request_body import TagCreateRequestBody
@@ -16058,6 +16062,604 @@ class MxPlatformApi:
 
         return self.api_client.call_api(
             '/users/{user_guid}', 'PUT',
+            _path_params,
+            _query_params,
+            _header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            response_types_map=_response_types_map,
+            auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
+            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=_params.get('_preload_content', True),
+            _request_timeout=_params.get('_request_timeout'),
+            collection_formats=_collection_formats,
+            _request_auth=_params.get('_request_auth'))
+
+    @validate_arguments
+    def users_user_guid_monthly_cash_flow_profile_get(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user.")], **kwargs) -> MonthlyCashFlowResponseBody:  # noqa: E501
+        """Read monthly cash flow profile  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_monthly_cash_flow_profile_get(user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. (required)
+        :type user_guid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _request_timeout: timeout setting for this request.
+               If one number provided, it will be total request
+               timeout. It can also be a pair (tuple) of
+               (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: MonthlyCashFlowResponseBody
+        """
+        kwargs['_return_http_data_only'] = True
+        if '_preload_content' in kwargs:
+            message = "Error! Please call the users_user_guid_monthly_cash_flow_profile_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            raise ValueError(message)
+        return self.users_user_guid_monthly_cash_flow_profile_get_with_http_info(user_guid, **kwargs)  # noqa: E501
+
+    @validate_arguments
+    def users_user_guid_monthly_cash_flow_profile_get_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user.")], **kwargs) -> ApiResponse:  # noqa: E501
+        """Read monthly cash flow profile  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_monthly_cash_flow_profile_get_with_http_info(user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. (required)
+        :type user_guid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the ApiResponse.data will
+                                 be set to none and raw_data will store the
+                                 HTTP response body without reading/decoding.
+                                 Default is True.
+        :type _preload_content: bool, optional
+        :param _return_http_data_only: response data instead of ApiResponse
+                                       object with status code, headers, etc
+        :type _return_http_data_only: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(MonthlyCashFlowResponseBody, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        _params = locals()
+
+        _all_params = [
+            'user_guid'
+        ]
+        _all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        # validate the arguments
+        for _key, _val in _params['kwargs'].items():
+            if _key not in _all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method users_user_guid_monthly_cash_flow_profile_get" % _key
+                )
+            _params[_key] = _val
+        del _params['kwargs']
+
+        _collection_formats = {}
+
+        # process the path parameters
+        _path_params = {}
+        if _params['user_guid']:
+            _path_params['user_guid'] = _params['user_guid']
+
+
+        # process the query parameters
+        _query_params = []
+        # process the header parameters
+        _header_params = dict(_params.get('_headers', {}))
+        # process the form parameters
+        _form_params = []
+        _files = {}
+        # process the body parameter
+        _body_params = None
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # authentication setting
+        _auth_settings = ['basicAuth']  # noqa: E501
+
+        _response_types_map = {
+            '200': "MonthlyCashFlowResponseBody",
+        }
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/monthly_cash_flow_profile', 'GET',
+            _path_params,
+            _query_params,
+            _header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            response_types_map=_response_types_map,
+            auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
+            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=_params.get('_preload_content', True),
+            _request_timeout=_params.get('_request_timeout'),
+            collection_formats=_collection_formats,
+            _request_auth=_params.get('_request_auth'))
+
+    @validate_arguments
+    def users_user_guid_monthly_cash_flow_profile_put(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user.")], monthly_cash_flow_profile_request_body : MonthlyCashFlowProfileRequestBody, **kwargs) -> MonthlyCashFlowResponseBody:  # noqa: E501
+        """Update monthly cash flow profile  # noqa: E501
+
+        Use this endpoint to update the attributes of a `monthly_cash_flow_profile`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_monthly_cash_flow_profile_put(user_guid, monthly_cash_flow_profile_request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. (required)
+        :type user_guid: str
+        :param monthly_cash_flow_profile_request_body: (required)
+        :type monthly_cash_flow_profile_request_body: MonthlyCashFlowProfileRequestBody
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _request_timeout: timeout setting for this request.
+               If one number provided, it will be total request
+               timeout. It can also be a pair (tuple) of
+               (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: MonthlyCashFlowResponseBody
+        """
+        kwargs['_return_http_data_only'] = True
+        if '_preload_content' in kwargs:
+            message = "Error! Please call the users_user_guid_monthly_cash_flow_profile_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            raise ValueError(message)
+        return self.users_user_guid_monthly_cash_flow_profile_put_with_http_info(user_guid, monthly_cash_flow_profile_request_body, **kwargs)  # noqa: E501
+
+    @validate_arguments
+    def users_user_guid_monthly_cash_flow_profile_put_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user.")], monthly_cash_flow_profile_request_body : MonthlyCashFlowProfileRequestBody, **kwargs) -> ApiResponse:  # noqa: E501
+        """Update monthly cash flow profile  # noqa: E501
+
+        Use this endpoint to update the attributes of a `monthly_cash_flow_profile`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_monthly_cash_flow_profile_put_with_http_info(user_guid, monthly_cash_flow_profile_request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. (required)
+        :type user_guid: str
+        :param monthly_cash_flow_profile_request_body: (required)
+        :type monthly_cash_flow_profile_request_body: MonthlyCashFlowProfileRequestBody
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the ApiResponse.data will
+                                 be set to none and raw_data will store the
+                                 HTTP response body without reading/decoding.
+                                 Default is True.
+        :type _preload_content: bool, optional
+        :param _return_http_data_only: response data instead of ApiResponse
+                                       object with status code, headers, etc
+        :type _return_http_data_only: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(MonthlyCashFlowResponseBody, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        _params = locals()
+
+        _all_params = [
+            'user_guid',
+            'monthly_cash_flow_profile_request_body'
+        ]
+        _all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        # validate the arguments
+        for _key, _val in _params['kwargs'].items():
+            if _key not in _all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method users_user_guid_monthly_cash_flow_profile_put" % _key
+                )
+            _params[_key] = _val
+        del _params['kwargs']
+
+        _collection_formats = {}
+
+        # process the path parameters
+        _path_params = {}
+        if _params['user_guid']:
+            _path_params['user_guid'] = _params['user_guid']
+
+
+        # process the query parameters
+        _query_params = []
+        # process the header parameters
+        _header_params = dict(_params.get('_headers', {}))
+        # process the form parameters
+        _form_params = []
+        _files = {}
+        # process the body parameter
+        _body_params = None
+        if _params['monthly_cash_flow_profile_request_body'] is not None:
+            _body_params = _params['monthly_cash_flow_profile_request_body']
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
+
+        # authentication setting
+        _auth_settings = ['basicAuth']  # noqa: E501
+
+        _response_types_map = {
+            '200': "MonthlyCashFlowResponseBody",
+        }
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/monthly_cash_flow_profile', 'PUT',
+            _path_params,
+            _query_params,
+            _header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            response_types_map=_response_types_map,
+            auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
+            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=_params.get('_preload_content', True),
+            _request_timeout=_params.get('_request_timeout'),
+            collection_formats=_collection_formats,
+            _request_auth=_params.get('_request_auth'))
+
+    @validate_arguments
+    def users_user_guid_transactions_transaction_guid_split_delete(self, transaction_guid : Annotated[StrictStr, Field(..., description="The unique id for a `transaction`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], **kwargs) -> None:  # noqa: E501
+        """Delete split transactions  # noqa: E501
+
+        This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_transactions_transaction_guid_split_delete(transaction_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param transaction_guid: The unique id for a `transaction`. (required)
+        :type transaction_guid: str
+        :param user_guid: The unique id for a `user`. (required)
+        :type user_guid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _request_timeout: timeout setting for this request.
+               If one number provided, it will be total request
+               timeout. It can also be a pair (tuple) of
+               (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+        kwargs['_return_http_data_only'] = True
+        if '_preload_content' in kwargs:
+            message = "Error! Please call the users_user_guid_transactions_transaction_guid_split_delete_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            raise ValueError(message)
+        return self.users_user_guid_transactions_transaction_guid_split_delete_with_http_info(transaction_guid, user_guid, **kwargs)  # noqa: E501
+
+    @validate_arguments
+    def users_user_guid_transactions_transaction_guid_split_delete_with_http_info(self, transaction_guid : Annotated[StrictStr, Field(..., description="The unique id for a `transaction`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], **kwargs) -> ApiResponse:  # noqa: E501
+        """Delete split transactions  # noqa: E501
+
+        This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_transactions_transaction_guid_split_delete_with_http_info(transaction_guid, user_guid, async_req=True)
+        >>> result = thread.get()
+
+        :param transaction_guid: The unique id for a `transaction`. (required)
+        :type transaction_guid: str
+        :param user_guid: The unique id for a `user`. (required)
+        :type user_guid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the ApiResponse.data will
+                                 be set to none and raw_data will store the
+                                 HTTP response body without reading/decoding.
+                                 Default is True.
+        :type _preload_content: bool, optional
+        :param _return_http_data_only: response data instead of ApiResponse
+                                       object with status code, headers, etc
+        :type _return_http_data_only: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+
+        _params = locals()
+
+        _all_params = [
+            'transaction_guid',
+            'user_guid'
+        ]
+        _all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        # validate the arguments
+        for _key, _val in _params['kwargs'].items():
+            if _key not in _all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method users_user_guid_transactions_transaction_guid_split_delete" % _key
+                )
+            _params[_key] = _val
+        del _params['kwargs']
+
+        _collection_formats = {}
+
+        # process the path parameters
+        _path_params = {}
+        if _params['transaction_guid']:
+            _path_params['transaction_guid'] = _params['transaction_guid']
+
+        if _params['user_guid']:
+            _path_params['user_guid'] = _params['user_guid']
+
+
+        # process the query parameters
+        _query_params = []
+        # process the header parameters
+        _header_params = dict(_params.get('_headers', {}))
+        # process the form parameters
+        _form_params = []
+        _files = {}
+        # process the body parameter
+        _body_params = None
+        # authentication setting
+        _auth_settings = ['basicAuth']  # noqa: E501
+
+        _response_types_map = {}
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/transactions/{transaction_guid}/split', 'DELETE',
+            _path_params,
+            _query_params,
+            _header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            response_types_map=_response_types_map,
+            auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
+            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=_params.get('_preload_content', True),
+            _request_timeout=_params.get('_request_timeout'),
+            collection_formats=_collection_formats,
+            _request_auth=_params.get('_request_auth'))
+
+    @validate_arguments
+    def users_user_guid_transactions_transaction_guid_split_post(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user. Defined by MX.")], transaction_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the transaction. Defined by MX.")], split_transaction_request_body : Optional[SplitTransactionRequestBody] = None, **kwargs) -> SplitTransactionsResponseBody:  # noqa: E501
+        """Create split transactions  # noqa: E501
+
+        This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent transaction. Once a transaction has been split it can't be split again.    In order to re-split a transaction, it must first be un-split. This can be done by calling the Delete Split Transactions endpoint. Calling this endpoint will delete the existing child transactions and update the parent transaction's `has_been_split` field to false. You can then re-split the parent transaction by calling Create Split Transaction again.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_transactions_transaction_guid_split_post(user_guid, transaction_guid, split_transaction_request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. Defined by MX. (required)
+        :type user_guid: str
+        :param transaction_guid: The unique identifier for the transaction. Defined by MX. (required)
+        :type transaction_guid: str
+        :param split_transaction_request_body:
+        :type split_transaction_request_body: SplitTransactionRequestBody
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _request_timeout: timeout setting for this request.
+               If one number provided, it will be total request
+               timeout. It can also be a pair (tuple) of
+               (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: SplitTransactionsResponseBody
+        """
+        kwargs['_return_http_data_only'] = True
+        if '_preload_content' in kwargs:
+            message = "Error! Please call the users_user_guid_transactions_transaction_guid_split_post_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            raise ValueError(message)
+        return self.users_user_guid_transactions_transaction_guid_split_post_with_http_info(user_guid, transaction_guid, split_transaction_request_body, **kwargs)  # noqa: E501
+
+    @validate_arguments
+    def users_user_guid_transactions_transaction_guid_split_post_with_http_info(self, user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the user. Defined by MX.")], transaction_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the transaction. Defined by MX.")], split_transaction_request_body : Optional[SplitTransactionRequestBody] = None, **kwargs) -> ApiResponse:  # noqa: E501
+        """Create split transactions  # noqa: E501
+
+        This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent transaction. Once a transaction has been split it can't be split again.    In order to re-split a transaction, it must first be un-split. This can be done by calling the Delete Split Transactions endpoint. Calling this endpoint will delete the existing child transactions and update the parent transaction's `has_been_split` field to false. You can then re-split the parent transaction by calling Create Split Transaction again.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.users_user_guid_transactions_transaction_guid_split_post_with_http_info(user_guid, transaction_guid, split_transaction_request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param user_guid: The unique identifier for the user. Defined by MX. (required)
+        :type user_guid: str
+        :param transaction_guid: The unique identifier for the transaction. Defined by MX. (required)
+        :type transaction_guid: str
+        :param split_transaction_request_body:
+        :type split_transaction_request_body: SplitTransactionRequestBody
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the ApiResponse.data will
+                                 be set to none and raw_data will store the
+                                 HTTP response body without reading/decoding.
+                                 Default is True.
+        :type _preload_content: bool, optional
+        :param _return_http_data_only: response data instead of ApiResponse
+                                       object with status code, headers, etc
+        :type _return_http_data_only: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(SplitTransactionsResponseBody, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        _params = locals()
+
+        _all_params = [
+            'user_guid',
+            'transaction_guid',
+            'split_transaction_request_body'
+        ]
+        _all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        # validate the arguments
+        for _key, _val in _params['kwargs'].items():
+            if _key not in _all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method users_user_guid_transactions_transaction_guid_split_post" % _key
+                )
+            _params[_key] = _val
+        del _params['kwargs']
+
+        _collection_formats = {}
+
+        # process the path parameters
+        _path_params = {}
+        if _params['user_guid']:
+            _path_params['user_guid'] = _params['user_guid']
+
+        if _params['transaction_guid']:
+            _path_params['transaction_guid'] = _params['transaction_guid']
+
+
+        # process the query parameters
+        _query_params = []
+        # process the header parameters
+        _header_params = dict(_params.get('_headers', {}))
+        # process the form parameters
+        _form_params = []
+        _files = {}
+        # process the body parameter
+        _body_params = None
+        if _params['split_transaction_request_body'] is not None:
+            _body_params = _params['split_transaction_request_body']
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/vnd.mx.api.v1+json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
+
+        # authentication setting
+        _auth_settings = ['basicAuth']  # noqa: E501
+
+        _response_types_map = {
+            '200': "SplitTransactionsResponseBody",
+        }
+
+        return self.api_client.call_api(
+            '/users/{user_guid}/transactions/{transaction_guid}/split', 'POST',
             _path_params,
             _query_params,
             _header_params,

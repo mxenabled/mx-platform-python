@@ -47,6 +47,7 @@ class TestRewardsResponseBody(unittest.TestCase):
                         guid = 'RWD-1234', 
                         member_guid = 'MBR-4567', 
                         unit_type = 'POINTS', 
+                        updated_at = '2023-06-01T19:18:06Z', 
                         user_guid = 'USR-1234', )
                     ],
                 pagination = mx_platform_python.models.pagination_response.PaginationResponse(

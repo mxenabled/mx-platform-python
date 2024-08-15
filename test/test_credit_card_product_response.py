@@ -36,19 +36,19 @@ class TestCreditCardProductResponse(unittest.TestCase):
         model = CreditCardProductResponse()  # noqa: E501
         if include_optional:
             return CreditCardProductResponse(
-                reward = mx_platform_python.models.credit_card_product.CreditCardProduct(
+                credit_card_product = mx_platform_python.models.credit_card_product.CreditCardProduct(
                     annual_fee = 45.0, 
-                    duration_of_introductory_rate_on_balance_transfer = null, 
-                    duration_of_introductory_rate_on_purchases = null, 
-                    guid = CCA-b5bcd822-6d01-4e23-b8d6-846a225e714a, 
+                    duration_of_introductory_rate_on_balance_transfer = 56, 
+                    duration_of_introductory_rate_on_purchases = 56, 
+                    guid = 'CCA-b5bcd822-6d01-4e23-b8d6-846a225e714a', 
                     has_cashback_rewards = False, 
                     has_other_rewards = True, 
                     has_travel_rewards = True, 
                     has_zero_introductory_annual_fee = True, 
                     has_zero_percent_introductory_rate = False, 
                     has_zero_percent_introductory_rate_on_balance_transfer = True, 
-                    financial_institution = True, 
-                    is_accepting_applications = True, 
+                    is_accepting_applicants = True, 
+                    is_active_credit_card_product = True, 
                     is_small_business_card = True, 
                     name = 'Chase Credit Card', )
             )

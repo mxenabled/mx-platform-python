@@ -106,6 +106,10 @@ Method | HTTP request | Description
 [**update_transaction**](MxPlatformApi.md#update_transaction) | **PUT** /users/{user_guid}/transactions/{transaction_guid} | Update transaction
 [**update_transaction_rule**](MxPlatformApi.md#update_transaction_rule) | **PUT** /users/{user_guid}/transaction_rules/{transaction_rule_guid} | Update transaction_rule
 [**update_user**](MxPlatformApi.md#update_user) | **PUT** /users/{user_guid} | Update user
+[**users_user_guid_monthly_cash_flow_profile_get**](MxPlatformApi.md#users_user_guid_monthly_cash_flow_profile_get) | **GET** /users/{user_guid}/monthly_cash_flow_profile | Read monthly cash flow profile
+[**users_user_guid_monthly_cash_flow_profile_put**](MxPlatformApi.md#users_user_guid_monthly_cash_flow_profile_put) | **PUT** /users/{user_guid}/monthly_cash_flow_profile | Update monthly cash flow profile
+[**users_user_guid_transactions_transaction_guid_split_delete**](MxPlatformApi.md#users_user_guid_transactions_transaction_guid_split_delete) | **DELETE** /users/{user_guid}/transactions/{transaction_guid}/split | Delete split transactions
+[**users_user_guid_transactions_transaction_guid_split_post**](MxPlatformApi.md#users_user_guid_transactions_transaction_guid_split_post) | **POST** /users/{user_guid}/transactions/{transaction_guid}/split | Create split transactions
 [**verify_member**](MxPlatformApi.md#verify_member) | **POST** /users/{user_guid}/members/{member_guid}/verify | Verify member
 
 
@@ -8431,6 +8435,323 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserResponseBody**](UserResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/vnd.mx.api.v1+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_user_guid_monthly_cash_flow_profile_get**
+> MonthlyCashFlowResponseBody users_user_guid_monthly_cash_flow_profile_get(user_guid)
+
+Read monthly cash flow profile
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.monthly_cash_flow_response_body import MonthlyCashFlowResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'user_guid_example' # str | The unique identifier for the user.
+
+    try:
+        # Read monthly cash flow profile
+        api_response = api_instance.users_user_guid_monthly_cash_flow_profile_get(user_guid)
+        print("The response of MxPlatformApi->users_user_guid_monthly_cash_flow_profile_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->users_user_guid_monthly_cash_flow_profile_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique identifier for the user. | 
+
+### Return type
+
+[**MonthlyCashFlowResponseBody**](MonthlyCashFlowResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_user_guid_monthly_cash_flow_profile_put**
+> MonthlyCashFlowResponseBody users_user_guid_monthly_cash_flow_profile_put(user_guid, monthly_cash_flow_profile_request_body)
+
+Update monthly cash flow profile
+
+Use this endpoint to update the attributes of a `monthly_cash_flow_profile`.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.monthly_cash_flow_profile_request_body import MonthlyCashFlowProfileRequestBody
+from mx_platform_python.models.monthly_cash_flow_response_body import MonthlyCashFlowResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'user_guid_example' # str | The unique identifier for the user.
+    monthly_cash_flow_profile_request_body = mx_platform_python.MonthlyCashFlowProfileRequestBody() # MonthlyCashFlowProfileRequestBody | 
+
+    try:
+        # Update monthly cash flow profile
+        api_response = api_instance.users_user_guid_monthly_cash_flow_profile_put(user_guid, monthly_cash_flow_profile_request_body)
+        print("The response of MxPlatformApi->users_user_guid_monthly_cash_flow_profile_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->users_user_guid_monthly_cash_flow_profile_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique identifier for the user. | 
+ **monthly_cash_flow_profile_request_body** | [**MonthlyCashFlowProfileRequestBody**](MonthlyCashFlowProfileRequestBody.md)|  | 
+
+### Return type
+
+[**MonthlyCashFlowResponseBody**](MonthlyCashFlowResponseBody.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_user_guid_transactions_transaction_guid_split_delete**
+> users_user_guid_transactions_transaction_guid_split_delete(transaction_guid, user_guid)
+
+Delete split transactions
+
+This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    transaction_guid = 'TRN-810828b0-5210-4878-9bd3-f4ce514f90c4' # str | The unique id for a `transaction`.
+    user_guid = 'USR-85628b0-5210-4878-9bd3-f4ce154f90c4' # str | The unique id for a `user`.
+
+    try:
+        # Delete split transactions
+        api_instance.users_user_guid_transactions_transaction_guid_split_delete(transaction_guid, user_guid)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->users_user_guid_transactions_transaction_guid_split_delete: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transaction_guid** | **str**| The unique id for a &#x60;transaction&#x60;. | 
+ **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_user_guid_transactions_transaction_guid_split_post**
+> SplitTransactionsResponseBody users_user_guid_transactions_transaction_guid_split_post(user_guid, transaction_guid, split_transaction_request_body=split_transaction_request_body)
+
+Create split transactions
+
+This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent transaction. Once a transaction has been split it can't be split again.    In order to re-split a transaction, it must first be un-split. This can be done by calling the Delete Split Transactions endpoint. Calling this endpoint will delete the existing child transactions and update the parent transaction's `has_been_split` field to false. You can then re-split the parent transaction by calling Create Split Transaction again.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+import time
+import os
+import mx_platform_python
+from mx_platform_python.models.split_transaction_request_body import SplitTransactionRequestBody
+from mx_platform_python.models.split_transactions_response_body import SplitTransactionsResponseBody
+from mx_platform_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.mx.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mx_platform_python.Configuration(
+    host = "https://api.mx.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mx_platform_python.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with mx_platform_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mx_platform_python.MxPlatformApi(api_client)
+    user_guid = 'user_guid_example' # str | The unique identifier for the user. Defined by MX.
+    transaction_guid = 'transaction_guid_example' # str | The unique identifier for the transaction. Defined by MX.
+    split_transaction_request_body = mx_platform_python.SplitTransactionRequestBody() # SplitTransactionRequestBody |  (optional)
+
+    try:
+        # Create split transactions
+        api_response = api_instance.users_user_guid_transactions_transaction_guid_split_post(user_guid, transaction_guid, split_transaction_request_body=split_transaction_request_body)
+        print("The response of MxPlatformApi->users_user_guid_transactions_transaction_guid_split_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MxPlatformApi->users_user_guid_transactions_transaction_guid_split_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_guid** | **str**| The unique identifier for the user. Defined by MX. | 
+ **transaction_guid** | **str**| The unique identifier for the transaction. Defined by MX. | 
+ **split_transaction_request_body** | [**SplitTransactionRequestBody**](SplitTransactionRequestBody.md)|  | [optional] 
+
+### Return type
+
+[**SplitTransactionsResponseBody**](SplitTransactionsResponseBody.md)
 
 ### Authorization
 
