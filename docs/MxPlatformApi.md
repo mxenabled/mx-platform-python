@@ -7538,7 +7538,7 @@ Name | Type | Description  | Notes
 
 Update account by member
 
-This endpoint allows you to update certain attributes of an `account` resource.
+This endpoint allows you to update certain attributes of an `account` resource, including manual accounts. For manual accounts, you can update every field listed. For aggregated accounts, you can only update `is_business`, `is_hidden` and `metadata`.
 
 ### Example
 
@@ -7576,7 +7576,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     account_guid = 'ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1' # str | The unique id for an `account`.
     member_guid = 'MBR-7c6f361b-e582-15b6-60c0-358f12466b4b' # str | The unique id for a `member`.
     user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54' # str | The unique id for a `user`.
-    account_update_request_body = mx_platform_python.AccountUpdateRequestBody() # AccountUpdateRequestBody | Account object to be created with optional parameters (is_hidden)
+    account_update_request_body = mx_platform_python.AccountUpdateRequestBody() # AccountUpdateRequestBody | 
 
     try:
         # Update account by member
@@ -7596,7 +7596,7 @@ Name | Type | Description  | Notes
  **account_guid** | **str**| The unique id for an &#x60;account&#x60;. | 
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. | 
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
- **account_update_request_body** | [**AccountUpdateRequestBody**](AccountUpdateRequestBody.md)| Account object to be created with optional parameters (is_hidden) | 
+ **account_update_request_body** | [**AccountUpdateRequestBody**](AccountUpdateRequestBody.md)|  | 
 
 ### Return type
 

@@ -14261,10 +14261,10 @@ class MxPlatformApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_account_by_member(self, account_guid : Annotated[StrictStr, Field(..., description="The unique id for an `account`.")], member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_update_request_body : Annotated[AccountUpdateRequestBody, Field(..., description="Account object to be created with optional parameters (is_hidden)")], **kwargs) -> AccountResponseBody:  # noqa: E501
+    def update_account_by_member(self, account_guid : Annotated[StrictStr, Field(..., description="The unique id for an `account`.")], member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_update_request_body : AccountUpdateRequestBody, **kwargs) -> AccountResponseBody:  # noqa: E501
         """Update account by member  # noqa: E501
 
-        This endpoint allows you to update certain attributes of an `account` resource.  # noqa: E501
+        This endpoint allows you to update certain attributes of an `account` resource, including manual accounts. For manual accounts, you can update every field listed. For aggregated accounts, you can only update `is_business`, `is_hidden` and `metadata`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -14277,7 +14277,7 @@ class MxPlatformApi:
         :type member_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
-        :param account_update_request_body: Account object to be created with optional parameters (is_hidden) (required)
+        :param account_update_request_body: (required)
         :type account_update_request_body: AccountUpdateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -14297,10 +14297,10 @@ class MxPlatformApi:
         return self.update_account_by_member_with_http_info(account_guid, member_guid, user_guid, account_update_request_body, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_account_by_member_with_http_info(self, account_guid : Annotated[StrictStr, Field(..., description="The unique id for an `account`.")], member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_update_request_body : Annotated[AccountUpdateRequestBody, Field(..., description="Account object to be created with optional parameters (is_hidden)")], **kwargs) -> ApiResponse:  # noqa: E501
+    def update_account_by_member_with_http_info(self, account_guid : Annotated[StrictStr, Field(..., description="The unique id for an `account`.")], member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], account_update_request_body : AccountUpdateRequestBody, **kwargs) -> ApiResponse:  # noqa: E501
         """Update account by member  # noqa: E501
 
-        This endpoint allows you to update certain attributes of an `account` resource.  # noqa: E501
+        This endpoint allows you to update certain attributes of an `account` resource, including manual accounts. For manual accounts, you can update every field listed. For aggregated accounts, you can only update `is_business`, `is_hidden` and `metadata`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -14313,7 +14313,7 @@ class MxPlatformApi:
         :type member_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
-        :param account_update_request_body: Account object to be created with optional parameters (is_hidden) (required)
+        :param account_update_request_body: (required)
         :type account_update_request_body: AccountUpdateRequestBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
