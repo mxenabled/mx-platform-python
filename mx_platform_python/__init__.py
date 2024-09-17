@@ -14,14 +14,16 @@
 """  # noqa: E501
 
 
-__version__ = "0.38.0"
+__version__ = "0.39.0"
 
 # import apis into sdk package
 from mx_platform_python.api.budgets_api import BudgetsApi
 from mx_platform_python.api.goals_api import GoalsApi
 from mx_platform_python.api.insights_api import InsightsApi
+from mx_platform_python.api.microdeposits_api import MicrodepositsApi
 from mx_platform_python.api.mx_platform_api import MxPlatformApi
 from mx_platform_python.api.spending_plan_api import SpendingPlanApi
+from mx_platform_python.api.transactions_api import TransactionsApi
 
 # import ApiClient
 from mx_platform_python.api_response import ApiResponse
@@ -123,6 +125,13 @@ from mx_platform_python.models.merchant_location_response_body import MerchantLo
 from mx_platform_python.models.merchant_response import MerchantResponse
 from mx_platform_python.models.merchant_response_body import MerchantResponseBody
 from mx_platform_python.models.merchants_response_body import MerchantsResponseBody
+from mx_platform_python.models.microdeposit_request import MicrodepositRequest
+from mx_platform_python.models.microdeposit_request_body import MicrodepositRequestBody
+from mx_platform_python.models.microdeposit_response import MicrodepositResponse
+from mx_platform_python.models.microdeposit_response_body import MicrodepositResponseBody
+from mx_platform_python.models.microdeposit_verify_request import MicrodepositVerifyRequest
+from mx_platform_python.models.microdeposit_verify_request_body import MicrodepositVerifyRequestBody
+from mx_platform_python.models.microdeposits_response_body import MicrodepositsResponseBody
 from mx_platform_python.models.monthly_cash_flow_profile_request import MonthlyCashFlowProfileRequest
 from mx_platform_python.models.monthly_cash_flow_profile_request_body import MonthlyCashFlowProfileRequestBody
 from mx_platform_python.models.monthly_cash_flow_response import MonthlyCashFlowResponse
@@ -176,6 +185,9 @@ from mx_platform_python.models.tags_response_body import TagsResponseBody
 from mx_platform_python.models.tax_document_response import TaxDocumentResponse
 from mx_platform_python.models.tax_document_response_body import TaxDocumentResponseBody
 from mx_platform_python.models.tax_documents_response_body import TaxDocumentsResponseBody
+from mx_platform_python.models.transaction_create_request import TransactionCreateRequest
+from mx_platform_python.models.transaction_create_request_body import TransactionCreateRequestBody
+from mx_platform_python.models.transaction_create_response_body import TransactionCreateResponseBody
 from mx_platform_python.models.transaction_response import TransactionResponse
 from mx_platform_python.models.transaction_response_body import TransactionResponseBody
 from mx_platform_python.models.transaction_rule_create_request import TransactionRuleCreateRequest
