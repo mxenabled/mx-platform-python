@@ -49,6 +49,7 @@ class TestInstitutionsResponseBody(unittest.TestCase):
                         supports_account_statement = True, 
                         supports_account_verification = True, 
                         supports_oauth = True, 
+                        supports_tax_document = True, 
                         supports_transaction_history = True, 
                         trouble_signing_in_url = 'https://example.url.chase.com/login-trouble', 
                         url = 'https://www.chase.com', )

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **supports_account_statement** | **bool** |  | [optional] 
 **supports_account_verification** | **bool** |  | [optional] 
 **supports_oauth** | **bool** |  | [optional] 
+**supports_tax_document** | **bool** |  | [optional] 
 **supports_transaction_history** | **bool** |  | [optional] 
 **trouble_signing_in_url** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 

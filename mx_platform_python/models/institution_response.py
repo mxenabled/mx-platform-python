@@ -36,10 +36,11 @@ class InstitutionResponse(BaseModel):
     supports_account_statement: Optional[StrictBool] = None
     supports_account_verification: Optional[StrictBool] = None
     supports_oauth: Optional[StrictBool] = None
+    supports_tax_document: Optional[StrictBool] = None
     supports_transaction_history: Optional[StrictBool] = None
     trouble_signing_in_url: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties = ["code", "forgot_password_url", "forgot_username_url", "instructional_text", "medium_logo_url", "name", "small_logo_url", "supports_account_identification", "supports_account_statement", "supports_account_verification", "supports_oauth", "supports_transaction_history", "trouble_signing_in_url", "url"]
+    __properties = ["code", "forgot_password_url", "forgot_username_url", "instructional_text", "medium_logo_url", "name", "small_logo_url", "supports_account_identification", "supports_account_statement", "supports_account_verification", "supports_oauth", "supports_tax_document", "supports_transaction_history", "trouble_signing_in_url", "url"]
 
     class Config:
         """Pydantic configuration"""
@@ -120,6 +121,11 @@ class InstitutionResponse(BaseModel):
         if self.supports_oauth is None and "supports_oauth" in self.__fields_set__:
             _dict['supports_oauth'] = None
 
+        # set to None if supports_tax_document (nullable) is None
+        # and __fields_set__ contains the field
+        if self.supports_tax_document is None and "supports_tax_document" in self.__fields_set__:
+            _dict['supports_tax_document'] = None
+
         # set to None if supports_transaction_history (nullable) is None
         # and __fields_set__ contains the field
         if self.supports_transaction_history is None and "supports_transaction_history" in self.__fields_set__:
@@ -158,6 +164,7 @@ class InstitutionResponse(BaseModel):
             "supports_account_statement": obj.get("supports_account_statement"),
             "supports_account_verification": obj.get("supports_account_verification"),
             "supports_oauth": obj.get("supports_oauth"),
+            "supports_tax_document": obj.get("supports_tax_document"),
             "supports_transaction_history": obj.get("supports_transaction_history"),
             "trouble_signing_in_url": obj.get("trouble_signing_in_url"),
             "url": obj.get("url")

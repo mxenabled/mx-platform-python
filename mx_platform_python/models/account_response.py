@@ -42,6 +42,7 @@ class AccountResponse(BaseModel):
     currency_code: Optional[StrictStr] = None
     day_payment_is_due: Optional[StrictInt] = None
     death_benefit: Optional[StrictInt] = None
+    federal_insurance_status: Optional[StrictStr] = None
     guid: Optional[StrictStr] = None
     holdings_value: Optional[Union[StrictFloat, StrictInt]] = None
     id: Optional[StrictStr] = None
@@ -83,7 +84,7 @@ class AccountResponse(BaseModel):
     updated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "statement_balance", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "total_account_value_ugl", "type", "updated_at", "user_guid", "user_id"]
+    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "federal_insurance_status", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "statement_balance", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "total_account_value_ugl", "type", "updated_at", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -188,6 +189,11 @@ class AccountResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.death_benefit is None and "death_benefit" in self.__fields_set__:
             _dict['death_benefit'] = None
+
+        # set to None if federal_insurance_status (nullable) is None
+        # and __fields_set__ contains the field
+        if self.federal_insurance_status is None and "federal_insurance_status" in self.__fields_set__:
+            _dict['federal_insurance_status'] = None
 
         # set to None if guid (nullable) is None
         # and __fields_set__ contains the field
@@ -423,6 +429,7 @@ class AccountResponse(BaseModel):
             "currency_code": obj.get("currency_code"),
             "day_payment_is_due": obj.get("day_payment_is_due"),
             "death_benefit": obj.get("death_benefit"),
+            "federal_insurance_status": obj.get("federal_insurance_status"),
             "guid": obj.get("guid"),
             "holdings_value": obj.get("holdings_value"),
             "id": obj.get("id"),
