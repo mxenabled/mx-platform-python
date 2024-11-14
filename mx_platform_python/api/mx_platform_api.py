@@ -1346,6 +1346,7 @@ class MxPlatformApi:
         _auth_settings = ['basicAuth']  # noqa: E501
 
         _response_types_map = {
+            '200': "MemberResponseBody",
             '202': "MemberResponseBody",
         }
 
