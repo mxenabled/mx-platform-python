@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **oauth_window_uri** | **str** |  | [optional] 
 **successfully_aggregated_at** | **str** |  | [optional] 
+**use_cases** | **List[str]** |  | [optional] 
 **user_guid** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 

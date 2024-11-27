@@ -18,8 +18,8 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, StrictBool, StrictStr
+from typing import List, Optional
+from pydantic import BaseModel, StrictBool, StrictStr, conlist
 
 class MemberResponse(BaseModel):
     """
@@ -41,9 +41,10 @@ class MemberResponse(BaseModel):
     name: Optional[StrictStr] = None
     oauth_window_uri: Optional[StrictStr] = None
     successfully_aggregated_at: Optional[StrictStr] = None
+    use_cases: Optional[conlist(StrictStr)] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "user_guid", "user_id"]
+    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "use_cases", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -144,6 +145,11 @@ class MemberResponse(BaseModel):
         if self.successfully_aggregated_at is None and "successfully_aggregated_at" in self.__fields_set__:
             _dict['successfully_aggregated_at'] = None
 
+        # set to None if use_cases (nullable) is None
+        # and __fields_set__ contains the field
+        if self.use_cases is None and "use_cases" in self.__fields_set__:
+            _dict['use_cases'] = None
+
         # set to None if user_guid (nullable) is None
         # and __fields_set__ contains the field
         if self.user_guid is None and "user_guid" in self.__fields_set__:
@@ -182,6 +188,7 @@ class MemberResponse(BaseModel):
             "name": obj.get("name"),
             "oauth_window_uri": obj.get("oauth_window_uri"),
             "successfully_aggregated_at": obj.get("successfully_aggregated_at"),
+            "use_cases": obj.get("use_cases"),
             "user_guid": obj.get("user_guid"),
             "user_id": obj.get("user_id")
         })

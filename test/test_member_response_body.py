@@ -53,6 +53,7 @@ class TestMemberResponseBody(unittest.TestCase):
                     name = 'Chase Bank', 
                     oauth_window_uri = 'https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2', 
                     successfully_aggregated_at = '2016-10-13T17:57:38.000Z', 
+                    use_cases = ["PFM","IAV"], 
                     user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54', 
                     user_id = 'user123', )
             )
