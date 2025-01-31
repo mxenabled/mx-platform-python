@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 # import apis into sdk package
 from mx_platform_python.api.budgets_api import BudgetsApi

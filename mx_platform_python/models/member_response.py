@@ -25,6 +25,7 @@ class MemberResponse(BaseModel):
     """
     MemberResponse
     """
+    actionable_error: Optional[StrictStr] = None
     aggregated_at: Optional[StrictStr] = None
     background_aggregation_is_disabled: Optional[StrictBool] = None
     connection_status: Optional[StrictStr] = None
@@ -44,7 +45,7 @@ class MemberResponse(BaseModel):
     use_cases: Optional[conlist(StrictStr)] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "use_cases", "user_guid", "user_id"]
+    __properties = ["actionable_error", "aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "use_cases", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -70,6 +71,11 @@ class MemberResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # set to None if actionable_error (nullable) is None
+        # and __fields_set__ contains the field
+        if self.actionable_error is None and "actionable_error" in self.__fields_set__:
+            _dict['actionable_error'] = None
+
         # set to None if aggregated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.aggregated_at is None and "aggregated_at" in self.__fields_set__:
@@ -172,6 +178,7 @@ class MemberResponse(BaseModel):
             return MemberResponse.parse_obj(obj)
 
         _obj = MemberResponse.parse_obj({
+            "actionable_error": obj.get("actionable_error"),
             "aggregated_at": obj.get("aggregated_at"),
             "background_aggregation_is_disabled": obj.get("background_aggregation_is_disabled"),
             "connection_status": obj.get("connection_status"),

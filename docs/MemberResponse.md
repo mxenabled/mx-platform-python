@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**actionable_error** | **str** |  | [optional] 
 **aggregated_at** | **str** |  | [optional] 
 **background_aggregation_is_disabled** | **bool** |  | [optional] 
 **connection_status** | **str** |  | [optional] 

@@ -36,6 +36,7 @@ class TestMemberResponse(unittest.TestCase):
         model = MemberResponse()  # noqa: E501
         if include_optional:
             return MemberResponse(
+                actionable_error = '{\"error_type\": \"MEMBER\", \"error_code\": 1000, \"error_message\": \"This Member has no eligible checking, savings, or money market accounts.\", \"user_message\": \"We could not find any accounts eligible for transfers. Please link a checking or savings account.\", \"locale\": \"en\"}',
                 aggregated_at = '2016-10-13T18:07:57.000Z',
                 background_aggregation_is_disabled = False,
                 connection_status = 'CONNECTED',
