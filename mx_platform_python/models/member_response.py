@@ -19,33 +19,48 @@ import json
 
 
 from typing import List, Optional
-from pydantic import BaseModel, StrictBool, StrictStr, conlist
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist, validator
 
 class MemberResponse(BaseModel):
     """
     MemberResponse
     """
-    actionable_error: Optional[StrictStr] = None
     aggregated_at: Optional[StrictStr] = None
     background_aggregation_is_disabled: Optional[StrictBool] = None
     connection_status: Optional[StrictStr] = None
+    connection_status_message: Optional[StrictStr] = None
+    error: Optional[StrictStr] = None
     guid: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     institution_code: Optional[StrictStr] = None
+    institution_guid: Optional[StrictStr] = None
     is_being_aggregated: Optional[StrictBool] = None
     is_managed_by_user: Optional[StrictBool] = None
     is_manual: Optional[StrictBool] = None
     is_oauth: Optional[StrictBool] = None
     metadata: Optional[StrictStr] = None
-    most_recent_job_detail_code: Optional[StrictStr] = None
-    most_recent_job_detail_text: Optional[StrictStr] = None
+    most_recent_job_detail_code: Optional[StrictInt] = None
+    most_recent_job_detail_text: Optional[StrictBool] = None
+    most_recent_job_guid: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
+    needs_updated_credentials: Optional[StrictBool] = None
     oauth_window_uri: Optional[StrictStr] = None
     successfully_aggregated_at: Optional[StrictStr] = None
-    use_cases: Optional[conlist(StrictStr)] = None
+    use_cases: Optional[conlist(StrictStr)] = Field(None, description="The use case associated with the member. Valid values are `PFM` and/or `MONEY_MOVEMENT`. Only set this if you've met with MX and have opted in to using this field.")
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["actionable_error", "aggregated_at", "background_aggregation_is_disabled", "connection_status", "guid", "id", "institution_code", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "name", "oauth_window_uri", "successfully_aggregated_at", "use_cases", "user_guid", "user_id"]
+    __properties = ["aggregated_at", "background_aggregation_is_disabled", "connection_status", "connection_status_message", "error", "guid", "id", "institution_code", "institution_guid", "is_being_aggregated", "is_managed_by_user", "is_manual", "is_oauth", "metadata", "most_recent_job_detail_code", "most_recent_job_detail_text", "most_recent_job_guid", "name", "needs_updated_credentials", "oauth_window_uri", "successfully_aggregated_at", "use_cases", "user_guid", "user_id"]
+
+    @validator('use_cases')
+    def use_cases_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in ('MONEY_MOVEMENT', 'PFM'):
+                raise ValueError("each list item must be one of ('MONEY_MOVEMENT', 'PFM')")
+        return value
 
     class Config:
         """Pydantic configuration"""
@@ -71,11 +86,6 @@ class MemberResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if actionable_error (nullable) is None
-        # and __fields_set__ contains the field
-        if self.actionable_error is None and "actionable_error" in self.__fields_set__:
-            _dict['actionable_error'] = None
-
         # set to None if aggregated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.aggregated_at is None and "aggregated_at" in self.__fields_set__:
@@ -85,6 +95,16 @@ class MemberResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.connection_status is None and "connection_status" in self.__fields_set__:
             _dict['connection_status'] = None
+
+        # set to None if connection_status_message (nullable) is None
+        # and __fields_set__ contains the field
+        if self.connection_status_message is None and "connection_status_message" in self.__fields_set__:
+            _dict['connection_status_message'] = None
+
+        # set to None if error (nullable) is None
+        # and __fields_set__ contains the field
+        if self.error is None and "error" in self.__fields_set__:
+            _dict['error'] = None
 
         # set to None if guid (nullable) is None
         # and __fields_set__ contains the field
@@ -136,10 +156,20 @@ class MemberResponse(BaseModel):
         if self.most_recent_job_detail_text is None and "most_recent_job_detail_text" in self.__fields_set__:
             _dict['most_recent_job_detail_text'] = None
 
+        # set to None if most_recent_job_guid (nullable) is None
+        # and __fields_set__ contains the field
+        if self.most_recent_job_guid is None and "most_recent_job_guid" in self.__fields_set__:
+            _dict['most_recent_job_guid'] = None
+
         # set to None if name (nullable) is None
         # and __fields_set__ contains the field
         if self.name is None and "name" in self.__fields_set__:
             _dict['name'] = None
+
+        # set to None if needs_updated_credentials (nullable) is None
+        # and __fields_set__ contains the field
+        if self.needs_updated_credentials is None and "needs_updated_credentials" in self.__fields_set__:
+            _dict['needs_updated_credentials'] = None
 
         # set to None if oauth_window_uri (nullable) is None
         # and __fields_set__ contains the field
@@ -150,11 +180,6 @@ class MemberResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.successfully_aggregated_at is None and "successfully_aggregated_at" in self.__fields_set__:
             _dict['successfully_aggregated_at'] = None
-
-        # set to None if use_cases (nullable) is None
-        # and __fields_set__ contains the field
-        if self.use_cases is None and "use_cases" in self.__fields_set__:
-            _dict['use_cases'] = None
 
         # set to None if user_guid (nullable) is None
         # and __fields_set__ contains the field
@@ -178,13 +203,15 @@ class MemberResponse(BaseModel):
             return MemberResponse.parse_obj(obj)
 
         _obj = MemberResponse.parse_obj({
-            "actionable_error": obj.get("actionable_error"),
             "aggregated_at": obj.get("aggregated_at"),
             "background_aggregation_is_disabled": obj.get("background_aggregation_is_disabled"),
             "connection_status": obj.get("connection_status"),
+            "connection_status_message": obj.get("connection_status_message"),
+            "error": obj.get("error"),
             "guid": obj.get("guid"),
             "id": obj.get("id"),
             "institution_code": obj.get("institution_code"),
+            "institution_guid": obj.get("institution_guid"),
             "is_being_aggregated": obj.get("is_being_aggregated"),
             "is_managed_by_user": obj.get("is_managed_by_user"),
             "is_manual": obj.get("is_manual"),
@@ -192,7 +219,9 @@ class MemberResponse(BaseModel):
             "metadata": obj.get("metadata"),
             "most_recent_job_detail_code": obj.get("most_recent_job_detail_code"),
             "most_recent_job_detail_text": obj.get("most_recent_job_detail_text"),
+            "most_recent_job_guid": obj.get("most_recent_job_guid"),
             "name": obj.get("name"),
+            "needs_updated_credentials": obj.get("needs_updated_credentials"),
             "oauth_window_uri": obj.get("oauth_window_uri"),
             "successfully_aggregated_at": obj.get("successfully_aggregated_at"),
             "use_cases": obj.get("use_cases"),
