@@ -26,65 +26,129 @@ class AccountResponse(BaseModel):
     AccountResponse
     """
     account_number: Optional[StrictStr] = None
+    account_number_set_by: Optional[StrictInt] = None
     account_ownership: Optional[StrictStr] = None
     annuity_policy_to_date: Optional[StrictStr] = None
     annuity_provider: Optional[StrictStr] = None
-    annuity_term_year: Optional[Union[StrictFloat, StrictInt]] = None
+    annuity_term_year: Optional[StrictInt] = None
     apr: Optional[Union[StrictFloat, StrictInt]] = None
+    apr_set_by: Optional[StrictInt] = None
     apy: Optional[Union[StrictFloat, StrictInt]] = None
+    apy_set_by: Optional[StrictInt] = None
     available_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    available_balance_set_by: Optional[StrictInt] = None
     available_credit: Optional[Union[StrictFloat, StrictInt]] = None
+    available_credit_set_by: Optional[StrictInt] = None
     balance: Optional[Union[StrictFloat, StrictInt]] = None
+    balance_set_by: Optional[StrictInt] = None
+    calculated_apr: Optional[Union[StrictFloat, StrictInt]] = None
     cash_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    cash_balance_set_by: Optional[StrictInt] = None
     cash_surrender_value: Optional[Union[StrictFloat, StrictInt]] = None
+    cash_surrender_value_set_by: Optional[StrictInt] = None
     created_at: Optional[StrictStr] = None
     credit_limit: Optional[Union[StrictFloat, StrictInt]] = None
+    credit_limit_set_by: Optional[StrictInt] = None
     currency_code: Optional[StrictStr] = None
+    currency_code_set_by: Optional[StrictInt] = None
     day_payment_is_due: Optional[StrictInt] = None
+    day_payment_is_due_set_by: Optional[StrictInt] = None
     death_benefit: Optional[StrictInt] = None
+    death_benefit_set_by: Optional[StrictInt] = None
     federal_insurance_status: Optional[StrictStr] = None
+    feed_account_number: Optional[StrictStr] = None
+    feed_account_subtype: Optional[StrictInt] = None
+    feed_account_type: Optional[StrictInt] = None
+    feed_apr: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_apy: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_available_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_cash_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_cash_surrender_value: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_credit_limit: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_currency_code: Optional[StrictStr] = None
+    feed_day_payment_is_due: Optional[StrictInt] = None
+    feed_death_benefit: Optional[StrictInt] = None
+    feed_holdings_value: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_interest_rate: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_is_closed: Optional[StrictBool] = None
+    feed_last_payment: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_last_payment_at: Optional[StrictStr] = None
+    feed_loan_amount: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_matures_on: Optional[StrictStr] = None
+    feed_minimum_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_minimum_payment: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_name: Optional[StrictStr] = None
+    feed_nickname: Optional[StrictStr] = None
+    feed_original_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_payment_due_at: Optional[StrictStr] = None
+    feed_payoff_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_routing_number: Optional[StrictStr] = None
+    feed_started_on: Optional[StrictStr] = None
+    feed_statement_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    feed_total_account_value: Optional[Union[StrictFloat, StrictInt]] = None
     guid: Optional[StrictStr] = None
     holdings_value: Optional[Union[StrictFloat, StrictInt]] = None
+    holdings_value_set_by: Optional[StrictInt] = None
     id: Optional[StrictStr] = None
     imported_at: Optional[StrictStr] = None
     institution_code: Optional[StrictStr] = None
+    institution_guid: Optional[StrictStr] = None
     insured_name: Optional[StrictStr] = None
     interest_rate: Optional[Union[StrictFloat, StrictInt]] = None
+    interest_rate_set_by: Optional[StrictInt] = None
     is_closed: Optional[StrictBool] = None
+    is_closed_set_by: Optional[StrictInt] = None
     is_hidden: Optional[StrictBool] = None
     is_manual: Optional[StrictBool] = None
     last_payment: Optional[Union[StrictFloat, StrictInt]] = None
+    last_payment_set_by: Optional[StrictInt] = None
     last_payment_at: Optional[StrictStr] = None
+    last_payment_at_set_by: Optional[StrictInt] = None
     loan_amount: Optional[Union[StrictFloat, StrictInt]] = None
+    loan_amount_set_by: Optional[StrictInt] = None
     margin_balance: Optional[Union[StrictFloat, StrictInt]] = None
     matures_on: Optional[StrictStr] = None
+    matures_on_set_by: Optional[StrictInt] = None
     member_guid: Optional[StrictStr] = None
     member_id: Optional[StrictStr] = None
     member_is_managed_by_user: Optional[StrictBool] = None
     metadata: Optional[StrictStr] = None
     minimum_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    minimum_balance_set_by: Optional[StrictInt] = None
     minimum_payment: Optional[Union[StrictFloat, StrictInt]] = None
+    minimum_payment_set_by: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
+    name_set_by: Optional[StrictInt] = None
     nickname: Optional[StrictStr] = None
+    nickname_set_by: Optional[StrictInt] = None
     original_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    original_balance_set_by: Optional[StrictInt] = None
     pay_out_amount: Optional[Union[StrictFloat, StrictInt]] = None
     payment_due_at: Optional[StrictStr] = None
+    payment_due_at_set_by: Optional[StrictInt] = None
     payoff_balance: Optional[Union[StrictFloat, StrictInt]] = None
-    premium_amount: Optional[Union[StrictFloat, StrictInt]] = None
-    property_type: Optional[StrictStr] = None
+    payoff_balance_set_by: Optional[StrictInt] = None
+    premium_amount: Optional[StrictStr] = None
+    property_type: Optional[StrictInt] = None
     routing_number: Optional[StrictStr] = None
     started_on: Optional[StrictStr] = None
+    started_on_set_by: Optional[StrictInt] = None
     statement_balance: Optional[Union[StrictFloat, StrictInt]] = None
+    statement_balance_set_by: Optional[StrictInt] = None
     subtype: Optional[StrictStr] = None
+    subtype_set_by: Optional[StrictInt] = None
     today_ugl_amount: Optional[Union[StrictFloat, StrictInt]] = None
     today_ugl_percentage: Optional[Union[StrictFloat, StrictInt]] = None
     total_account_value: Optional[Union[StrictFloat, StrictInt]] = None
+    total_account_value_set_by: Optional[StrictInt] = None
     total_account_value_ugl: Optional[Union[StrictFloat, StrictInt]] = None
     type: Optional[StrictStr] = None
+    type_set_by: Optional[StrictInt] = None
     updated_at: Optional[StrictStr] = None
     user_guid: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties = ["account_number", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apy", "available_balance", "available_credit", "balance", "cash_balance", "cash_surrender_value", "created_at", "credit_limit", "currency_code", "day_payment_is_due", "death_benefit", "federal_insurance_status", "guid", "holdings_value", "id", "imported_at", "institution_code", "insured_name", "interest_rate", "is_closed", "is_hidden", "is_manual", "last_payment", "last_payment_at", "loan_amount", "margin_balance", "matures_on", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_payment", "name", "nickname", "original_balance", "pay_out_amount", "payment_due_at", "payoff_balance", "premium_amount", "property_type", "routing_number", "started_on", "statement_balance", "subtype", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "total_account_value_ugl", "type", "updated_at", "user_guid", "user_id"]
+    __properties = ["account_number", "account_number_set_by", "account_ownership", "annuity_policy_to_date", "annuity_provider", "annuity_term_year", "apr", "apr_set_by", "apy", "apy_set_by", "available_balance", "available_balance_set_by", "available_credit", "available_credit_set_by", "balance", "balance_set_by", "calculated_apr", "cash_balance", "cash_balance_set_by", "cash_surrender_value", "cash_surrender_value_set_by", "created_at", "credit_limit", "credit_limit_set_by", "currency_code", "currency_code_set_by", "day_payment_is_due", "day_payment_is_due_set_by", "death_benefit", "death_benefit_set_by", "federal_insurance_status", "feed_account_number", "feed_account_subtype", "feed_account_type", "feed_apr", "feed_apy", "feed_available_balance", "feed_balance", "feed_cash_balance", "feed_cash_surrender_value", "feed_credit_limit", "feed_currency_code", "feed_day_payment_is_due", "feed_death_benefit", "feed_holdings_value", "feed_interest_rate", "feed_is_closed", "feed_last_payment", "feed_last_payment_at", "feed_loan_amount", "feed_matures_on", "feed_minimum_balance", "feed_minimum_payment", "feed_name", "feed_nickname", "feed_original_balance", "feed_payment_due_at", "feed_payoff_balance", "feed_routing_number", "feed_started_on", "feed_statement_balance", "feed_total_account_value", "guid", "holdings_value", "holdings_value_set_by", "id", "imported_at", "institution_code", "institution_guid", "insured_name", "interest_rate", "interest_rate_set_by", "is_closed", "is_closed_set_by", "is_hidden", "is_manual", "last_payment", "last_payment_set_by", "last_payment_at", "last_payment_at_set_by", "loan_amount", "loan_amount_set_by", "margin_balance", "matures_on", "matures_on_set_by", "member_guid", "member_id", "member_is_managed_by_user", "metadata", "minimum_balance", "minimum_balance_set_by", "minimum_payment", "minimum_payment_set_by", "name", "name_set_by", "nickname", "nickname_set_by", "original_balance", "original_balance_set_by", "pay_out_amount", "payment_due_at", "payment_due_at_set_by", "payoff_balance", "payoff_balance_set_by", "premium_amount", "property_type", "routing_number", "started_on", "started_on_set_by", "statement_balance", "statement_balance_set_by", "subtype", "subtype_set_by", "today_ugl_amount", "today_ugl_percentage", "total_account_value", "total_account_value_set_by", "total_account_value_ugl", "type", "type_set_by", "updated_at", "user_guid", "user_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -115,6 +179,11 @@ class AccountResponse(BaseModel):
         if self.account_number is None and "account_number" in self.__fields_set__:
             _dict['account_number'] = None
 
+        # set to None if account_number_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.account_number_set_by is None and "account_number_set_by" in self.__fields_set__:
+            _dict['account_number_set_by'] = None
+
         # set to None if account_ownership (nullable) is None
         # and __fields_set__ contains the field
         if self.account_ownership is None and "account_ownership" in self.__fields_set__:
@@ -140,60 +209,275 @@ class AccountResponse(BaseModel):
         if self.apr is None and "apr" in self.__fields_set__:
             _dict['apr'] = None
 
+        # set to None if apr_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.apr_set_by is None and "apr_set_by" in self.__fields_set__:
+            _dict['apr_set_by'] = None
+
         # set to None if apy (nullable) is None
         # and __fields_set__ contains the field
         if self.apy is None and "apy" in self.__fields_set__:
             _dict['apy'] = None
+
+        # set to None if apy_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.apy_set_by is None and "apy_set_by" in self.__fields_set__:
+            _dict['apy_set_by'] = None
 
         # set to None if available_balance (nullable) is None
         # and __fields_set__ contains the field
         if self.available_balance is None and "available_balance" in self.__fields_set__:
             _dict['available_balance'] = None
 
+        # set to None if available_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.available_balance_set_by is None and "available_balance_set_by" in self.__fields_set__:
+            _dict['available_balance_set_by'] = None
+
         # set to None if available_credit (nullable) is None
         # and __fields_set__ contains the field
         if self.available_credit is None and "available_credit" in self.__fields_set__:
             _dict['available_credit'] = None
+
+        # set to None if available_credit_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.available_credit_set_by is None and "available_credit_set_by" in self.__fields_set__:
+            _dict['available_credit_set_by'] = None
 
         # set to None if balance (nullable) is None
         # and __fields_set__ contains the field
         if self.balance is None and "balance" in self.__fields_set__:
             _dict['balance'] = None
 
+        # set to None if balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.balance_set_by is None and "balance_set_by" in self.__fields_set__:
+            _dict['balance_set_by'] = None
+
+        # set to None if calculated_apr (nullable) is None
+        # and __fields_set__ contains the field
+        if self.calculated_apr is None and "calculated_apr" in self.__fields_set__:
+            _dict['calculated_apr'] = None
+
         # set to None if cash_balance (nullable) is None
         # and __fields_set__ contains the field
         if self.cash_balance is None and "cash_balance" in self.__fields_set__:
             _dict['cash_balance'] = None
+
+        # set to None if cash_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.cash_balance_set_by is None and "cash_balance_set_by" in self.__fields_set__:
+            _dict['cash_balance_set_by'] = None
 
         # set to None if cash_surrender_value (nullable) is None
         # and __fields_set__ contains the field
         if self.cash_surrender_value is None and "cash_surrender_value" in self.__fields_set__:
             _dict['cash_surrender_value'] = None
 
+        # set to None if cash_surrender_value_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.cash_surrender_value_set_by is None and "cash_surrender_value_set_by" in self.__fields_set__:
+            _dict['cash_surrender_value_set_by'] = None
+
         # set to None if credit_limit (nullable) is None
         # and __fields_set__ contains the field
         if self.credit_limit is None and "credit_limit" in self.__fields_set__:
             _dict['credit_limit'] = None
+
+        # set to None if credit_limit_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.credit_limit_set_by is None and "credit_limit_set_by" in self.__fields_set__:
+            _dict['credit_limit_set_by'] = None
 
         # set to None if currency_code (nullable) is None
         # and __fields_set__ contains the field
         if self.currency_code is None and "currency_code" in self.__fields_set__:
             _dict['currency_code'] = None
 
+        # set to None if currency_code_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.currency_code_set_by is None and "currency_code_set_by" in self.__fields_set__:
+            _dict['currency_code_set_by'] = None
+
         # set to None if day_payment_is_due (nullable) is None
         # and __fields_set__ contains the field
         if self.day_payment_is_due is None and "day_payment_is_due" in self.__fields_set__:
             _dict['day_payment_is_due'] = None
+
+        # set to None if day_payment_is_due_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.day_payment_is_due_set_by is None and "day_payment_is_due_set_by" in self.__fields_set__:
+            _dict['day_payment_is_due_set_by'] = None
 
         # set to None if death_benefit (nullable) is None
         # and __fields_set__ contains the field
         if self.death_benefit is None and "death_benefit" in self.__fields_set__:
             _dict['death_benefit'] = None
 
+        # set to None if death_benefit_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.death_benefit_set_by is None and "death_benefit_set_by" in self.__fields_set__:
+            _dict['death_benefit_set_by'] = None
+
         # set to None if federal_insurance_status (nullable) is None
         # and __fields_set__ contains the field
         if self.federal_insurance_status is None and "federal_insurance_status" in self.__fields_set__:
             _dict['federal_insurance_status'] = None
+
+        # set to None if feed_account_number (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_account_number is None and "feed_account_number" in self.__fields_set__:
+            _dict['feed_account_number'] = None
+
+        # set to None if feed_account_subtype (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_account_subtype is None and "feed_account_subtype" in self.__fields_set__:
+            _dict['feed_account_subtype'] = None
+
+        # set to None if feed_account_type (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_account_type is None and "feed_account_type" in self.__fields_set__:
+            _dict['feed_account_type'] = None
+
+        # set to None if feed_apr (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_apr is None and "feed_apr" in self.__fields_set__:
+            _dict['feed_apr'] = None
+
+        # set to None if feed_apy (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_apy is None and "feed_apy" in self.__fields_set__:
+            _dict['feed_apy'] = None
+
+        # set to None if feed_available_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_available_balance is None and "feed_available_balance" in self.__fields_set__:
+            _dict['feed_available_balance'] = None
+
+        # set to None if feed_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_balance is None and "feed_balance" in self.__fields_set__:
+            _dict['feed_balance'] = None
+
+        # set to None if feed_cash_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_cash_balance is None and "feed_cash_balance" in self.__fields_set__:
+            _dict['feed_cash_balance'] = None
+
+        # set to None if feed_cash_surrender_value (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_cash_surrender_value is None and "feed_cash_surrender_value" in self.__fields_set__:
+            _dict['feed_cash_surrender_value'] = None
+
+        # set to None if feed_credit_limit (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_credit_limit is None and "feed_credit_limit" in self.__fields_set__:
+            _dict['feed_credit_limit'] = None
+
+        # set to None if feed_currency_code (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_currency_code is None and "feed_currency_code" in self.__fields_set__:
+            _dict['feed_currency_code'] = None
+
+        # set to None if feed_day_payment_is_due (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_day_payment_is_due is None and "feed_day_payment_is_due" in self.__fields_set__:
+            _dict['feed_day_payment_is_due'] = None
+
+        # set to None if feed_death_benefit (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_death_benefit is None and "feed_death_benefit" in self.__fields_set__:
+            _dict['feed_death_benefit'] = None
+
+        # set to None if feed_holdings_value (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_holdings_value is None and "feed_holdings_value" in self.__fields_set__:
+            _dict['feed_holdings_value'] = None
+
+        # set to None if feed_interest_rate (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_interest_rate is None and "feed_interest_rate" in self.__fields_set__:
+            _dict['feed_interest_rate'] = None
+
+        # set to None if feed_is_closed (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_is_closed is None and "feed_is_closed" in self.__fields_set__:
+            _dict['feed_is_closed'] = None
+
+        # set to None if feed_last_payment (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_last_payment is None and "feed_last_payment" in self.__fields_set__:
+            _dict['feed_last_payment'] = None
+
+        # set to None if feed_last_payment_at (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_last_payment_at is None and "feed_last_payment_at" in self.__fields_set__:
+            _dict['feed_last_payment_at'] = None
+
+        # set to None if feed_loan_amount (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_loan_amount is None and "feed_loan_amount" in self.__fields_set__:
+            _dict['feed_loan_amount'] = None
+
+        # set to None if feed_matures_on (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_matures_on is None and "feed_matures_on" in self.__fields_set__:
+            _dict['feed_matures_on'] = None
+
+        # set to None if feed_minimum_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_minimum_balance is None and "feed_minimum_balance" in self.__fields_set__:
+            _dict['feed_minimum_balance'] = None
+
+        # set to None if feed_minimum_payment (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_minimum_payment is None and "feed_minimum_payment" in self.__fields_set__:
+            _dict['feed_minimum_payment'] = None
+
+        # set to None if feed_name (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_name is None and "feed_name" in self.__fields_set__:
+            _dict['feed_name'] = None
+
+        # set to None if feed_nickname (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_nickname is None and "feed_nickname" in self.__fields_set__:
+            _dict['feed_nickname'] = None
+
+        # set to None if feed_original_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_original_balance is None and "feed_original_balance" in self.__fields_set__:
+            _dict['feed_original_balance'] = None
+
+        # set to None if feed_payment_due_at (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_payment_due_at is None and "feed_payment_due_at" in self.__fields_set__:
+            _dict['feed_payment_due_at'] = None
+
+        # set to None if feed_payoff_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_payoff_balance is None and "feed_payoff_balance" in self.__fields_set__:
+            _dict['feed_payoff_balance'] = None
+
+        # set to None if feed_routing_number (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_routing_number is None and "feed_routing_number" in self.__fields_set__:
+            _dict['feed_routing_number'] = None
+
+        # set to None if feed_started_on (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_started_on is None and "feed_started_on" in self.__fields_set__:
+            _dict['feed_started_on'] = None
+
+        # set to None if feed_statement_balance (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_statement_balance is None and "feed_statement_balance" in self.__fields_set__:
+            _dict['feed_statement_balance'] = None
+
+        # set to None if feed_total_account_value (nullable) is None
+        # and __fields_set__ contains the field
+        if self.feed_total_account_value is None and "feed_total_account_value" in self.__fields_set__:
+            _dict['feed_total_account_value'] = None
 
         # set to None if guid (nullable) is None
         # and __fields_set__ contains the field
@@ -204,6 +488,11 @@ class AccountResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.holdings_value is None and "holdings_value" in self.__fields_set__:
             _dict['holdings_value'] = None
+
+        # set to None if holdings_value_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.holdings_value_set_by is None and "holdings_value_set_by" in self.__fields_set__:
+            _dict['holdings_value_set_by'] = None
 
         # set to None if id (nullable) is None
         # and __fields_set__ contains the field
@@ -220,6 +509,11 @@ class AccountResponse(BaseModel):
         if self.institution_code is None and "institution_code" in self.__fields_set__:
             _dict['institution_code'] = None
 
+        # set to None if institution_guid (nullable) is None
+        # and __fields_set__ contains the field
+        if self.institution_guid is None and "institution_guid" in self.__fields_set__:
+            _dict['institution_guid'] = None
+
         # set to None if insured_name (nullable) is None
         # and __fields_set__ contains the field
         if self.insured_name is None and "insured_name" in self.__fields_set__:
@@ -230,10 +524,20 @@ class AccountResponse(BaseModel):
         if self.interest_rate is None and "interest_rate" in self.__fields_set__:
             _dict['interest_rate'] = None
 
+        # set to None if interest_rate_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.interest_rate_set_by is None and "interest_rate_set_by" in self.__fields_set__:
+            _dict['interest_rate_set_by'] = None
+
         # set to None if is_closed (nullable) is None
         # and __fields_set__ contains the field
         if self.is_closed is None and "is_closed" in self.__fields_set__:
             _dict['is_closed'] = None
+
+        # set to None if is_closed_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.is_closed_set_by is None and "is_closed_set_by" in self.__fields_set__:
+            _dict['is_closed_set_by'] = None
 
         # set to None if is_hidden (nullable) is None
         # and __fields_set__ contains the field
@@ -250,15 +554,30 @@ class AccountResponse(BaseModel):
         if self.last_payment is None and "last_payment" in self.__fields_set__:
             _dict['last_payment'] = None
 
+        # set to None if last_payment_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.last_payment_set_by is None and "last_payment_set_by" in self.__fields_set__:
+            _dict['last_payment_set_by'] = None
+
         # set to None if last_payment_at (nullable) is None
         # and __fields_set__ contains the field
         if self.last_payment_at is None and "last_payment_at" in self.__fields_set__:
             _dict['last_payment_at'] = None
 
+        # set to None if last_payment_at_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.last_payment_at_set_by is None and "last_payment_at_set_by" in self.__fields_set__:
+            _dict['last_payment_at_set_by'] = None
+
         # set to None if loan_amount (nullable) is None
         # and __fields_set__ contains the field
         if self.loan_amount is None and "loan_amount" in self.__fields_set__:
             _dict['loan_amount'] = None
+
+        # set to None if loan_amount_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.loan_amount_set_by is None and "loan_amount_set_by" in self.__fields_set__:
+            _dict['loan_amount_set_by'] = None
 
         # set to None if margin_balance (nullable) is None
         # and __fields_set__ contains the field
@@ -269,6 +588,11 @@ class AccountResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.matures_on is None and "matures_on" in self.__fields_set__:
             _dict['matures_on'] = None
+
+        # set to None if matures_on_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.matures_on_set_by is None and "matures_on_set_by" in self.__fields_set__:
+            _dict['matures_on_set_by'] = None
 
         # set to None if member_guid (nullable) is None
         # and __fields_set__ contains the field
@@ -295,25 +619,50 @@ class AccountResponse(BaseModel):
         if self.minimum_balance is None and "minimum_balance" in self.__fields_set__:
             _dict['minimum_balance'] = None
 
+        # set to None if minimum_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.minimum_balance_set_by is None and "minimum_balance_set_by" in self.__fields_set__:
+            _dict['minimum_balance_set_by'] = None
+
         # set to None if minimum_payment (nullable) is None
         # and __fields_set__ contains the field
         if self.minimum_payment is None and "minimum_payment" in self.__fields_set__:
             _dict['minimum_payment'] = None
+
+        # set to None if minimum_payment_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.minimum_payment_set_by is None and "minimum_payment_set_by" in self.__fields_set__:
+            _dict['minimum_payment_set_by'] = None
 
         # set to None if name (nullable) is None
         # and __fields_set__ contains the field
         if self.name is None and "name" in self.__fields_set__:
             _dict['name'] = None
 
+        # set to None if name_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.name_set_by is None and "name_set_by" in self.__fields_set__:
+            _dict['name_set_by'] = None
+
         # set to None if nickname (nullable) is None
         # and __fields_set__ contains the field
         if self.nickname is None and "nickname" in self.__fields_set__:
             _dict['nickname'] = None
 
+        # set to None if nickname_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.nickname_set_by is None and "nickname_set_by" in self.__fields_set__:
+            _dict['nickname_set_by'] = None
+
         # set to None if original_balance (nullable) is None
         # and __fields_set__ contains the field
         if self.original_balance is None and "original_balance" in self.__fields_set__:
             _dict['original_balance'] = None
+
+        # set to None if original_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.original_balance_set_by is None and "original_balance_set_by" in self.__fields_set__:
+            _dict['original_balance_set_by'] = None
 
         # set to None if pay_out_amount (nullable) is None
         # and __fields_set__ contains the field
@@ -325,10 +674,20 @@ class AccountResponse(BaseModel):
         if self.payment_due_at is None and "payment_due_at" in self.__fields_set__:
             _dict['payment_due_at'] = None
 
+        # set to None if payment_due_at_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.payment_due_at_set_by is None and "payment_due_at_set_by" in self.__fields_set__:
+            _dict['payment_due_at_set_by'] = None
+
         # set to None if payoff_balance (nullable) is None
         # and __fields_set__ contains the field
         if self.payoff_balance is None and "payoff_balance" in self.__fields_set__:
             _dict['payoff_balance'] = None
+
+        # set to None if payoff_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.payoff_balance_set_by is None and "payoff_balance_set_by" in self.__fields_set__:
+            _dict['payoff_balance_set_by'] = None
 
         # set to None if premium_amount (nullable) is None
         # and __fields_set__ contains the field
@@ -350,15 +709,30 @@ class AccountResponse(BaseModel):
         if self.started_on is None and "started_on" in self.__fields_set__:
             _dict['started_on'] = None
 
+        # set to None if started_on_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.started_on_set_by is None and "started_on_set_by" in self.__fields_set__:
+            _dict['started_on_set_by'] = None
+
         # set to None if statement_balance (nullable) is None
         # and __fields_set__ contains the field
         if self.statement_balance is None and "statement_balance" in self.__fields_set__:
             _dict['statement_balance'] = None
 
+        # set to None if statement_balance_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.statement_balance_set_by is None and "statement_balance_set_by" in self.__fields_set__:
+            _dict['statement_balance_set_by'] = None
+
         # set to None if subtype (nullable) is None
         # and __fields_set__ contains the field
         if self.subtype is None and "subtype" in self.__fields_set__:
             _dict['subtype'] = None
+
+        # set to None if subtype_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.subtype_set_by is None and "subtype_set_by" in self.__fields_set__:
+            _dict['subtype_set_by'] = None
 
         # set to None if today_ugl_amount (nullable) is None
         # and __fields_set__ contains the field
@@ -375,6 +749,11 @@ class AccountResponse(BaseModel):
         if self.total_account_value is None and "total_account_value" in self.__fields_set__:
             _dict['total_account_value'] = None
 
+        # set to None if total_account_value_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.total_account_value_set_by is None and "total_account_value_set_by" in self.__fields_set__:
+            _dict['total_account_value_set_by'] = None
+
         # set to None if total_account_value_ugl (nullable) is None
         # and __fields_set__ contains the field
         if self.total_account_value_ugl is None and "total_account_value_ugl" in self.__fields_set__:
@@ -384,6 +763,11 @@ class AccountResponse(BaseModel):
         # and __fields_set__ contains the field
         if self.type is None and "type" in self.__fields_set__:
             _dict['type'] = None
+
+        # set to None if type_set_by (nullable) is None
+        # and __fields_set__ contains the field
+        if self.type_set_by is None and "type_set_by" in self.__fields_set__:
+            _dict['type_set_by'] = None
 
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
@@ -413,61 +797,125 @@ class AccountResponse(BaseModel):
 
         _obj = AccountResponse.parse_obj({
             "account_number": obj.get("account_number"),
+            "account_number_set_by": obj.get("account_number_set_by"),
             "account_ownership": obj.get("account_ownership"),
             "annuity_policy_to_date": obj.get("annuity_policy_to_date"),
             "annuity_provider": obj.get("annuity_provider"),
             "annuity_term_year": obj.get("annuity_term_year"),
             "apr": obj.get("apr"),
+            "apr_set_by": obj.get("apr_set_by"),
             "apy": obj.get("apy"),
+            "apy_set_by": obj.get("apy_set_by"),
             "available_balance": obj.get("available_balance"),
+            "available_balance_set_by": obj.get("available_balance_set_by"),
             "available_credit": obj.get("available_credit"),
+            "available_credit_set_by": obj.get("available_credit_set_by"),
             "balance": obj.get("balance"),
+            "balance_set_by": obj.get("balance_set_by"),
+            "calculated_apr": obj.get("calculated_apr"),
             "cash_balance": obj.get("cash_balance"),
+            "cash_balance_set_by": obj.get("cash_balance_set_by"),
             "cash_surrender_value": obj.get("cash_surrender_value"),
+            "cash_surrender_value_set_by": obj.get("cash_surrender_value_set_by"),
             "created_at": obj.get("created_at"),
             "credit_limit": obj.get("credit_limit"),
+            "credit_limit_set_by": obj.get("credit_limit_set_by"),
             "currency_code": obj.get("currency_code"),
+            "currency_code_set_by": obj.get("currency_code_set_by"),
             "day_payment_is_due": obj.get("day_payment_is_due"),
+            "day_payment_is_due_set_by": obj.get("day_payment_is_due_set_by"),
             "death_benefit": obj.get("death_benefit"),
+            "death_benefit_set_by": obj.get("death_benefit_set_by"),
             "federal_insurance_status": obj.get("federal_insurance_status"),
+            "feed_account_number": obj.get("feed_account_number"),
+            "feed_account_subtype": obj.get("feed_account_subtype"),
+            "feed_account_type": obj.get("feed_account_type"),
+            "feed_apr": obj.get("feed_apr"),
+            "feed_apy": obj.get("feed_apy"),
+            "feed_available_balance": obj.get("feed_available_balance"),
+            "feed_balance": obj.get("feed_balance"),
+            "feed_cash_balance": obj.get("feed_cash_balance"),
+            "feed_cash_surrender_value": obj.get("feed_cash_surrender_value"),
+            "feed_credit_limit": obj.get("feed_credit_limit"),
+            "feed_currency_code": obj.get("feed_currency_code"),
+            "feed_day_payment_is_due": obj.get("feed_day_payment_is_due"),
+            "feed_death_benefit": obj.get("feed_death_benefit"),
+            "feed_holdings_value": obj.get("feed_holdings_value"),
+            "feed_interest_rate": obj.get("feed_interest_rate"),
+            "feed_is_closed": obj.get("feed_is_closed"),
+            "feed_last_payment": obj.get("feed_last_payment"),
+            "feed_last_payment_at": obj.get("feed_last_payment_at"),
+            "feed_loan_amount": obj.get("feed_loan_amount"),
+            "feed_matures_on": obj.get("feed_matures_on"),
+            "feed_minimum_balance": obj.get("feed_minimum_balance"),
+            "feed_minimum_payment": obj.get("feed_minimum_payment"),
+            "feed_name": obj.get("feed_name"),
+            "feed_nickname": obj.get("feed_nickname"),
+            "feed_original_balance": obj.get("feed_original_balance"),
+            "feed_payment_due_at": obj.get("feed_payment_due_at"),
+            "feed_payoff_balance": obj.get("feed_payoff_balance"),
+            "feed_routing_number": obj.get("feed_routing_number"),
+            "feed_started_on": obj.get("feed_started_on"),
+            "feed_statement_balance": obj.get("feed_statement_balance"),
+            "feed_total_account_value": obj.get("feed_total_account_value"),
             "guid": obj.get("guid"),
             "holdings_value": obj.get("holdings_value"),
+            "holdings_value_set_by": obj.get("holdings_value_set_by"),
             "id": obj.get("id"),
             "imported_at": obj.get("imported_at"),
             "institution_code": obj.get("institution_code"),
+            "institution_guid": obj.get("institution_guid"),
             "insured_name": obj.get("insured_name"),
             "interest_rate": obj.get("interest_rate"),
+            "interest_rate_set_by": obj.get("interest_rate_set_by"),
             "is_closed": obj.get("is_closed"),
+            "is_closed_set_by": obj.get("is_closed_set_by"),
             "is_hidden": obj.get("is_hidden"),
             "is_manual": obj.get("is_manual"),
             "last_payment": obj.get("last_payment"),
+            "last_payment_set_by": obj.get("last_payment_set_by"),
             "last_payment_at": obj.get("last_payment_at"),
+            "last_payment_at_set_by": obj.get("last_payment_at_set_by"),
             "loan_amount": obj.get("loan_amount"),
+            "loan_amount_set_by": obj.get("loan_amount_set_by"),
             "margin_balance": obj.get("margin_balance"),
             "matures_on": obj.get("matures_on"),
+            "matures_on_set_by": obj.get("matures_on_set_by"),
             "member_guid": obj.get("member_guid"),
             "member_id": obj.get("member_id"),
             "member_is_managed_by_user": obj.get("member_is_managed_by_user"),
             "metadata": obj.get("metadata"),
             "minimum_balance": obj.get("minimum_balance"),
+            "minimum_balance_set_by": obj.get("minimum_balance_set_by"),
             "minimum_payment": obj.get("minimum_payment"),
+            "minimum_payment_set_by": obj.get("minimum_payment_set_by"),
             "name": obj.get("name"),
+            "name_set_by": obj.get("name_set_by"),
             "nickname": obj.get("nickname"),
+            "nickname_set_by": obj.get("nickname_set_by"),
             "original_balance": obj.get("original_balance"),
+            "original_balance_set_by": obj.get("original_balance_set_by"),
             "pay_out_amount": obj.get("pay_out_amount"),
             "payment_due_at": obj.get("payment_due_at"),
+            "payment_due_at_set_by": obj.get("payment_due_at_set_by"),
             "payoff_balance": obj.get("payoff_balance"),
+            "payoff_balance_set_by": obj.get("payoff_balance_set_by"),
             "premium_amount": obj.get("premium_amount"),
             "property_type": obj.get("property_type"),
             "routing_number": obj.get("routing_number"),
             "started_on": obj.get("started_on"),
+            "started_on_set_by": obj.get("started_on_set_by"),
             "statement_balance": obj.get("statement_balance"),
+            "statement_balance_set_by": obj.get("statement_balance_set_by"),
             "subtype": obj.get("subtype"),
+            "subtype_set_by": obj.get("subtype_set_by"),
             "today_ugl_amount": obj.get("today_ugl_amount"),
             "today_ugl_percentage": obj.get("today_ugl_percentage"),
             "total_account_value": obj.get("total_account_value"),
+            "total_account_value_set_by": obj.get("total_account_value_set_by"),
             "total_account_value_ugl": obj.get("total_account_value_ugl"),
             "type": obj.get("type"),
+            "type_set_by": obj.get("type_set_by"),
             "updated_at": obj.get("updated_at"),
             "user_guid": obj.get("user_guid"),
             "user_id": obj.get("user_id")
