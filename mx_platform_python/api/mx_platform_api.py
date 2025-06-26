@@ -117,20 +117,24 @@ class MxPlatformApi:
         self.api_client = api_client
 
     @validate_arguments
-    def aggregate_member(self, member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], **kwargs) -> MemberResponseBody:  # noqa: E501
+    def aggregate_member(self, member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], include_holdings : Annotated[Optional[StrictBool], Field(description="When set to `false`, the aggregation will not gather holdings data. Defaults to `true`.")] = None, include_transactions : Annotated[Optional[StrictBool], Field(description="When set to `false`, the aggregation will not gather transactions data. Defaults to `true`.")] = None, **kwargs) -> MemberResponseBody:  # noqa: E501
         """Aggregate member  # noqa: E501
 
         Calling this endpoint initiates an aggregation event for the member. This brings in the latest account and transaction data from the connected institution. If this data has recently been updated, MX may not initiate an aggregation event.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.aggregate_member(member_guid, user_guid, async_req=True)
+        >>> thread = api.aggregate_member(member_guid, user_guid, include_holdings, include_transactions, async_req=True)
         >>> result = thread.get()
 
         :param member_guid: The unique id for a `member`. (required)
         :type member_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
+        :param include_holdings: When set to `false`, the aggregation will not gather holdings data. Defaults to `true`.
+        :type include_holdings: bool
+        :param include_transactions: When set to `false`, the aggregation will not gather transactions data. Defaults to `true`.
+        :type include_transactions: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
@@ -146,23 +150,27 @@ class MxPlatformApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the aggregate_member_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return self.aggregate_member_with_http_info(member_guid, user_guid, **kwargs)  # noqa: E501
+        return self.aggregate_member_with_http_info(member_guid, user_guid, include_holdings, include_transactions, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def aggregate_member_with_http_info(self, member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], **kwargs) -> ApiResponse:  # noqa: E501
+    def aggregate_member_with_http_info(self, member_guid : Annotated[StrictStr, Field(..., description="The unique id for a `member`.")], user_guid : Annotated[StrictStr, Field(..., description="The unique id for a `user`.")], include_holdings : Annotated[Optional[StrictBool], Field(description="When set to `false`, the aggregation will not gather holdings data. Defaults to `true`.")] = None, include_transactions : Annotated[Optional[StrictBool], Field(description="When set to `false`, the aggregation will not gather transactions data. Defaults to `true`.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Aggregate member  # noqa: E501
 
         Calling this endpoint initiates an aggregation event for the member. This brings in the latest account and transaction data from the connected institution. If this data has recently been updated, MX may not initiate an aggregation event.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.aggregate_member_with_http_info(member_guid, user_guid, async_req=True)
+        >>> thread = api.aggregate_member_with_http_info(member_guid, user_guid, include_holdings, include_transactions, async_req=True)
         >>> result = thread.get()
 
         :param member_guid: The unique id for a `member`. (required)
         :type member_guid: str
         :param user_guid: The unique id for a `user`. (required)
         :type user_guid: str
+        :param include_holdings: When set to `false`, the aggregation will not gather holdings data. Defaults to `true`.
+        :type include_holdings: bool
+        :param include_transactions: When set to `false`, the aggregation will not gather transactions data. Defaults to `true`.
+        :type include_transactions: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -192,7 +200,9 @@ class MxPlatformApi:
 
         _all_params = [
             'member_guid',
-            'user_guid'
+            'user_guid',
+            'include_holdings',
+            'include_transactions'
         ]
         _all_params.extend(
             [
@@ -229,6 +239,12 @@ class MxPlatformApi:
 
         # process the query parameters
         _query_params = []
+        if _params.get('include_holdings') is not None:  # noqa: E501
+            _query_params.append(('include_holdings', _params['include_holdings']))
+
+        if _params.get('include_transactions') is not None:  # noqa: E501
+            _query_params.append(('include_transactions', _params['include_transactions']))
+
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
         # process the form parameters

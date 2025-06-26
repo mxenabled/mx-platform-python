@@ -129,8 +129,8 @@ class AccountResponse(BaseModel):
     payment_due_at_set_by: Optional[StrictInt] = None
     payoff_balance: Optional[Union[StrictFloat, StrictInt]] = None
     payoff_balance_set_by: Optional[StrictInt] = None
-    premium_amount: Optional[StrictStr] = None
-    property_type: Optional[StrictInt] = None
+    premium_amount: Optional[Union[StrictFloat, StrictInt]] = None
+    property_type: Optional[StrictStr] = None
     routing_number: Optional[StrictStr] = None
     started_on: Optional[StrictStr] = None
     started_on_set_by: Optional[StrictInt] = None

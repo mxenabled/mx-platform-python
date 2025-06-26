@@ -114,7 +114,7 @@ Method | HTTP request | Description
 
 
 # **aggregate_member**
-> MemberResponseBody aggregate_member(member_guid, user_guid)
+> MemberResponseBody aggregate_member(member_guid, user_guid, include_holdings=include_holdings, include_transactions=include_transactions)
 
 Aggregate member
 
@@ -154,10 +154,12 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_python.MxPlatformApi(api_client)
     member_guid = 'MBR-7c6f361b-e582-15b6-60c0-358f12466b4b' # str | The unique id for a `member`.
     user_guid = 'USR-fa7537f3-48aa-a683-a02a-b18940482f54' # str | The unique id for a `user`.
+    include_holdings = false # bool | When set to `false`, the aggregation will not gather holdings data. Defaults to `true`. (optional)
+    include_transactions = false # bool | When set to `false`, the aggregation will not gather transactions data. Defaults to `true`. (optional)
 
     try:
         # Aggregate member
-        api_response = api_instance.aggregate_member(member_guid, user_guid)
+        api_response = api_instance.aggregate_member(member_guid, user_guid, include_holdings=include_holdings, include_transactions=include_transactions)
         print("The response of MxPlatformApi->aggregate_member:\n")
         pprint(api_response)
     except Exception as e:
@@ -172,6 +174,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **str**| The unique id for a &#x60;member&#x60;. | 
  **user_guid** | **str**| The unique id for a &#x60;user&#x60;. | 
+ **include_holdings** | **bool**| When set to &#x60;false&#x60;, the aggregation will not gather holdings data. Defaults to &#x60;true&#x60;. | [optional] 
+ **include_transactions** | **bool**| When set to &#x60;false&#x60;, the aggregation will not gather transactions data. Defaults to &#x60;true&#x60;. | [optional] 
 
 ### Return type
 
