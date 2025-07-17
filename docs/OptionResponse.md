@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**guid** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 

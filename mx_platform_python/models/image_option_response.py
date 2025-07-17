@@ -26,9 +26,10 @@ class ImageOptionResponse(BaseModel):
     ImageOptionResponse
     """
     data_uri: Optional[StrictStr] = None
+    guid: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     value: Optional[StrictStr] = None
-    __properties = ["data_uri", "label", "value"]
+    __properties = ["data_uri", "guid", "label", "value"]
 
     class Config:
         """Pydantic configuration"""
@@ -59,6 +60,11 @@ class ImageOptionResponse(BaseModel):
         if self.data_uri is None and "data_uri" in self.__fields_set__:
             _dict['data_uri'] = None
 
+        # set to None if guid (nullable) is None
+        # and __fields_set__ contains the field
+        if self.guid is None and "guid" in self.__fields_set__:
+            _dict['guid'] = None
+
         # set to None if label (nullable) is None
         # and __fields_set__ contains the field
         if self.label is None and "label" in self.__fields_set__:
@@ -82,6 +88,7 @@ class ImageOptionResponse(BaseModel):
 
         _obj = ImageOptionResponse.parse_obj({
             "data_uri": obj.get("data_uri"),
+            "guid": obj.get("guid"),
             "label": obj.get("label"),
             "value": obj.get("value")
         })
