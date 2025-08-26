@@ -46,7 +46,7 @@ class TestTransactionResponseBody(unittest.TestCase):
                     created_at = '2016-10-06T09:43:42.000Z', 
                     currency_code = 'USD', 
                     date = '2013-09-23T00:00:00.000Z', 
-                    description = 'Whole foods', 
+                    description = 'Whole Foods', 
                     extended_transaction_type = 'partner_transaction_type', 
                     guid = 'TRN-265abee9-889b-af6a-c69b-25157db2bdd9', 
                     id = 'transaction-265abee9-889b-af6a-c69b-25157db2bdd9', 
