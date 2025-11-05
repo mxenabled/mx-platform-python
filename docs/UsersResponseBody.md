@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 **users** | [**List[UserResponse]**](UserResponse.md) |  | [optional] 
+**pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 
 ## Example
 

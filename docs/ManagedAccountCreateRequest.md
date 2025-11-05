@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **currency_code** | **str** |  | [optional] 
 **day_payment_is_due** | **int** |  | [optional] 
 **death_benefit** | **int** |  | [optional] 
-**id** | **str** |  | [optional] 
+**id** | **str** |  | 
 **interest_rate** | **float** |  | [optional] 
 **is_closed** | **bool** |  | [optional] 
 **is_hidden** | **bool** |  | [optional] 

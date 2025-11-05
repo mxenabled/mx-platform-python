@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_guid** | **str** |  | [optional] 
-**member_guid** | **str** |  | [optional] 
-**user_guid** | **str** |  | [optional] 
+**account_guid** | **str** |  | 
+**member_guid** | **str** |  | 
+**user_guid** | **str** |  | 
 
 ## Example
 

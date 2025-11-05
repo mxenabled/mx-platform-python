@@ -4,13 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_name** | **str** |  | [optional] 
-**account_number** | **str** |  | [optional] 
-**account_type** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
-**first_name** | **str** |  | [optional] 
-**last_name** | **str** |  | [optional] 
-**routing_number** | **str** |  | [optional] 
 **error_message** | **str** |  | [optional] 
 **guid** | **str** |  | [optional] 
 **institution_code** | **str** |  | [optional] 

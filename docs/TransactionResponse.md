@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **is_fee** | **bool** |  | [optional] 
 **is_income** | **bool** |  | [optional] 
 **is_international** | **bool** |  | [optional] 
+**is_manual** | **bool** |  | [optional] 
 **is_overdraft_fee** | **bool** |  | [optional] 
 **is_payroll_advance** | **bool** |  | [optional] 
 **is_recurring** | **bool** |  | [optional] 

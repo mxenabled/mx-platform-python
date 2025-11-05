@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metadata** | **str** |  | [optional] 
 **name** | **str** |  | 
-**parent_guid** | **str** |  | [optional] 
+**parent_guid** | **str** |  | 
 
 ## Example
 

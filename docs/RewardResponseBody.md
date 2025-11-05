@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reward** | [**RewardResponse**](RewardResponse.md) |  | [optional] 
+**reward** | [**RewardsResponseBodyRewardsInner**](RewardsResponseBodyRewardsInner.md) |  | [optional] 
 
 ## Example
 

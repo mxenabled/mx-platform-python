@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deposit_amount_1** | **int** |  | [optional] 
-**deposit_amount_2** | **int** |  | [optional] 
+**deposit_amount_1** | **float** |  | [optional] 
+**deposit_amount_2** | **float** |  | [optional] 
 
 ## Example
 

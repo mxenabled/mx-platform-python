@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 **transaction_rules** | [**List[TransactionRuleResponse]**](TransactionRuleResponse.md) |  | [optional] 
+**pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 
 ## Example
 

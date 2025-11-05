@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authorization_code** | [**List[AuthorizationCodeResponse]**](AuthorizationCodeResponse.md) |  | [optional] 
+**authorization_code** | [**AuthorizationCodeResponse**](AuthorizationCodeResponse.md) |  | [optional] 
 
 ## Example
 
