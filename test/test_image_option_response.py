@@ -37,6 +37,7 @@ class TestImageOptionResponse(unittest.TestCase):
         if include_optional:
             return ImageOptionResponse(
                 data_uri = 'data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...',
+                guid = 'CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5',
                 label = 'IMAGE_1',
                 value = 'image_data'
             )

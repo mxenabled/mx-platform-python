@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.9.1"
+__version__ = "1.10.0"
 
 # import apis into sdk package
 from mx_platform_python.api.accounts_api import AccountsApi

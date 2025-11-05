@@ -46,12 +46,14 @@ class TestMemberStatusResponseBody(unittest.TestCase):
                             image_options = [
                                 mx_platform_python.models.image_option_response.ImageOptionResponse(
                                     data_uri = 'data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...', 
+                                    guid = 'CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5', 
                                     label = 'IMAGE_1', 
                                     value = 'image_data', )
                                 ], 
                             label = 'Who is this guy?', 
                             options = [
                                 mx_platform_python.models.option_response.OptionResponse(
+                                    guid = 'CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5', 
                                     label = 'IMAGE_1', 
                                     value = 'image_data', )
                                 ], 

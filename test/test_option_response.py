@@ -36,6 +36,7 @@ class TestOptionResponse(unittest.TestCase):
         model = OptionResponse()  # noqa: E501
         if include_optional:
             return OptionResponse(
+                guid = 'CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5',
                 label = 'IMAGE_1',
                 value = 'image_data'
             )

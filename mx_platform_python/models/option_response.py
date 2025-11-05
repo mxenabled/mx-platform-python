@@ -25,9 +25,10 @@ class OptionResponse(BaseModel):
     """
     OptionResponse
     """
+    guid: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     value: Optional[StrictStr] = None
-    __properties = ["label", "value"]
+    __properties = ["guid", "label", "value"]
 
     class Config:
         """Pydantic configuration"""
@@ -53,6 +54,11 @@ class OptionResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # set to None if guid (nullable) is None
+        # and __fields_set__ contains the field
+        if self.guid is None and "guid" in self.__fields_set__:
+            _dict['guid'] = None
+
         # set to None if label (nullable) is None
         # and __fields_set__ contains the field
         if self.label is None and "label" in self.__fields_set__:
@@ -75,6 +81,7 @@ class OptionResponse(BaseModel):
             return OptionResponse.parse_obj(obj)
 
         _obj = OptionResponse.parse_obj({
+            "guid": obj.get("guid"),
             "label": obj.get("label"),
             "value": obj.get("value")
         })
