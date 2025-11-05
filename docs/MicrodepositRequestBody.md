@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**micro_deposit** | [**MicrodepositRequest**](MicrodepositRequest.md) |  | [optional] 
+**micro_deposit** | [**MicrodepositElements**](MicrodepositElements.md) |  | [optional] 
 
 ## Example
 

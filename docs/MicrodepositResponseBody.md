@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**micro_deposit** | [**MicrodepositResponse**](MicrodepositResponse.md) |  | [optional] 
+**micro_deposit** | [**List[MicrodepositResponseBodyMicroDepositInner]**](MicrodepositResponseBodyMicroDepositInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data_uri** | **str** |  | [optional] 
-**guid** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mx_platform_python"
-version = "1.9.0"
+version = "1.9.1"
 description = "MX Platform API"
 authors = ["MX Platform API <team@openapitools.org>"]
 license = "NoLicense"

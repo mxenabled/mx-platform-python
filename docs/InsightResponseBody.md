@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**insight** | [**List[InsightResponse]**](InsightResponse.md) |  | [optional] 
+**insight** | [**InsightResponse**](InsightResponse.md) |  | [optional] 
 
 ## Example
 

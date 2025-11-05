@@ -1,11 +1,29 @@
 # flake8: noqa
 
 # import apis into api package
+from mx_platform_python.api.accounts_api import AccountsApi
+from mx_platform_python.api.ach_return_api import AchReturnApi
 from mx_platform_python.api.budgets_api import BudgetsApi
+from mx_platform_python.api.categories_api import CategoriesApi
 from mx_platform_python.api.goals_api import GoalsApi
 from mx_platform_python.api.insights_api import InsightsApi
+from mx_platform_python.api.institutions_api import InstitutionsApi
+from mx_platform_python.api.investment_holdings_api import InvestmentHoldingsApi
+from mx_platform_python.api.managed_data_api import ManagedDataApi
+from mx_platform_python.api.members_api import MembersApi
+from mx_platform_python.api.merchants_api import MerchantsApi
 from mx_platform_python.api.microdeposits_api import MicrodepositsApi
-from mx_platform_python.api.mx_platform_api import MxPlatformApi
+from mx_platform_python.api.monthly_cash_flow_profile_api import MonthlyCashFlowProfileApi
+from mx_platform_python.api.notifications_api import NotificationsApi
+from mx_platform_python.api.processor_token_api import ProcessorTokenApi
+from mx_platform_python.api.rewards_api import RewardsApi
 from mx_platform_python.api.spending_plan_api import SpendingPlanApi
+from mx_platform_python.api.statements_api import StatementsApi
+from mx_platform_python.api.taggings_api import TaggingsApi
+from mx_platform_python.api.tags_api import TagsApi
+from mx_platform_python.api.transaction_rules_api import TransactionRulesApi
 from mx_platform_python.api.transactions_api import TransactionsApi
+from mx_platform_python.api.users_api import UsersApi
+from mx_platform_python.api.verifiable_credentials_api import VerifiableCredentialsApi
+from mx_platform_python.api.widgets_api import WidgetsApi
 

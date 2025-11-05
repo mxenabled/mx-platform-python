@@ -4,7 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **str** |  | 
+**var_date** | **str** |  | [optional] 
+**memo** | **str** |  | [optional] 
+**category_guid** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 
 ## Example
 

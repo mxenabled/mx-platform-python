@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **background_aggregation_is_disabled** | **bool** |  | [optional] 
 **connection_status** | **str** |  | [optional] 
 **connection_status_message** | **str** |  | [optional] 
-**error** | **str** |  | [optional] 
 **guid** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **institution_code** | **str** |  | [optional] 

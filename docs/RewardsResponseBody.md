@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rewards** | [**List[RewardsResponse]**](RewardsResponse.md) |  | [optional] 
+**rewards** | [**List[RewardsResponseBodyRewardsInner]**](RewardsResponseBodyRewardsInner.md) |  | [optional] 
 **pagination** | [**PaginationResponse**](PaginationResponse.md) |  | [optional] 
 
 ## Example

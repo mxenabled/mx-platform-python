@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **budgeted_income** | **float** | The amount of the budgeted income for the user. | [optional] 
 **budgeted_expenses** | **float** | The amount of the budgeted expenses for the user. | [optional] 
 **goals_contribution** | **float** | The monthly dollar amount allocated for goals. | [optional] 
-**estimated_goals_contribution** | **int** | The estimated monthly dollar amount allocated for goals calculated from income and budgets. | [optional] 
+**estimated_goals_contribution** | **float** | The estimated monthly dollar amount allocated for goals calculated from income and budgets. | [optional] 
 **uses_estimated_goals_contribution** | **bool** |  | [optional] 
 
 ## Example

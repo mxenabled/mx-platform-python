@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **str** |  | [optional] 
+**created_at** | **str** | Category creation date-time. | [optional] 
 **guid** | **str** |  | [optional] 
 **is_default** | **bool** |  | [optional] 
 **is_income** | **bool** |  | [optional] 

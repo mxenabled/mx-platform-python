@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **is_oauth** | **bool** |  | [optional] 
 **metadata** | **str** |  | [optional] 
 **skip_aggregation** | **bool** |  | [optional] 
+**use_cases** | **List[str]** | The use case associated with the member. Valid values are &#x60;PFM&#x60; and/or &#x60;MONEY_MOVEMENT&#x60;. Only set this if you&#39;ve met with MX and have opted in to using this field. | [optional] 
 
 ## Example
 
