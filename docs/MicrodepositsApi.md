@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 Read a microdeposit for a user
 
-Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br></br> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint. 
+Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br /><br /> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.
 
 ### Example
 

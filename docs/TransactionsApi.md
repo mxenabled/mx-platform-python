@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 List transactions by account
 
-Requests to this endpoint return a list of transactions associated with the specified account. <br /><br />Enhanced transaction data may be requested using the `includes` parameter.  To use this optional parameter, the value should include the optional metadata requested such as `repeating_transactions`, `merchants`, `classifications`, `geolocations`. For more information, see the [Optional Enhancement Query Parameter guide](/api-reference/platform-api/reference/transactions-overview#enhanced-transactions#optional-enhancement-query-parameter). 
+Requests to this endpoint return a list of transactions associated with the specified account. <br /><br />Enhanced transaction data may be requested using the `includes` parameter. To use this optional parameter, the value should include the optional metadata requested such as `repeating_transactions`, `merchants`, `classifications`, `geolocations`. For more information, see the [Optional Enhancement Query Parameter guide](/api-reference/platform-api/reference/transactions-overview#enhanced-transactions#optional-enhancement-query-parameter).
 
 ### Example
 

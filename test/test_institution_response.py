@@ -39,9 +39,7 @@ class TestInstitutionResponse(unittest.TestCase):
                 code = 'mxbank',
                 forgot_password_url = 'https://example.url.mxbank.com/forgot-password',
                 forgot_username_url = 'https://example.url.mxbank.com/forgot-username',
-                instructional_text = 'Some instructional text <a href="https://example.url.mxbank.com/instructions"
-id="instructional_text">for end users</a>.
-',
+                instructional_text = 'Some instructional text <a href="https://example.url.mxbank.com/instructions" id="instructional_text">for end users</a>.',
                 instructional_text_steps = ["Step 1: Do this.","Step 2: Do that."],
                 is_disabled_by_client = False,
                 iso_country_code = 'US',
