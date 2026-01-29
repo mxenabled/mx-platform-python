@@ -28,7 +28,7 @@ class InstitutionResponse(BaseModel):
     code: Optional[StrictStr] = None
     forgot_password_url: Optional[StrictStr] = None
     forgot_username_url: Optional[StrictStr] = None
-    instructional_text: Optional[StrictStr] = None
+    instructional_text: Optional[StrictStr] = Field(None, description="Render this text when end users are asked for their credentials, as it helps end users provide the correct credentials when creating a new member. May contain `<a></a>` tags to link to explanatory material.")
     instructional_text_steps: Optional[conlist(StrictStr)] = Field(None, description="An array of instructional steps that may contain html elements.")
     is_disabled_by_client: Optional[StrictBool] = None
     iso_country_code: Optional[StrictStr] = None

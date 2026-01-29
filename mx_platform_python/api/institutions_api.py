@@ -48,7 +48,7 @@ class InstitutionsApi:
         self.api_client = api_client
 
     @validate_arguments
-    def list_favorite_institutions(self, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.")] = None, **kwargs) -> InstitutionsResponseBody:  # noqa: E501
+    def list_favorite_institutions(self, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.")] = None, **kwargs) -> InstitutionsResponseBody:  # noqa: E501
         """List favorite institutions  # noqa: E501
 
         This endpoint returns a paginated list containing institutions that have been set as the partner’s favorites, sorted by popularity. Please contact MX to set a list of favorites.  # noqa: E501
@@ -62,7 +62,7 @@ class InstitutionsApi:
         :type iso_country_code: List[str]
         :param page: Results are paginated. Specify current page.
         :type page: int
-        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.
+        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.
         :type records_per_page: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -82,7 +82,7 @@ class InstitutionsApi:
         return self.list_favorite_institutions_with_http_info(iso_country_code, page, records_per_page, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_favorite_institutions_with_http_info(self, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def list_favorite_institutions_with_http_info(self, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """List favorite institutions  # noqa: E501
 
         This endpoint returns a paginated list containing institutions that have been set as the partner’s favorites, sorted by popularity. Please contact MX to set a list of favorites.  # noqa: E501
@@ -96,7 +96,7 @@ class InstitutionsApi:
         :type iso_country_code: List[str]
         :param page: Results are paginated. Specify current page.
         :type page: int
-        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.
+        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.
         :type records_per_page: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -361,7 +361,7 @@ class InstitutionsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_institutions(self, name : Annotated[Optional[StrictStr], Field(description="This will list only institutions in which the appended string appears.")] = None, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.")] = None, supports_account_identification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account identification.")] = None, supports_account_statement : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account statements.")] = None, supports_account_verification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account verification.")] = None, supports_transaction_history : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support extended transaction history.")] = None, **kwargs) -> InstitutionsResponseBody:  # noqa: E501
+    def list_institutions(self, name : Annotated[Optional[StrictStr], Field(description="This will list only institutions in which the appended string appears.")] = None, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.")] = None, supports_account_identification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account identification.")] = None, supports_account_statement : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account statements.")] = None, supports_account_verification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account verification.")] = None, supports_transaction_history : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support extended transaction history.")] = None, **kwargs) -> InstitutionsResponseBody:  # noqa: E501
         """List institutions  # noqa: E501
 
         This endpoint returns a list of institutions based on the specified search term or parameter.  # noqa: E501
@@ -377,7 +377,7 @@ class InstitutionsApi:
         :type iso_country_code: List[str]
         :param page: Results are paginated. Specify current page.
         :type page: int
-        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.
+        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.
         :type records_per_page: int
         :param supports_account_identification: Filter only institutions which support account identification.
         :type supports_account_identification: bool
@@ -405,7 +405,7 @@ class InstitutionsApi:
         return self.list_institutions_with_http_info(name, iso_country_code, page, records_per_page, supports_account_identification, supports_account_statement, supports_account_verification, supports_transaction_history, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_institutions_with_http_info(self, name : Annotated[Optional[StrictStr], Field(description="This will list only institutions in which the appended string appears.")] = None, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.")] = None, supports_account_identification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account identification.")] = None, supports_account_statement : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account statements.")] = None, supports_account_verification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account verification.")] = None, supports_transaction_history : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support extended transaction history.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def list_institutions_with_http_info(self, name : Annotated[Optional[StrictStr], Field(description="This will list only institutions in which the appended string appears.")] = None, iso_country_code : Annotated[Optional[conlist(StrictStr)], Field(description="An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico).")] = None, page : Annotated[Optional[StrictInt], Field(description="Results are paginated. Specify current page.")] = None, records_per_page : Annotated[Optional[StrictInt], Field(description="This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.")] = None, supports_account_identification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account identification.")] = None, supports_account_statement : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account statements.")] = None, supports_account_verification : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support account verification.")] = None, supports_transaction_history : Annotated[Optional[StrictBool], Field(description="Filter only institutions which support extended transaction history.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """List institutions  # noqa: E501
 
         This endpoint returns a list of institutions based on the specified search term or parameter.  # noqa: E501
@@ -421,7 +421,7 @@ class InstitutionsApi:
         :type iso_country_code: List[str]
         :param page: Results are paginated. Specify current page.
         :type page: int
-        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead.
+        :param records_per_page: This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead.
         :type records_per_page: int
         :param supports_account_identification: Filter only institutions which support account identification.
         :type supports_account_identification: bool

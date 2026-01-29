@@ -51,7 +51,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     api_instance = mx_platform_python.InstitutionsApi(api_client)
     iso_country_code = ['[\"US\",\"CA\"]'] # List[str] | An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico). (optional)
     page = 1 # int | Results are paginated. Specify current page. (optional)
-    records_per_page = 10 # int | This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead. (optional)
+    records_per_page = 10 # int | This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead. (optional)
 
     try:
         # List favorite institutions
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **iso_country_code** | [**List[str]**](str.md)| An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include &#x60;US&#x60;, &#x60;CA&#x60;, and &#x60;MX&#x60; (Mexico). | [optional] 
  **page** | **int**| Results are paginated. Specify current page. | [optional] 
- **records_per_page** | **int**| This specifies the number of records to be returned on each page. Defaults to &#x60;25&#x60;. The valid range is from &#x60;10&#x60; to &#x60;100&#x60;. If the value exceeds &#x60;100&#x60;, the default value of &#x60;25&#x60; will be used instead. | [optional] 
+ **records_per_page** | **int**| This specifies the number of records to be returned on each page. Defaults to &#x60;25&#x60;. The valid range is from &#x60;10&#x60; to &#x60;1000&#x60;. If the value exceeds &#x60;1000&#x60;, the default value of &#x60;25&#x60; will be used instead. | [optional] 
 
 ### Return type
 
@@ -216,7 +216,7 @@ with mx_platform_python.ApiClient(configuration) as api_client:
     name = 'mxbank' # str | This will list only institutions in which the appended string appears. (optional)
     iso_country_code = ['[\"US\",\"CA\"]'] # List[str] | An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include `US`, `CA`, and `MX` (Mexico). (optional)
     page = 1 # int | Results are paginated. Specify current page. (optional)
-    records_per_page = 10 # int | This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `100`. If the value exceeds `100`, the default value of `25` will be used instead. (optional)
+    records_per_page = 10 # int | This specifies the number of records to be returned on each page. Defaults to `25`. The valid range is from `10` to `1000`. If the value exceeds `1000`, the default value of `25` will be used instead. (optional)
     supports_account_identification = true # bool | Filter only institutions which support account identification. (optional)
     supports_account_statement = true # bool | Filter only institutions which support account statements. (optional)
     supports_account_verification = true # bool | Filter only institutions which support account verification. (optional)
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
  **name** | **str**| This will list only institutions in which the appended string appears. | [optional] 
  **iso_country_code** | [**List[str]**](str.md)| An array of strings that filters institutions in the widget by the specified country code. Acceptable codes include &#x60;US&#x60;, &#x60;CA&#x60;, and &#x60;MX&#x60; (Mexico). | [optional] 
  **page** | **int**| Results are paginated. Specify current page. | [optional] 
- **records_per_page** | **int**| This specifies the number of records to be returned on each page. Defaults to &#x60;25&#x60;. The valid range is from &#x60;10&#x60; to &#x60;100&#x60;. If the value exceeds &#x60;100&#x60;, the default value of &#x60;25&#x60; will be used instead. | [optional] 
+ **records_per_page** | **int**| This specifies the number of records to be returned on each page. Defaults to &#x60;25&#x60;. The valid range is from &#x60;10&#x60; to &#x60;1000&#x60;. If the value exceeds &#x60;1000&#x60;, the default value of &#x60;25&#x60; will be used instead. | [optional] 
  **supports_account_identification** | **bool**| Filter only institutions which support account identification. | [optional] 
  **supports_account_statement** | **bool**| Filter only institutions which support account statements. | [optional] 
  **supports_account_verification** | **bool**| Filter only institutions which support account verification. | [optional] 

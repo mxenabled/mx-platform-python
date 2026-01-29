@@ -199,7 +199,7 @@ class UsersApi:
     def delete_user(self, accept : Annotated[StrictStr, Field(..., description="Specifies the media type expected in the response.")], user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for a `user`, beginning with the prefix `USR-`.")], **kwargs) -> None:  # noqa: E501
         """Delete user  # noqa: E501
 
-        Use this endpoint to delete the specified `user`. The response will have a status of `204 No Content` without an object.  :::warning Deleting a user is permanent. Deleted users can never be restored. For more info, see [Deleting Objects](https://docs.mx.com/api-reference/platform-api/overview/deleting-objects). :::   # noqa: E501
+        Use this endpoint to delete the specified `user`. The response will have a status of `204 No Content` without an object.  :::warning Deleting a user is permanent. Deleted users can never be restored. For more info, see [Deleting Objects](/api-reference/platform-api/overview/deleting-objects). :::   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -231,7 +231,7 @@ class UsersApi:
     def delete_user_with_http_info(self, accept : Annotated[StrictStr, Field(..., description="Specifies the media type expected in the response.")], user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for a `user`, beginning with the prefix `USR-`.")], **kwargs) -> ApiResponse:  # noqa: E501
         """Delete user  # noqa: E501
 
-        Use this endpoint to delete the specified `user`. The response will have a status of `204 No Content` without an object.  :::warning Deleting a user is permanent. Deleted users can never be restored. For more info, see [Deleting Objects](https://docs.mx.com/api-reference/platform-api/overview/deleting-objects). :::   # noqa: E501
+        Use this endpoint to delete the specified `user`. The response will have a status of `204 No Content` without an object.  :::warning Deleting a user is permanent. Deleted users can never be restored. For more info, see [Deleting Objects](/api-reference/platform-api/overview/deleting-objects). :::   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

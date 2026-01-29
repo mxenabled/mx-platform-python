@@ -629,7 +629,7 @@ class MicrodepositsApi:
     def read_user_microdeposit(self, micro_deposit_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the microdeposit. Defined by MX.")], user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for a `user`, beginning with the prefix `USR-`.")], **kwargs) -> MicrodepositResponseBody:  # noqa: E501
         """Read a microdeposit for a user  # noqa: E501
 
-        Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br /><br /> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.  # noqa: E501
+        Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br></br> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -661,7 +661,7 @@ class MicrodepositsApi:
     def read_user_microdeposit_with_http_info(self, micro_deposit_guid : Annotated[StrictStr, Field(..., description="The unique identifier for the microdeposit. Defined by MX.")], user_guid : Annotated[StrictStr, Field(..., description="The unique identifier for a `user`, beginning with the prefix `USR-`.")], **kwargs) -> ApiResponse:  # noqa: E501
         """Read a microdeposit for a user  # noqa: E501
 
-        Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br /><br /> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.  # noqa: E501
+        Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br></br> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
